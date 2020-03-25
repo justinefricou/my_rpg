@@ -30,6 +30,7 @@ SRC_ENT =	src/entities/ent_music.c			\
 			src/entities/ent_text.c				\
 			src/entities/ent_map.c				\
 			src/entities/ent_button.c			\
+			src/entities/ent_player.c
 
 SRC_SYS =	src/systems/sys_render.c			\
 			src/systems/sys_display_text.c		\
@@ -37,6 +38,7 @@ SRC_SYS =	src/systems/sys_render.c			\
 			src/systems/sys_escape.c			\
 			src/systems/sys_camera.c			\
 			src/systems/sys_script.c			\
+			src/systems/sys_player.c			\
 
 SRC_INI =	src/init/init_img.c					\
 

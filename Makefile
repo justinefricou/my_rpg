@@ -39,6 +39,8 @@ SRC_SYS =	src/systems/sys_render.c			\
 			src/systems/sys_script.c			\
 
 SRC_INI =	src/init/init_img.c					\
+			src/init/init_dialogs.c 			\
+			src/init/parsing_dialogs.c 			\
 
 SRC_SPT =	src/scripts/script_build_menu.c		\
 

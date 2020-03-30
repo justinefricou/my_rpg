@@ -6,9 +6,14 @@
 */
 
 #include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <dirent.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include "libmy.h"
 #include "init_dialogs.h"
 
 static int get_file_content(char **content, int fd)
@@ -50,9 +55,17 @@ int init_dialogs(dialogs_t *dialogs)
     return (0);
 }
 
-void destroy_dialogs(dialogs_t *dialogs)
+void destroy_dialogs(dialogs_t dialogs)
 {
-    free_string_array(dialogs->ids);
-    free_string_array(dialogs->lines);
-    free(dialogs);
+    free_string_array(dialogs.ids);
+    free_string_array(dialogs.lines);
+}
+
+int get_dialog_id(char *str, dialogs_t dialogs)
+{
+    for (int i = 0; dialogs.ids[i]; i++) {
+        if (!my_strcmpp(str, dialogs.ids[i]))
+            return (i);
+    }
+    return (-1);
 }

@@ -15,9 +15,10 @@ typedef struct dialogs {
 
 // init_dialogs.c
 int init_dialogs(dialogs_t *dialogs);
-void destroy_dialogs(dialogs_t *dialogs);
+void destroy_dialogs(dialogs_t dialogs);
+int get_dialog_id(char *str, dialogs_t dialogs);
 
-// parsing_dialogs.c
+// pars_dialogs.c
 int parse_dialogs(dialogs_t *dialogs, char *content);
 void free_string_array(char **array);
 

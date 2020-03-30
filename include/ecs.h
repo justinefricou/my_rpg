@@ -27,6 +27,7 @@ dg_entity_t *ent_button(sfVector2f pos, int size, char *text
     , void (*action)(dg_window_t *));
 dg_entity_t *ent_map(int id, float scale, float x, float y);
 dg_entity_t *ent_build_menu(dg_entity_t *camera, dg_scene_t *scene);
+dg_entity_t *entity_player_create();
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));
@@ -54,6 +55,8 @@ void sys_escape(dg_entity_t *entity, dg_window_t *w,
 void sys_camera(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void sys_script(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void sys_player_control(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 
 // init

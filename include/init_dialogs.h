@@ -14,7 +14,7 @@ typedef struct dialogs {
 } dialogs_t;
 
 // init_dialogs.c
-int init_dialogs(dialogs_t *dialogs);
+int init_dialogs(dialogs_t *dialogs, char *language);
 void destroy_dialogs(dialogs_t dialogs);
 int get_dialog_id(char *str, dialogs_t dialogs);
 

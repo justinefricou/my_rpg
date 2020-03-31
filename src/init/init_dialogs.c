@@ -16,6 +16,19 @@
 #include "libmy.h"
 #include "init_dialogs.h"
 
+static int open_dialog_file(char *language)
+{
+    char *filepath = NULL;
+    int fd = 0;
+
+    filepath = my_strcat("dialogs/dialogs_", language);
+    if (!filepath)
+        return (-1);
+    fd = open(filepath, O_RDONLY);
+    free(filepath);
+    return (fd);
+}
+
 static int get_file_content(char **content, int fd)
 {
     struct stat buffer;
@@ -35,12 +48,13 @@ static int get_file_content(char **content, int fd)
     return (0);
 }
 
-int init_dialogs(dialogs_t *dialogs)
+int init_dialogs(dialogs_t *dialogs, char *language)
 {
-    char *content = NULL;
     int fd = 0;
+    char *content = NULL;
 
-    if ((fd = open("dialogs/dialog_test", O_RDONLY)) == -1)
+    fd = open_dialog_file(language);
+    if (fd == -1)
         return (84);
     if (get_file_content(&content, fd) == 84) {
         close(fd);

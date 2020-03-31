@@ -55,4 +55,7 @@ char *my_revstr(char *str);
 // my_nblen
 int my_nblen(int nb);
 
+// my_strcat
+char *my_strcat(char *str1, char *str2);
+
 #endif

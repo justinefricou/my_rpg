@@ -56,6 +56,7 @@ SRC_LIB =	lib/get_next_line.c			\
 			lib/itoa.c					\
 			lib/my_revstr.c				\
 			lib/nblen.c					\
+			lib/my_strcat.c				\
 
 SRC	=	$(SRC_OTH)	\
 		$(SRC_SCN)	\

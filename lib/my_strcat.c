@@ -14,8 +14,8 @@ char *my_strcat(char *str1, char *str2)
     int length1 = 0;
     int length2 = 0;
 
-    for (; str1[length1]; length1++);
-    for (; str2[length2]; length2++);
+    for (; str1[length1]; length1 += 1);
+    for (; str2[length2]; length2 += 1);
     dest = malloc(sizeof(char) * (length1 + length2 + 1));
     if (!dest)
         return (NULL);

@@ -27,4 +27,10 @@ void scp_build_menu_loop(dg_entity_t *entity, dg_window_t *w,
 void scp_build_menu_end(void *data);
 */
 
+// player controller
+void *scp_player_controller_init(void *init_data);
+void scp_player_controller_loop(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void scp_player_controller_end(void *data);
+
 #endif /*SCRIPT_H_*/

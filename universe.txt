@@ -1,0 +1,18 @@
+Le scénario du jeu est basé sur une enquête à résoudre.
+
+Notre personnage peut interroger des personnages non jouables, dont des ennemis.
+Les dialogues avec les ennemis sont des combats sous forme de "joutes verbales".
+S'il gagne le combat, il gagne un indice.
+
+Le joueur gagne un niveau grâce à des points d'expériences gagnés à la fin de
+chaque combat. Il gagne alors un point de compétence qu'il pourra utiliser pour
+débloquer une compétence.
+
+Le joueur a accès à une liste d'indices qui regroupe tous les indices qu'il a
+découverts jusque là.
+
+Il a également un inventaire où il peut stocker des pièces à conviction qu'il
+utilisera dans les quêtes.
+
+Avant chaque combat, le joueur peut choisir différentes compétences (ex : répartie,
+menaces, etc) qu'il pourra utiliser durant le combat, en fonction de son ennemi (son apparence, sa façon de parler...).

@@ -9,7 +9,7 @@
 #include "dg_component.h"
 #include "ecs.h"
 
-static sfSprite *render_sprite(sfVector2f *scale, dg_spritesheet_t *sheet,
+sfSprite *render_sprite(sfVector2f *scale, dg_spritesheet_t *sheet,
     sfVector2f *pos, sfColor *color)
 {
     sfSprite *sprite = sfSprite_create();

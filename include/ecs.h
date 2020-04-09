@@ -11,7 +11,6 @@
 #include "libdragon.h"
 #include "general_data.h"
 #include "enemy_data.h"
-#include "tower_data.h"
 
 // scenes
 dg_scene_t *scene_game(void);
@@ -25,7 +24,7 @@ dg_entity_t *ent_sprite(int id, float scale, float x, float y);
 dg_entity_t *ent_text(int x, int y, int scale, char *text);
 dg_entity_t *ent_button(sfVector2f pos, int size, char *text
     , void (*action)(dg_window_t *));
-dg_entity_t *ent_map(int id, float scale, float x, float y);
+dg_entity_t *ent_map(int sheet, float scale, int **map,int fmod);
 dg_entity_t *ent_build_menu(dg_entity_t *camera, dg_scene_t *scene);
 dg_entity_t *entity_player_create();
 
@@ -42,6 +41,8 @@ dg_component_t *cpt_subentity(void);
 dg_component_t *cpt_script(void *(*init)(void *), dg_sysf_t loop,
     void (*end)(void *), void *idata);
 dg_component_t *cpt_color(sfColor color);
+dg_component_t *cpt_tilemap(int **map, dg_spritesheet_t *sheet,
+    int free_map_on_destroy);
 
 // systems
 void sys_render(dg_entity_t *entity, dg_window_t *w,
@@ -58,6 +59,8 @@ void sys_script(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void sys_player_control(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
+void sys_tm_render(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
 
 // init
 void init_img(void);
@@ -66,5 +69,7 @@ void set_build_id(dg_entity_t *entity, dg_window_t *w,
 
 // utilities
 void sound_play(sfMusic *sound);
+sfSprite *render_sprite(sfVector2f *scale, dg_spritesheet_t *sheet,
+    sfVector2f *pos, sfColor *color);
 
 #endif

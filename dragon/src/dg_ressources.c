@@ -40,7 +40,11 @@ void dg_ressources_add_spritesheet(char *path, int width, int height)
 dg_spritesheet_t *dg_ressources_get_spritesheet(int id)
 {
     dg_ressources_t *ressources = dg_ressources();
+    int i = 0;
 
+    for (i = 0; ressources->sheets[i]; i++);
+    if (i < id)
+        return NULL;
     return ressources->sheets[id];
 }
 

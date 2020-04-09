@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include "libdragon.h"
 #include "ecs.h"
-#include "tower_data.h"
 #include "enemy_data.h"
 #include "script.h"
 /*

@@ -7,7 +7,7 @@
 
 CC	=	gcc
 
-SRC_OTH = 	src/main.c									\
+SRC_MAI = 	src/main.c									\
 
 SRC_SCN =	src/scenes/scene_main_menu.c				\
 			src/scenes/scene_game.c						\
@@ -24,6 +24,7 @@ SRC_CPT =	src/components/cpt_action.c					\
 			src/components/cpt_subentity.c				\
 			src/components/cpt_script.c					\
 			src/components/cpt_color.c					\
+			src/components/cpt_tilemap.c				\
 
 SRC_ENT =	src/entities/ent_music.c					\
 			src/entities/ent_sprite.c					\
@@ -33,6 +34,7 @@ SRC_ENT =	src/entities/ent_music.c					\
 			src/entities/ent_player.c
 
 SRC_SYS =	src/systems/sys_render.c					\
+			src/systems/sys_tm_render.c					\
 			src/systems/sys_display_text.c				\
 			src/systems/sys_button.c					\
 			src/systems/sys_escape.c					\
@@ -46,6 +48,9 @@ SRC_INI =	src/init/init_img.c							\
 SRC_SPT =	src/scripts/script_build_menu.c				\
 			src/scripts/script_player_controller.c		\
 
+SRC_OTH =	src/other/tilemap.c							\
+			src/other/transform.c						\
+
 SRC_LIB =	lib/get_next_line.c			\
 			lib/my_putarray.c			\
 			lib/my_strcpy.c				\
@@ -58,7 +63,7 @@ SRC_LIB =	lib/get_next_line.c			\
 			lib/nblen.c					\
 			lib/my_strcat.c				\
 
-SRC	=	$(SRC_OTH)	\
+SRC	=	$(SRC_MAI)	\
 		$(SRC_SCN)	\
 		$(SRC_CPT)	\
 		$(SRC_ENT)	\
@@ -67,6 +72,7 @@ SRC	=	$(SRC_OTH)	\
 		$(SRC_INI)	\
 		$(SRC_TOW)	\
 		$(SRC_SPT)	\
+		$(SRC_OTH)	\
 
 LIB	=	$(SRC_LIB)	\
 

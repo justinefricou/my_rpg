@@ -6,7 +6,6 @@
 */
 
 #include "libdragon.h"
-#include "tower_data.h"
 
 #ifndef SCRIPT_H_
 #define SCRIPT_H_

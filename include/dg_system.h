@@ -27,6 +27,8 @@ int dg_system_require(dg_entity_t *, unsigned int, ...);
 
 void dg_camera_render(sfVector2f, sfSprite *, dg_window_t *);
 
+void dg_camera_transform(sfVector2f, sfVector2f);
+
 void dg_sys_animator(dg_entity_t *, dg_window_t *, dg_array_t **, sfTime);
 
 void dg_sys_render(dg_entity_t *, dg_window_t *, dg_array_t **, sfTime);

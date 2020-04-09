@@ -24,7 +24,7 @@ dg_entity_t *ent_sprite(int id, float scale, float x, float y);
 dg_entity_t *ent_text(int x, int y, int scale, char *text);
 dg_entity_t *ent_button(sfVector2f pos, int size, char *text
     , void (*action)(dg_window_t *));
-dg_entity_t *ent_map(int sheet, float scale, int **map,int fmod);
+dg_entity_t *ent_map(int sheet, float scale, int **map, int fmod);
 dg_entity_t *ent_build_menu(dg_entity_t *camera, dg_scene_t *scene);
 dg_entity_t *entity_player_create();
 
@@ -60,6 +60,8 @@ void sys_script(dg_entity_t *entity, dg_window_t *w,
 void sys_player_control(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void sys_tm_render(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void sys_interact_dialogue(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 
 // init

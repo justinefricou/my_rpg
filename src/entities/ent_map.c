@@ -9,7 +9,7 @@
 #include "libdragon.h"
 #include "ecs.h"
 
-dg_entity_t *ent_map(int sheet, float scale, int **map,int fmod)
+dg_entity_t *ent_map(int sheet, float scale, int **map, int fmod)
 {
     dg_entity_t *background_menu = dg_entity_create("map");
 

@@ -34,7 +34,7 @@ void scp_player_controller_loop(dg_entity_t *entity, dg_window_t *w,
     script_t *script = (script_t *)dg_entity_get_component(entity, "script");
     data_t *data = script->data;
     sfVector2f move = {0, 0};
-    
+
     move.x += (sfKeyboard_isKeyPressed(sfKeyRight)) ? 1 : 0;
     move.x += (sfKeyboard_isKeyPressed(sfKeyLeft)) ? -1 : 0;
     move.y += (sfKeyboard_isKeyPressed(sfKeyDown)) ? 1 : 0;

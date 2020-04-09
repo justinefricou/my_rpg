@@ -40,6 +40,7 @@ SRC_SYS =	src/systems/sys_render.c					\
 			src/systems/sys_escape.c					\
 			src/systems/sys_camera.c					\
 			src/systems/sys_script.c					\
+			src/systems/sys_interact_dialogue.c			\
 
 SRC_INI =	src/init/init_img.c							\
 			src/init/init_dialogs.c 					\

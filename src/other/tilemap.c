@@ -59,7 +59,7 @@ void tilemap_draw_display(tilemap_t *tm, transform_t transform,
         new_pos.x = transform.pos.x;
         for (int x = 0; x < tm->width; x++) {
             sfSprite_setPosition(sprite, new_pos);
-            (tm->map[y][x] > 0) ? 
+            (tm->map[y][x] > 0) ?
                 dg_spritesheet_to_sprite(tm->sheet, sprite,
                     tm->map[y][x] - 1) : NULL;
             dg_camera_render(camera, sprite,  w);

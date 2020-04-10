@@ -13,10 +13,14 @@
 #include "enemy_data.h"
 
 // scenes
-dg_scene_t *scene_game(void);
 dg_scene_t *scene_main_menu(void);
 dg_scene_t *scene_escape_menu(void);
 dg_scene_t *scene_how_to_play(void);
+dg_scene_t *scene_game_event(void);
+dg_scene_t *scene_game_hud(void);
+dg_scene_t *scene_game_top(void);
+dg_scene_t *scene_game_bottom(void);
+dg_scene_t *scene_game_middle(void);
 
 // entities
 dg_entity_t *ent_music(char *path);
@@ -74,5 +78,7 @@ void set_build_id(dg_entity_t *entity, dg_window_t *w,
 void sound_play(sfMusic *sound);
 sfSprite *render_sprite(sfVector2f *scale, dg_spritesheet_t *sheet,
     sfVector2f *pos, sfColor *color);
+void scn_change(dg_scene_t *scene, int status);
+void scn_change_music(dg_scene_t *scene, int status);
 
 #endif

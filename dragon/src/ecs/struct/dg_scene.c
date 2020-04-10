@@ -18,8 +18,8 @@ dg_scene_t *dg_scene_create(char *name)
     scene->name = name;
     scene->entities = 0;
     scene->systems = 0;
-    scene->run = 0;
-    scene->display = 0;
+    scene->run = 1;
+    scene->display = 1;
     scene->destroy = 0;
     return scene;
 }

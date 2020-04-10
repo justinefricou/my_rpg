@@ -7,38 +7,30 @@
 
 #include <stdlib.h>
 #include "libdragon.h"
+#include "game_scenes.h"
 #include "ecs.h"
 
 static void go_to_resume(dg_window_t *w)
 {
-    dg_scene_t *old_scene = dg_scene_manager_get_scene("escape_menu");
-    dg_scene_t *new_scene = dg_scene_manager_get_scene("game");
-    dg_entity_t *music_ent = dg_get_entity(new_scene->entities, "music");
-    sfMusic *music_music = dg_entity_get_component(music_ent, "sound");
-    sfMusic_play(music_music);
+    dg_scene_t *escape_menu = dg_scene_manager_get_scene("escape_menu");
+    dg_scene_t *game_scenes[NB_GAME_SCENE - 1] = {0};
 
-    old_scene->run = 0;
-    old_scene->display = 0;
-    new_scene->run = 1;
-    new_scene->display = 1;
+    get_game_scenes(game_scenes, 0);
+    scn_change(escape_menu, 0);
+    for (int i = 0; i < NB_GAME_SCENE - 1; i++) {
+        scn_change(game_scenes[i], 1);
+    }
 }
 
 static void go_to_menu(dg_window_t *w)
 {
     dg_scene_manager_add_scene(scene_main_menu());
-    dg_scene_manager_remove("game");
-    dg_scene_manager_remove("escape_menu");
+    remove_game_scenes();
 }
 
 static void go_to_quit(dg_window_t *w)
 {
     w->quit = 1;
-}
-
-static void go_to_reload(dg_window_t *w)
-{
-    dg_scene_manager_reload("game", scene_game());
-    go_to_resume(w);
 }
 
 dg_scene_t *scene_escape_menu(void)

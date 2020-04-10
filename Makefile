@@ -10,9 +10,15 @@ CC	=	gcc
 SRC_MAI = 	src/main.c									\
 
 SRC_SCN =	src/scenes/scene_main_menu.c				\
-			src/scenes/scene_game.c						\
-			src/scenes/scene_escape_menu.c				\
 			src/scenes/scene_how_to_play.c				\
+			src/scenes/scn_utils.c						\
+			src/scenes/game/scene_game_event.c			\
+			src/scenes/game/scene_game_bottom.c			\
+			src/scenes/game/scene_game_middle.c			\
+			src/scenes/game/scene_game_top.c			\
+			src/scenes/game/scene_game_hud.c			\
+			src/scenes/game/scene_escape_menu.c			\
+			src/scenes/game/game_scn_utils.c			\
 
 SRC_CPT =	src/components/cpt_action.c					\
 			src/components/cpt_text.c					\

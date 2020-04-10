@@ -18,7 +18,7 @@ void dg_camera_render(sfVector2f camera, sfSprite *sprite, dg_window_t *w)
     sfSprite_move(sprite, camera);
 }
 
-void dg_camera_transform(sfVector2f camera, sfVector2f pos)
+sfVector2f dg_camera_transform(sfVector2f camera, sfVector2f pos)
 {
     sfVector2f reverse = {-camera.x, -camera.y};
 

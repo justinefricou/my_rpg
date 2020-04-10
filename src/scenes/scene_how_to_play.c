@@ -11,12 +11,7 @@
 
 static void go_to_map(dg_window_t *w)
 {
-    dg_scene_t *new_scene = 0;
-
     dg_scene_manager_add_scene(scene_main_menu());
-    new_scene = dg_scene_manager_get_scene("main_menu");
-    new_scene->run = 1;
-    new_scene->display = 1;
     dg_scene_manager_remove("how_to_play");
 }
 

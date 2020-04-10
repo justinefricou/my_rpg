@@ -31,7 +31,8 @@ SRC_ENT =	src/entities/ent_music.c					\
 			src/entities/ent_text.c						\
 			src/entities/ent_map.c						\
 			src/entities/ent_button.c					\
-			src/entities/ent_player.c
+			src/entities/ent_player.c					\
+			src/entities/ent_hud_box.c					\
 
 SRC_SYS =	src/systems/sys_render.c					\
 			src/systems/sys_tm_render.c					\

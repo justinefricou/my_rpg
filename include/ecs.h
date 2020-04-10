@@ -27,6 +27,7 @@ dg_entity_t *ent_button(sfVector2f pos, int size, char *text
 dg_entity_t *ent_map(int sheet, float scale, int **map, int fmod);
 dg_entity_t *ent_build_menu(dg_entity_t *camera, dg_scene_t *scene);
 dg_entity_t *entity_player_create();
+dg_entity_t *ent_hud_box(int x, int y, int sx, int sy);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));

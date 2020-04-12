@@ -42,7 +42,8 @@ dg_scene_t *scene_escape_menu(void)
         (button_t){"Menu", &go_to_menu}, (button_t){"Quit", &go_to_quit},
         (button_t){NULL, NULL}};
 
-    dg_scene_add_ent(scene, ent_hud_menu_selector((sfVector2f){20, 20}, button_list, scene));
+    dg_scene_add_ent(scene, ent_hud_menu_selector((sfVector2f){20, 20},
+        button_list, scene, 1));
     dg_scene_add_ent(scene, dg_ent_camera(0, 0));
     dg_scene_add_sys(scene, dg_system_create(&sys_display_text, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_render, 1));

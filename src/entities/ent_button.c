@@ -47,7 +47,8 @@ dg_entity_t *ent_button(sfVector2f pos, int size, char *text
     dg_entity_add_component(button, dg_cpt_pos(pos.x, pos.y));
     set_button_scale(button, size, text, dg_ressources_get_spritesheet(1));
     dg_entity_add_component(button, cpt_action(action));
-    dg_entity_add_component(button, cpt_spritesheet(1));
+    dg_entity_add_component(button, cpt_spritesheet(
+        dg_ressources_get_spritesheet_by_name("to_remove")));
     dg_entity_add_component(button, cpt_color((sfColor){255, 255, 255, 255}));
     return button;
 }

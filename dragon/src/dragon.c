@@ -17,7 +17,7 @@ void dg_end(void *, int);
 
 int dg_loop(dg_window_t *, void *, sfTime);
 
-static set_special_pressed_event(dg_window_t *w, sfEvent event)
+static void set_special_pressed_event(dg_window_t *w, sfEvent event)
 {
     w->events.mouse_pressed_left +=
         (event.type == sfEvtMouseButtonPressed &&

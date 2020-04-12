@@ -12,7 +12,7 @@
 
 static dg_animator_t *set_player_animator(void)
 {
-    dg_spritesheet_t *ss = dg_ressources_get_spritesheet(4);
+    dg_spritesheet_t *ss = dg_ressources_get_spritesheet_by_name("player");
     dg_animator_t *animator = dg_animator_create();
     dg_animation_t *anim = 0;
     char *name_list[4] = {"down", "right", "up", "left"};

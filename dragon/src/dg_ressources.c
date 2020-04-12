@@ -6,54 +6,38 @@
 */
 
 #include <stdlib.h>
+#include "libdragon.h"
 #include "dg_ressources.h"
 
 dg_ressources_t *dg_ressources(void)
 {
     static dg_ressources_t ressources = {0};
 
-    if (!ressources.sheets) {
-        ressources.sheets = malloc(sizeof(dg_spritesheet_t *));
-        ressources.sheets[0] = 0;
+    if (!ressources.sheets.sheets) {
+        ressources.sheets.sheets = malloc(sizeof(dg_spritesheet_t *));
+        ressources.sheets.sheets[0] = 0;
+        ressources.sheets.name = malloc(sizeof(char *));
+        ressources.sheets.name[0] = 0;
+        ressources.sheets.len = 0;
+        ressources.audio.audio = malloc(sizeof(sfMusic *));
+        ressources.audio.audio[0] = 0;
+        ressources.audio.name = malloc(sizeof(char *));
+        ressources.audio.name[0] = 0;
+        ressources.audio.len = 0;
     }
     return &ressources;
-}
-
-void dg_ressources_add_spritesheet(char *path, int width, int height)
-{
-    dg_ressources_t *ressources = dg_ressources();
-    dg_spritesheet_t **old = ressources->sheets;
-    dg_spritesheet_t *sheet = dg_spritesheet_create(path, width, height);
-    int size = 0;
-
-    if (!sheet)
-        return;
-    for (size = 0; old[size]; size++);
-    ressources->sheets = malloc(sizeof(dg_spritesheet_t *) * (size + 2));
-    for (int i = 0; i < size; i++)
-        ressources->sheets[i] = old[i];
-    free(old);
-    ressources->sheets[size] = sheet;
-    ressources->sheets[size + 1] = 0;
-}
-
-dg_spritesheet_t *dg_ressources_get_spritesheet(int id)
-{
-    dg_ressources_t *ressources = dg_ressources();
-    int i = 0;
-
-    for (i = 0; ressources->sheets[i]; i++);
-    if (i < id)
-        return NULL;
-    return ressources->sheets[id];
 }
 
 void dg_ressources_destroy(void)
 {
     dg_ressources_t *ressources = dg_ressources();
 
-    for (int i = 0; ressources->sheets[i]; i++) {
-        dg_spritesheet_free(ressources->sheets[i]);
-    }
-    free(ressources->sheets);
+    for (int i = 0; ressources->sheets.len; i++)
+        dg_spritesheet_free(ressources->sheets.sheets[i]);
+    for (int i = 0; ressources->audio.len; i++)
+        sfMusic_destroy(ressources->audio.audio[i]);
+    free(ressources->sheets.sheets);
+    free(ressources->sheets.name);
+    free(ressources->audio.audio);
+    free(ressources->audio.name);
 }

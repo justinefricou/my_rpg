@@ -23,6 +23,8 @@ typedef struct data {
     int llen;
     int select;
     int is_active;
+    sfMusic *sound_move;
+    sfMusic *sound_activate;
 } data_t;
 
 int get_longest_name(button_t *button_list, int len);

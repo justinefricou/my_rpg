@@ -61,10 +61,12 @@ void update_position(data_t *data)
             pos->x += difference.x;
             pos->y += difference.y;
         }
-        pos = (sfVector2f *)dg_entity_get_component(data->hud_box,
-                "pos");
-        pos->x += difference.x;
-        pos->y += difference.y;
+        if (data->hud_box) {
+            pos = (sfVector2f *)dg_entity_get_component(data->hud_box,
+                    "pos");
+            pos->x += difference.x;
+            pos->y += difference.y;
+        }
     }
     data->pos_memory = (sfVector2f){data->pos->x, data->pos->y};
 }

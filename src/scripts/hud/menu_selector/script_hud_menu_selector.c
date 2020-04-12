@@ -11,8 +11,13 @@
 #include "script.h"
 #include "hud_menu_selector.h"
 
+static void hud_selector_set_sounds(data_t *data)
+{
+
+}
+
 static data_t *set_data(dg_component_t *pos,
-    button_t *button_list, dg_scene_t *scene)
+    button_t *button_list, dg_scene_t *scene, int has_box)
 {
     data_t *data = malloc(sizeof(data_t));
 
@@ -24,11 +29,15 @@ static data_t *set_data(dg_component_t *pos,
     if (!button_list)
         return data;
     for (data->llen = 0; button_list[data->llen].name; data->llen++);
-    data->hud_box = ent_hud_box(data->pos->x, data->pos->y,
-        get_longest_name(button_list, data->llen) / 1.5, data->llen);
+    if (has_box)
+        data->hud_box = ent_hud_box(data->pos->x, data->pos->y,
+            get_longest_name(button_list, data->llen) / 1.5, data->llen);
+    else
+        data->hud_box = NULL;
     data->buttons = create_buttons(*(data->pos), scene, button_list,
         data->llen);
     data->action = create_actions(button_list, data->llen);
+    hud_selector_set_sounds(data);
     return data;
 }
 
@@ -44,12 +53,13 @@ void *scp_hud_menu_selector_init(void *init_data)
     dg_component_t *selector = 0;
 
     dg_entity_add_component(entity, pos);
-    data = set_data(pos, button_list, scene);
+    data = set_data(pos, button_list, scene, *((int *)idata[4]));
     selector = cpt_shape_rectangle((sfVector2f){0, 0},
         (sfVector2f){get_longest_name(button_list, data->llen) / 1.5 * 16 - 4
         , 14}, (sfColor){255, 255, 255, 100},
         (sfColor){0, 0, 0, 0});
-    dg_scene_add_ent(scene, data->hud_box);
+    if (*((int *)idata[4]))
+        dg_scene_add_ent(scene, data->hud_box);
     dg_entity_add_component(entity, selector);
     data->selector = selector->data;
     return data;

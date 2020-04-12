@@ -8,6 +8,8 @@
 SRC_SKL	=		src/dragon.c									\
 				src/dg_window.c									\
 				src/dg_ressources.c								\
+				src/dg_ressources_spritesheets.c				\
+				src/dg_ressources_audio.c						\
 
 SRC_EPI =		src/epi_tools/dep_tools.c						\
 

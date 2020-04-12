@@ -34,7 +34,7 @@ dg_entity_t *ent_build_menu(dg_entity_t *camera, dg_scene_t *scene);
 dg_entity_t *entity_player_create();
 dg_entity_t *ent_hud_box(int x, int y, int sx, int sy);
 dg_entity_t *ent_hud_menu_selector(sfVector2f pos, button_t *button_list,
-    dg_scene_t *scene);
+    dg_scene_t *scene, int has_box);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));
@@ -42,7 +42,7 @@ dg_component_t *cpt_text(sfVector2f pos, int scale, char *content);
 dg_component_t *cpt_scale(float x, float y);
 dg_component_t *cpt_box_collider(float left, float top
     , float height, float width);
-dg_component_t *cpt_spritesheet(int id);
+dg_component_t *cpt_spritesheet(dg_spritesheet_t *sheet);
 dg_component_t *cpt_sound(char *path);
 dg_component_t *cpt_tag(char *tag);
 dg_component_t *cpt_subentity(void);

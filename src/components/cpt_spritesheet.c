@@ -14,10 +14,9 @@ static void component_destroy(void *data)
     (void) data;
 }
 
-dg_component_t *cpt_spritesheet(int id)
+dg_component_t *cpt_spritesheet(dg_spritesheet_t *sheet)
 {
     dg_cpt_destroy_t destroy = &component_destroy;
-    dg_spritesheet_t *sheet = dg_ressources_get_spritesheet(id);
     dg_component_t *component = dg_component_create("spritesheet",
         sheet, destroy);
 

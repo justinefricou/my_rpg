@@ -11,10 +11,10 @@
 #include "hud.h"
 
 dg_entity_t *ent_hud_menu_selector(sfVector2f pos, button_t *button_list,
-    dg_scene_t *scene)
+    dg_scene_t *scene, int has_box)
 {
     dg_entity_t *entity = dg_entity_create("hud_menu_selector");
-    void *idata[4] = {entity, &pos, button_list, scene};
+    void *idata[5] = {entity, &pos, button_list, scene, &has_box};
 
     dg_entity_add_component(entity, dg_cpt_pos(pos.x, pos.y));
     dg_entity_add_component(entity, cpt_scale(3, 3));

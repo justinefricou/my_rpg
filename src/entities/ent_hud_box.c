@@ -60,6 +60,6 @@ dg_entity_t *ent_hud_box(int x, int y, int sx, int sy)
     dg_entity_add_component(background_menu, dg_cpt_pos(x, y));
     dg_entity_add_component(background_menu, cpt_scale(3, 3));
     dg_entity_add_component(background_menu, cpt_tilemap(map,
-        dg_ressources_get_spritesheet(5), 1));
+        dg_ressources_get_spritesheet_by_name("hud"), 1));
     return background_menu;
 }

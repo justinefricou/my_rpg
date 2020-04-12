@@ -11,6 +11,8 @@
 #include "libdragon.h"
 #include "ecs.h"
 
+//!\Do NOT INCLUDE SOMEWHERE ELSE THAN IN MENU SELECTOR FILES
+
 typedef void (*button_action_t)(dg_window_t *w);
 
 typedef struct data {
@@ -27,12 +29,13 @@ typedef struct data {
     sfMusic *sound_activate;
 } data_t;
 
-int get_longest_name(button_t *button_list, int len);
+sfVector2f get_longest_name(data_t *data);
 dg_entity_t **create_buttons(sfVector2f pos, dg_scene_t *scene,
     button_t *button_list, int len);
 void update_position(data_t *data);
 button_action_t *create_actions(button_t *button_list, int len);
 data_t *menu_selector_set_data(dg_component_t *pos,
     button_t *button_list, dg_scene_t *scene, int has_box);
+sfVector2f menu_selector_set_rect(data_t *data);
 
 #endif /*HUD_MENU_SELECTOR_H_*/

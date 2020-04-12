@@ -11,16 +11,21 @@
 #include "script.h"
 #include "hud_menu_selector.h"
 
-int get_longest_name(button_t *button_list, int len)
+sfVector2f get_longest_name(data_t *data)
 {
-    int blen = 0;
-    int alen = 0;
+    int len = data->llen;
+    sfVector2f blen = {0};
+    sfVector2f alen = {0};
+    dg_entity_t *entity = 0;
+    sfText *text = 0;
 
     for (int i = 0; i < len; i++) {
-        for (alen = 0; button_list[i].name[alen]; alen++);
-        if (blen < alen) {
+        entity = data->buttons[i];
+        text = (sfText *)dg_entity_get_component(entity, "text");
+        alen =  (sfVector2f){sfText_getGlobalBounds(text).width,
+            sfText_getGlobalBounds(text).height};
+        if (blen.x < alen.x)
             blen = alen;
-        }
     }
     return blen;
 }

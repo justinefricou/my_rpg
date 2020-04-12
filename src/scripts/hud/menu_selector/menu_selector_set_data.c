@@ -11,6 +11,15 @@
 #include "script.h"
 #include "hud_menu_selector.h"
 
+sfVector2f menu_selector_set_rect(data_t *data)
+{
+    sfVector2f ssize = get_longest_name(data);
+
+    ssize.x = ((int)((ssize.x + 10)/ (16 * 3) + 0.9)) * 16 * 3 - 10;
+    ssize.y += (int)(ssize.y) % (16 * 3);
+    return ssize;
+}
+
 static void hud_selector_set_sounds(data_t *data)
 {
     data->sound_activate = dg_ressources_get_audio_by_name("hud_activate");
@@ -30,13 +39,13 @@ data_t *menu_selector_set_data(dg_component_t *pos,
     if (!button_list)
         return data;
     for (data->llen = 0; button_list[data->llen].name; data->llen++);
-    if (has_box)
-        data->hud_box = ent_hud_box(data->pos->x, data->pos->y,
-            get_longest_name(button_list, data->llen) / 1.5, data->llen);
-    else
-        data->hud_box = NULL;
     data->buttons = create_buttons(*(data->pos), scene, button_list,
         data->llen);
+    if (has_box)
+        data->hud_box = ent_hud_box(data->pos->x, data->pos->y,
+            (int)((get_longest_name(data).x + 10)/ (16 * 3) + 0.9), data->llen);
+    else
+        data->hud_box = NULL;
     data->action = create_actions(button_list, data->llen);
     hud_selector_set_sounds(data);
     return data;

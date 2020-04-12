@@ -17,7 +17,6 @@ dg_entity_t *ent_hud_menu_selector(sfVector2f pos, button_t *button_list,
     void *idata[5] = {entity, &pos, button_list, scene, &has_box};
 
     dg_entity_add_component(entity, dg_cpt_pos(pos.x, pos.y));
-    dg_entity_add_component(entity, cpt_scale(3, 3));
     dg_entity_add_component(entity, cpt_script(&scp_hud_menu_selector_init,
         &scp_hud_menu_selector_loop, &scp_player_controller_end, idata));
     return entity;

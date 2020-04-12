@@ -14,13 +14,15 @@ static void render_shape(sfRectangleShape *shape,
 {
     sfVector2f oscale = sfRectangleShape_getScale(shape);
     sfVector2f opos = sfRectangleShape_getPosition(shape);
-    sfVector2f nscale = (sfVector2f) {oscale.x * scale->x,
-        oscale.y * scale->y};
+    sfVector2f nscale = oscale;
     sfVector2f npos = (sfVector2f) {opos.x + pos->x,
         opos.y + pos->y};
 
-    if (scale)
+    if (scale) {
+        nscale = (sfVector2f) {oscale.x * scale->x,
+        oscale.y * scale->y};
         sfRectangleShape_setScale(shape, nscale);
+    }
     sfRectangleShape_setPosition(shape, npos);
 }
 
@@ -29,13 +31,15 @@ static void render_shape_back(sfRectangleShape *shape,
 {
     sfVector2f oscale = sfRectangleShape_getScale(shape);
     sfVector2f opos = sfRectangleShape_getPosition(shape);
-    sfVector2f nscale = (sfVector2f) {oscale.x / scale->x,
-        oscale.y / scale->y};
+    sfVector2f nscale = oscale;
     sfVector2f npos = (sfVector2f) {opos.x - pos->x,
         opos.y - pos->y};
 
-    if (scale)
+    if (scale) {
+        nscale = (sfVector2f) {oscale.x / scale->x,
+        oscale.y / scale->y};
         sfRectangleShape_setScale(shape, nscale);
+    }
     sfRectangleShape_setPosition(shape, npos);
 }
 

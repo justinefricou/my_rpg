@@ -25,8 +25,7 @@ void *scp_hud_menu_selector_init(void *init_data)
     dg_entity_add_component(entity, pos);
     data = menu_selector_set_data(pos, button_list, scene, *((int *)idata[4]));
     selector = cpt_shape_rectangle((sfVector2f){0, 0},
-        (sfVector2f){get_longest_name(button_list, data->llen) / 1.5 * 16 - 4
-        , 14}, (sfColor){255, 255, 255, 100},
+        menu_selector_set_rect(data), (sfColor){255, 255, 255, 100},
         (sfColor){0, 0, 0, 0});
     if (*((int *)idata[4]))
         dg_scene_add_ent(scene, data->hud_box);
@@ -38,16 +37,16 @@ void *scp_hud_menu_selector_init(void *init_data)
 void hud_menu_active(dg_window_t *w, data_t *data)
 {
     if (w->events.keyboard_pressed_down && data->select < data->llen - 1) {
-            data->select++;
-            sound_play(data->sound_move);
+        sound_play(data->sound_move);
+        data->select++;
     }
     if (w->events.keyboard_pressed_up && data->select > 0) {
-        data->select--;
         sound_play(data->sound_move);
+        data->select--;
     }
     if (w->events.keyboard_pressed_enter || w->events.keyboard_pressed_space) {
-        data->action[data->select](w);
         sound_play(data->sound_activate);
+        data->action[data->select](w);
     }
 }
 
@@ -58,7 +57,7 @@ void scp_hud_menu_selector_loop(dg_entity_t *entity, dg_window_t *w,
     data_t *data = script->data;
 
     sfRectangleShape_setPosition(data->selector,
-        (sfVector2f){2 * 3, 2.5 * 3 + data->select * 45});
+        (sfVector2f){2 * 3, 1.5 * 3 + data->select * 45});
     if (data->is_active)
         hud_menu_active(w, data);
     update_position(data);

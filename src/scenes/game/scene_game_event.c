@@ -31,7 +31,7 @@ static void scene_add_ent(dg_scene_t *scene)
 
     dg_scene_add_ent(scene, camera);
     dg_scene_add_ent(scene, ent_music("./sound/theme_game.ogg"));
-    dg_scene_add_ent(scene, ent_map(2, 3, map, 1));
+    dg_scene_add_ent(scene, ent_map("map", 3, map, 1));
     dg_scene_add_ent(scene, entity_player_create());
 }
 

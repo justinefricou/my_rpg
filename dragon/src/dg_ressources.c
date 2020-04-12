@@ -32,9 +32,9 @@ void dg_ressources_destroy(void)
 {
     dg_ressources_t *ressources = dg_ressources();
 
-    for (int i = 0; ressources->sheets.len; i++)
+    for (int i = 0; i < ressources->sheets.len; i++)
         dg_spritesheet_free(ressources->sheets.sheets[i]);
-    for (int i = 0; ressources->audio.len; i++)
+    for (int i = 0; i < ressources->audio.len; i++)
         sfMusic_destroy(ressources->audio.audio[i]);
     free(ressources->sheets.sheets);
     free(ressources->sheets.name);

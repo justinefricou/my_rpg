@@ -7,64 +7,66 @@
 
 CC	=	gcc
 
-SRC_MAI = 	src/main.c									\
+SRC_MAI = 	src/main.c														\
 
-SRC_SCN =	src/scenes/scene_main_menu.c				\
-			src/scenes/scene_how_to_play.c				\
-			src/scenes/scn_utils.c						\
-			src/scenes/game/scene_game_event.c			\
-			src/scenes/game/scene_game_bottom.c			\
-			src/scenes/game/scene_game_middle.c			\
-			src/scenes/game/scene_game_top.c			\
-			src/scenes/game/scene_game_hud.c			\
-			src/scenes/game/scene_escape_menu.c			\
-			src/scenes/game/game_scn_utils.c			\
+SRC_SCN =	src/scenes/scene_main_menu.c									\
+			src/scenes/scene_how_to_play.c									\
+			src/scenes/scn_utils.c											\
+			src/scenes/game/scene_game_event.c								\
+			src/scenes/game/scene_game_bottom.c								\
+			src/scenes/game/scene_game_middle.c								\
+			src/scenes/game/scene_game_top.c								\
+			src/scenes/game/scene_game_hud.c								\
+			src/scenes/game/scene_escape_menu.c								\
+			src/scenes/game/game_scn_utils.c								\
 
-SRC_CPT =	src/components/cpt_action.c					\
-			src/components/cpt_text.c					\
-			src/components/cpt_scale.c					\
-			src/components/cpt_box_collider.c			\
-			src/components/cpt_spritesheet.c			\
-			src/components/cpt_sound.c					\
-			src/components/cpt_tag.c					\
-			src/components/cpt_subentity.c				\
-			src/components/cpt_script.c					\
-			src/components/cpt_color.c					\
-			src/components/cpt_tilemap.c				\
-			src/components/cpt_shape_rectangle.c		\
-			src/components/cpt_shape_circle.c			\
+SRC_CPT =	src/components/cpt_action.c										\
+			src/components/cpt_text.c										\
+			src/components/cpt_scale.c										\
+			src/components/cpt_box_collider.c								\
+			src/components/cpt_spritesheet.c								\
+			src/components/cpt_sound.c										\
+			src/components/cpt_tag.c										\
+			src/components/cpt_subentity.c									\
+			src/components/cpt_script.c										\
+			src/components/cpt_color.c										\
+			src/components/cpt_tilemap.c									\
+			src/components/cpt_shape_rectangle.c							\
+			src/components/cpt_shape_circle.c								\
 
-SRC_ENT =	src/entities/ent_music.c					\
-			src/entities/ent_sprite.c					\
-			src/entities/ent_text.c						\
-			src/entities/ent_map.c						\
-			src/entities/ent_button.c					\
-			src/entities/ent_player.c					\
-			src/entities/ent_hud_box.c					\
-			src/entities/ent_hud_menu_selector.c		\
+SRC_ENT =	src/entities/ent_music.c										\
+			src/entities/ent_sprite.c										\
+			src/entities/ent_text.c											\
+			src/entities/ent_map.c											\
+			src/entities/ent_button.c										\
+			src/entities/ent_player.c										\
+			src/entities/ent_hud_box.c										\
+			src/entities/ent_hud_menu_selector.c							\
 
-SRC_SYS =	src/systems/sys_render.c					\
-			src/systems/sys_tm_render.c					\
-			src/systems/sys_display_text.c				\
-			src/systems/sys_button.c					\
-			src/systems/sys_escape.c					\
-			src/systems/sys_camera.c					\
-			src/systems/sys_script.c					\
-			src/systems/sys_interact_dialogue.c			\
-			src/systems/sys_shape_circle.c				\
-			src/systems/sys_shape_rectangle.c			\
+SRC_SYS =	src/systems/sys_render.c										\
+			src/systems/sys_tm_render.c										\
+			src/systems/sys_display_text.c									\
+			src/systems/sys_button.c										\
+			src/systems/sys_escape.c										\
+			src/systems/sys_camera.c										\
+			src/systems/sys_script.c										\
+			src/systems/sys_interact_dialogue.c								\
+			src/systems/sys_shape_circle.c									\
+			src/systems/sys_shape_rectangle.c								\
 
-SRC_INI =	src/init/init_img.c							\
-			src/init/init_dialogs.c 					\
-			src/init/parsing/pars_dialogs.c 			\
+SRC_INI =	src/init/init_img.c												\
+			src/init/init_audio.c											\
+			src/init/init_dialogs.c 										\
+			src/init/parsing/pars_dialogs.c 								\
 
 SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/script_player_controller.c							\
 			src/scripts/hud/menu_selector/script_hud_menu_selector.c		\
 			src/scripts/hud/menu_selector/menu_selector_utils.c				\
+			src/scripts/hud/menu_selector/menu_selector_set_data.c			\
 
-SRC_OTH =	src/other/tilemap.c							\
-			src/other/transform.c						\
+SRC_OTH =	src/other/tilemap.c												\
+			src/other/transform.c											\
 
 SRC_LIB =	lib/get_next_line.c			\
 			lib/my_putarray.c			\

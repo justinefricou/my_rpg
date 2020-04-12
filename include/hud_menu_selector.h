@@ -32,5 +32,7 @@ dg_entity_t **create_buttons(sfVector2f pos, dg_scene_t *scene,
     button_t *button_list, int len);
 void update_position(data_t *data);
 button_action_t *create_actions(button_t *button_list, int len);
+data_t *menu_selector_set_data(dg_component_t *pos,
+    button_t *button_list, dg_scene_t *scene, int has_box);
 
 #endif /*HUD_MENU_SELECTOR_H_*/

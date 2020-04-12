@@ -22,6 +22,4 @@ typedef struct game_data
     int health;
 } game_data_t;
 
-static const int COST[4] = {5, 10, 20, 30};
-
 #endif /*GENERAL_DATA_H_*/

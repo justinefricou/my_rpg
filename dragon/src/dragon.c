@@ -17,6 +17,39 @@ void dg_end(void *, int);
 
 int dg_loop(dg_window_t *, void *, sfTime);
 
+static set_special_pressed_event(dg_window_t *w, sfEvent event)
+{
+    w->events.mouse_pressed_left +=
+        (event.type == sfEvtMouseButtonPressed &&
+        event.mouseButton.button == sfMouseLeft) ? 1 : 0;
+    w->events.mouse_pressed_right +=
+        (event.type == sfEvtMouseButtonPressed &&
+        event.mouseButton.button == sfMouseRight) ? 1 : 0;
+    w->events.keyboard_pressed_up +=
+        (event.type == sfEvtKeyPressed && event.key.code == sfKeyUp) ? 1 : 0;
+    w->events.keyboard_pressed_down +=
+        (event.type == sfEvtKeyPressed && event.key.code == sfKeyDown) ? 1 : 0;
+    w->events.keyboard_pressed_left +=
+        (event.type == sfEvtKeyPressed && event.key.code == sfKeyLeft) ? 1 : 0;
+    w->events.keyboard_pressed_right += (event.type == sfEvtKeyPressed &&
+        event.key.code == sfKeyRight) ? 1 : 0;
+    w->events.keyboard_pressed_space += (event.type == sfEvtKeyPressed &&
+        event.key.code == sfKeySpace) ? 1 : 0;
+    w->events.keyboard_pressed_enter += (event.type == sfEvtKeyPressed &&
+        event.key.code == sfKeyEnter) ? 1 : 0;
+}
+
+static void set_events(dg_window_t *w, sfEvent event)
+{
+    set_special_pressed_event(w, event);
+    for (int i = 0; i < 26; i++) {
+        w->events.keyboard_pressed_letter[i] +=
+        (event.type == sfEvtKeyPressed &&
+            event.key.code == sfKeyA + i) ? 1 : 0;
+    }
+
+}
+
 static void dg_manage_event(dg_window_t *w)
 {
     sfEvent event;
@@ -25,12 +58,7 @@ static void dg_manage_event(dg_window_t *w)
     while (sfRenderWindow_pollEvent(w->window, &event)) {
         if (event.type == sfEvtClosed)
             sfRenderWindow_close(w->window);
-        w->events.mouse_pressed_left +=
-            (event.type == sfEvtMouseButtonPressed &&
-                event.mouseButton.button == sfMouseLeft) ? 1 : 0;
-        w->events.mouse_pressed_right +=
-            (event.type == sfEvtMouseButtonPressed &&
-                event.mouseButton.button == sfMouseRight) ? 1 : 0;
+        set_events(w, event);
     }
 }
 

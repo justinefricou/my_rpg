@@ -54,7 +54,7 @@ int **create_hud_box(int sx, int sy, int style)
 
 dg_entity_t *ent_hud_box(int x, int y, int sx, int sy)
 {
-    dg_entity_t *background_menu = dg_entity_create("map");
+    dg_entity_t *background_menu = dg_entity_create("hud_box");
     int **map = create_hud_box(sx, sy, 0);
 
     dg_entity_add_component(background_menu, dg_cpt_pos(x, y));

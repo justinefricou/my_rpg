@@ -11,6 +11,7 @@
 #include "libdragon.h"
 #include "general_data.h"
 #include "enemy_data.h"
+#include "hud.h"
 
 // scenes
 dg_scene_t *scene_main_menu(void);
@@ -32,6 +33,8 @@ dg_entity_t *ent_map(int sheet, float scale, int **map, int fmod);
 dg_entity_t *ent_build_menu(dg_entity_t *camera, dg_scene_t *scene);
 dg_entity_t *entity_player_create();
 dg_entity_t *ent_hud_box(int x, int y, int sx, int sy);
+dg_entity_t *ent_hud_menu_selector(sfVector2f pos, button_t *button_list,
+    dg_scene_t *scene);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));
@@ -48,6 +51,10 @@ dg_component_t *cpt_script(void *(*init)(void *), dg_sysf_t loop,
 dg_component_t *cpt_color(sfColor color);
 dg_component_t *cpt_tilemap(int **map, dg_spritesheet_t *sheet,
     int free_map_on_destroy);
+dg_component_t *cpt_shape_circle(sfVector2f pos, int size,
+    sfColor fill, sfColor outline);
+dg_component_t *cpt_shape_rectangle(sfVector2f pos, sfVector2f size,
+    sfColor fill, sfColor outline);
 
 // systems
 void sys_render(dg_entity_t *entity, dg_window_t *w,
@@ -67,6 +74,10 @@ void sys_player_control(dg_entity_t *entity, dg_window_t *w,
 void sys_tm_render(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void sys_interact_dialogue(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void sys_shape_circle(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void sys_shape_rectangle(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 
 // init

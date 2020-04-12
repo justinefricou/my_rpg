@@ -32,4 +32,10 @@ void scp_player_controller_loop(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void scp_player_controller_end(void *data);
 
+// hud_menu_selector
+void *scp_hud_menu_selector_init(void *init_data);
+void scp_hud_menu_selector_loop(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void scp_hud_menu_selector_end(void *data);
+
 #endif /*SCRIPT_H_*/

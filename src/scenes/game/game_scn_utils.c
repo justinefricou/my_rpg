@@ -34,7 +34,7 @@ void remove_game_scenes(void)
 {
     dg_scene_t *game_scenes[NB_GAME_SCENE] = {0};
 
-    get_game_scenes(game_scenes, 0);
+    get_game_scenes(game_scenes, 1);
     for (int i = 0; i < NB_GAME_SCENE; i++) {
         dg_scene_manager_remove(game_scenes[i]->name);
     }

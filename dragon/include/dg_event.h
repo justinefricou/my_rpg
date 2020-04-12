@@ -15,6 +15,13 @@ typedef struct dg_event
 {
     int mouse_pressed_left;
     int mouse_pressed_right;
+    int keyboard_pressed_up;
+    int keyboard_pressed_down;
+    int keyboard_pressed_left;
+    int keyboard_pressed_right;
+    int keyboard_pressed_space;
+    int keyboard_pressed_enter;
+    int keyboard_pressed_letter[26];
 } dg_event_t;
 
 #endif /*DG_EVENT_H*/

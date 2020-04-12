@@ -31,6 +31,8 @@ SRC_CPT =	src/components/cpt_action.c					\
 			src/components/cpt_script.c					\
 			src/components/cpt_color.c					\
 			src/components/cpt_tilemap.c				\
+			src/components/cpt_shape_rectangle.c		\
+			src/components/cpt_shape_circle.c			\
 
 SRC_ENT =	src/entities/ent_music.c					\
 			src/entities/ent_sprite.c					\
@@ -39,6 +41,7 @@ SRC_ENT =	src/entities/ent_music.c					\
 			src/entities/ent_button.c					\
 			src/entities/ent_player.c					\
 			src/entities/ent_hud_box.c					\
+			src/entities/ent_hud_menu_selector.c		\
 
 SRC_SYS =	src/systems/sys_render.c					\
 			src/systems/sys_tm_render.c					\
@@ -48,13 +51,17 @@ SRC_SYS =	src/systems/sys_render.c					\
 			src/systems/sys_camera.c					\
 			src/systems/sys_script.c					\
 			src/systems/sys_interact_dialogue.c			\
+			src/systems/sys_shape_circle.c				\
+			src/systems/sys_shape_rectangle.c			\
 
 SRC_INI =	src/init/init_img.c							\
 			src/init/init_dialogs.c 					\
 			src/init/parsing/pars_dialogs.c 			\
 
-SRC_SPT =	src/scripts/script_build_menu.c				\
-			src/scripts/script_player_controller.c		\
+SRC_SPT =	src/scripts/script_build_menu.c									\
+			src/scripts/script_player_controller.c							\
+			src/scripts/hud/menu_selector/script_hud_menu_selector.c		\
+			src/scripts/hud/menu_selector/menu_selector_utils.c				\
 
 SRC_OTH =	src/other/tilemap.c							\
 			src/other/transform.c						\

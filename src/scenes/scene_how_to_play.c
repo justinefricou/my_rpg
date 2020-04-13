@@ -28,7 +28,6 @@ dg_scene_t *scene_how_to_play(void)
 
     dg_scene_add_ent(scene, ent_button
         ((sfVector2f){1100, 800}, 100, "Return", &go_to_map));
-    dg_scene_add_ent(scene, ent_music("./sound/menu_song.ogg"));
     dg_scene_add_ent(scene, ent_sprite(0, 1, 0, 0));
     text_add_ent(scene);
     dg_scene_add_ent(scene, dg_ent_camera(0, 0));

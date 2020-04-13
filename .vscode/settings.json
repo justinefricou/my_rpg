@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "libdragon.h": "c"
+        "libdragon.h": "c",
+        "game_scenes.h": "c",
+        "hud_menu_selector.h": "c",
+        "script.h": "c"
     }
 }

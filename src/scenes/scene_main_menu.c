@@ -9,37 +9,29 @@
 #include "libdragon.h"
 #include "ecs.h"
 #include "game_scenes.h"
+#include "button_action.h"
 
-static void go_to_game(dg_window_t *w)
+static button_t *create_select_box(void)
 {
-    create_game_scenes();
-    dg_scene_manager_remove("main_menu");
-}
-
-static void go_to_how(dg_window_t *w)
-{
-    dg_scene_manager_add_scene(scene_how_to_play());
-    dg_scene_manager_remove("main_menu");
-}
-
-static void go_to_quit(dg_window_t *w)
-{
-    w->quit = 1;
+    button_t *button_list = malloc(sizeof(button_t) * 6);
+    
+    button_list[0] = (button_t){"New game", &new_game, NULL};
+    button_list[1] = (button_t){"Load Game", &load_game, NULL};
+    button_list[2] = (button_t){"How to play", &how_to_play, NULL};
+    button_list[3] = (button_t){"Options", &options, NULL};
+    button_list[4] = (button_t){"Quit", &action_quit, NULL};
+    button_list[5] = (button_t){NULL, NULL, NULL};
+    return button_list;
 }
 
 dg_scene_t *scene_main_menu(void)
 {
     dg_scene_t *scene = dg_scene_create("main_menu");
-    button_t button_list[6] = {(button_t){"New game", &go_to_game},
-        (button_t){"Load Game", &go_to_game},
-        (button_t){"How to play", &go_to_how},
-        (button_t){"Options", &go_to_how},
-        (button_t){"Quit", &go_to_quit},
-        (button_t){NULL, NULL}};
+    button_t *button_list = create_select_box();
+    sfMusic *music = dg_ressources_get_audio_by_name("menu_theme");
 
     dg_scene_add_ent(scene, ent_hud_menu_selector((sfVector2f){300, 700},
         button_list, scene, 1));
-    dg_scene_add_ent(scene, ent_music("./sound/menu_song.ogg"));
     dg_scene_add_ent(scene, ent_sprite(0, 1, 0, 0));
     dg_scene_add_ent(scene, ent_text(300, 100, 200, "RPG"));
     dg_scene_add_ent(scene, ent_text(1200, 150, 150, "Menu"));
@@ -49,7 +41,9 @@ dg_scene_t *scene_main_menu(void)
     dg_scene_add_sys(scene, dg_system_create(&sys_tm_render, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_render, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_script, 0));
-    scene->run = 1;
-    scene->display = 1;
+    if (sfMusic_getStatus(music) != sfPlaying) {
+        sfMusic_setLoop(music, true);
+        sfMusic_play(music);
+    }
     return scene;
 }

@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include "libdragon.h"
 #include "ecs.h"
+#include "script.h"
 #include "hud.h"
 
 dg_entity_t *ent_hud_menu_selector(sfVector2f pos, button_t *button_list,
@@ -18,6 +19,6 @@ dg_entity_t *ent_hud_menu_selector(sfVector2f pos, button_t *button_list,
 
     dg_entity_add_component(entity, dg_cpt_pos(pos.x, pos.y));
     dg_entity_add_component(entity, cpt_script(&scp_hud_menu_selector_init,
-        &scp_hud_menu_selector_loop, &scp_player_controller_end, idata));
+        &scp_hud_menu_selector_loop, &scp_hud_menu_selector_end, idata));
     return entity;
 }

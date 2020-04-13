@@ -13,4 +13,5 @@ void init_audio(void)
 {
     dg_ressources_add_audio("./sound/button_click.ogg", "hud_activate");
     dg_ressources_add_audio("./sound/button_change.ogg", "hud_move");
+    dg_ressources_add_audio("./sound/menu_song.ogg", "menu_theme");
 }

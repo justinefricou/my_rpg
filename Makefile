@@ -12,6 +12,7 @@ SRC_MAI = 	src/main.c														\
 SRC_SCN =	src/scenes/scene_main_menu.c									\
 			src/scenes/scene_how_to_play.c									\
 			src/scenes/scn_utils.c											\
+			src/scenes/scn_main_menu_buttons.c								\
 			src/scenes/game/scene_game_event.c								\
 			src/scenes/game/scene_game_bottom.c								\
 			src/scenes/game/scene_game_middle.c								\
@@ -19,6 +20,7 @@ SRC_SCN =	src/scenes/scene_main_menu.c									\
 			src/scenes/game/scene_game_hud.c								\
 			src/scenes/game/scene_escape_menu.c								\
 			src/scenes/game/game_scn_utils.c								\
+			src/scenes/game/scn_esc_menu_buttons.c							\
 
 SRC_CPT =	src/components/cpt_action.c										\
 			src/components/cpt_text.c										\
@@ -42,6 +44,8 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_player.c										\
 			src/entities/ent_hud_box.c										\
 			src/entities/ent_hud_menu_selector.c							\
+			src/entities/ent_hud_inventory.c								\
+			src/entities/ent_hud_clues.c									\
 
 SRC_SYS =	src/systems/sys_render.c										\
 			src/systems/sys_tm_render.c										\
@@ -61,9 +65,16 @@ SRC_INI =	src/init/init_img.c												\
 
 SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/script_player_controller.c							\
+			src/scripts/hud/button_action.c									\
 			src/scripts/hud/menu_selector/script_hud_menu_selector.c		\
 			src/scripts/hud/menu_selector/menu_selector_utils.c				\
 			src/scripts/hud/menu_selector/menu_selector_set_data.c			\
+			src/scripts/hud/inventory/scp_hud_inventory.c					\
+			src/scripts/hud/inventory/inventory_utils.c						\
+			src/scripts/hud/inventory/inventory_set_data.c					\
+			src/scripts/hud/clues/scp_hud_clues.c							\
+			src/scripts/hud/clues/clues_utils.c								\
+			src/scripts/hud/clues/clues_set_data.c							\
 
 SRC_OTH =	src/other/tilemap.c												\
 			src/other/transform.c											\

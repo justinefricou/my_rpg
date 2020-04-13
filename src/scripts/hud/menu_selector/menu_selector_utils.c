@@ -36,21 +36,11 @@ dg_entity_t **create_buttons(sfVector2f pos, dg_scene_t *scene,
     dg_entity_t **buttons = malloc(sizeof(dg_entity_t *) * len);
 
     for (int i = 0; button_list[i].name; i++) {
-        buttons[i] = ent_text(pos.x + 10, pos.y + i * 45,
+        buttons[i] = ent_text(pos.x + 10, pos.y + i * (3 * 16) - 5,
             40, button_list[i].name);
         dg_scene_add_ent(scene, buttons[i]);
     }
     return buttons;
-}
-
-button_action_t *create_actions(button_t *button_list, int len)
-{
-    button_action_t *actions = malloc(sizeof(button_action_t) * len);
-
-    for (int i = 0; i < len; i++) {
-        actions[i] = button_list[i].action;
-    }
-    return actions;
 }
 
 void update_position(data_t *data)

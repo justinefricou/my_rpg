@@ -38,4 +38,16 @@ void scp_hud_menu_selector_loop(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void scp_hud_menu_selector_end(void *data);
 
+// hud inventory
+void *scp_hud_inventory_init(void *init_data);
+void scp_hud_inventory_loop(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void scp_hud_inventory_end(void *data);
+
+// hud clues
+void *scp_hud_clues_init(void *init_data);
+void scp_hud_clues_loop(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void scp_hud_clues_end(void *data);
+
 #endif /*SCRIPT_H_*/

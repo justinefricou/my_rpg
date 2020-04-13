@@ -46,7 +46,8 @@ void hud_menu_active(dg_window_t *w, data_t *data)
     }
     if (w->events.keyboard_pressed_enter || w->events.keyboard_pressed_space) {
         sound_play(data->sound_activate);
-        data->action[data->select](w);
+        data->button_list[data->select].action
+            (&(data->is_active), data->button_list[data->select].data, w);
     }
 }
 
@@ -57,7 +58,7 @@ void scp_hud_menu_selector_loop(dg_entity_t *entity, dg_window_t *w,
     data_t *data = script->data;
 
     sfRectangleShape_setPosition(data->selector,
-        (sfVector2f){2 * 3, 1.5 * 3 + data->select * 45});
+        (sfVector2f){2 * 3, 2 + data->select * (16 * 3)});
     if (data->is_active)
         hud_menu_active(w, data);
     update_position(data);
@@ -67,7 +68,7 @@ void scp_hud_menu_selector_end(void *data)
 {
     data_t *d = (data_t *)data;
 
-    free(d->action);
+    free(d->button_list);
     free(d->buttons);
     free(d);
 }

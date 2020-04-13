@@ -16,4 +16,11 @@ void get_game_scenes(dg_scene_t **scenes, int escape);
 void create_game_scenes(void);
 void remove_game_scenes(void);
 
+//buttons
+void main_menu(int *previous, void *data, dg_window_t *w);
+void status(int *previous, void *data, dg_window_t *w);
+void inventory(int *previous, void *data, dg_window_t *w);
+void clues(int *previous, void *data, dg_window_t *w);
+void save(int *previous, void *data, dg_window_t *w);
+
 #endif /*GAME_SCENES_H_*/

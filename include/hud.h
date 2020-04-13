@@ -8,11 +8,14 @@
 #ifndef HUD_H_
 #define HUD_H_
 
-#include "script.h"
+#include "libdragon.h"
+
+typedef void (*button_action_t)(int *, void *, dg_window_t *);
 
 typedef struct button {
     char *name;
-    void (*action)(dg_window_t *w);
+    button_action_t action;
+    void *data;
 } button_t;
 
 #endif /*HUD_H_*/

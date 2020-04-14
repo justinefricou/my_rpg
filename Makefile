@@ -10,7 +10,7 @@ CC	=	gcc
 SRC_MAI = 	src/main.c														\
 
 SRC_SCN =	src/scenes/scene_main_menu.c									\
-			src/scenes/scene_how_to_play.c									\
+			src/scenes/scene_main_menu_hover.c								\
 			src/scenes/scn_utils.c											\
 			src/scenes/scn_main_menu_buttons.c								\
 			src/scenes/game/scene_game_event.c								\
@@ -46,6 +46,11 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_hud_menu_selector.c							\
 			src/entities/ent_hud_inventory.c								\
 			src/entities/ent_hud_clues.c									\
+			src/entities/ent_hud_save.c										\
+			src/entities/ent_hud_status.c									\
+			src/entities/ent_hud_options.c									\
+			src/entities/ent_hud_htp.c										\
+			src/entities/ent_hud_load.c										\
 
 SRC_SYS =	src/systems/sys_render.c										\
 			src/systems/sys_tm_render.c										\
@@ -75,6 +80,21 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/hud/clues/scp_hud_clues.c							\
 			src/scripts/hud/clues/clues_utils.c								\
 			src/scripts/hud/clues/clues_set_data.c							\
+			src/scripts/hud/save/scp_hud_save.c								\
+			src/scripts/hud/save/save_utils.c								\
+			src/scripts/hud/save/save_set_data.c							\
+			src/scripts/hud/status/scp_hud_status.c							\
+			src/scripts/hud/status/status_utils.c							\
+			src/scripts/hud/status/status_set_data.c						\
+			src/scripts/hud/options/scp_hud_options.c						\
+			src/scripts/hud/options/options_utils.c							\
+			src/scripts/hud/options/options_set_data.c						\
+			src/scripts/hud/how_to_play/scp_hud_htp.c						\
+			src/scripts/hud/how_to_play/htp_utils.c							\
+			src/scripts/hud/how_to_play/htp_set_data.c						\
+			src/scripts/hud/load/scp_hud_load.c								\
+			src/scripts/hud/load/load_utils.c								\
+			src/scripts/hud/load/load_set_data.c							\
 
 SRC_OTH =	src/other/tilemap.c												\
 			src/other/transform.c											\

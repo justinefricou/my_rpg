@@ -26,16 +26,17 @@ static void resume(int *previous, void *data, dg_window_t *w)
 
 static button_t *create_select_box(void)
 {
-    button_t *button_list = malloc(sizeof(button_t) * 8);
+    button_t *button_list = malloc(sizeof(button_t) * 9);
     
     button_list[0] = (button_t){"Resume", &resume, NULL};
     button_list[1] = (button_t){"Status", &status, NULL};
     button_list[2] = (button_t){"Inventory", &inventory, NULL};
     button_list[3] = (button_t){"Clues", &clues, NULL};
     button_list[4] = (button_t){"Save", &save, NULL};
-    button_list[5] = (button_t){"Menu", &main_menu, NULL};
-    button_list[6] = (button_t){"Quit", &action_quit, NULL};
-    button_list[7] = (button_t){NULL, NULL, NULL};
+    button_list[5] = (button_t){"Options", &action_options, "escape_menu"};
+    button_list[6] = (button_t){"Menu", &main_menu, NULL};
+    button_list[7] = (button_t){"Quit", &action_quit, NULL};
+    button_list[8] = (button_t){NULL, NULL, NULL};
     return button_list;
 }
 

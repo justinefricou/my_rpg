@@ -20,17 +20,16 @@ void new_game(int *previous, void *data, dg_window_t *w)
 
 void load_game(int *previous, void *data, dg_window_t *w)
 {
-    sfMusic_stop(dg_ressources_get_audio_by_name("menu_theme"));
+    dg_scene_t *scene = dg_scene_manager_get_scene("main_menu_hover");
+
+    *previous = 0;
+    dg_scene_add_ent(scene, ent_hud_load(previous, scene));
 }
 
 void how_to_play(int *previous, void *data, dg_window_t *w)
 {
-    dg_scene_manager_add_scene(scene_how_to_play());
-    dg_scene_manager_remove("main_menu");
+    dg_scene_t *scene = dg_scene_manager_get_scene("main_menu_hover");
 
-}
-
-void options(int *previous, void *data, dg_window_t *w)
-{
-
+    *previous = 0;
+    dg_scene_add_ent(scene, ent_hud_htp(previous, scene));
 }

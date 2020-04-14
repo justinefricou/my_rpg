@@ -1,17 +1,17 @@
 /*
 ** EPITECH PROJECT, 2020
-** script_monster
+** rpg
 ** File description:
-** script player controller
+** how to play
 */
 
 #include <stdlib.h>
 #include "libdragon.h"
 #include "ecs.h"
 #include "script.h"
-#include "hud_clues.h"
+#include "hud_htp.h"
 
-void clues_set_sounds(data_t *data)
+void htp_set_sounds(data_t *data)
 {
     data->sound_activate = dg_ressources_get_audio_by_name("hud_activate");
     data->sound_move = dg_ressources_get_audio_by_name("hud_move");

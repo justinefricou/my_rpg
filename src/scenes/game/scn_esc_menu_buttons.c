@@ -17,7 +17,10 @@ void main_menu(int *previous, void *data, dg_window_t *w)
 
 void status(int *previous, void *data, dg_window_t *w)
 {
+    dg_scene_t *scene = dg_scene_manager_get_scene("escape_menu");
 
+    *previous = 0;
+    dg_scene_add_ent(scene, ent_hud_status(previous, scene));
 }
 
 void inventory(int *previous, void *data, dg_window_t *w)
@@ -38,5 +41,8 @@ void clues(int *previous, void *data, dg_window_t *w)
 
 void save(int *previous, void *data, dg_window_t *w)
 {
+    dg_scene_t *scene = dg_scene_manager_get_scene("escape_menu");
 
+    *previous = 0;
+    dg_scene_add_ent(scene, ent_hud_save(previous, scene));
 }

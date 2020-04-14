@@ -18,7 +18,7 @@ static button_t *create_select_box(void)
     button_list[0] = (button_t){"New game", &new_game, NULL};
     button_list[1] = (button_t){"Load Game", &load_game, NULL};
     button_list[2] = (button_t){"How to play", &how_to_play, NULL};
-    button_list[3] = (button_t){"Options", &options, NULL};
+    button_list[3] = (button_t){"Options", &action_options, "main_menu_hover"};
     button_list[4] = (button_t){"Quit", &action_quit, NULL};
     button_list[5] = (button_t){NULL, NULL, NULL};
     return button_list;
@@ -30,7 +30,7 @@ dg_scene_t *scene_main_menu(void)
     button_t *button_list = create_select_box();
     sfMusic *music = dg_ressources_get_audio_by_name("menu_theme");
 
-    dg_scene_add_ent(scene, ent_hud_menu_selector((sfVector2f){300, 700},
+    dg_scene_add_ent(scene, ent_hud_menu_selector((sfVector2f){80, 700},
         button_list, scene, 1));
     dg_scene_add_ent(scene, ent_sprite(0, 1, 0, 0));
     dg_scene_add_ent(scene, ent_text(300, 100, 200, "RPG"));

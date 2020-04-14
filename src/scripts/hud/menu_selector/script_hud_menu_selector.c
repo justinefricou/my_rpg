@@ -48,6 +48,7 @@ void hud_menu_active(dg_window_t *w, data_t *data)
         sound_play(data->sound_activate);
         data->button_list[data->select].action
             (&(data->is_active), data->button_list[data->select].data, w);
+        w->events.keyboard_pressed_space = 0;
     }
 }
 

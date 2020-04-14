@@ -15,6 +15,7 @@ void *dg_init(dg_window_t *window, void *import)
     init_img();
     init_audio();
     dg_scene_manager_add_scene(scene_main_menu());
+    dg_scene_manager_add_scene(scene_main_menu_hover());
     return 0;
 }
 

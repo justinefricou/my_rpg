@@ -35,10 +35,10 @@ void scp_player_controller_loop(dg_entity_t *entity, dg_window_t *w,
     data_t *data = script->data;
     sfVector2f move = {0, 0};
 
-    move.x += (sfKeyboard_isKeyPressed(sfKeyRight)) ? 1 : 0;
-    move.x += (sfKeyboard_isKeyPressed(sfKeyLeft)) ? -1 : 0;
-    move.y += (sfKeyboard_isKeyPressed(sfKeyDown)) ? 1 : 0;
-    move.y += (sfKeyboard_isKeyPressed(sfKeyUp)) ? -1 : 0;
+    move.x += (keymap_is_pressed(w, "right")) ? 1 : 0;
+    move.x += (keymap_is_pressed(w, "left")) ? -1 : 0;
+    move.y += (keymap_is_pressed(w, "down")) ? 1 : 0;
+    move.y += (keymap_is_pressed(w, "up")) ? -1 : 0;
     (move.x > 0) ? dg_animator_set_animation(data->animator, "right") : NULL;
     (move.x < 0) ? dg_animator_set_animation(data->animator, "left") : NULL;
     (move.y < 0) ? dg_animator_set_animation(data->animator, "up") : NULL;

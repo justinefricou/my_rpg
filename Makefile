@@ -66,6 +66,7 @@ SRC_SYS =	src/systems/sys_render.c										\
 SRC_INI =	src/init/init_img.c												\
 			src/init/init_audio.c											\
 			src/init/init_dialogs.c 										\
+			src/init/general_data.c											\
 			src/init/parsing/pars_dialogs.c 								\
 
 SRC_SPT =	src/scripts/script_build_menu.c									\
@@ -98,6 +99,10 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 
 SRC_OTH =	src/other/tilemap.c												\
 			src/other/transform.c											\
+			src/other/objects.c												\
+			src/other/update_options.c										\
+			src/other/key_is_clicked.c										\
+			src/other/keymap.c												\
 
 SRC_LIB =	lib/get_next_line.c			\
 			lib/my_putarray.c			\

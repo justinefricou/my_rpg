@@ -18,9 +18,9 @@ typedef struct dg_window
     sfRenderWindow *window;
     dg_framebuffer_t *fb;
     dg_event_t events;
+    void *general_data;
     bool quit;
     int id;
-
 } dg_window_t;
 
 dg_window_t *dg_window_create(unsigned int, unsigned int, char *, int);

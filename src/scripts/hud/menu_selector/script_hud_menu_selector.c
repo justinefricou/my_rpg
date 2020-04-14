@@ -10,6 +10,7 @@
 #include "ecs.h"
 #include "script.h"
 #include "hud_menu_selector.h"
+#include "general_data.h"
 
 void *scp_hud_menu_selector_init(void *init_data)
 {
@@ -36,19 +37,18 @@ void *scp_hud_menu_selector_init(void *init_data)
 
 void hud_menu_active(dg_window_t *w, data_t *data)
 {
-    if (w->events.keyboard_pressed_down && data->select < data->llen - 1) {
+    if (keymap_is_clicked(w, "down", 0) && data->select < data->llen - 1) {
         sound_play(data->sound_move);
         data->select++;
     }
-    if (w->events.keyboard_pressed_up && data->select > 0) {
+    if (keymap_is_clicked(w, "up", 0) && data->select > 0) {
         sound_play(data->sound_move);
         data->select--;
     }
-    if (w->events.keyboard_pressed_enter || w->events.keyboard_pressed_space) {
+    if (keymap_is_clicked(w, "action", 1)) {
         sound_play(data->sound_activate);
         data->button_list[data->select].action
             (&(data->is_active), data->button_list[data->select].data, w);
-        w->events.keyboard_pressed_space = 0;
     }
 }
 

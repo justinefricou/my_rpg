@@ -37,6 +37,8 @@ static void set_special_pressed_event(dg_window_t *w, sfEvent event)
         event.key.code == sfKeySpace) ? 1 : 0;
     w->events.keyboard_pressed_enter += (event.type == sfEvtKeyPressed &&
         event.key.code == sfKeyEnter) ? 1 : 0;
+    w->events.keyboard_pressed_escape += (event.type == sfEvtKeyPressed &&
+        event.key.code == sfKeyEscape) ? 1 : 0;
 }
 
 static void set_events(dg_window_t *w, sfEvent event)

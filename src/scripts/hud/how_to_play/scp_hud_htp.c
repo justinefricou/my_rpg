@@ -60,10 +60,9 @@ void scp_hud_htp_loop(dg_entity_t *entity, dg_window_t *w,
     //if (data->is_active)
     //    hud_menu_active(w, data);
     //update_position(data);
-    if (w->events.keyboard_pressed_space) {
+    if (keymap_is_clicked(w, "cancel", 1)) {
         sound_play(data->sound_activate);
         *(data->previous) = 1;
-        w->events.keyboard_pressed_space = 0;
         data->hud_box->destroy = 1;
         entity->destroy = 1;
     }

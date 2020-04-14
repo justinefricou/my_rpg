@@ -27,6 +27,7 @@ dg_window_t *dg_window_create(
         sfClose, NULL);
     window->fb = dg_framebuffer_create(mode.width, mode.height);
     window->quit = false;
+    window->general_data = NULL;
     return window;
 }
 

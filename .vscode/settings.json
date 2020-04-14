@@ -4,6 +4,7 @@
         "game_scenes.h": "c",
         "hud_menu_selector.h": "c",
         "script.h": "c",
-        "ecs.h": "c"
+        "ecs.h": "c",
+        "general_data.h": "c"
     }
 }

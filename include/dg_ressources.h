@@ -15,6 +15,7 @@ typedef struct dg_ressources_audio
 {
     sfMusic **audio;
     char **name;
+    int *type;
     int len;
 } dg_ressources_audio_t;
 
@@ -42,7 +43,7 @@ dg_spritesheet_t *dg_ressources_get_spritesheet(int);
 dg_spritesheet_t *dg_ressources_get_spritesheet_by_name(char *name);
 
 //audio
-void dg_ressources_add_audio(char *path, char *name);
+void dg_ressources_add_audio(char *path, char *name, int type);
 sfMusic *dg_ressources_get_audio(int id);
 sfMusic *dg_ressources_get_audio_by_name(char *name);
 

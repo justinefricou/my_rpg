@@ -32,14 +32,16 @@ dg_scene_t *scene_main_menu(void)
 
     dg_scene_add_ent(scene, ent_hud_menu_selector((sfVector2f){80, 700},
         button_list, scene, 1));
-    dg_scene_add_ent(scene, ent_sprite(0, 1, 0, 0));
+    dg_scene_add_ent(scene, ent_sprite(
+            dg_ressources_get_spritesheet_by_name("background_menu"),
+            0, 1, (sfVector2f){0, 0}));
     dg_scene_add_ent(scene, ent_text(300, 100, 200, "RPG"));
     dg_scene_add_ent(scene, ent_text(1200, 150, 150, "Menu"));
     dg_scene_add_ent(scene, dg_ent_camera(0, 0));
     dg_scene_add_sys(scene, dg_system_create(&sys_display_text, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_shape_rectangle, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_tm_render, 1));
-    dg_scene_add_sys(scene, dg_system_create(&sys_render, 1));
+    dg_scene_add_sys(scene, dg_system_create(&sys_sprite, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_script, 0));
     if (sfMusic_getStatus(music) != sfPlaying) {
         sfMusic_setLoop(music, true);

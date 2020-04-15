@@ -5,11 +5,11 @@
 ** script_monster
 */
 
-#include <stdlib.h>
+/*#include <stdlib.h>
 #include "libdragon.h"
 #include "ecs.h"
 #include "script.h"
-/*
+
 typedef struct data {
     dg_entity_t *camera;
     sfVector2f *pos;

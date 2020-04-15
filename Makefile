@@ -36,6 +36,7 @@ SRC_CPT =	src/components/cpt_action.c										\
 			src/components/cpt_tilemap.c									\
 			src/components/cpt_shape_rectangle.c							\
 			src/components/cpt_shape_circle.c								\
+			src/components/cpt_sprite.c										\
 
 SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_sprite.c										\
@@ -64,6 +65,7 @@ SRC_SYS =	src/systems/sys_render.c										\
 			src/systems/sys_interact_dialogue.c								\
 			src/systems/sys_shape_circle.c									\
 			src/systems/sys_shape_rectangle.c								\
+			src/systems/sys_sprite.c										\
 
 SRC_INI =	src/init/init_img.c												\
 			src/init/init_audio.c											\
@@ -93,6 +95,8 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/hud/options/scp_hud_options.c						\
 			src/scripts/hud/options/options_utils.c							\
 			src/scripts/hud/options/options_set_data.c						\
+			src/scripts/hud/options/options_set_main.c						\
+			src/scripts/hud/options/options_set_escape.c					\
 			src/scripts/hud/how_to_play/scp_hud_htp.c						\
 			src/scripts/hud/how_to_play/htp_utils.c							\
 			src/scripts/hud/how_to_play/htp_set_data.c						\
@@ -132,31 +136,38 @@ SRC	=	$(SRC_MAI)	\
 
 LIB	=	$(SRC_LIB)	\
 
+CFLAGS = -Iinclude -L./ -ldragon -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window
+
+OBJ	=	$(SRC:.c=.o) $(LIB:.c=.o)
+
 NAME	=	my_rpg
 
 DEBUG	=	rpg.d
 
 all:	$(NAME)	## Build the project
 
-$(NAME):
+make_lib:
 	@make -C dragon/
-	@$(CC) -g3 -o $(NAME) $(SRC) $(LIB) -Iinclude -L./ -ldragon -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window
+
+$(NAME): make_lib $(OBJ)	
+	@$(CC) -g3 -o $(NAME) $(OBJ) $(CFLAGS)
 	@printf "[\e[1;34m-Link Obj-\e[0m] % 43s\n" $(NAME) | tr ' ' '.'
-	@printf "[\e[1;34m-Link Main-\e[0m] % 43s\n" $(SRC) | tr ' ' '.'
+	@printf "[\e[1;34m-Link Main-\e[0m] % 43s\n" $(OBJ) | tr ' ' '.'
 	@printf "\e[1;3;5;32m▀▄▀▄▀▄ Finished compiling sources ▄▀▄▀▄▀\e[0m\n"
 	@printf "[\e[1;35m-Link Lib-\e[0m] % 43s\n" $(LIB) | tr ' ' '.'
 	@printf "\e[1;3;5;32m▀▄▀▄▀▄ Finished compiling lib ▄▀▄▀▄▀\e[0m\n"
 
 debug: ## Lunch the debug
 	@make -C dragon/
-	@$(CC) -g3 -o $(DEBUG) $(SRC) $(LIB) -Iinclude -L./ -ldragon -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window
+	@$(CC) -g3 -o $(DEBUG) $(OBJ) $(LIB) -Iinclude -L./ -ldragon -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window
 	@printf "[\e[1;34m-Link Obj-\e[0m] % 43s\n" $(DEBUG) | tr ' ' '.'
-	@printf "[\e[1;34m-Link Main-\e[0m] % 43s\n" $(SRC) | tr ' ' '.'
+	@printf "[\e[1;34m-Link Main-\e[0m] % 43s\n" $(OBJ) | tr ' ' '.'
 	@printf "[\e[1;34m-Link Main-\e[0m] % 43s\n" $(LIB) | tr ' ' '.'
 	@printf "\e[1;3;5;32m▀▄▀▄▀▄ Finished compiling sources debug ▄▀▄▀▄▀\e[0m\n"
 
 clean: ## Clean the useless file
 	@make clean -C dragon/
+	@rm -rf $(OBJ)
 
 fclean:	clean ## Clean the project
 	@make fclean -C dragon/

@@ -26,7 +26,8 @@ dg_scene_t *scene_tmp_hover(char *name);
 
 // entities
 dg_entity_t *ent_music(char *path);
-dg_entity_t *ent_sprite(int id, float scale, float x, float y);
+dg_entity_t *ent_sprite(dg_spritesheet_t *sheet, int id,
+    float scale, sfVector2f pos);
 dg_entity_t *ent_text(int x, int y, int scale, char *text);
 dg_entity_t *ent_button(sfVector2f pos, int size, char *text
     , void (*action)(dg_window_t *));
@@ -65,6 +66,7 @@ dg_component_t *cpt_shape_circle(sfVector2f pos, int size,
     sfColor fill, sfColor outline);
 dg_component_t *cpt_shape_rectangle(sfVector2f pos, sfVector2f size,
     sfColor fill, sfColor outline);
+dg_component_t *cpt_sprite(dg_spritesheet_t *sheet, int id);
 
 // systems
 void sys_render(dg_entity_t *entity, dg_window_t *w,
@@ -89,6 +91,8 @@ void sys_shape_circle(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void sys_shape_rectangle(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
+void sys_sprite(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
 
 // init
 void init_img(void);
@@ -102,5 +106,6 @@ sfSprite *render_sprite(sfVector2f *scale, dg_spritesheet_t *sheet,
     sfVector2f *pos, sfColor *color);
 void scn_change(dg_scene_t *scene, int status);
 void scn_change_music(dg_scene_t *scene, int status);
+void hud_progress_bar_activate(dg_entity_t *pb, int stat);
 
 #endif

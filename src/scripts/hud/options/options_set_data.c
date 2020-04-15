@@ -19,16 +19,6 @@ static void options_set_sounds(data_t *data)
     data->sound_move = dg_ressources_get_audio_by_name("hud_move");
 }
 
-static void options_set_main(data_t *data)
-{
-    data->hud_box = ent_hud_box(490, 20, 29, 20);
-}
-
-static void options_set_escape(data_t *data)
-{
-    data->hud_box = ent_hud_box(350, 20, 32, 20);
-}
-
 void options_set_data(data_t *data, dg_scene_t *scene,
     dg_entity_t *entity, general_data_t *gd)
 {
@@ -36,15 +26,22 @@ void options_set_data(data_t *data, dg_scene_t *scene,
         (sfVector2f){0, 0}, (sfColor){255, 255, 255, 100},
         (sfColor){0, 0, 0, 0});
     if (!dg_strcmp(scene->name, "escape_menu"))
-        options_set_escape(data);
+        options_set_escape(data, gd);
     else
-        options_set_main(data);
+        options_set_main(data, gd);
+    data->select = 0;
+    data->is_active = 1;
     data->gvm = gd->options.general_volume.x;
-    data->general_volume = ent_hud_progress_bar(
-        (sfVector2f){800, 200}, 10, &(gd->options.general_volume), sfWhite);
-    dg_scene_add_ent(scene, data->hud_box);
-    dg_scene_add_ent(data->hover_layer, data->general_volume);
-    data->selector = selector->data;
+    dg_scene_add_ent(scene, data->content.main.data);
+    dg_scene_add_ent(data->hover_layer, data->content.main.name);
+    dg_scene_add_ent(data->hover_layer, data->content.volume_general.data);
+    dg_scene_add_ent(data->hover_layer, data->content.volume_general.name);
+    dg_scene_add_ent(data->hover_layer, data->content.volume_music.data);
+    dg_scene_add_ent(data->hover_layer, data->content.volume_music.name);
+    dg_scene_add_ent(data->hover_layer, data->content.volume_sound.data);
+    dg_scene_add_ent(data->hover_layer, data->content.volume_sound.name);
+    dg_scene_add_ent(data->hover_layer, data->selector.entity);
+    data->selector.pos = dg_entity_get_component(data->selector.entity, "pos");
     dg_entity_add_component(entity, selector);
     options_set_sounds(data);
 }

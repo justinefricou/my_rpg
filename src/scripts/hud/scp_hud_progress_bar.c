@@ -19,6 +19,14 @@ typedef struct data {
     sfMusic *sound_move;
 } data_t;
 
+void hud_progress_bar_activate(dg_entity_t *pb, int stat)
+{
+    script_t *script = (script_t *)dg_entity_get_component(pb, "script");
+    data_t *data = script->data;
+
+    data->active = stat;
+}
+
 void *scp_hud_progress_bar_init(void *init_data)
 {
     void **idata = (void **) init_data;
@@ -33,7 +41,7 @@ void *scp_hud_progress_bar_init(void *init_data)
     data->pos = pos->data;
     data->data = (sfVector2f *)idata[3];
     data->size = *((int *)idata[2]);
-    data->active = 1;
+    data->active = 0;
     dg_entity_add_component(entity, pos);
     selector = cpt_shape_rectangle((sfVector2f){0, 12},
         (sfVector2f){data->size * 16 * 3, 16 * 3}, color, color);

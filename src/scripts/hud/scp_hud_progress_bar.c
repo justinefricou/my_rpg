@@ -35,7 +35,7 @@ void *scp_hud_progress_bar_init(void *init_data)
     data->size = *((int *)idata[2]);
     data->active = 1;
     dg_entity_add_component(entity, pos);
-    selector = cpt_shape_rectangle((sfVector2f){0, 0},
+    selector = cpt_shape_rectangle((sfVector2f){0, 12},
         (sfVector2f){data->size * 16 * 3, 16 * 3}, color, color);
     dg_entity_add_component(entity, selector);
     data->selector = selector->data;
@@ -59,11 +59,11 @@ void scp_hud_progress_bar_loop(dg_entity_t *entity, dg_window_t *w,
 {
     script_t *script = (script_t *)dg_entity_get_component(entity, "script");
     data_t *data = script->data;
-    float size = (data->data->x / data->data->y) * (data->size * 16 * 3);
+    float size = (data->data->x / data->data->y) * (data->size * 16);
 
     if (data->active)
         hud_pb_active(w, data);
-    sfRectangleShape_setSize(data->selector, (sfVector2f){size, 16/* * 3*/});
+    sfRectangleShape_setSize(data->selector, (sfVector2f){size, 8});
 }
 
 void scp_hud_progress_bar_end(void *data)

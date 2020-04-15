@@ -15,6 +15,7 @@
 //!\Do NOT INCLUDE SOMEWHERE ELSE THAN IN INVENTORY FILES
 
 typedef struct data {
+    dg_scene_t *hover_layer;
     float gvm;
     int *previous;
     sfVector2f *pos;
@@ -27,7 +28,7 @@ typedef struct data {
     sfMusic *sound_activate;
 } data_t;
 
-void options_set_sounds(data_t *data);
-void options_set_data(data_t *data, dg_scene_t *scene, dg_entity_t *ent);
+void options_set_data(data_t *data, dg_scene_t *scene,
+    dg_entity_t *ent, general_data_t *gd);
 
 #endif /*HUD_OPTIONS_H_*/

@@ -11,6 +11,7 @@ SRC_MAI = 	src/main.c														\
 
 SRC_SCN =	src/scenes/scene_main_menu.c									\
 			src/scenes/scene_main_menu_hover.c								\
+			src/scenes/scene_tmp_hover.c									\
 			src/scenes/scn_utils.c											\
 			src/scenes/scn_main_menu_buttons.c								\
 			src/scenes/game/scene_game_event.c								\

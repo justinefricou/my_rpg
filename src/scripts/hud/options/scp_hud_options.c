@@ -19,27 +19,14 @@ void *scp_hud_options_init(void *init_data)
     data_t *data = malloc(sizeof(data_t));
     dg_scene_t *scene = idata[1];
     dg_window_t *w = idata[3];
-    general_data_t *gd = w->general_data;
     dg_entity_t *entity = idata[0];
     dg_component_t *pos = dg_cpt_pos(350, 20);
-    dg_component_t *selector = cpt_shape_rectangle((sfVector2f){350, 20},
-        (sfVector2f){0, 0}, (sfColor){255, 255, 255, 100},
-        (sfColor){0, 0, 0, 0});
 
+    data->hover_layer = scene_tmp_hover("options_hover");
+    dg_scene_manager_add_scene(data->hover_layer);
     dg_entity_add_component(entity, pos);
-    dg_entity_add_component(entity, selector);
     data->previous = idata[2];
-    data->selector = selector->data;
-    data->gvm = gd->options.general_volume.x;
-    data->general_volume = ent_hud_progress_bar(
-        (sfVector2f){800, 200}, 4, &(gd->options.general_volume), sfRed);
-    if (!dg_strcmp(scene->name, "escape_menu"))
-        data->hud_box = ent_hud_box(350, 20, 32, 20);
-    else
-        data->hud_box = ent_hud_box(490, 20, 29, 20);
-    dg_scene_add_ent(scene, data->hud_box);
-    dg_scene_add_ent(scene, data->general_volume);
-    options_set_sounds(data);
+    options_set_data(data, scene, entity, w->general_data);
     return data;
 }
 
@@ -92,6 +79,7 @@ void scp_hud_options_end(void *data)
 
     //free(d->button_list);
     //free(d->buttons);
+    dg_scene_manager_remove("options_hover");
     d->general_volume->destroy = 1;
     d->hud_box->destroy = 1;
     free(d);

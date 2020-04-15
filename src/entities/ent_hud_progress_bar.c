@@ -16,9 +16,9 @@ static int **create_hud_progress_bar(int size)
 
     pb[0] = malloc(sizeof(int) * (size + 1));
     for (int i = 0; i < size; i++)
-        pb[0][i] = 224;
-    pb[0][0] = 223;
-    pb[0][size - 1] = 225;
+        pb[0][i] = 203;
+    pb[0][0] = 202;
+    pb[0][size - 1] = 204;
     pb[0][size] = -1;
     pb[1] = NULL;
     return pb;

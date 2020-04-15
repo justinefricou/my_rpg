@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dg_entity.h"
+#include "dragon/dg_entity.h"
 #include "epitech_tools.h"
 
 int dg_entity_has_component(dg_entity_t *entity, char *name)

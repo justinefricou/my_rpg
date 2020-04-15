@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include "tilemap.h"
-#include "dg_component.h"
+#include "dragon/dg_component.h"
 #include "ecs.h"
 
 static void component_destroy(void *data)

@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dg_entity.h"
+#include "dragon/dg_entity.h"
 #include "epitech_tools.h"
 
 dg_entity_t *dg_entity_create(char *name)

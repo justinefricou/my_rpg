@@ -9,7 +9,7 @@
 #include "libdragon.h"
 #include "ecs.h"
 #include "script.h"
-#include "hud_save.h"
+#include "hud/hud_save.h"
 
 void save_set_sounds(data_t *data)
 {

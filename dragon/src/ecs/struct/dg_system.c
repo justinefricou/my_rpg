@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <stdarg.h>
-#include "dg_system.h"
+#include "dragon/dg_system.h"
 
 dg_system_t *dg_system_create(dg_sysf_t action, int is_render)
 {

@@ -49,9 +49,9 @@ typedef struct keymap
 
 typedef struct options
 {
-    int general_volume;
-    int music;
-    int sound;
+    sfVector2f general_volume;
+    sfVector2f music;
+    sfVector2f sound;
     int resolution;
     keymap_t keymap;
 } options_t;

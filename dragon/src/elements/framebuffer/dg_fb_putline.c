@@ -5,8 +5,8 @@
 ** draw a line
 */
 
-#include "dg_framebuffer.h"
-#include "dg_math.h"
+#include "dragon/dg_framebuffer.h"
+#include "dragon/dg_math.h"
 
 static int indg_check_spe(dg_framebuffer_t *fb, sfVector2u p1,
     sfVector2u p2, sfColor color)

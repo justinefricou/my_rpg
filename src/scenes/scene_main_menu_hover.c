@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include "libdragon.h"
 #include "ecs.h"
-#include "hud.h"
+#include "hud/hud.h"
 
 dg_scene_t *scene_main_menu_hover(void)
 {

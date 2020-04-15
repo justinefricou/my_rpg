@@ -8,8 +8,8 @@
 #include <SFML/Graphics.h>
 #include <SFML/System.h>
 #include <SFML/Window.h>
-#include "dg_framebuffer.h"
-#include "dg_window.h"
+#include "dragon/dg_framebuffer.h"
+#include "dragon/dg_window.h"
 
 void *dg_init(dg_window_t *, void *);
 

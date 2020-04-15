@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dg_component.h"
+#include "dragon/dg_component.h"
 #include "ecs.h"
 
 sfSprite *render_sprite(sfVector2f *scale, dg_spritesheet_t *sheet,

@@ -12,6 +12,9 @@
 void main_menu(int *previous, void *data, dg_window_t *w)
 {
     dg_scene_manager_add_scene(scene_main_menu());
+    dg_scene_manager_add_scene(scene_main_menu_hover());
+    sfMusic_play(dg_ressources_get_audio_by_name("menu_theme"));
+    sfMusic_stop(dg_ressources_get_audio_by_name("game_theme"));
     remove_game_scenes();
 }
 

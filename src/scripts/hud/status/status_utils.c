@@ -9,4 +9,4 @@
 #include "libdragon.h"
 #include "ecs.h"
 #include "script.h"
-#include "hud_status.h"
+#include "hud/hud_status.h"

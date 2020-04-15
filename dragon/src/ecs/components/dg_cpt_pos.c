@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <SFML/Graphics.h>
-#include "dg_component.h"
+#include "dragon/dg_component.h"
 
 static void component_destroy(void *data)
 {

@@ -9,7 +9,7 @@
 #include "libdragon.h"
 #include "ecs.h"
 #include "script.h"
-#include "hud_inventory.h"
+#include "hud/hud_inventory.h"
 
 void *scp_hud_inventory_init(void *init_data)
 {

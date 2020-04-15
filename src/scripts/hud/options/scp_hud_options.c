@@ -9,7 +9,8 @@
 #include "libdragon.h"
 #include "ecs.h"
 #include "script.h"
-#include "hud_options.h"
+#include "general_data.h"
+#include "hud/hud_options.h"
 #include "epitech_tools.h"
 
 void *scp_hud_options_init(void *init_data)
@@ -17,6 +18,8 @@ void *scp_hud_options_init(void *init_data)
     void **idata = (void **) init_data;
     data_t *data = malloc(sizeof(data_t));
     dg_scene_t *scene = idata[1];
+    dg_window_t *w = idata[3];
+    general_data_t *gd = w->general_data;
     dg_entity_t *entity = idata[0];
     dg_component_t *pos = dg_cpt_pos(350, 20);
     dg_component_t *selector = cpt_shape_rectangle((sfVector2f){350, 20},
@@ -27,11 +30,15 @@ void *scp_hud_options_init(void *init_data)
     dg_entity_add_component(entity, selector);
     data->previous = idata[2];
     data->selector = selector->data;
+    data->gvm = gd->options.general_volume.x;
+    data->general_volume = ent_hud_progress_bar(
+        (sfVector2f){800, 200}, 4, &(gd->options.general_volume), sfRed);
     if (!dg_strcmp(scene->name, "escape_menu"))
         data->hud_box = ent_hud_box(350, 20, 32, 20);
     else
         data->hud_box = ent_hud_box(490, 20, 29, 20);
     dg_scene_add_ent(scene, data->hud_box);
+    dg_scene_add_ent(scene, data->general_volume);
     options_set_sounds(data);
     return data;
 }
@@ -58,12 +65,19 @@ void scp_hud_options_loop(dg_entity_t *entity, dg_window_t *w,
 {
     script_t *script = (script_t *)dg_entity_get_component(entity, "script");
     data_t *data = script->data;
+    general_data_t *gd = w->general_data;
+    float gvm = gd->options.general_volume.x;
 
     //sfRectangleShape_setPosition(data->selector,
     //    (sfVector2f){2 * 3, 2 + data->select * (16 * 3)});
     //if (data->is_active)
     //    hud_menu_active(w, data);
     //update_position(data);
+    if (data->gvm != gvm) {
+        gd->options.music.x += gvm - data->gvm;
+        gd->options.sound.x += gvm - data->gvm;
+        data->gvm = gvm;
+    }
     if (keymap_is_clicked(w, "cancel", 1)) {
         sound_play(data->sound_activate);
         *(data->previous) = 1;
@@ -78,5 +92,7 @@ void scp_hud_options_end(void *data)
 
     //free(d->button_list);
     //free(d->buttons);
+    d->general_volume->destroy = 1;
+    d->hud_box->destroy = 1;
     free(d);
 }

@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dg_component.h"
+#include "dragon/dg_component.h"
 #include "ecs.h"
 #include "tilemap.h"
 #include "transform.h"

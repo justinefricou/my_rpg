@@ -42,6 +42,7 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_map.c											\
 			src/entities/ent_button.c										\
 			src/entities/ent_player.c										\
+			src/entities/ent_hud_progress_bar.c								\
 			src/entities/ent_hud_box.c										\
 			src/entities/ent_hud_menu_selector.c							\
 			src/entities/ent_hud_inventory.c								\
@@ -72,6 +73,7 @@ SRC_INI =	src/init/init_img.c												\
 SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/script_player_controller.c							\
 			src/scripts/hud/button_action.c									\
+			src/scripts/hud/scp_hud_progress_bar.c							\
 			src/scripts/hud/menu_selector/script_hud_menu_selector.c		\
 			src/scripts/hud/menu_selector/menu_selector_utils.c				\
 			src/scripts/hud/menu_selector/menu_selector_set_data.c			\

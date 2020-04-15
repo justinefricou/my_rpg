@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include "libdragon.h"
-#include "dg_system.h"
+#include "dragon/dg_system.h"
 
 void dg_sys_animator(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt)

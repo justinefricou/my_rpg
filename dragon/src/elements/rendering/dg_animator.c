@@ -7,8 +7,8 @@
 
 #include <stdlib.h>
 #include <SFML/Graphics.h>
-#include "dg_window.h"
-#include "dg_animator.h"
+#include "dragon/dg_window.h"
+#include "dragon/dg_animator.h"
 #include "epitech_tools.h"
 
 dg_animator_t *dg_animator_create(void)

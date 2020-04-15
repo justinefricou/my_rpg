@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dg_component.h"
+#include "dragon/dg_component.h"
 #include "libdragon.h"
 
 static void component_destroy(void *data)

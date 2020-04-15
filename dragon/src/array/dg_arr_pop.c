@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dg_array.h"
+#include "dragon/dg_array.h"
 
 dg_array_t *dg_arr_pop_end(dg_array_t **list)
 {

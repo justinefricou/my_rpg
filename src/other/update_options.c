@@ -21,12 +21,12 @@ void set_volume(dg_window_t *w)
         audio = res->audio.audio[i];
         type = res->audio.type[i];
         if (type == 0)
-            sfMusic_setVolume(audio, gd->options.music);
+            sfMusic_setVolume(audio, gd->options.music.x);
         else
-            sfMusic_setVolume(audio, gd->options.sound);
+            sfMusic_setVolume(audio, gd->options.sound.x);
     }
-    if (gd->options.music > gd->options.general_volume)
-        gd->options.music = gd->options.general_volume;
-    if (gd->options.sound > gd->options.general_volume)
-        gd->options.sound = gd->options.general_volume;
+    if (gd->options.music.x > gd->options.general_volume.x)
+        gd->options.music.x = gd->options.general_volume.x;
+    if (gd->options.sound.x > gd->options.general_volume.x)
+        gd->options.sound.x = gd->options.general_volume.x;
 }

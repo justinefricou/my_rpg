@@ -9,7 +9,7 @@
 #include "libdragon.h"
 #include "game_scenes.h"
 #include "ecs.h"
-#include "hud.h"
+#include "hud/hud.h"
 #include "button_action.h"
 
 static void resume(int *previous, void *data, dg_window_t *w)

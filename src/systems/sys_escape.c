@@ -20,6 +20,5 @@ void sys_escape(dg_entity_t *entity, dg_window_t *w,
         for (int i = 0; i < NB_GAME_SCENE - 1; i++)
             game_scenes[i]->run = 0;
         scn_change(game_scenes[NB_GAME_SCENE - 1], 1);
-        scn_change_music(game_scenes[0], 1);
     }
 }

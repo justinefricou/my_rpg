@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include "libdragon.h"
 #include "ecs.h"
-#include "enemy_data.h"
 #include "script.h"
 /*
 typedef struct data {

@@ -5,7 +5,7 @@
 ** linked_list merge two lists
 */
 
-#include "dg_array.h"
+#include "dragon/dg_array.h"
 
 void dg_arr_merge(dg_array_t **target, dg_array_t **to_merge)
 {

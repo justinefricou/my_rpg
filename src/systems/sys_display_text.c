@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dg_component.h"
+#include "dragon/dg_component.h"
 #include "ecs.h"
 
 static void set_text_offset(dg_window_t *w, sfVector2f pos, sfText *text)

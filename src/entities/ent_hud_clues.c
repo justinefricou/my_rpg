@@ -9,7 +9,7 @@
 #include "libdragon.h"
 #include "ecs.h"
 #include "script.h"
-#include "hud.h"
+#include "hud/hud.h"
 
 dg_entity_t *ent_hud_clues(int *previous, dg_scene_t *scene)
 {

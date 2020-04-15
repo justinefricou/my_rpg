@@ -8,7 +8,7 @@
 
 #include <stdlib.h>
 #include <SFML/Graphics.h>
-#include "dg_window.h"
+#include "dragon/dg_window.h"
 
 dg_window_t *dg_window_create(
     unsigned int width,

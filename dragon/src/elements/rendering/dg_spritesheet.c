@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <SFML/Graphics.h>
-#include "dg_spritesheet.h"
+#include "dragon/dg_spritesheet.h"
 
 dg_spritesheet_t *dg_spritesheet_create(char *filepath, int x, int y)
 {

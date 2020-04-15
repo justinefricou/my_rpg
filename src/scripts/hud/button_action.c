@@ -19,5 +19,5 @@ void action_options(int *previous, void *data, dg_window_t *w)
     dg_scene_t *scene = dg_scene_manager_get_scene(scene_name);
 
     *previous = 0;
-    dg_scene_add_ent(scene, ent_hud_options(previous, scene));
+    dg_scene_add_ent(scene, ent_hud_options(previous, scene, w));
 }

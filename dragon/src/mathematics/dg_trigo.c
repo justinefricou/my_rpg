@@ -5,7 +5,7 @@
 ** maths functions : trigonometry
 */
 
-#include "dg_math.h"
+#include "dragon/dg_math.h"
 
 const double PI = 3.14159265359;
 const int PRECISION = 10;

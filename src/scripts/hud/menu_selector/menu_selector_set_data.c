@@ -9,7 +9,7 @@
 #include "libdragon.h"
 #include "ecs.h"
 #include "script.h"
-#include "hud_menu_selector.h"
+#include "hud/hud_menu_selector.h"
 
 sfVector2f menu_selector_set_rect(data_t *data)
 {

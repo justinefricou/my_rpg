@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dg_scene.h"
+#include "dragon/dg_scene.h"
 #include "epitech_tools.h"
 
 dg_scene_t *dg_scene_create(char *name)

@@ -5,8 +5,8 @@
 ** draw a circle in a framebuffer
 */
 
-#include "dg_framebuffer.h"
-#include "dg_math.h"
+#include "dragon/dg_framebuffer.h"
+#include "dragon/dg_math.h"
 
 static void ingd_circle(dg_framebuffer_t *fb, int *coord, sfColor color)
 {

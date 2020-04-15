@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include "libdragon.h"
-#include "dg_ressources.h"
+#include "dragon/dg_ressources.h"
 
 dg_ressources_t *dg_ressources(void)
 {

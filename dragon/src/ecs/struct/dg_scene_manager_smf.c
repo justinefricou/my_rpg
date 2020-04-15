@@ -6,8 +6,8 @@
 */
 
 #include <stdlib.h>
-#include "dg_scene_manager.h"
-#include "dg_scene.h"
+#include "dragon/dg_scene_manager.h"
+#include "dragon/dg_scene.h"
 #include "epitech_tools.h"
 
 void dg_scene_manager_update(dg_window_t *w, sfTime dt)

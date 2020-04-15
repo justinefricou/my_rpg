@@ -5,7 +5,7 @@
 ** linked_list swap
 */
 
-#include "dg_array.h"
+#include "dragon/dg_array.h"
 
 void dg_arr_iswap_extreme(dg_array_t **list)
 {

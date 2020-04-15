@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dg_scene.h"
+#include "dragon/dg_scene.h"
 #include "epitech_tools.h"
 
 void dg_scene_add_ent(dg_scene_t *scene, dg_entity_t *entity)

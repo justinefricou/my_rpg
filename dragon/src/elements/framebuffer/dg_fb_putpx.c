@@ -6,7 +6,7 @@
 */
 
 #include <SFML/Graphics.h>
-#include "dg_framebuffer.h"
+#include "dragon/dg_framebuffer.h"
 
 //change a pixel of a framebuffer
 int dg_fb_putpx(dg_framebuffer_t *fb, unsigned int x,

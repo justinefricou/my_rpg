@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <SFML/Graphics.h>
-#include "dg_animation.h"
+#include "dragon/dg_animation.h"
 
 dg_animation_t *dg_animation_create(dg_spritesheet_t *sheet, float speed)
 {

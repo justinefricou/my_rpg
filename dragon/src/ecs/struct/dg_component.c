@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dg_component.h"
+#include "dragon/dg_component.h"
 
 dg_component_t *dg_component_create(char *name, void *data,
     dg_cpt_destroy_t cff)

@@ -5,6 +5,24 @@
         "hud_menu_selector.h": "c",
         "script.h": "c",
         "ecs.h": "c",
-        "general_data.h": "c"
+        "general_data.h": "c",
+        "dg_window.h": "c",
+        "dg_framebuffer.h": "c",
+        "dg_ressources.h": "c",
+        "dg_math.h": "c",
+        "epitech_tools.h": "c",
+        "dg_system.h": "c",
+        "dg_scene.h": "c",
+        "dg_scene_manager.h": "c",
+        "dg_entity.h": "c",
+        "dg_component.h": "c",
+        "dg_array.h": "c",
+        "hud.h": "c",
+        "hud_clues.h": "c",
+        "hud_htp.h": "c",
+        "hud_inventory.h": "c",
+        "hud_load.h": "c",
+        "hud_options.h": "c",
+        "hud_save.h": "c"
     }
 }

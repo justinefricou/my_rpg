@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dg_array.h"
+#include "dragon/dg_array.h"
 
 int dg_arr_get_size(dg_array_t *list)
 {

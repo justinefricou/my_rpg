@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dg_array.h"
+#include "dragon/dg_array.h"
 
 void dg_arr_add_node_end(dg_array_t **list, dg_array_t *node)
 {

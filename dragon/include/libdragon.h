@@ -10,21 +10,21 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
-#include "dg_array.h"
-#include "dg_framebuffer.h"
-#include "dg_window.h"
-#include "dg_math.h"
-#include "dg_spritesheet.h"
-#include "dg_animation.h"
-#include "dg_animator.h"
-#include "dg_component.h"
-#include "dg_entity.h"
-#include "dg_system.h"
-#include "dg_scene.h"
-#include "dg_scene_manager.h"
-#include "dg_cpt.h"
-#include "dg_ressources.h"
-#include "dg_event.h"
+#include "dragon/dg_array.h"
+#include "dragon/dg_framebuffer.h"
+#include "dragon/dg_window.h"
+#include "dragon/dg_math.h"
+#include "dragon/dg_spritesheet.h"
+#include "dragon/dg_animation.h"
+#include "dragon/dg_animator.h"
+#include "dragon/dg_component.h"
+#include "dragon/dg_entity.h"
+#include "dragon/dg_system.h"
+#include "dragon/dg_scene.h"
+#include "dragon/dg_scene_manager.h"
+#include "dragon/dg_cpt.h"
+#include "dragon/dg_ressources.h"
+#include "dragon/dg_event.h"
 
 int dg_play(sfVector2u, char *, int, void *);
 #endif

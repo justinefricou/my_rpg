@@ -80,4 +80,10 @@ void scp_hud_load_loop(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void scp_hud_load_end(void *data);
 
+// hud progress bar
+void *scp_hud_progress_bar_init(void *init_data);
+void scp_hud_progress_bar_loop(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void scp_hud_progress_bar_end(void *data);
+
 #endif /*SCRIPT_H_*/

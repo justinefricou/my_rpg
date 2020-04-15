@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include "libdragon.h"
-#include "dg_ressources.h"
+#include "dragon/dg_ressources.h"
 #include "epitech_tools.h"
 
 static void indg_ressources_add_spritesheet_two(dg_ressources_t *ressources,

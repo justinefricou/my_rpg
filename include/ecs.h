@@ -10,8 +10,7 @@
 
 #include "libdragon.h"
 #include "general_data.h"
-#include "enemy_data.h"
-#include "hud.h"
+#include "hud/hud.h"
 
 // scenes
 dg_scene_t *scene_main_menu(void);
@@ -40,9 +39,11 @@ dg_entity_t *ent_hud_inventory(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_clues(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_save(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_status(int *previous, dg_scene_t *scene);
-dg_entity_t *ent_hud_options(int *previous, dg_scene_t *scene);
+dg_entity_t *ent_hud_options(int *previous, dg_scene_t *scene, dg_window_t *w);
 dg_entity_t *ent_hud_htp(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_load(int *previous, dg_scene_t *scene);
+dg_entity_t *ent_hud_progress_bar(sfVector2f pos, int size,
+    sfVector2f *data, sfColor color);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));

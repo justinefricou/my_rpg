@@ -9,7 +9,7 @@
 #include "libdragon.h"
 #include "ecs.h"
 #include "script.h"
-#include "hud_load.h"
+#include "hud/hud_load.h"
 
 void load_set_sounds(data_t *data)
 {

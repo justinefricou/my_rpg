@@ -9,7 +9,7 @@
 #include "libdragon.h"
 #include "ecs.h"
 #include "script.h"
-#include "hud_clues.h"
+#include "hud/hud_clues.h"
 
 void *scp_hud_clues_init(void *init_data)
 {

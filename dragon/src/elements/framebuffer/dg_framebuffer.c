@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <SFML/Graphics.h>
-#include "dg_framebuffer.h"
+#include "dragon/dg_framebuffer.h"
 
 dg_framebuffer_t *dg_framebuffer_create(unsigned int width,
     unsigned int height) {

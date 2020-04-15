@@ -5,7 +5,7 @@
 ** draw rectangles
 */
 
-#include "dg_framebuffer.h"
+#include "dragon/dg_framebuffer.h"
 
 void dg_fb_putsquare(dg_framebuffer_t *fb, sfVector2u position,
     unsigned int size, sfColor color)

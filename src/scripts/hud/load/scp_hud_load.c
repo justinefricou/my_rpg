@@ -9,7 +9,7 @@
 #include "libdragon.h"
 #include "ecs.h"
 #include "script.h"
-#include "hud_load.h"
+#include "hud/hud_load.h"
 
 void *scp_hud_load_init(void *init_data)
 {

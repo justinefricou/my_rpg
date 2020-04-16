@@ -27,6 +27,8 @@ int load_saved_data(general_data_t *data, FILE *save_file)
         return (84);
     if (load_saved_player_pv(data, save_file) == 84)
         return (84);
+    /*if (load_saved_player_position(player's position, FILE *save_file) == 84)
+        return (84);*/
     // load other things
     return (0);
 }

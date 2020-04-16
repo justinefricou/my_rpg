@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <SFML/System/Vector2.h>
 #include "libmy.h"
 #include "general_data.h"
 
@@ -51,7 +52,6 @@ int load_saved_player_name(general_data_t *data, FILE *save_file)
 
 int load_saved_player_pv(general_data_t *data, FILE *save_file)
 {
-    int pv = 0;
     char *line = NULL;
     ssize_t line_size = 0;
 
@@ -62,6 +62,26 @@ int load_saved_player_pv(general_data_t *data, FILE *save_file)
     }
     line[line_size - (line[line_size - 1 == '\n'])] = 0;
     data->player.pv = my_atoi(&(line[10]));
+    free(line);
+    return (0);
+}
+
+int load_saved_player_position(sfVector2f *position, FILE *save_file)
+{
+    char *line = NULL;
+    ssize_t line_size = 0;
+    int start = 0;
+
+    line_size = getline(&line, 0, save_file);
+    if (line_size == -1) {
+        write(2, "Player's position could not be loaded.\n", 39);
+        return (84);
+    }
+    line[line_size - (line[line_size - 1 == '\n'])] = 0;
+    position->x = my_atoi(&(line[16]));
+    for (int spaces = 0; line[start] && spaces < 2; start++)
+        spaces += (line[start] == ' ');
+    position->y = my_atoi(&(line[start]));
     free(line);
     return (0);
 }

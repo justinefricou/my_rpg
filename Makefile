@@ -106,6 +106,12 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/hud/load/load_utils.c								\
 			src/scripts/hud/load/load_set_data.c							\
 
+SRC_SAV =	src/save_load/save_game.c										\
+			src/save_load/save_player_info.c								\
+			src/save_load/load_game.c										\
+			src/save_load/load_player_info.c								\
+			src/save_load/save_load_utils.c									\
+
 SRC_OTH =	src/other/tilemap.c												\
 			src/other/transform.c											\
 			src/other/objects.c												\
@@ -135,6 +141,7 @@ SRC	=	$(SRC_MAI)	\
 		$(SRC_INI)	\
 		$(SRC_TOW)	\
 		$(SRC_SPT)	\
+		$(SRC_SAV)	\
 		$(SRC_OTH)	\
 
 LIB	=	$(SRC_LIB)	\
@@ -152,7 +159,7 @@ all:	$(NAME)	## Build the project
 make_lib:
 	@make -C dragon/
 
-$(NAME): make_lib $(OBJ)	
+$(NAME): make_lib $(OBJ)
 	@$(CC) -g3 -o $(NAME) $(OBJ) $(CFLAGS)
 	@printf "[\e[1;34m-Link Obj-\e[0m] % 43s\n" $(NAME) | tr ' ' '.'
 	@printf "[\e[1;34m-Link Main-\e[0m] % 43s\n" $(OBJ) | tr ' ' '.'

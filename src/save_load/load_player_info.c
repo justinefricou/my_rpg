@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "libmy.h"
 #include "general_data.h"
 
 static char *get_saved_player_name(FILE *save_file)
@@ -41,9 +42,26 @@ int load_saved_player_name(general_data_t *data, FILE *save_file)
         free(data->player.name);
     new_name = get_saved_player_name(save_file);
     if (!new_name) {
-        write(2, "Error : player's name could not be loaded.\n", 43);
+        write(2, "Player's name could not be loaded.\n", 35);
         return (84);
     }
     data->player.name = new_name;
+    return (0);
+}
+
+int load_saved_player_pv(general_data_t *data, FILE *save_file)
+{
+    int pv = 0;
+    char *line = NULL;
+    ssize_t line_size = 0;
+
+    line_size = getline(&line, 0, save_file);
+    if (line_size == -1) {
+        write(2, "Player's pv could not be loaded.\n", 33);
+        return (84);
+    }
+    line[line_size - (line[line_size - 1 == '\n'])] = 0;
+    data->player.pv = my_atoi(&(line[10]));
+    free(line);
     return (0);
 }

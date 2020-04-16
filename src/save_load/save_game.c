@@ -24,6 +24,7 @@ int save_game(general_data_t *data, int save_nb)
 int save_data(general_data_t *data, FILE *save_file)
 {
     save_player_name(data->player.name, save_file);
+    save_player_pv(data->player.pv, save_file);
     // save other things
     return (0);
 }

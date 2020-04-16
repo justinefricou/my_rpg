@@ -33,7 +33,7 @@ static sfKeyCode get_keymap_from_id(dg_window_t *w, int keymap)
         case 5:
             return gd->options.keymap.cancel;
     }
-    return 0;
+    return -1;
 }
 
 sfKeyCode get_keymap(dg_window_t *w, char *keymap)
@@ -42,7 +42,21 @@ sfKeyCode get_keymap(dg_window_t *w, char *keymap)
         if (!dg_strcmp(keymap, name[i]))
             return get_keymap_from_id(w, i);
     }
-    return 0;
+    return -1;
+}
+
+int is_keymap(dg_window_t *w, sfKeyCode keymap)
+{
+    general_data_t *gd = (general_data_t *)w->general_data;
+    int result = 0;
+    
+    result += (gd->options.keymap.action == keymap) ? 1 : 0;
+    result += (gd->options.keymap.cancel == keymap) ? 1 : 0;
+    result += (gd->options.keymap.up == keymap) ? 1 : 0;
+    result += (gd->options.keymap.down == keymap) ? 1 : 0;
+    result += (gd->options.keymap.left == keymap) ? 1 : 0;
+    result += (gd->options.keymap.right == keymap) ? 1 : 0;
+    return result;
 }
 
 int keymap_is_clicked(dg_window_t *w, char *keymap, int force_ignore)

@@ -80,5 +80,7 @@ int key_is_pressed(dg_window_t *w, sfKeyCode key);
 int keymap_is_pressed(dg_window_t *w, char *keymap);
 int keymap_is_clicked(dg_window_t *w, char *keymap, int force_ignore);
 sfKeyCode get_keymap(dg_window_t *w, char *keymap);
+const char *keycode_to_text(sfKeyCode code);
+int is_keymap(dg_window_t *w, sfKeyCode keymap);
 
 #endif /*GENERAL_DATA_H_*/

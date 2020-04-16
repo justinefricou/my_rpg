@@ -44,16 +44,17 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_map.c											\
 			src/entities/ent_button.c										\
 			src/entities/ent_player.c										\
-			src/entities/ent_hud_progress_bar.c								\
-			src/entities/ent_hud_box.c										\
-			src/entities/ent_hud_menu_selector.c							\
-			src/entities/ent_hud_inventory.c								\
-			src/entities/ent_hud_clues.c									\
-			src/entities/ent_hud_save.c										\
-			src/entities/ent_hud_status.c									\
-			src/entities/ent_hud_options.c									\
-			src/entities/ent_hud_htp.c										\
-			src/entities/ent_hud_load.c										\
+			src/entities/hud/ent_hud_progress_bar.c							\
+			src/entities/hud/ent_hud_box.c									\
+			src/entities/hud/ent_hud_menu_selector.c						\
+			src/entities/hud/ent_hud_inventory.c							\
+			src/entities/hud/ent_hud_clues.c								\
+			src/entities/hud/ent_hud_save.c									\
+			src/entities/hud/ent_hud_status.c								\
+			src/entities/hud/ent_hud_options.c								\
+			src/entities/hud/ent_hud_htp.c									\
+			src/entities/hud/ent_hud_load.c									\
+			src/entities/hud/ent_hud_keymap_button.c						\
 
 SRC_SYS =	src/systems/sys_render.c										\
 			src/systems/sys_tm_render.c										\
@@ -77,6 +78,7 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/script_player_controller.c							\
 			src/scripts/hud/button_action.c									\
 			src/scripts/hud/scp_hud_progress_bar.c							\
+			src/scripts/hud/scp_hud_keymap_button.c							\
 			src/scripts/hud/menu_selector/script_hud_menu_selector.c		\
 			src/scripts/hud/menu_selector/menu_selector_utils.c				\
 			src/scripts/hud/menu_selector/menu_selector_set_data.c			\
@@ -110,6 +112,7 @@ SRC_OTH =	src/other/tilemap.c												\
 			src/other/update_options.c										\
 			src/other/key_is_clicked.c										\
 			src/other/keymap.c												\
+			src/other/keycode_to_text.c										\
 
 SRC_LIB =	lib/get_next_line.c			\
 			lib/my_putarray.c			\
@@ -136,7 +139,7 @@ SRC	=	$(SRC_MAI)	\
 
 LIB	=	$(SRC_LIB)	\
 
-CFLAGS = -Iinclude -L./ -ldragon -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window
+CFLAGS = -Iinclude -L./ -ldragon -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window -g3
 
 OBJ	=	$(SRC:.c=.o) $(LIB:.c=.o)
 
@@ -157,9 +160,9 @@ $(NAME): make_lib $(OBJ)
 	@printf "[\e[1;35m-Link Lib-\e[0m] % 43s\n" $(LIB) | tr ' ' '.'
 	@printf "\e[1;3;5;32m▀▄▀▄▀▄ Finished compiling lib ▄▀▄▀▄▀\e[0m\n"
 
-debug: ## Lunch the debug
+debug: make_lib $(OBJ) ## Lunch the debug
 	@make -C dragon/
-	@$(CC) -g3 -o $(DEBUG) $(OBJ) $(LIB) -Iinclude -L./ -ldragon -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window
+	@$(CC) -g3 -o $(DEBUG) $(OBJ) $(CFLAGS)
 	@printf "[\e[1;34m-Link Obj-\e[0m] % 43s\n" $(DEBUG) | tr ' ' '.'
 	@printf "[\e[1;34m-Link Main-\e[0m] % 43s\n" $(OBJ) | tr ' ' '.'
 	@printf "[\e[1;34m-Link Main-\e[0m] % 43s\n" $(LIB) | tr ' ' '.'

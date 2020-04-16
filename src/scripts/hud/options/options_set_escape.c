@@ -19,6 +19,28 @@ static void opt_set_texts(data_t *data)
     data->content.volume_general.name = ent_text(480, 202, 30, "general");
     data->content.volume_music.name = ent_text(480, 282, 30, "music");
     data->content.volume_sound.name = ent_text(480, 362, 30, "sound");
+    data->content.keymap_action.name = ent_text(480, 442, 30, "action");
+    data->content.keymap_cancel.name = ent_text(480, 532, 30, "cancel");
+    data->content.keymap_up.name = ent_text(480, 622, 30, "up");
+    data->content.keymap_down.name = ent_text(480, 712, 30, "down");
+    data->content.keymap_left.name = ent_text(480, 802, 30, "left");
+    data->content.keymap_right.name = ent_text(480, 892, 30, "right");
+}
+
+static void opt_set_km(data_t *data, general_data_t *gd)
+{
+    data->content.keymap_down.data = ent_hud_keymap_button(
+        (sfVector2f){660, 620}, 6, &(gd->options.keymap.up),
+        data->hover_layer);
+    data->content.keymap_left.data = ent_hud_keymap_button(
+        (sfVector2f){660, 710}, 6, &(gd->options.keymap.down),
+        data->hover_layer);
+    data->content.keymap_right.data = ent_hud_keymap_button(
+        (sfVector2f){660, 800}, 6, &(gd->options.keymap.left),
+        data->hover_layer);
+    data->content.keymap_up.data = ent_hud_keymap_button(
+        (sfVector2f){660, 890}, 6, &(gd->options.keymap.right),
+        data->hover_layer);
 }
 
 void options_set_escape(data_t *data, general_data_t *gd)
@@ -31,6 +53,13 @@ void options_set_escape(data_t *data, general_data_t *gd)
         (sfVector2f){660, 280}, 24, &(gd->options.music), sfWhite);
     data->content.volume_sound.data = ent_hud_progress_bar(
         (sfVector2f){660, 360}, 24, &(gd->options.sound), sfWhite);
+    data->content.keymap_action.data = ent_hud_keymap_button(
+        (sfVector2f){660, 440}, 6, &(gd->options.keymap.action),
+        data->hover_layer);
+    data->content.keymap_cancel.data = ent_hud_keymap_button(
+        (sfVector2f){660, 530}, 6, &(gd->options.keymap.cancel),
+        data->hover_layer);
+    opt_set_km(data, gd);
     data->selector.entity = ent_sprite(
         dg_ressources_get_spritesheet_by_name("hud"),
         55, 3, (sfVector2f){400, 200});

@@ -23,6 +23,12 @@ typedef struct content {
     op_slot_t volume_general;
     op_slot_t volume_music;
     op_slot_t volume_sound;
+    op_slot_t keymap_up;
+    op_slot_t keymap_down;
+    op_slot_t keymap_left;
+    op_slot_t keymap_right;
+    op_slot_t keymap_action;
+    op_slot_t keymap_cancel;
     op_slot_t main;
 } content_t;
 

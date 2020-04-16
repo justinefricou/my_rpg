@@ -30,11 +30,11 @@ void *scp_hud_options_init(void *init_data)
 
 static void hud_options_active(dg_window_t *w, data_t *data)
 {
-    if (w->events.keyboard_pressed_down && data->select < 2) {
+    if (keymap_is_clicked(w, "down", 1) && data->select < 8) {
         sound_play(data->sound_move);
         data->select++;
     }
-    if (w->events.keyboard_pressed_up && data->select > 0) {
+    if (keymap_is_clicked(w, "up", 1) && data->select > 0) {
         sound_play(data->sound_move);
         data->select--;
     }

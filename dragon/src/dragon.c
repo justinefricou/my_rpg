@@ -49,7 +49,8 @@ static void set_events(dg_window_t *w, sfEvent event)
         (event.type == sfEvtKeyPressed &&
             event.key.code == sfKeyA + i) ? 1 : 0;
     }
-
+    if (event.type == sfEvtKeyPressed)
+        w->events.keyboard_pressed = event.key.code;
 }
 
 static void dg_manage_event(dg_window_t *w)
@@ -57,6 +58,7 @@ static void dg_manage_event(dg_window_t *w)
     sfEvent event;
 
     w->events = (dg_event_t){0};
+    w->events.keyboard_pressed = -1;
     while (sfRenderWindow_pollEvent(w->window, &event)) {
         if (event.type == sfEvtClosed)
             sfRenderWindow_close(w->window);

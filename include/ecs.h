@@ -46,6 +46,8 @@ dg_entity_t *ent_hud_htp(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_load(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_progress_bar(sfVector2f pos, int size,
     sfVector2f *data, sfColor color);
+dg_entity_t *ent_hud_keymap_button(sfVector2f pos, int size,
+    int *keymap, dg_scene_t *scene);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));
@@ -107,5 +109,6 @@ sfSprite *render_sprite(sfVector2f *scale, dg_spritesheet_t *sheet,
 void scn_change(dg_scene_t *scene, int status);
 void scn_change_music(dg_scene_t *scene, int status);
 void hud_progress_bar_activate(dg_entity_t *pb, int stat);
+void hud_keymap_button_activate(dg_entity_t *kb, int stat);
 
 #endif

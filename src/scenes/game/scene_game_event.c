@@ -42,7 +42,7 @@ static void scene_add_sys(dg_scene_t *scene)
     dg_scene_add_sys(scene, dg_system_create(&dg_sys_animator, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_tm_render, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_render, 1));
-    dg_scene_add_sys(scene, dg_system_create(&sys_escape, 1));
+    dg_scene_add_sys(scene, dg_system_create(&sys_escape, 0));
     dg_scene_add_sys(scene, dg_system_create(&sys_script, 0));
     dg_scene_add_sys(scene, dg_system_create(&sys_interact_dialogue, 1));
 }

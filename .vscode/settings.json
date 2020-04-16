@@ -23,6 +23,7 @@
         "hud_inventory.h": "c",
         "hud_load.h": "c",
         "hud_options.h": "c",
-        "hud_save.h": "c"
+        "hud_save.h": "c",
+        "hud_keymap_button.h": "c"
     }
 }

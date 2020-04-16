@@ -16,6 +16,7 @@
 
 typedef struct data {
     button_t *button_list;
+    button_t cancel;
     sfVector2f pos_memory;
     sfVector2f *pos;
     dg_entity_t *hud_box;

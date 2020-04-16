@@ -12,27 +12,42 @@
 #include "hud/hud_menu_selector.h"
 #include "general_data.h"
 
+
 void *scp_hud_menu_selector_init(void *init_data)
 {
     void **idata = (void **) init_data;
-    data_t *data = 0;
     dg_scene_t *scene = idata[3];
     button_t *button_list = idata[2];
+    button_t *cancel = idata[5];
     dg_entity_t *entity = idata[0];
     sfVector2f *dpos = idata[1];
     dg_component_t *pos = dg_cpt_pos(dpos->x, dpos->y);
-    dg_component_t *selector = 0;
+    data_t *data = menu_selector_set_data(pos, button_list, scene,
+        *((int *)idata[4]));
+    dg_component_t *selector = cpt_shape_rectangle((sfVector2f){0, 0},
+        menu_selector_set_rect(data), (sfColor){255, 255, 255, 100},
+        sfTransparent);
 
     dg_entity_add_component(entity, pos);
-    data = menu_selector_set_data(pos, button_list, scene, *((int *)idata[4]));
-    selector = cpt_shape_rectangle((sfVector2f){0, 0},
-        menu_selector_set_rect(data), (sfColor){255, 255, 255, 100},
-        (sfColor){0, 0, 0, 0});
-    if (*((int *)idata[4]))
-        dg_scene_add_ent(scene, data->hud_box);
+    (*((int *)idata[4])) ? dg_scene_add_ent(scene, data->hud_box) : 0;
     dg_entity_add_component(entity, selector);
     data->selector = selector->data;
+    data->cancel.action = (cancel) ? cancel->action : NULL;
+    data->cancel.data = (cancel) ? cancel->data : NULL;
     return data;
+}
+
+static void hud_menu_actions(dg_window_t *w, data_t *data)
+{
+    if (keymap_is_clicked(w, "action", 1)) {
+        sound_play(data->sound_activate);
+        data->button_list[data->select].action
+            (&(data->is_active), data->button_list[data->select].data, w);
+    }
+    if (keymap_is_clicked(w, "cancel", 1) && data->cancel.action != NULL) {
+        sound_play(data->sound_activate);
+        data->cancel.action(&(data->is_active), data->cancel.data, w);
+    }
 }
 
 void hud_menu_active(dg_window_t *w, data_t *data)
@@ -45,11 +60,7 @@ void hud_menu_active(dg_window_t *w, data_t *data)
         sound_play(data->sound_move);
         data->select--;
     }
-    if (keymap_is_clicked(w, "action", 1)) {
-        sound_play(data->sound_activate);
-        data->button_list[data->select].action
-            (&(data->is_active), data->button_list[data->select].data, w);
-    }
+    hud_menu_actions(w, data);
 }
 
 void scp_hud_menu_selector_loop(dg_entity_t *entity, dg_window_t *w,

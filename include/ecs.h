@@ -37,6 +37,8 @@ dg_entity_t *entity_player_create();
 dg_entity_t *ent_hud_box(int x, int y, int sx, int sy);
 dg_entity_t *ent_hud_menu_selector(sfVector2f pos, button_t *button_list,
     dg_scene_t *scene, int has_box);
+dg_entity_t *ent_hud_cancel_menu_selector(sfVector2f pos,
+    button_t *button_list, dg_scene_t *scene, button_t action);
 dg_entity_t *ent_hud_inventory(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_clues(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_save(int *previous, dg_scene_t *scene);

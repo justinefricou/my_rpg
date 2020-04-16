@@ -55,6 +55,7 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/hud/ent_hud_htp.c									\
 			src/entities/hud/ent_hud_load.c									\
 			src/entities/hud/ent_hud_keymap_button.c						\
+			src/entities/hud/ent_cancel_menu_selector.c						\
 
 SRC_SYS =	src/systems/sys_render.c										\
 			src/systems/sys_tm_render.c										\
@@ -78,7 +79,6 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/script_player_controller.c							\
 			src/scripts/hud/button_action.c									\
 			src/scripts/hud/scp_hud_progress_bar.c							\
-			src/scripts/hud/scp_hud_keymap_button.c							\
 			src/scripts/hud/menu_selector/script_hud_menu_selector.c		\
 			src/scripts/hud/menu_selector/menu_selector_utils.c				\
 			src/scripts/hud/menu_selector/menu_selector_set_data.c			\
@@ -105,6 +105,8 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/hud/load/scp_hud_load.c								\
 			src/scripts/hud/load/load_utils.c								\
 			src/scripts/hud/load/load_set_data.c							\
+			src/scripts/hud/keymap_button/scp_hud_keymap_button.c			\
+			src/scripts/hud/keymap_button/kb_utils.c						\
 
 SRC_OTH =	src/other/tilemap.c												\
 			src/other/transform.c											\

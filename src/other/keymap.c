@@ -61,11 +61,19 @@ int is_keymap(dg_window_t *w, sfKeyCode keymap)
 
 int keymap_is_clicked(dg_window_t *w, char *keymap, int force_ignore)
 {
+    general_data_t *gd = (general_data_t *)w->general_data;
+
+    if (gd->block_input)
+        return 0;
     return key_is_clicked(w, get_keymap(w, keymap), force_ignore);
 }
 
 int keymap_is_pressed(dg_window_t *w, char *keymap)
 {
+    general_data_t *gd = (general_data_t *)w->general_data;
+
+    if (gd->block_input)
+        return 0;
     if (sfKeyboard_isKeyPressed(get_keymap(w, keymap)))
         return 1;
     return 0;

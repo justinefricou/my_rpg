@@ -23,6 +23,7 @@ static void set_default_keymap(general_data_t *gd)
     gd->options.keymap.down = sfKeyDown;
     gd->options.keymap.left = sfKeyLeft;
     gd->options.keymap.right = sfKeyRight;
+    gd->block_input = 0;
 }
 
 general_data_t *create_general_data(void)

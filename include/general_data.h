@@ -68,6 +68,7 @@ typedef struct general_data
     player_t player;
     object_list_t object_list;
     options_t options;
+    int block_input;
 } general_data_t;
 
 general_data_t *create_general_data(void);

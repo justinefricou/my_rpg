@@ -27,4 +27,6 @@ typedef struct data {
     sfMusic *sound_active;
 } data_t;
 
+int is_valid_key(sfKeyCode key);
+
 #endif /*HUD_KEYMAP_BUTTON_H_*/

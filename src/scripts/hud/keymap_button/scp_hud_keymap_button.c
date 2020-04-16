@@ -59,6 +59,7 @@ static void hud_kb_active(dg_window_t *w, data_t *data)
         w->events.keyboard_pressed = -1;
     }
     if (data->change_key && w->events.keyboard_pressed != -1
+        && is_valid_key(w->events.keyboard_pressed)
         && (w->events.keyboard_pressed == *(data->keymap)
         || !is_keymap(w, w->events.keyboard_pressed))) {
         sound_play(data->sound_active);

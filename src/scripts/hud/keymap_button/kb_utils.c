@@ -18,3 +18,19 @@ void hud_keymap_button_activate(dg_entity_t *kb, int stat)
 
     data->active = stat;
 }
+
+int is_valid_key(sfKeyCode key)
+{
+    int rtv = 0;
+
+    if (key >= sfKeyA && key <= sfKeyZ)
+        rtv += 1;
+    rtv += (key == sfKeyEnter) ? 1 : 0;
+    rtv += (key == sfKeySpace) ? 1 : 0;
+    rtv += (key == sfKeyUp) ? 1 : 0;
+    rtv += (key == sfKeyDown) ? 1 : 0;
+    rtv += (key == sfKeyLeft) ? 1 : 0;
+    rtv += (key == sfKeyRight) ? 1 : 0;
+    rtv += (key == sfKeyEscape) ? 1 : 0;
+    return rtv;
+}

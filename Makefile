@@ -110,8 +110,10 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 
 SRC_SAV =	src/save_load/save_game.c										\
 			src/save_load/save_player_info.c								\
-			src/save_load/load_game.c										\
-			src/save_load/load_player_info.c								\
+			src/save_load/save_inventory.c									\
+			src/save_load/load_saved_game.c									\
+			src/save_load/load_saved_player_info.c							\
+			src/save_load/load_saved_inventory.c							\
 			src/save_load/save_load_utils.c									\
 
 SRC_OTH =	src/other/tilemap.c												\

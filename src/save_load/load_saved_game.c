@@ -8,6 +8,20 @@
 #include <stdio.h>
 #include "save_load.h"
 
+static int load_saved_data(general_data_t *data, FILE *save_file)
+{
+    if (load_saved_player_name(data, save_file) == 84)
+        return (84);
+    if (load_saved_player_pv(data, save_file) == 84)
+        return (84);
+    /*if (load_saved_player_position(player's position, FILE *save_file) == 84)
+        return (84);*/
+    if (load_saved_inventory(&(data->inventory), save_file) == 84)
+        return (84);
+    // load other things
+    return (0);
+}
+
 int load_saved_game(general_data_t *data, int save_nb)
 {
     FILE *save_file = NULL;
@@ -19,16 +33,4 @@ int load_saved_game(general_data_t *data, int save_nb)
         fclose(save_file);
     }
     return (return_value);
-}
-
-int load_saved_data(general_data_t *data, FILE *save_file)
-{
-    if (load_saved_player_name(data, save_file) == 84)
-        return (84);
-    if (load_saved_player_pv(data, save_file) == 84)
-        return (84);
-    /*if (load_saved_player_position(player's position, FILE *save_file) == 84)
-        return (84);*/
-    // load other things
-    return (0);
 }

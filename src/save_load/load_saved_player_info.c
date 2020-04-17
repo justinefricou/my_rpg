@@ -13,7 +13,7 @@
 #include "general_data.h"
 #include "save_load.h"
 
-static char *get_saved_player_name(FILE *save_file)
+static char *get_player_name(FILE *save_file)
 {
     char *line = NULL;
     char *new_name = NULL;
@@ -39,7 +39,7 @@ int load_saved_player_name(general_data_t *data, FILE *save_file)
 {
     char *new_name = NULL;
 
-    new_name = get_saved_player_name(save_file);
+    new_name = get_player_name(save_file);
     if (!new_name) {
         write(2, "Error : player's name could not be loaded.\n", 43);
         return (84);

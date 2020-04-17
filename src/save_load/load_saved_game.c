@@ -18,6 +18,8 @@ static int load_saved_data(general_data_t *data, FILE *save_file)
         return (84);*/
     if (load_saved_inventory(&(data->inventory), save_file) == 84)
         return (84);
+    if (load_saved_player_lvl_and_xp(&(data->player), save_file) == 84)
+        return (84);
     // load other things
     return (0);
 }

@@ -26,6 +26,7 @@ int save_game(general_data_t *data, int save_nb);
 void save_player_name(char *name, FILE *save_file);
 void save_player_pv(int pv, FILE *save_file);
 void save_player_position(sfVector2f *position, FILE *save_file);
+void save_player_lvl_and_xp(player_t player, FILE *save_file);
 
 // save_inventory.c
 void save_inventory(inventory_t inventory, FILE *save_file);
@@ -39,6 +40,7 @@ int load_saved_game(general_data_t *data, int save_nb);
 int load_saved_player_name(general_data_t *data, FILE *save_file);
 int load_saved_player_pv(general_data_t *data, FILE *save_file);
 int load_saved_player_position(sfVector2f *position, FILE *save_file);
+int load_saved_player_lvl_and_xp(player_t *player, FILE *save_file);
 
 // load_saved_inventory.c
 int load_saved_inventory(inventory_t *inventory, FILE *save_file);

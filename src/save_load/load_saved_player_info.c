@@ -83,3 +83,27 @@ int load_saved_player_position(sfVector2f *position, FILE *save_file)
     free(line);
     return (0);
 }
+
+int load_saved_player_lvl_and_xp(player_t *player, FILE *save_file)
+{
+    char *line = NULL;
+    int start = 0;
+
+    line = get_line_from_save_file(save_file);
+    if (!line) {
+        write(2, "Error : player's level could not be loaded.\n", 44);
+        return (84);
+    }
+    start = my_strlen("player_level ");
+    player->level = get_nbr_until(&(line[start]), 0);
+    free(line);
+    line = get_line_from_save_file(save_file);
+    if (!line) {
+        write(2, "Error : player's xp could not be loaded.\n", 41);
+        return (84);
+    }
+    start = my_strlen("player_xp ");
+    player->xp = get_nbr_until(&(line[start]), 0);
+    free(line);
+    return (0);
+}

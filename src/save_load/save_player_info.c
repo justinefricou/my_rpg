@@ -35,3 +35,13 @@ void save_player_position(sfVector2f *position, FILE *save_file)
     write_int_in_save_file(position->y, save_file);
     fwrite("\n", sizeof(char), 1, save_file);
 }
+
+void save_player_lvl_and_xp(player_t player, FILE *save_file)
+{
+    write_str_in_save_file("player_level ", save_file);
+    write_int_in_save_file(player.level, save_file);
+    fwrite("\n", sizeof(char), 1, save_file);
+    write_str_in_save_file("player_xp ", save_file);
+    write_int_in_save_file(player.xp, save_file);
+    fwrite("\n", sizeof(char), 1, save_file);
+}

@@ -31,6 +31,8 @@ typedef struct player
     char *name;
     int pv;
     int pm;
+    int level;
+    int xp;
 } player_t;
 
 typedef struct clues

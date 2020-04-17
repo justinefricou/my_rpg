@@ -16,7 +16,7 @@
 typedef struct inventory_slot
 {
     int nb;
-    object_t object;
+    int id;
 } inventory_slot_t;
 
 typedef struct inventory

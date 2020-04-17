@@ -22,6 +22,7 @@ typedef struct inventory_slot
 typedef struct inventory
 {
     int len;
+    int max_len;
     inventory_slot_t *slot;
 } inventory_t;
 

@@ -22,7 +22,7 @@ static int load_inventory_stats(inventory_t *inventory, FILE *save_file)
         return (84);
     }
     start = my_strlen("max_len ");
-    inventory->max_len = get_nbr_until(&(line[start]), 0);
+    inventory->stack.y = get_nbr_until(&(line[start]), 0);
     free(line);
     line = get_line_from_save_file(save_file);
     if (!line) {
@@ -65,11 +65,6 @@ static int check_end_of_inventory(FILE *save_file)
 
 static int load_inventory_content(inventory_t *inventory, FILE *save_file)
 {
-    if (inventory->slot)
-        free(inventory->slot);
-    inventory->slot = malloc(sizeof(inventory_slot_t) * inventory->len);
-    if (!inventory->slot)
-        return (84);
     for (int i = 0; i < inventory->len; i++) {
         if (!load_inventory_slot(&(inventory->slot[i]), save_file)) {
             write(2, "Error : inventory slot could not be loaded.\n", 44);

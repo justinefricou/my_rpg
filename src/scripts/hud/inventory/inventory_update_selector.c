@@ -12,7 +12,7 @@
 #include "hud/hud_inventory.h"
 
 static const float SHAPE_WIDTH = 32 * 3 * 16 / 4;
-static const float SHAPE_HEIGHT = 20 * 3 * 16 / 3;
+static const float SHAPE_HEIGHT = 20 * 3 * 16 / 6;
 
 static void inventory_update_rect(data_t *data, general_data_t *dt)
 {
@@ -31,7 +31,7 @@ static void inventory_update_rect(data_t *data, general_data_t *dt)
 
 static void inv_update_defilement(data_t *data)
 {
-    while (data->selector.select - data->selector.defilement * 4 >= 12)
+    while (data->selector.select - data->selector.defilement * 4 >= 24)
         data->selector.defilement++;
     while (data->selector.select - data->selector.defilement * 4 < 0)
         data->selector.defilement--;

@@ -16,7 +16,7 @@ static void hud_inv_right(dg_window_t *w, data_t *data)
     general_data_t *gd = w->general_data;
 
     if (data->selector.select % 4 < 3
-        && data->selector.select < gd->inventory.len) {
+        && data->selector.select + 1 < gd->inventory.len) {
         sound_play(data->sound_move);
         data->selector.select++;
     }
@@ -42,8 +42,7 @@ static void hud_inv_down(dg_window_t *w, data_t *data)
 {
     general_data_t *gd = w->general_data;
 
-    if (data->selector.select + 4 <= gd->inventory.max_len
-        && data->selector.select + 4 <= gd->inventory.len) {
+    if (data->selector.select + 4 < gd->inventory.len) {
         sound_play(data->sound_move);
         data->selector.select += 4;
     }

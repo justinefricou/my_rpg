@@ -29,11 +29,10 @@ typedef struct inventory
 typedef struct player
 {
     char *name;
-    int pv;
-    int pv_max;
-    int pm;
+    sfVector2f pv;
+    sfVector2f pm;
     int level;
-    int xp;
+    sfVector2f xp;
 } player_t;
 
 typedef struct clues

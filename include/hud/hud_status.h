@@ -16,15 +16,12 @@
 
 typedef struct data {
     int *previous;
-    sfVector2f *pos;
+    dg_scene_t *layer;
     dg_entity_t *hud_box;
-    sfRectangleShape *selector;
-    int select;
-    int is_active;
-    sfMusic *sound_move;
     sfMusic *sound_activate;
 } data_t;
 
 void status_set_sounds(data_t *data);
+void status_set_data(data_t *data, dg_window_t *w);
 
 #endif /*HUD_STATUS_H_*/

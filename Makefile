@@ -22,6 +22,12 @@ SRC_SCN =	src/scenes/scene_main_menu.c									\
 			src/scenes/game/scene_escape_menu.c								\
 			src/scenes/game/game_scn_utils.c								\
 			src/scenes/game/scn_esc_menu_buttons.c							\
+			src/scenes/fight_scenes/scene_fight_event.c						\
+			src/scenes/fight_scenes/scene_fight_bottom.c					\
+			src/scenes/fight_scenes/scene_fight_middle.c					\
+			src/scenes/fight_scenes/scene_fight_top.c						\
+			src/scenes/fight_scenes/scene_fight_hud.c						\
+			src/scenes/fight_scenes/game_scn_utils_fight.c					\
 
 SRC_CPT =	src/components/cpt_action.c										\
 			src/components/cpt_text.c										\
@@ -56,6 +62,7 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/hud/ent_hud_load.c									\
 			src/entities/hud/ent_hud_keymap_button.c						\
 			src/entities/hud/ent_cancel_menu_selector.c						\
+			src/entities/fight_ent/ent_player_fight.c						\
 
 SRC_SYS =	src/systems/sys_render.c										\
 			src/systems/sys_tm_render.c										\

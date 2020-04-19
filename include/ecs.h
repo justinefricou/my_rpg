@@ -22,6 +22,11 @@ dg_scene_t *scene_game_hud(void);
 dg_scene_t *scene_game_top(void);
 dg_scene_t *scene_game_bottom(void);
 dg_scene_t *scene_game_middle(void);
+dg_scene_t *scene_fight_event(void);
+dg_scene_t *scene_fight_hud(void);
+dg_scene_t *scene_fight_top(void);
+dg_scene_t *scene_fight_bottom(void);
+dg_scene_t *scene_fight_middle(void);
 dg_scene_t *scene_tmp_hover(char *name);
 
 // entities
@@ -50,6 +55,7 @@ dg_entity_t *ent_hud_progress_bar(sfVector2f pos, int size,
     sfVector2f *data, sfColor color);
 dg_entity_t *ent_hud_keymap_button(sfVector2f pos, int size,
     int *keymap, dg_scene_t *scene);
+dg_entity_t *entity_player_fight_create(void);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));

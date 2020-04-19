@@ -16,12 +16,13 @@
 typedef struct inventory_slot
 {
     int nb;
-    object_t object;
+    int id;
 } inventory_slot_t;
 
 typedef struct inventory
 {
     int len;
+    int max_len;
     inventory_slot_t *slot;
 } inventory_t;
 
@@ -30,6 +31,8 @@ typedef struct player
     char *name;
     int pv;
     int pm;
+    int level;
+    int xp;
 } player_t;
 
 typedef struct clues

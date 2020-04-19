@@ -9,47 +9,39 @@
 #include <stdlib.h>
 #include <SFML/System/Vector2.h>
 #include "libmy.h"
+#include "save_load.h"
 
 void save_player_name(char *name, FILE *save_file)
 {
-    int length = 0;
-
-    for (; name[length]; length++);
-    fwrite("player_name ", sizeof(char), 11, save_file);
-    fwrite(name, sizeof(char), length, save_file);
+    write_str_in_save_file("player_name ", save_file);
+    write_str_in_save_file(name, save_file);
     fwrite("\n", sizeof(char), 1, save_file);
 }
 
 void save_player_pv(int pv, FILE *save_file)
 {
-    char *str = NULL;
-    int length = 0;
-
-    str = my_itoa(pv);
-    for (; str[length]; length++);
-    fwrite("player_pv ", sizeof(char), 10, save_file);
-    fwrite(str, sizeof(char), length, save_file);
+    write_str_in_save_file("player_pv ", save_file);
+    write_int_in_save_file(pv, save_file);
     fwrite("\n", sizeof(char), 1, save_file);
-    free(str);
 }
 
 void save_player_position(sfVector2f *position, FILE *save_file)
 {
-    char *x = NULL;
-    char *y = NULL;
-    int length = 0;
-
     if (!position)
         return;
-    x = my_itoa(position->x);
-    for (; x[length]; length++);
-    fwrite("player_position ", sizeof(char), 16, save_file);
-    fwrite(x, sizeof(char), length, save_file);
-    fwrite(" ", sizeof(char), 1, save_file);
-    y = my_itoa(position->y);
-    for (length = 0; y[length]; length++);
-    fwrite(y, sizeof(char), length, save_file);
+    write_str_in_save_file("player_position ", save_file);
+    write_int_in_save_file(position->x, save_file);
+    fwrite(",", sizeof(char), 1, save_file);
+    write_int_in_save_file(position->y, save_file);
     fwrite("\n", sizeof(char), 1, save_file);
-    free(x);
-    free(y);
+}
+
+void save_player_lvl_and_xp(player_t player, FILE *save_file)
+{
+    write_str_in_save_file("player_level ", save_file);
+    write_int_in_save_file(player.level, save_file);
+    fwrite("\n", sizeof(char), 1, save_file);
+    write_str_in_save_file("player_xp ", save_file);
+    write_int_in_save_file(player.xp, save_file);
+    fwrite("\n", sizeof(char), 1, save_file);
 }

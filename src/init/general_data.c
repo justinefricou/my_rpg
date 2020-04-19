@@ -34,8 +34,9 @@ general_data_t *create_general_data(void)
     gd->options.music = (sfVector2f){100, 100};
     gd->options.sound = (sfVector2f){100, 100};
     gd->options.resolution = 0;
-    gd->inventory.len = 0;
+    gd->inventory.len = 20;
     gd->inventory.slot = NULL;
+    gd->inventory.max_len = 20;
     gd->player.name = "";
     gd->player.pv = 100;
     gd->player.pm = 100;

@@ -85,6 +85,8 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/hud/inventory/scp_hud_inventory.c					\
 			src/scripts/hud/inventory/inventory_utils.c						\
 			src/scripts/hud/inventory/inventory_set_data.c					\
+			src/scripts/hud/inventory/inventory_move.c						\
+			src/scripts/hud/inventory/inventory_update_selector.c			\
 			src/scripts/hud/clues/scp_hud_clues.c							\
 			src/scripts/hud/clues/clues_utils.c								\
 			src/scripts/hud/clues/clues_set_data.c							\

@@ -11,33 +11,25 @@
 #include "script.h"
 #include "hud/hud_inventory.h"
 
-void inventory_set_sounds(data_t *data)
+static void inventory_set_sounds(data_t *data)
 {
     data->sound_activate = dg_ressources_get_audio_by_name("hud_activate");
     data->sound_move = dg_ressources_get_audio_by_name("hud_move");
 }
 
-/*data_t *menu_selector_set_data(dg_component_t *pos,
-    button_t *button_list, dg_scene_t *scene, int has_box)
+void inventory_set_data(data_t *data, dg_entity_t *entity)
 {
-    data_t *data = malloc(sizeof(data_t));
-
-    data->select = 0;
+    dg_component_t *pos = dg_cpt_pos(350, 20);
+    dg_component_t *selector = cpt_shape_rectangle((sfVector2f){0, 0},
+        (sfVector2f){32 * 3 * 16 / 4, 20 * 3 * 16 / 3},
+        (sfColor){255, 255, 255, 100},
+        (sfColor){0, 0, 0, 0});
+    
+    dg_entity_add_component(entity, pos);
+    dg_entity_add_component(entity, selector);
+    data->selector.select = 0;
+    data->selector.selector = selector->data;
+    data->selector.defilement = 0;
     data->is_active = 1;
-    data->llen = 0;
-    data->pos = pos->data;
-    data->pos_memory = *(data->pos);
-    if (!button_list)
-        return data;
-    for (data->llen = 0; button_list[data->llen].name; data->llen++);
-    data->buttons = create_buttons(*(data->pos), scene, button_list,
-        data->llen);
-    if (has_box)
-        data->hud_box = ent_hud_box(data->pos->x, data->pos->y,
-        (int)((get_longest_name(data).x + 10)/ (16 * 3) + 0.9), data->llen);
-    else
-        data->hud_box = NULL;
-    data->button_list = button_list;
-    hud_selector_set_sounds(data);
-    return data;
-}*/
+    inventory_set_sounds(data);
+}

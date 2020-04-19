@@ -22,14 +22,15 @@ typedef struct inventory_slot
 typedef struct inventory
 {
     int len;
-    int max_len;
-    inventory_slot_t *slot;
+    sfVector2f stack;
+    inventory_slot_t slot[100];
 } inventory_t;
 
 typedef struct player
 {
     char *name;
     int pv;
+    int pv_max;
     int pm;
     int level;
     int xp;
@@ -86,5 +87,11 @@ int keymap_is_clicked(dg_window_t *w, char *keymap, int force_ignore);
 sfKeyCode get_keymap(dg_window_t *w, char *keymap);
 const char *keycode_to_text(sfKeyCode code);
 int is_keymap(dg_window_t *w, sfKeyCode keymap);
+
+//inventory
+int add_to_inventory(general_data_t *gd, int id, int nb);
+int remove_from_inventory(general_data_t *gd, int id, int nb);
+int is_in_inventory(general_data_t *gd, int id, int nb);
+int how_much_in_inventory(general_data_t *gd, int id);
 
 #endif /*GENERAL_DATA_H_*/

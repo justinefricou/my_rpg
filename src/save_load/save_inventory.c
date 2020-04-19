@@ -20,7 +20,7 @@ void save_inventory(inventory_t inventory, FILE *save_file)
 {
     write_str_in_save_file("inventory_start\n", save_file);
     write_str_in_save_file("max_len ", save_file);
-    write_int_in_save_file(inventory.max_len, save_file);
+    write_int_in_save_file(inventory.stack.y, save_file);
     fwrite("\n", sizeof(char), 1, save_file);
     write_str_in_save_file("len ", save_file);
     write_int_in_save_file(inventory.len, save_file);

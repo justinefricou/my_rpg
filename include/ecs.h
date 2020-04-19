@@ -23,6 +23,7 @@ dg_scene_t *scene_game_top(void);
 dg_scene_t *scene_game_bottom(void);
 dg_scene_t *scene_game_middle(void);
 dg_scene_t *scene_tmp_hover(char *name);
+dg_scene_t *scene_tmp_hover_ws(char *name);
 
 // entities
 dg_entity_t *ent_music(char *path);

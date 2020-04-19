@@ -12,6 +12,7 @@ SRC_MAI = 	src/main.c														\
 SRC_SCN =	src/scenes/scene_main_menu.c									\
 			src/scenes/scene_main_menu_hover.c								\
 			src/scenes/scene_tmp_hover.c									\
+			src/scenes/scene_tmp_hover_ws.c									\
 			src/scenes/scn_utils.c											\
 			src/scenes/scn_main_menu_buttons.c								\
 			src/scenes/game/scene_game_event.c								\
@@ -87,6 +88,10 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/hud/inventory/inventory_set_data.c					\
 			src/scripts/hud/inventory/inventory_move.c						\
 			src/scripts/hud/inventory/inventory_update_selector.c			\
+			src/scripts/hud/inventory/inventory_update_slot.c				\
+			src/scripts/hud/inventory/inventory_update_weight.c				\
+			src/scripts/hud/inventory/inventory_action.c					\
+			src/scripts/hud/inventory/invetory_action_action.c				\
 			src/scripts/hud/clues/scp_hud_clues.c							\
 			src/scripts/hud/clues/clues_utils.c								\
 			src/scripts/hud/clues/clues_set_data.c							\
@@ -125,6 +130,8 @@ SRC_OTH =	src/other/tilemap.c												\
 			src/other/key_is_clicked.c										\
 			src/other/keymap.c												\
 			src/other/keycode_to_text.c										\
+			src/other/inventory.c											\
+			src/other/objects/calming.c										\
 
 SRC_LIB =	lib/get_next_line.c			\
 			lib/my_putarray.c			\

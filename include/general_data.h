@@ -12,6 +12,7 @@
 #include "libdragon.h"
 
 #define OBJECT_LIST 1
+#define CLUES_LEN 1
 
 typedef struct inventory_slot
 {
@@ -37,7 +38,8 @@ typedef struct player
 
 typedef struct clues
 {
-    int unused;
+    int len;
+    int list[CLUES_LEN];
 } clues_t;
 
 typedef struct keymap

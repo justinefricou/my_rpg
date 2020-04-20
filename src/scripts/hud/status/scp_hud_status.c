@@ -28,7 +28,7 @@ void *scp_hud_status_init(void *init_data)
     data->previous = idata[2];
     data->hud_box = ent_hud_box(350, 20, 32, 20);
     dg_scene_add_ent(scene, data->hud_box);
-    status_set_sounds(data);
+    data->sound_activate = dg_ressources_get_audio_by_name("hud_activate");
     status_set_data(data, w);
     dg_scene_manager_add_scene(data->layer);
     return data;

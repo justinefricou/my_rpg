@@ -34,6 +34,7 @@ typedef struct player
     sfVector2f pm;
     int level;
     sfVector2f xp;
+    int money;
 } player_t;
 
 typedef struct clues

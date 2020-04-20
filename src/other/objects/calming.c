@@ -27,5 +27,6 @@ object_t calming(void)
     obj.icon_id = 1;
     obj.consomable = 1;
     obj.action = &calming_action;
+    obj.price = 10;
     return obj;
 }

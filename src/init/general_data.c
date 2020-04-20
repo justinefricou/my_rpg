@@ -47,6 +47,7 @@ general_data_t *create_general_data(void)
     gd->options.sound = (sfVector2f){100, 100};
     gd->options.resolution = 0;
     gd->player.name = "Player";
+    gd->player.money = 100;
     gd->player.pv.x = 50;
     gd->player.pv.y = 100;
     gd->player.pm.x = 100;

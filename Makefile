@@ -107,7 +107,6 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/hud/options/options_set_main.c						\
 			src/scripts/hud/options/options_set_escape.c					\
 			src/scripts/hud/how_to_play/scp_hud_htp.c						\
-			src/scripts/hud/how_to_play/htp_utils.c							\
 			src/scripts/hud/how_to_play/htp_set_data.c						\
 			src/scripts/hud/load/scp_hud_load.c								\
 			src/scripts/hud/load/load_utils.c								\

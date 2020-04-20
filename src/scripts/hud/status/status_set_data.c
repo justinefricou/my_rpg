@@ -16,7 +16,7 @@ void status_set_sounds(data_t *data)
     data->sound_activate = dg_ressources_get_audio_by_name("hud_activate");
 }
 
-static status_set_pb(data_t *data, general_data_t *gd)
+static void status_set_pb(data_t *data, general_data_t *gd)
 {
     dg_scene_add_ent(data->layer, ent_hud_progress_bar(
         (sfVector2f){650, 250}, 20, &(gd->player.pv), sfRed));

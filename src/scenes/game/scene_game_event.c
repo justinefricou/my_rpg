@@ -37,7 +37,6 @@ static void scene_add_ent(dg_scene_t *scene)
 static void scene_add_sys(dg_scene_t *scene)
 {
     dg_scene_add_sys(scene, dg_system_create(&sys_camera, 0));
-    dg_scene_add_sys(scene, dg_system_create(&sys_script, 0));
     dg_scene_add_sys(scene, dg_system_create(&sys_display_text, 1));
     dg_scene_add_sys(scene, dg_system_create(&dg_sys_animator, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_tm_render, 1));

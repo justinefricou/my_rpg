@@ -13,7 +13,7 @@
 #define NB_GAME_SCENE 6
 
 void get_game_scenes(dg_scene_t **scenes, int escape);
-void create_game_scenes(void);
+void create_game_scenes(dg_window_t *w);
 void remove_game_scenes(void);
 
 //buttons

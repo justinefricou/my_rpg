@@ -13,6 +13,7 @@
 typedef struct data {
     sfVector2f *pos;
     dg_animator_t *animator;
+    int speed;
 } data_t;
 
 void *scp_player_controller_init(void *init_data)
@@ -24,6 +25,7 @@ void *scp_player_controller_init(void *init_data)
 
     data->pos = pos->data;
     data->animator = idata[1];
+    data->speed = 2;
     dg_entity_add_component(entity, pos);
     return data;
 }
@@ -43,8 +45,8 @@ void scp_player_controller_loop(dg_entity_t *entity, dg_window_t *w,
     (move.x < 0) ? dg_animator_set_animation(data->animator, "left") : NULL;
     (move.y < 0) ? dg_animator_set_animation(data->animator, "up") : NULL;
     (move.y > 0) ? dg_animator_set_animation(data->animator, "down") : NULL;
-    data->pos->x += move.x * dt.microseconds / 10000;
-    data->pos->y += move.y * dt.microseconds / 10000;
+    data->pos->x += move.x * dt.microseconds / 10000 * data->speed;
+    data->pos->y += move.y * dt.microseconds / 10000 * data->speed;
 }
 
 void scp_player_controller_end(void *data)

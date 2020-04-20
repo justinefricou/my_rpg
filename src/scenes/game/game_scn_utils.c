@@ -20,13 +20,13 @@ void get_game_scenes(dg_scene_t **scenes, int escape)
         scenes[5] = dg_scene_manager_get_scene("escape_menu");
 }
 
-void create_game_scenes(void)
+void create_game_scenes(dg_window_t *w)
 {
     dg_scene_manager_add_scene(scene_game_bottom());
     dg_scene_manager_add_scene(scene_game_middle());
     dg_scene_manager_add_scene(scene_game_event());
     dg_scene_manager_add_scene(scene_game_top());
-    dg_scene_manager_add_scene(scene_game_hud());
+    dg_scene_manager_add_scene(scene_game_hud(w));
     dg_scene_manager_add_scene(scene_escape_menu());
 }
 

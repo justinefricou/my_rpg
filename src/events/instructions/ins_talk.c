@@ -16,16 +16,11 @@
 parameters_t *ins_set_talk(instruction_t *instruction, int *i,
     general_data_t *gd)
 {
-    int len = 0;
     parameters_t *param = malloc(sizeof(parameters_t) * 2);
     parameters_t *text_param = instruction[*i].parameters;
 
-    for (len = 0; text_param[len].type != NONE; len++);
-    param = malloc(sizeof(parameters_t) * len);
-    param[0].type = INT;
-    param[0].parameters.n = variable_to_int(text_param[1].parameters.s,
-        gd, text_param[0].parameters.s);
-    for (int i = 2; i < len; i++)
-        param[i - 1] = set_from_calcul(text_param[i].parameters.s, gd);
+    param[0].type = STRING;
+    param[0].parameters.s = text_param[0].parameters.s;
+    param[1].type = NONE;
     return param;
 }

@@ -47,5 +47,9 @@ void *get_variable(variable_t *var, int i);
 int variable_to_int(char *name, general_data_t *gd, char *type);
 int type_from_str(char *text);
 parameters_t set_from_calcul(char *data, general_data_t *gd);
+instruction_t *ins_set_intern(instruction_t *instruction, int *i,
+    general_data_t *gd);
+instruction_t *add_instruction(instruction_t *old,
+    int len, instruction_t data);
 
 #endif /*INSTRUCTIONS_H_*/

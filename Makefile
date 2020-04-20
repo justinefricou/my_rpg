@@ -81,6 +81,7 @@ SRC_EVT =	src/events/variable.c											\
 			src/events/create_events.c										\
 			src/events/set_from_calcul.c									\
 			src/events/type.c												\
+			src/events/ins_set_intern.c										\
 			src/events/instructions/ins_set.c								\
 			src/events/instructions/ins_if.c								\
 			src/events/instructions/ins_while.c								\

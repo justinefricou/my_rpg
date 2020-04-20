@@ -10,15 +10,15 @@ template :
 ------------------------------------------------
 keycodes :
 SET [TYPE] [VARIABLE] [DATA]
-IF [CONSITION]
-WHILE [CONDITION]
-FOR [CONDITION]
+IF [CONSITION]                           //END
+WHILE [CONDITION]                        //END
+FOR [BEGIN] [END]                        //END
 END
 GIVE [OBJECT] [NB]
 TAKE [OBJECT] [NB]
 TP [EVENT] [X] [Y] [MAP]
-DIALOG
+DIALOG                                   //END
 TALK [id]
-ANSWER [id]
+ANSWER [id]                              //END
 BATTLE [id]
 MOVE [EVENT] [X] [Y]

@@ -19,7 +19,7 @@ static const key_setter_t key_setter[14] = {
 
 static event_t *get_events(void){}
 
-static instruction_t *add_instruction(instruction_t *old,
+instruction_t *add_instruction(instruction_t *old,
     int len, instruction_t data)
 {
     instruction_t *new = malloc(sizeof(instruction_t) * (len + 2));
@@ -46,6 +46,7 @@ static instruction_t *set_instructions(instruction_t *tmp, general_data_t *gd)
             to_add.parameters = NULL;
         instructions = add_instruction(instructions, len, to_add);
     }
+    return instructions;
 }
 
 static event_t *interpret_events(event_t *tmp_event, general_data_t *gd)

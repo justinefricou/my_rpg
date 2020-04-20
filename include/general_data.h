@@ -5,11 +5,12 @@
 ** epitech forbidden functions
 */
 
-#ifndef GENERAL_DATA_H_
-#define GENERAL_DATA_H_
-
 #include "object.h"
 #include "libdragon.h"
+#include "event.h"
+
+#ifndef GENERAL_DATA_H_
+#define GENERAL_DATA_H_
 
 #define OBJECT_LIST 1
 #define CLUES_LEN 1
@@ -73,6 +74,7 @@ typedef struct general_data
     clues_t clues;
     player_t player;
     object_list_t object_list;
+    event_manager_t event_manager;
     options_t options;
     int block_input;
 } general_data_t;

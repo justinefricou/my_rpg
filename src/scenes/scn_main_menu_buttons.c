@@ -14,6 +14,7 @@
 void new_game(int *previous, void *data, dg_window_t *w)
 {
     create_fight_scenes();
+    //w->general_data
     //create_game_scenes();
     sfMusic_stop(dg_ressources_get_audio_by_name("menu_theme"));
     sfMusic_play(dg_ressources_get_audio_by_name("game_theme"));

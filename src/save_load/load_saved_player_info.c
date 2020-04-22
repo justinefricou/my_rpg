@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** MUL_my_rpg_2019
 ** File description:
-** Loads player's infos from a save : name, etc.
+** Loads player's infos : name, position, level and XPs.
 */
 
 #include <stdio.h>
@@ -50,22 +50,6 @@ int load_saved_player_name(general_data_t *data, FILE *save_file)
     return (0);
 }
 
-int load_saved_player_pv(general_data_t *data, FILE *save_file)
-{
-    char *line = NULL;
-    int start = 0;
-
-    line = get_line_from_save_file(save_file);
-    if (!line) {
-        write(2, "Error : player's pv could not be loaded.\n", 41);
-        return (84);
-    }
-    start = my_strlen("player_pv ");
-    data->player.pv.x = get_nbr_until(&(line[start]), 0);
-    free(line);
-    return (0);
-}
-
 int load_saved_player_position(sfVector2f *position, FILE *save_file)
 {
     char *line = NULL;
@@ -77,14 +61,14 @@ int load_saved_player_position(sfVector2f *position, FILE *save_file)
         return (84);
     }
     start = my_strlen("player_position ");
-    position->x = get_nbr_until(&(line[start]), ' ');
-    for (; line[start] && line[start] != ' '; start++);
+    position->x = get_nbr_until(&(line[start]), ',');
+    for (; line[start] && line[start] != ','; start++);
     position->y = get_nbr_until(&(line[start + 1]), 0);
     free(line);
     return (0);
 }
 
-int load_saved_player_lvl_and_xp(player_t *player, FILE *save_file)
+int load_saved_player_lvl(player_t *player, FILE *save_file)
 {
     char *line = NULL;
     int start = 0;
@@ -97,6 +81,14 @@ int load_saved_player_lvl_and_xp(player_t *player, FILE *save_file)
     start = my_strlen("player_level ");
     player->level = get_nbr_until(&(line[start]), 0);
     free(line);
+    return (0);
+}
+
+int load_saved_player_xp(player_t *player, FILE *save_file)
+{
+    char *line = NULL;
+    int start = 0;
+
     line = get_line_from_save_file(save_file);
     if (!line) {
         write(2, "Error : player's xp could not be loaded.\n", 41);
@@ -104,6 +96,14 @@ int load_saved_player_lvl_and_xp(player_t *player, FILE *save_file)
     }
     start = my_strlen("player_xp ");
     player->xp.x = get_nbr_until(&(line[start]), 0);
+    free(line);
+    line = get_line_from_save_file(save_file);
+    if (!line) {
+        write(2, "Error : player's max xp could not be loaded.\n", 45);
+        return (84);
+    }
+    start = my_strlen("player_max_xp ");
+    player->xp.y = get_nbr_until(&(line[start]), 0);
     free(line);
     return (0);
 }

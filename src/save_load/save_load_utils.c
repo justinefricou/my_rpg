@@ -14,8 +14,12 @@
 int open_save_file(FILE **save_file, int save_nb, char *mode)
 {
     char *filepath = "saves/0.save";
+    char *filepath_options = "saves/options.save";
 
-    filepath[6] = save_nb + '0';
+    if (save_nb == -1)
+        filepath = filepath_options;
+    else
+        filepath[6] = save_nb + '0';
     *save_file = fopen(filepath, mode);
     if (*save_file == NULL) {
         write(2, "Save file could not be opened.\n", 31);

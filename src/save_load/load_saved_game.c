@@ -12,9 +12,13 @@ static int load_saved_data(general_data_t *data, FILE *save_file)
 {
     if (load_saved_player_name(data, save_file) == 84)
         return (84);
-    if (load_saved_player_lvl_and_xp(&(data->player), save_file) == 84)
+    if (load_saved_player_lvl(&(data->player), save_file) == 84)
+        return (84);
+    if (load_saved_player_xp(&(data->player), save_file) == 84)
         return (84);
     if (load_saved_player_pv(data, save_file) == 84)
+        return (84);
+    if (load_saved_player_money(&(data->player), save_file) == 84)
         return (84);
     /*if (load_saved_player_position(player's position, FILE *save_file) == 84)
         return (84);*/

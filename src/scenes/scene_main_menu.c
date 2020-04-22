@@ -14,7 +14,7 @@
 static button_t *create_select_box(void)
 {
     button_t *button_list = malloc(sizeof(button_t) * 6);
-    
+
     button_list[0] = (button_t){"New game", &new_game, NULL};
     button_list[1] = (button_t){"Load Game", &load_game, NULL};
     button_list[2] = (button_t){"How to play", &how_to_play, NULL};

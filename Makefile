@@ -17,6 +17,7 @@ SRC_SCN =	src/scenes/scene_main_menu.c									\
 			src/scenes/scn_main_menu_buttons.c								\
 			src/scenes/game/scene_game_event.c								\
 			src/scenes/game/scene_game_bottom.c								\
+			src/scenes/game/scene_game_bh.c									\
 			src/scenes/game/scene_game_middle.c								\
 			src/scenes/game/scene_game_top.c								\
 			src/scenes/game/scene_game_hud.c								\
@@ -41,6 +42,7 @@ SRC_CPT =	src/components/cpt_action.c										\
 			src/components/cpt_script.c										\
 			src/components/cpt_color.c										\
 			src/components/cpt_tilemap.c									\
+			src/components/cpt_tilecollide.c								\
 			src/components/cpt_shape_rectangle.c							\
 			src/components/cpt_shape_circle.c								\
 			src/components/cpt_sprite.c										\
@@ -49,6 +51,7 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_sprite.c										\
 			src/entities/ent_text.c											\
 			src/entities/ent_map.c											\
+			src/entities/ent_map_collider.c									\
 			src/entities/ent_button.c										\
 			src/entities/ent_player.c										\
 			src/entities/ent_event.c										\
@@ -83,6 +86,10 @@ SRC_INI =	src/init/init_img.c												\
 			src/init/init_dialogs.c 										\
 			src/init/general_data.c											\
 			src/init/parsing/pars_dialogs.c 								\
+			src/init/parsing/map/set_map_data.c								\
+			src/init/parsing/map/map.c										\
+			src/init/parsing/map/get_map_content.c							\
+			src/init/parsing/map/set_path.c									\
 
 SRC_EVT =	src/events/variable.c											\
 			src/events/create_events.c										\
@@ -104,6 +111,7 @@ SRC_EVT =	src/events/variable.c											\
 			src/events/instructions/ins_move.c								\
 
 SRC_SPT =	src/scripts/script_player_controller.c							\
+			src/scripts/scp_link_camera.c									\
 			src/scripts/hud/button_action.c									\
 			src/scripts/hud/scp_hud_progress_bar.c							\
 			src/scripts/hud/menu_selector/script_hud_menu_selector.c		\
@@ -185,7 +193,7 @@ SRC	=	$(SRC_MAI)	\
 
 LIB	=	$(SRC_LIB)	\
 
-CFLAGS = -Iinclude -L./ -ldragon -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window -g3
+CFLAGS = -Iinclude -L./ -ldragon -fdiagnostics-color -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window -g3
 
 OBJ	=	$(SRC:.c=.o) $(LIB:.c=.o)
 

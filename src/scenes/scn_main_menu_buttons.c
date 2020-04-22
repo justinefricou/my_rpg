@@ -10,12 +10,12 @@
 #include "ecs.h"
 #include "game_scenes.h"
 #include "button_action.h"
+#include "fight_scenes.h"
 
 void new_game(int *previous, void *data, dg_window_t *w)
 {
     create_game_scenes(w);
-    //w->general_data
-    //create_game_scenes();
+    //create_fight_scenes(w);
     sfMusic_stop(dg_ressources_get_audio_by_name("menu_theme"));
     sfMusic_play(dg_ressources_get_audio_by_name("game_theme"));
     dg_scene_manager_remove("main_menu");

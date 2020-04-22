@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** rpg
 ** File description:
-** scene top layer
+** scene middle layer
 */
 
 #include <stdlib.h>
@@ -10,9 +10,9 @@
 #include "ecs.h"
 #include "script.h"
 
-dg_scene_t *scene_game_top(int **map, dg_scene_t *event)
+dg_scene_t *scene_game_bh(int **map, dg_scene_t *event)
 {
-    dg_scene_t *scene = dg_scene_create("layer_top");
+    dg_scene_t *scene = dg_scene_create("layer_bh");
 
     dg_scene_add_ent(scene, dg_ent_camera(0, 0));
     dg_scene_add_ent(scene, ent_map("map", 3, map, 0));

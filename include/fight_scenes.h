@@ -13,7 +13,7 @@
 #define NB_FIGHT_SCENE 6
 
 void get_fight_scenes(dg_scene_t **scenes, int escape);
-void create_fight_scenes(void);
+void create_fight_scenes(dg_window_t *w);
 void remove_fight_scenes(void);
 
 #endif /*GAME_SCENES_H_*/

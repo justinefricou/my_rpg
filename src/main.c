@@ -1,6 +1,6 @@
 /*
-** EPITECH PROJECT, 2019
-** my_defender
+** EPITECH PROJECT, 2020
+** main
 ** File description:
 ** main
 */
@@ -63,5 +63,5 @@ void dg_end(void *var, int id)
 
 int main(int argc, char **argv)
 {
-    return dg_play((sfVector2u){1920, 1080}, "Defender", 0, NULL);
+    return dg_play((sfVector2u){1920, 1080}, "RPG", 0, NULL);
 }

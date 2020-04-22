@@ -14,18 +14,27 @@ void get_game_scenes(dg_scene_t **scenes, int escape)
     scenes[0] = dg_scene_manager_get_scene("layer_event");
     scenes[1] = dg_scene_manager_get_scene("layer_top");
     scenes[2] = dg_scene_manager_get_scene("layer_middle");
-    scenes[3] = dg_scene_manager_get_scene("layer_bottom");
-    scenes[4] = dg_scene_manager_get_scene("layer_hud");
+    scenes[3] = dg_scene_manager_get_scene("layer_bh");
+    scenes[4] = dg_scene_manager_get_scene("layer_bottom");
+    scenes[5] = dg_scene_manager_get_scene("layer_hud");
     if (escape)
-        scenes[5] = dg_scene_manager_get_scene("escape_menu");
+        scenes[6] = dg_scene_manager_get_scene("escape_menu");
 }
 
 void create_game_scenes(dg_window_t *w)
 {
-    dg_scene_manager_add_scene(scene_game_bottom());
-    dg_scene_manager_add_scene(scene_game_middle());
-    dg_scene_manager_add_scene(scene_game_event());
-    dg_scene_manager_add_scene(scene_game_top());
+    general_data_t *gd = w->general_data;
+    dg_scene_t *event = scene_game_event(gd->maps.map[0].layers.event);
+
+    dg_scene_manager_add_scene(scene_game_bottom
+        (gd->maps.map[0].layers.bottom, event));
+    dg_scene_manager_add_scene(scene_game_bh
+        (gd->maps.map[0].layers.bottom_hover, event));
+    dg_scene_manager_add_scene(event);
+    dg_scene_manager_add_scene(scene_game_middle
+        (gd->maps.map[0].layers.middle, event));
+    dg_scene_manager_add_scene(scene_game_top
+        (gd->maps.map[0].layers.hover, event));
     dg_scene_manager_add_scene(scene_game_hud(w));
     dg_scene_manager_add_scene(scene_escape_menu());
 }

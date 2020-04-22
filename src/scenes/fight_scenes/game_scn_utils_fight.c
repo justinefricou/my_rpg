@@ -5,9 +5,24 @@
 ** game scenes utils
 */
 
+#include <stdlib.h>
 #include "libdragon.h"
 #include "fight_scenes.h"
 #include "ecs.h"
+
+static int **create_test_map(void)
+{
+    int **map = malloc(sizeof(int *) * 100);
+
+    for (int i = 0; i < 100 - 1; i++) {
+        map[i] = malloc(sizeof(int) * 100);
+        for (int j = 0; j < 100 - 1; j++)
+            map[i][j] = 6;
+        map[i][99] = -1;
+    }
+    map[99] = NULL;
+    return map;
+}
 
 void get_fight_scenes(dg_scene_t **scenes, int escape)
 {
@@ -18,13 +33,15 @@ void get_fight_scenes(dg_scene_t **scenes, int escape)
     scenes[4] = dg_scene_manager_get_scene("layer_hud_fight");
 }
 
-void create_fight_scenes(void)
+void create_fight_scenes(dg_window_t *w)
 {
-    dg_scene_manager_add_scene(scene_fight_bottom());
+    int **map = create_test_map();
+    dg_scene_t *event = scene_fight_event(map);
+
+    dg_scene_manager_add_scene(scene_fight_bottom(map, event));
     dg_scene_manager_add_scene(scene_fight_middle());
-    dg_scene_manager_add_scene(scene_fight_event());
     dg_scene_manager_add_scene(scene_fight_top());
-    dg_scene_manager_add_scene(scene_fight_hud());
+    dg_scene_manager_add_scene(scene_fight_hud(w));
 }
 
 void remove_fight_scenes(void)

@@ -8,6 +8,7 @@
 #include "object.h"
 #include "libdragon.h"
 #include "event.h"
+#include "map.h"
 
 #ifndef GENERAL_DATA_H_
 #define GENERAL_DATA_H_
@@ -68,6 +69,11 @@ typedef struct object_list {
     object_t object[OBJECT_LIST];
 } object_list_t;
 
+typedef struct map {
+    int len;
+    map_data_t *map;
+} map_t;
+
 typedef struct general_data
 {
     inventory_t inventory;
@@ -75,6 +81,7 @@ typedef struct general_data
     player_t player;
     object_list_t object_list;
     event_manager_t event_manager;
+    map_t maps;
     options_t options;
     int block_input;
 } general_data_t;
@@ -82,6 +89,7 @@ typedef struct general_data
 general_data_t *create_general_data(void);
 void free_general_data(general_data_t *gd);
 void set_volume(dg_window_t *w);
+map_t set_map_data(void);
 
 //key
 int key_is_clicked(dg_window_t *w, sfKeyCode key, int force_ignore);

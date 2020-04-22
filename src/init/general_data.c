@@ -42,9 +42,9 @@ general_data_t *create_general_data(void)
 {
     general_data_t *gd = malloc(sizeof(general_data_t));
 
-    gd->options.general_volume = (sfVector2f){100, 100};
-    gd->options.music = (sfVector2f){100, 100};
-    gd->options.sound = (sfVector2f){100, 100};
+    gd->options.general_volume = (sfVector2f){50, 100};
+    gd->options.music = (sfVector2f){15, 100};
+    gd->options.sound = (sfVector2f){30, 100};
     gd->options.resolution = 0;
     gd->player.name = "Player";
     gd->player.money = 100;

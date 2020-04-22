@@ -12,10 +12,12 @@ SRC_MAI = 	src/main.c														\
 SRC_SCN =	src/scenes/scene_main_menu.c									\
 			src/scenes/scene_main_menu_hover.c								\
 			src/scenes/scene_tmp_hover.c									\
+			src/scenes/scene_tmp_hover_ws.c									\
 			src/scenes/scn_utils.c											\
 			src/scenes/scn_main_menu_buttons.c								\
 			src/scenes/game/scene_game_event.c								\
 			src/scenes/game/scene_game_bottom.c								\
+			src/scenes/game/scene_game_bh.c									\
 			src/scenes/game/scene_game_middle.c								\
 			src/scenes/game/scene_game_top.c								\
 			src/scenes/game/scene_game_hud.c								\
@@ -34,6 +36,7 @@ SRC_CPT =	src/components/cpt_action.c										\
 			src/components/cpt_script.c										\
 			src/components/cpt_color.c										\
 			src/components/cpt_tilemap.c									\
+			src/components/cpt_tilecollide.c								\
 			src/components/cpt_shape_rectangle.c							\
 			src/components/cpt_shape_circle.c								\
 			src/components/cpt_sprite.c										\
@@ -42,8 +45,10 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_sprite.c										\
 			src/entities/ent_text.c											\
 			src/entities/ent_map.c											\
+			src/entities/ent_map_collider.c									\
 			src/entities/ent_button.c										\
 			src/entities/ent_player.c										\
+			src/entities/ent_event.c										\
 			src/entities/hud/ent_hud_progress_bar.c							\
 			src/entities/hud/ent_hud_box.c									\
 			src/entities/hud/ent_hud_menu_selector.c						\
@@ -74,9 +79,32 @@ SRC_INI =	src/init/init_img.c												\
 			src/init/init_dialogs.c 										\
 			src/init/general_data.c											\
 			src/init/parsing/pars_dialogs.c 								\
+			src/init/parsing/map/set_map_data.c								\
+			src/init/parsing/map/map.c										\
+			src/init/parsing/map/get_map_content.c							\
+			src/init/parsing/map/set_path.c									\
 
-SRC_SPT =	src/scripts/script_build_menu.c									\
-			src/scripts/script_player_controller.c							\
+SRC_EVT =	src/events/variable.c											\
+			src/events/create_events.c										\
+			src/events/set_from_calcul.c									\
+			src/events/type.c												\
+			src/events/ins_set_intern.c										\
+			src/events/instructions/ins_set.c								\
+			src/events/instructions/ins_if.c								\
+			src/events/instructions/ins_while.c								\
+			src/events/instructions/ins_for.c								\
+			src/events/instructions/ins_end.c								\
+			src/events/instructions/ins_give.c								\
+			src/events/instructions/ins_take.c								\
+			src/events/instructions/ins_tp.c								\
+			src/events/instructions/ins_dialog.c							\
+			src/events/instructions/ins_talk.c								\
+			src/events/instructions/ins_answer.c							\
+			src/events/instructions/ins_battle.c							\
+			src/events/instructions/ins_move.c								\
+
+SRC_SPT =	src/scripts/script_player_controller.c							\
+			src/scripts/scp_link_camera.c									\
 			src/scripts/hud/button_action.c									\
 			src/scripts/hud/scp_hud_progress_bar.c							\
 			src/scripts/hud/menu_selector/script_hud_menu_selector.c		\
@@ -85,6 +113,12 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/hud/inventory/scp_hud_inventory.c					\
 			src/scripts/hud/inventory/inventory_utils.c						\
 			src/scripts/hud/inventory/inventory_set_data.c					\
+			src/scripts/hud/inventory/inventory_move.c						\
+			src/scripts/hud/inventory/inventory_update_selector.c			\
+			src/scripts/hud/inventory/inventory_update_slot.c				\
+			src/scripts/hud/inventory/inventory_update_weight.c				\
+			src/scripts/hud/inventory/inventory_action.c					\
+			src/scripts/hud/inventory/invetory_action_action.c				\
 			src/scripts/hud/clues/scp_hud_clues.c							\
 			src/scripts/hud/clues/clues_utils.c								\
 			src/scripts/hud/clues/clues_set_data.c							\
@@ -100,7 +134,6 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/hud/options/options_set_main.c						\
 			src/scripts/hud/options/options_set_escape.c					\
 			src/scripts/hud/how_to_play/scp_hud_htp.c						\
-			src/scripts/hud/how_to_play/htp_utils.c							\
 			src/scripts/hud/how_to_play/htp_set_data.c						\
 			src/scripts/hud/load/scp_hud_load.c								\
 			src/scripts/hud/load/load_utils.c								\
@@ -125,6 +158,8 @@ SRC_OTH =	src/other/tilemap.c												\
 			src/other/key_is_clicked.c										\
 			src/other/keymap.c												\
 			src/other/keycode_to_text.c										\
+			src/other/inventory.c											\
+			src/other/objects/calming.c										\
 
 SRC_LIB =	lib/get_next_line.c			\
 			lib/my_putarray.c			\
@@ -149,10 +184,11 @@ SRC	=	$(SRC_MAI)	\
 		$(SRC_SPT)	\
 		$(SRC_SAV)	\
 		$(SRC_OTH)	\
+		$(SRC_EVT)	\
 
 LIB	=	$(SRC_LIB)	\
 
-CFLAGS = -Iinclude -L./ -ldragon -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window -g3
+CFLAGS = -Iinclude -L./ -ldragon -fdiagnostics-color -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window -g3
 
 OBJ	=	$(SRC:.c=.o) $(LIB:.c=.o)
 

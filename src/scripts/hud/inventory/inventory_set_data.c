@@ -11,33 +11,65 @@
 #include "script.h"
 #include "hud/hud_inventory.h"
 
-void inventory_set_sounds(data_t *data)
+static void inventory_set_sounds(data_t *data)
 {
     data->sound_activate = dg_ressources_get_audio_by_name("hud_activate");
     data->sound_move = dg_ressources_get_audio_by_name("hud_move");
 }
 
-/*data_t *menu_selector_set_data(dg_component_t *pos,
-    button_t *button_list, dg_scene_t *scene, int has_box)
+static void inventory_create_ent(data_t *data, int i)
 {
-    data_t *data = malloc(sizeof(data_t));
+    sfVector2f slot = {i % 4, i / 4};
+    data->slots.slots[i].quantity.entity = ent_text(
+        500 + slot.x * 385, 110 + 160 * slot.y, 30, "");
+    data->slots.slots[i].name.entity = ent_text(
+        500 + slot.x * 385, 45 + 160 * slot.y, 25, "");
+    data->slots.slots[i].icon.entity = ent_sprite(
+        dg_ressources_get_spritesheet_by_name("icons"),
+        0, 3.5, (sfVector2f){375 + slot.x * 385, 44 + 160 * slot.y});
+    inventory_active_slot(data, i, 0);
+}
 
-    data->select = 0;
+static void inventory_set_slots(data_t *data)
+{
+    data->slots.layer = scene_tmp_hover("slots");
+    for (int i = 0; i < NB_SLOT; i++) {
+        inventory_create_ent(data, i);
+        data->slots.slots[i].quantity.text = dg_entity_get_component(
+        data->slots.slots[i].quantity.entity, "text");
+        data->slots.slots[i].name.text = dg_entity_get_component(
+        data->slots.slots[i].name.entity, "text");
+        data->slots.slots[i].icon.id = dg_entity_get_component(
+            data->slots.slots[i].icon.entity, "sprite");
+        dg_scene_add_ent(data->slots.layer,
+            data->slots.slots[i].quantity.entity);
+        dg_scene_add_ent(data->slots.layer,
+            data->slots.slots[i].name.entity);
+        dg_scene_add_ent(data->slots.layer,
+            data->slots.slots[i].icon.entity);
+    }
+}
+
+void inventory_set_data(data_t *data, dg_entity_t *entity)
+{
+    dg_component_t *pos = dg_cpt_pos(350, 20);
+    dg_component_t *selector = cpt_shape_rectangle((sfVector2f){0, 0},
+        (sfVector2f){32 * 3 * 16 / 4, 20 * 3 * 16 / 3},
+        (sfColor){255, 255, 255, 100},
+        (sfColor){0, 0, 0, 0});
+    dg_entity_t *weight_ent = ent_text(70, 880, 35, "  0 / 0");
+    
+    dg_entity_add_component(entity, pos);
+    dg_entity_add_component(entity, selector);
+    data->selector.select = 0;
+    data->selector.selector = selector->data;
+    data->selector.defilement = 0;
     data->is_active = 1;
-    data->llen = 0;
-    data->pos = pos->data;
-    data->pos_memory = *(data->pos);
-    if (!button_list)
-        return data;
-    for (data->llen = 0; button_list[data->llen].name; data->llen++);
-    data->buttons = create_buttons(*(data->pos), scene, button_list,
-        data->llen);
-    if (has_box)
-        data->hud_box = ent_hud_box(data->pos->x, data->pos->y,
-        (int)((get_longest_name(data).x + 10)/ (16 * 3) + 0.9), data->llen);
-    else
-        data->hud_box = NULL;
-    data->button_list = button_list;
-    hud_selector_set_sounds(data);
-    return data;
-}*/
+    data->weight = dg_entity_get_component(weight_ent, "text");
+    inventory_set_slots(data);
+    dg_scene_manager_add_scene(data->slots.layer);
+    inventory_set_sounds(data);
+    dg_scene_add_ent(data->slots.layer,
+            ent_text(100, 810, 35, "Weight:"));
+    dg_scene_add_ent(data->slots.layer, weight_ent);
+}

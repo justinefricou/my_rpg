@@ -1,0 +1,24 @@
+scripting doc :
+
+------------------------------------------------
+template :
+
+[NAME]
+[SPRITE ID]
+[ORDERS]
+
+------------------------------------------------
+keycodes :
+SET [TYPE] [VARIABLE] [DATA]
+IF [CONSITION]                           //END
+WHILE [CONDITION]                        //END
+FOR [BEGIN] [END]                        //END
+END
+GIVE [OBJECT] [NB]
+TAKE [OBJECT] [NB]
+TP [EVENT] [X] [Y] [MAP]
+DIALOG                                   //END
+TALK [id]
+ANSWER [id]                              //END
+BATTLE [id]
+MOVE [EVENT] [X] [Y]

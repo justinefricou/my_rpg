@@ -94,6 +94,7 @@ int dg_play(sfVector2u size, char *name, int id, void *import_data)
     void *data = 0;
     int to_return = 0;
 
+    sfRenderWindow_setPosition(window->window, (sfVector2i) {0, 0});
     data = dg_init(window, import_data);
     sfRenderWindow_clear(window->window, sfBlack);
     to_return = dg_render_screen(window, data);

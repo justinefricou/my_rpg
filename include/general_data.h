@@ -5,13 +5,16 @@
 ** epitech forbidden functions
 */
 
+#include "object.h"
+#include "libdragon.h"
+#include "event.h"
+#include "map.h"
+
 #ifndef GENERAL_DATA_H_
 #define GENERAL_DATA_H_
 
-#include "object.h"
-#include "libdragon.h"
-
 #define OBJECT_LIST 1
+#define CLUES_LEN 1
 
 typedef struct inventory_slot
 {
@@ -22,22 +25,24 @@ typedef struct inventory_slot
 typedef struct inventory
 {
     int len;
-    int max_len;
-    inventory_slot_t *slot;
+    sfVector2f stack;
+    inventory_slot_t slot[100];
 } inventory_t;
 
 typedef struct player
 {
     char *name;
-    int pv;
-    int pm;
+    sfVector2f pv;
+    sfVector2f pm;
     int level;
-    int xp;
+    sfVector2f xp;
+    int money;
 } player_t;
 
 typedef struct clues
 {
-    int unused;
+    int len;
+    int list[CLUES_LEN];
 } clues_t;
 
 typedef struct keymap
@@ -64,12 +69,19 @@ typedef struct object_list {
     object_t object[OBJECT_LIST];
 } object_list_t;
 
+typedef struct map {
+    int len;
+    map_data_t *map;
+} map_t;
+
 typedef struct general_data
 {
     inventory_t inventory;
     clues_t clues;
     player_t player;
     object_list_t object_list;
+    event_manager_t event_manager;
+    map_t maps;
     options_t options;
     int block_input;
 } general_data_t;
@@ -77,6 +89,7 @@ typedef struct general_data
 general_data_t *create_general_data(void);
 void free_general_data(general_data_t *gd);
 void set_volume(dg_window_t *w);
+map_t set_map_data(void);
 
 //key
 int key_is_clicked(dg_window_t *w, sfKeyCode key, int force_ignore);
@@ -86,5 +99,11 @@ int keymap_is_clicked(dg_window_t *w, char *keymap, int force_ignore);
 sfKeyCode get_keymap(dg_window_t *w, char *keymap);
 const char *keycode_to_text(sfKeyCode code);
 int is_keymap(dg_window_t *w, sfKeyCode keymap);
+
+//inventory
+int add_to_inventory(general_data_t *gd, int id, int nb);
+int remove_from_inventory(general_data_t *gd, int id, int nb);
+int is_in_inventory(general_data_t *gd, int id, int nb);
+int how_much_in_inventory(general_data_t *gd, int id);
 
 #endif /*GENERAL_DATA_H_*/

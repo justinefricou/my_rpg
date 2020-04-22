@@ -26,14 +26,13 @@ static dg_animator_t *set_player_animator(void)
     return animator;
 }
 
-dg_entity_t *entity_player_create(void)
+dg_entity_t *entity_player_create(dg_scene_t *scene)
 {
     dg_entity_t *player = dg_entity_create("player");
     dg_component_t *animator = dg_cpt_animator(&set_player_animator);
-    void *idata[2] = {player, animator->data};
+    void *idata[3] = {player, animator->data, scene};
 
     dg_entity_add_component(player, animator);
-    dg_entity_add_component(player, dg_cpt_pos(0, 0));
     dg_entity_add_component(player, cpt_script(&scp_player_controller_init,
         &scp_player_controller_loop, &scp_player_controller_end, idata));
     return player;

@@ -13,10 +13,11 @@
 
 void new_game(int *previous, void *data, dg_window_t *w)
 {
-    create_game_scenes();
+    create_game_scenes(w);
     sfMusic_stop(dg_ressources_get_audio_by_name("menu_theme"));
     sfMusic_play(dg_ressources_get_audio_by_name("game_theme"));
     dg_scene_manager_remove("main_menu");
+    dg_scene_manager_remove("main_menu_hover");
 }
 
 void load_game(int *previous, void *data, dg_window_t *w)

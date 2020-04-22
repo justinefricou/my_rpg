@@ -17,27 +17,24 @@ void save_set_sounds(data_t *data)
     data->sound_move = dg_ressources_get_audio_by_name("hud_move");
 }
 
-/*data_t *menu_selector_set_data(dg_component_t *pos,
-    button_t *button_list, dg_scene_t *scene, int has_box)
+static void save_add_info(data_t *data, int x, int y, int i)
 {
-    data_t *data = malloc(sizeof(data_t));
+    char slot_name[7] = {'s', 'l', 'o', 't', ' ', '1' + i, '\0'};
 
-    data->select = 0;
-    data->is_active = 1;
-    data->llen = 0;
-    data->pos = pos->data;
-    data->pos_memory = *(data->pos);
-    if (!button_list)
-        return data;
-    for (data->llen = 0; button_list[data->llen].name; data->llen++);
-    data->buttons = create_buttons(*(data->pos), scene, button_list,
-        data->llen);
-    if (has_box)
-        data->hud_box = ent_hud_box(data->pos->x, data->pos->y,
-        (int)((get_longest_name(data).x + 10)/ (16 * 3) + 0.9), data->llen);
-    else
-        data->hud_box = NULL;
-    data->button_list = button_list;
-    hud_selector_set_sounds(data);
-    return data;
-}*/
+    dg_scene_add_ent(data->layer, ent_text(x + 25, y + 10, 60, slot_name));
+    dg_scene_add_ent(data->layer, ent_text(x + 25, y + 140, 60, "Player"));
+    dg_scene_add_ent(data->layer, ent_text(x + 1110, y + 75, 60, "lvl :"));
+    dg_scene_add_ent(data->layer, ent_text(x + 1310, y + 75, 60, "100"));
+}
+
+void save_set_data(data_t *data, dg_scene_t *scene)
+{
+    dg_scene_add_ent(data->layer, ent_text(1000, 50, 70, "SAVE"));
+    for (int i = 0; i < 3; i++) {
+        data->hud_box[i] = ent_hud_box(350, 190 + i * 270, 32, 5);
+        dg_scene_add_ent(scene, data->hud_box[i]);
+        save_add_info(data, 350, 190 + i * 270, i);
+    }
+    data->hud_box[3] = ent_hud_box(350, 50, 32, 2);
+    dg_scene_add_ent(scene, data->hud_box[3]);
+}

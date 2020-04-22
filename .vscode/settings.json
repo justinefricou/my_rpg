@@ -29,6 +29,9 @@
         "types.h": "c",
         "map.h": "c",
         "event.h": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "*.tcc": "c",
+        "string": "c",
+        "string_view": "c"
     }
 }

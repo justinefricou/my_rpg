@@ -65,6 +65,8 @@ void set_whole_map(map_t *map_list, char *filename)
     new[map_list->len].layers.middle = get_map(filename, '2');
     new[map_list->len].layers.hover = get_map(filename, '3');
     new[map_list->len].layers.event = get_map(filename, 'c');
+    new[map_list->len].events = get_map_events(filename,
+        &(new[map_list->len].events_len));
     map_list->len += 1;
     free(map_list->map);
     map_list->map = new;

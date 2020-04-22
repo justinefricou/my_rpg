@@ -3,13 +3,11 @@ scripting doc :
 ------------------------------------------------
 template :
 
-[NAME]
-[SPRITE ID]
 [ORDERS]
 
 ------------------------------------------------
 keycodes :
-SET [TYPE] [VARIABLE] [DATA]
+SET [VARIABLE] [DATA]
 IF [CONSITION]                           //END
 WHILE [CONDITION]                        //END
 FOR [BEGIN] [END]                        //END
@@ -22,3 +20,13 @@ TALK [id]
 ANSWER [id]                              //END
 BATTLE [id]
 MOVE [EVENT] [X] [Y]
+
+------------------------------------------------
+MAP event placement doc :
+
+template :
+[EVENT_NAME] [EXECUTE ON LAUNCH] [X] [Y] [SPRITE_ID]
+
+exemple :
+test 1 50 50 -1
+retest 0 1 1 2

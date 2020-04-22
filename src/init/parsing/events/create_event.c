@@ -33,8 +33,10 @@ char *parse_instructions(int *i, char **content)
         result[j] = copy[j];
     }
     result[len] = 0;
-    *content = &((*content)[len]);
-    *i += len;
+    if (**content == ' ') {
+        *content = &((*content)[len]);
+        *i += len;
+    }
     return result;
 }
 
@@ -79,7 +81,8 @@ instruction_t get_instructions(int *i, char *content)
     instruction.parameters = malloc(sizeof(parameters_t));
     free(kk_text);
     len = set_instructions_text(content, i, &instruction);
-    *i += 1;
+    if (content[*i])
+        *i += 1;
     instruction.parameters[len].type = VOID;
     instruction.len = len;
     return instruction;

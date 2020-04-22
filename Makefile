@@ -88,6 +88,7 @@ SRC_INI =	src/init/init_img.c												\
 			src/init/parsing/pars_dialogs.c 								\
 			src/init/parsing/map/set_map_data.c								\
 			src/init/parsing/map/map.c										\
+			src/init/parsing/map/map_events.c								\
 			src/init/parsing/map/get_map_content.c							\
 			src/init/parsing/map/set_path.c									\
 			src/init/parsing/events/create_event.c							\

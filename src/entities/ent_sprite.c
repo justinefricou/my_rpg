@@ -17,6 +17,6 @@ dg_entity_t *ent_sprite(dg_spritesheet_t *sheet, int id,
     dg_entity_add_component(background_menu, dg_cpt_pos(pos.x, pos.y));
     dg_entity_add_component(background_menu, cpt_scale(scale, scale));
     dg_entity_add_component(background_menu, cpt_sprite(
-       sheet, id));
+        sheet, id));
     return background_menu;
 }

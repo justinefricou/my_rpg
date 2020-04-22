@@ -15,7 +15,7 @@ void sys_escape(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt)
 {
     dg_scene_t *game_scenes[NB_GAME_SCENE] = {0};
-    
+
     get_game_scenes(game_scenes, 1);
     if (keymap_is_clicked(w, "cancel", 1)) {
         for (int i = 0; i < NB_GAME_SCENE - 1; i++)

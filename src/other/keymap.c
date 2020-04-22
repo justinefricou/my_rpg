@@ -49,7 +49,7 @@ int is_keymap(dg_window_t *w, sfKeyCode keymap)
 {
     general_data_t *gd = (general_data_t *)w->general_data;
     int result = 0;
-    
+
     result += (gd->options.keymap.action == keymap) ? 1 : 0;
     result += (gd->options.keymap.cancel == keymap) ? 1 : 0;
     result += (gd->options.keymap.up == keymap) ? 1 : 0;

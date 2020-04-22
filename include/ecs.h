@@ -23,6 +23,11 @@ dg_scene_t *scene_game_top(int **map, dg_scene_t *event);
 dg_scene_t *scene_game_bottom(int **map, dg_scene_t *event);
 dg_scene_t *scene_game_bh(int **map, dg_scene_t *event);
 dg_scene_t *scene_game_middle(int **map, dg_scene_t *event);
+dg_scene_t *scene_fight_event(int **map);
+dg_scene_t *scene_fight_hud(dg_window_t *w);
+dg_scene_t *scene_fight_top(void);
+dg_scene_t *scene_fight_bottom(int **map, dg_scene_t *event);
+dg_scene_t *scene_fight_middle(void);
 dg_scene_t *scene_tmp_hover(char *name);
 dg_scene_t *scene_tmp_hover_ws(char *name);
 
@@ -53,6 +58,7 @@ dg_entity_t *ent_hud_progress_bar(sfVector2f pos, int size,
     sfVector2f *data, sfColor color);
 dg_entity_t *ent_hud_keymap_button(sfVector2f pos, int size,
     int *keymap, dg_scene_t *scene);
+dg_entity_t *entity_player_fight_create(void);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));

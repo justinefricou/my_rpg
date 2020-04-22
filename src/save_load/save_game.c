@@ -13,12 +13,12 @@ static int save_data(general_data_t *data, FILE *save_file)
     sfVector2f *position = NULL;
 
     save_player_name(data->player.name, save_file);
-    save_player_pv(data->player.pv.x, save_file);
+    save_player_lvl_and_xp(data->player, save_file);
+    save_player_pv(data->player.pv, save_file);
     /*position = dg_entity_get_component(player, "pos"); // get player
     save_player_position(position, save_file);*/
     save_inventory(data->inventory, save_file);
-    save_player_lvl_and_xp(data->player, save_file);
-    // save other things
+    save_clues(data->clues, save_file);
     return (0);
 }
 

@@ -31,6 +31,9 @@ void save_player_lvl_and_xp(player_t player, FILE *save_file);
 // save_inventory.c
 void save_inventory(inventory_t inventory, FILE *save_file);
 
+// save_clues.c
+void save_clues(clues_t clues, FILE *save_file);
+
 /*          LOAD          */
 
 // load_saved_game.c
@@ -44,5 +47,8 @@ int load_saved_player_lvl_and_xp(player_t *player, FILE *save_file);
 
 // load_saved_inventory.c
 int load_saved_inventory(inventory_t *inventory, FILE *save_file);
+
+// load_saved_clues.c
+int load_saved_clues(clues_t *clues, FILE *save_file);
 
 #endif /*DEF_SAVE_LOAD_H_*/

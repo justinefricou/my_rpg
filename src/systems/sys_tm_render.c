@@ -36,7 +36,8 @@ static void tilemap_sys_draw(tilemap_t *tm, transform_t transform,
             (tm->map[y][x] > 0) ?
                 dg_spritesheet_to_sprite(tm->sheet, sprite,
                     tm->map[y][x] - 1) : NULL;
-            dg_camera_render((sfVector2f){0, 0}, sprite,  w);
+            (tm->map[y][x] > 0) ?
+                dg_camera_render((sfVector2f){0, 0}, sprite,  w) : NULL;
             new_pos.x += tm->sheet->x * transform.scale.x;
         }
         new_pos.y += tm->sheet->y * transform.scale.y;

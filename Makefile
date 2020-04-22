@@ -141,7 +141,8 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/hud/keymap_button/scp_hud_keymap_button.c			\
 			src/scripts/hud/keymap_button/kb_utils.c						\
 
-SRC_SAV =	src/save_load/save_game.c										\
+SRC_SAV =	src/save_load/save_load_utils.c									\
+			src/save_load/save_game.c										\
 			src/save_load/save_player_info.c								\
 			src/save_load/save_player_status.c								\
 			src/save_load/save_inventory.c									\
@@ -151,7 +152,6 @@ SRC_SAV =	src/save_load/save_game.c										\
 			src/save_load/load_saved_player_status.c						\
 			src/save_load/load_saved_inventory.c							\
 			src/save_load/load_saved_clues.c								\
-			src/save_load/save_load_utils.c									\
 
 SRC_OTH =	src/other/tilemap.c												\
 			src/other/transform.c											\

@@ -11,19 +11,35 @@
 #include "libmy.h"
 #include "save_load.h"
 
-static int load_inventory_stats(inventory_t *inventory, FILE *save_file)
+static int load_inventory_weights(inventory_t *inventory, FILE *save_file)
 {
     char *line = NULL;
     int start = 0;
 
     line = get_line_from_save_file(save_file);
     if (!line) {
-        write(2, "Error : inventory's max length could not be loaded.\n", 52);
+        write(2, "Error : inventory's max weight could not be loaded.\n", 52);
         return (84);
     }
-    start = my_strlen("max_len ");
+    start = my_strlen("max_weight ");
     inventory->stack.y = get_nbr_until(&(line[start]), 0);
     free(line);
+    line = get_line_from_save_file(save_file);
+    if (!line) {
+        write(2, "Error : inventory's weight could not be loaded.\n", 48);
+        return (84);
+    }
+    start = my_strlen("current_weight ");
+    inventory->stack.x = get_nbr_until(&(line[start]), 0);
+    free(line);
+    return (0);
+}
+
+static int load_inventory_len(inventory_t *inventory, FILE *save_file)
+{
+    char *line = NULL;
+    int start = 0;
+
     line = get_line_from_save_file(save_file);
     if (!line) {
         write(2, "Error : inventory's length could not be loaded.\n", 48);
@@ -49,10 +65,16 @@ static int load_inventory_slot(inventory_slot_t *slot, FILE *save_file)
     free(line);
 }
 
-static int check_end_of_inventory(FILE *save_file)
+static int load_inventory_content(inventory_t *inventory, FILE *save_file)
 {
     char *line = NULL;
 
+    for (int i = 0; i < inventory->len; i++) {
+        if (!load_inventory_slot(&(inventory->slot[i]), save_file)) {
+            write(2, "Error : inventory slot could not be loaded.\n", 44);
+            return (84);
+        }
+    }
     line = get_line_from_save_file(save_file);
     if (!line || my_strcmpp(line, "inventory_end") != 0) {
         write(2, "Error : too many inventory objects found in file.\n", 50);
@@ -61,18 +83,6 @@ static int check_end_of_inventory(FILE *save_file)
         return (84);
     }
     free(line);
-}
-
-static int load_inventory_content(inventory_t *inventory, FILE *save_file)
-{
-    for (int i = 0; i < inventory->len; i++) {
-        if (!load_inventory_slot(&(inventory->slot[i]), save_file)) {
-            write(2, "Error : inventory slot could not be loaded.\n", 44);
-            return (84);
-        }
-    }
-    if (check_end_of_inventory(save_file) == 84)
-        return (84);
     return (0);
 }
 
@@ -88,7 +98,9 @@ int load_saved_inventory(inventory_t *inventory, FILE *save_file)
         return (84);
     }
     free(line);
-    if (load_inventory_stats(inventory, save_file) == 84)
+    if (load_inventory_weights(inventory, save_file) == 84)
+        return (84);
+    if (load_inventory_len(inventory, save_file) == 84)
         return (84);
     if (load_inventory_content(inventory, save_file) == 84)
         return (84);

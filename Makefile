@@ -24,6 +24,12 @@ SRC_SCN =	src/scenes/scene_main_menu.c									\
 			src/scenes/game/scene_escape_menu.c								\
 			src/scenes/game/game_scn_utils.c								\
 			src/scenes/game/scn_esc_menu_buttons.c							\
+			src/scenes/fight_scenes/scene_fight_event.c						\
+			src/scenes/fight_scenes/scene_fight_bottom.c					\
+			src/scenes/fight_scenes/scene_fight_middle.c					\
+			src/scenes/fight_scenes/scene_fight_top.c						\
+			src/scenes/fight_scenes/scene_fight_hud.c						\
+			src/scenes/fight_scenes/game_scn_utils_fight.c					\
 
 SRC_CPT =	src/components/cpt_action.c										\
 			src/components/cpt_text.c										\
@@ -61,6 +67,7 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/hud/ent_hud_load.c									\
 			src/entities/hud/ent_hud_keymap_button.c						\
 			src/entities/hud/ent_cancel_menu_selector.c						\
+			src/entities/fight_ent/ent_player_fight.c						\
 
 SRC_SYS =	src/systems/sys_render.c										\
 			src/systems/sys_tm_render.c										\
@@ -145,13 +152,17 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/hud/keymap_button/scp_hud_keymap_button.c			\
 			src/scripts/hud/keymap_button/kb_utils.c						\
 
-SRC_SAV =	src/save_load/save_game.c										\
+SRC_SAV =	src/save_load/save_load_utils.c									\
+			src/save_load/save_game.c										\
 			src/save_load/save_player_info.c								\
+			src/save_load/save_player_status.c								\
 			src/save_load/save_inventory.c									\
+			src/save_load/save_clues.c										\
 			src/save_load/load_saved_game.c									\
 			src/save_load/load_saved_player_info.c							\
+			src/save_load/load_saved_player_status.c						\
 			src/save_load/load_saved_inventory.c							\
-			src/save_load/save_load_utils.c									\
+			src/save_load/load_saved_clues.c								\
 
 SRC_OTH =	src/other/tilemap.c												\
 			src/other/transform.c											\

@@ -44,8 +44,10 @@ static void collide(sfVector2f *move, data_t *data)
         data->pos->y / (16 * 3)},
         {(data->pos->x + move->x + (16 * 3 / 2)) / (16 * 3),
         (data->pos->y + (16 * 3 / 2)) / (16 * 3)}};
-    sfVector2i tiled_posy[2] = {{(data->pos->x) / (16 * 3), (data->pos->y + move->y) / (16 * 3)},
-        {(data->pos->x + (16 * 3 / 2)) / (16 * 3), (data->pos->y + move->y + (16 * 3 / 2)) / (16 * 3)}};
+    sfVector2i tiled_posy[2] = {{(data->pos->x) / (16 * 3),
+        (data->pos->y + move->y) / (16 * 3)},
+        {(data->pos->x + (16 * 3 / 2)) / (16 * 3),
+        (data->pos->y + move->y + (16 * 3 / 2)) / (16 * 3)}};
 
     if (data->collide->map[tiled_posx[0].y][tiled_posx[0].x] ||
         data->collide->map[tiled_posx[1].y][tiled_posx[1].x])

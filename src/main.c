@@ -1,6 +1,6 @@
 /*
-** EPITECH PROJECT, 2019
-** my_defender
+** EPITECH PROJECT, 2020
+** main
 ** File description:
 ** main
 */

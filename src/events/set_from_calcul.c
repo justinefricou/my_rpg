@@ -77,9 +77,10 @@ parameters_t set_from_calcul(char *data, general_data_t *gd)
     sfc_equality(data, &param);
     sfc_calcul(data, &param);
     sfc_union(data, &param);
+    sfc_number(data, &param);
     if (param.type == NONE) {
         param.type = VARIABLE;
-        param.parameters.n = variable_to_int(data, gd, "VARIABLE");
+        param.parameters.n = variable_to_int(data, gd);
     }
     return param;
 }

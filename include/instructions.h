@@ -44,12 +44,19 @@ parameters_t *ins_set_move(instruction_t *instruction, int *i,
 //functions
 void set_variable(variable_t *var, int i, void *data);
 void *get_variable(variable_t *var, int i);
-int variable_to_int(char *name, general_data_t *gd, char *type);
+int variable_to_int(char *name, general_data_t *gd);
 int type_from_str(char *text);
 parameters_t set_from_calcul(char *data, general_data_t *gd);
 instruction_t *ins_set_intern(instruction_t *instruction, int *i,
     general_data_t *gd);
 instruction_t *add_instruction(instruction_t *old,
     int len, instruction_t data);
+
+//parser
+char *set_event_path(char *filename);
+int get_event_content(char **content, int fd);
+int open_event_file(char *filename, int *fd);
+instruction_t *create_event(char *content, int *len);
+event_t *set_text_events(void);
 
 #endif /*INSTRUCTIONS_H_*/

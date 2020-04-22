@@ -1,6 +1,4 @@
-test
-0
-SET VAR 99 INT
+SET VAR 99
 DIALOG
 TALK sometext
 ANSWER yes

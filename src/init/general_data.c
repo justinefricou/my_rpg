@@ -57,6 +57,7 @@ general_data_t *create_general_data(void)
     set_object_list(gd);
     set_inventory(gd);
     set_default_keymap(gd);
+    create_events(gd);
     gd->maps = set_map_data();
     return gd;
 }

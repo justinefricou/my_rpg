@@ -25,7 +25,7 @@ instruction_t *ins_set_intern(instruction_t *tmp, int *i,
     instruction_t to_add = {0};
     int len = 0;
 
-    for (; tmp[*i].keycode != END; *i += 1) {
+    for (*i += 1; tmp[*i].keycode != END; *i += 1) {
         to_add.keycode = tmp[*i].keycode;
         if (key_setter[tmp[*i].keycode])
             to_add.parameters = key_setter[tmp[*i].keycode](tmp, i, gd);

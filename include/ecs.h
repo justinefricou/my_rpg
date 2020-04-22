@@ -18,7 +18,7 @@ dg_scene_t *scene_main_menu_hover(void);
 dg_scene_t *scene_escape_menu(void);
 dg_scene_t *scene_how_to_play(void);
 dg_scene_t *scene_game_event(void);
-dg_scene_t *scene_game_hud(void);
+dg_scene_t *scene_game_hud(dg_window_t *w);
 dg_scene_t *scene_game_top(void);
 dg_scene_t *scene_game_bottom(void);
 dg_scene_t *scene_game_middle(void);
@@ -48,7 +48,7 @@ dg_entity_t *ent_hud_cancel_menu_selector(sfVector2f pos,
 dg_entity_t *ent_hud_inventory(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_clues(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_save(int *previous, dg_scene_t *scene);
-dg_entity_t *ent_hud_status(int *previous, dg_scene_t *scene);
+dg_entity_t *ent_hud_status(int *previous, dg_scene_t *scene, dg_window_t *w);
 dg_entity_t *ent_hud_options(int *previous, dg_scene_t *scene, dg_window_t *w);
 dg_entity_t *ent_hud_htp(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_load(int *previous, dg_scene_t *scene);

@@ -18,13 +18,15 @@ typedef struct data {
     int *previous;
     sfVector2f *pos;
     dg_entity_t *hud_box;
-    sfRectangleShape *selector;
+    dg_scene_t *layer;
     int select;
-    int is_active;
+    sfText *text[20];
     sfMusic *sound_move;
     sfMusic *sound_activate;
 } data_t;
 
 void clues_set_sounds(data_t *data);
+void clues_set_data(data_t *data);
+void clues_update(data_t *data, dg_window_t *w);
 
 #endif /*HUD_INVENTORY_H_*/

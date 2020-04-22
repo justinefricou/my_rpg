@@ -20,6 +20,7 @@ typedef struct object
     int icon_id;
     int consomable;
     object_action_t action;
+    int price;
 } object_t;
 
 object_t object_get_by_name(object_t *objects, int len, char *name);

@@ -5,13 +5,15 @@
 ** epitech forbidden functions
 */
 
+#include "object.h"
+#include "libdragon.h"
+#include "event.h"
+
 #ifndef GENERAL_DATA_H_
 #define GENERAL_DATA_H_
 
-#include "object.h"
-#include "libdragon.h"
-
 #define OBJECT_LIST 1
+#define CLUES_LEN 1
 
 typedef struct inventory_slot
 {
@@ -29,16 +31,17 @@ typedef struct inventory
 typedef struct player
 {
     char *name;
-    int pv;
-    int pv_max;
-    int pm;
+    sfVector2f pv;
+    sfVector2f pm;
     int level;
-    int xp;
+    sfVector2f xp;
+    int money;
 } player_t;
 
 typedef struct clues
 {
-    int unused;
+    int len;
+    int list[CLUES_LEN];
 } clues_t;
 
 typedef struct keymap
@@ -71,6 +74,7 @@ typedef struct general_data
     clues_t clues;
     player_t player;
     object_list_t object_list;
+    event_manager_t event_manager;
     options_t options;
     int block_input;
 } general_data_t;

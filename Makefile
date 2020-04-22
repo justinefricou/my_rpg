@@ -51,6 +51,7 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_map.c											\
 			src/entities/ent_button.c										\
 			src/entities/ent_player.c										\
+			src/entities/ent_event.c										\
 			src/entities/hud/ent_hud_progress_bar.c							\
 			src/entities/hud/ent_hud_box.c									\
 			src/entities/hud/ent_hud_menu_selector.c						\
@@ -83,8 +84,26 @@ SRC_INI =	src/init/init_img.c												\
 			src/init/general_data.c											\
 			src/init/parsing/pars_dialogs.c 								\
 
-SRC_SPT =	src/scripts/script_build_menu.c									\
-			src/scripts/script_player_controller.c							\
+SRC_EVT =	src/events/variable.c											\
+			src/events/create_events.c										\
+			src/events/set_from_calcul.c									\
+			src/events/type.c												\
+			src/events/ins_set_intern.c										\
+			src/events/instructions/ins_set.c								\
+			src/events/instructions/ins_if.c								\
+			src/events/instructions/ins_while.c								\
+			src/events/instructions/ins_for.c								\
+			src/events/instructions/ins_end.c								\
+			src/events/instructions/ins_give.c								\
+			src/events/instructions/ins_take.c								\
+			src/events/instructions/ins_tp.c								\
+			src/events/instructions/ins_dialog.c							\
+			src/events/instructions/ins_talk.c								\
+			src/events/instructions/ins_answer.c							\
+			src/events/instructions/ins_battle.c							\
+			src/events/instructions/ins_move.c								\
+
+SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/hud/button_action.c									\
 			src/scripts/hud/scp_hud_progress_bar.c							\
 			src/scripts/hud/menu_selector/script_hud_menu_selector.c		\
@@ -114,7 +133,6 @@ SRC_SPT =	src/scripts/script_build_menu.c									\
 			src/scripts/hud/options/options_set_main.c						\
 			src/scripts/hud/options/options_set_escape.c					\
 			src/scripts/hud/how_to_play/scp_hud_htp.c						\
-			src/scripts/hud/how_to_play/htp_utils.c							\
 			src/scripts/hud/how_to_play/htp_set_data.c						\
 			src/scripts/hud/load/scp_hud_load.c								\
 			src/scripts/hud/load/load_utils.c								\
@@ -163,6 +181,7 @@ SRC	=	$(SRC_MAI)	\
 		$(SRC_SPT)	\
 		$(SRC_SAV)	\
 		$(SRC_OTH)	\
+		$(SRC_EVT)	\
 
 LIB	=	$(SRC_LIB)	\
 

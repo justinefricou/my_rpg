@@ -42,6 +42,6 @@ void save_player_lvl_and_xp(player_t player, FILE *save_file)
     write_int_in_save_file(player.level, save_file);
     fwrite("\n", sizeof(char), 1, save_file);
     write_str_in_save_file("player_xp ", save_file);
-    write_int_in_save_file(player.xp, save_file);
+    write_int_in_save_file(player.xp.x, save_file);
     fwrite("\n", sizeof(char), 1, save_file);
 }

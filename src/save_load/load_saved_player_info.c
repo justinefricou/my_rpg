@@ -61,7 +61,7 @@ int load_saved_player_pv(general_data_t *data, FILE *save_file)
         return (84);
     }
     start = my_strlen("player_pv ");
-    data->player.pv = get_nbr_until(&(line[start]), 0);
+    data->player.pv.x = get_nbr_until(&(line[start]), 0);
     free(line);
     return (0);
 }
@@ -103,7 +103,7 @@ int load_saved_player_lvl_and_xp(player_t *player, FILE *save_file)
         return (84);
     }
     start = my_strlen("player_xp ");
-    player->xp = get_nbr_until(&(line[start]), 0);
+    player->xp.x = get_nbr_until(&(line[start]), 0);
     free(line);
     return (0);
 }

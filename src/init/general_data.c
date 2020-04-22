@@ -46,10 +46,14 @@ general_data_t *create_general_data(void)
     gd->options.music = (sfVector2f){100, 100};
     gd->options.sound = (sfVector2f){100, 100};
     gd->options.resolution = 0;
-    gd->player.name = "";
-    gd->player.pv = 100;
-    gd->player.pv_max = 100;
-    gd->player.pm = 100;
+    gd->player.name = "Player";
+    gd->player.money = 100;
+    gd->player.pv.x = 50;
+    gd->player.pv.y = 100;
+    gd->player.pm.x = 100;
+    gd->player.pm.y = 100;
+    gd->player.xp.x = 0;
+    gd->player.xp.y = 20;
     set_object_list(gd);
     set_inventory(gd);
     set_default_keymap(gd);

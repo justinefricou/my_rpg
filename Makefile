@@ -85,6 +85,7 @@ SRC_INI =	src/init/init_img.c												\
 			src/init/init_audio.c											\
 			src/init/init_dialogs.c 										\
 			src/init/general_data.c											\
+			src/init/set_sprite_id.c										\
 			src/init/parsing/pars_dialogs.c 								\
 			src/init/parsing/map/set_map_data.c								\
 			src/init/parsing/map/map.c										\

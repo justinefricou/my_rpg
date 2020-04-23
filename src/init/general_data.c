@@ -58,6 +58,7 @@ general_data_t *create_general_data(void)
     set_inventory(gd);
     set_default_keymap(gd);
     create_events(gd);
+    set_sprite_id(gd);
     gd->maps = set_map_data();
     return gd;
 }

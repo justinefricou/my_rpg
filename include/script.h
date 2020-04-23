@@ -98,4 +98,10 @@ void scp_link_camera_loop(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void scp_link_camera_end(void *data);
 
+// link camera
+void *scp_event_init(void *init_data);
+void scp_event_loop(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void scp_event_end(void *data);
+
 #endif /*SCRIPT_H_*/

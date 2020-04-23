@@ -24,7 +24,7 @@ void get_game_scenes(dg_scene_t **scenes, int escape)
 void create_game_scenes(dg_window_t *w)
 {
     general_data_t *gd = w->general_data;
-    dg_scene_t *event = scene_game_event(gd->maps.map[0].layers.event);
+    dg_scene_t *event = scene_game_event(gd->maps.map[0], gd);
 
     dg_scene_manager_add_scene(scene_game_bottom
         (gd->maps.map[0].layers.bottom, event));

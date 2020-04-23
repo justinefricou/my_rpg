@@ -15,6 +15,9 @@
 
 #define OBJECT_LIST 1
 #define CLUES_LEN 1
+#define SPRITE_ID_LEN 1
+
+typedef dg_animator_t *(*set_animator_t)(void);
 
 typedef struct inventory_slot
 {
@@ -84,12 +87,14 @@ typedef struct general_data
     map_t maps;
     options_t options;
     int block_input;
+    set_animator_t sprite_id[SPRITE_ID_LEN];
 } general_data_t;
 
 general_data_t *create_general_data(void);
 void free_general_data(general_data_t *gd);
 void set_volume(dg_window_t *w);
 map_t set_map_data(void);
+void set_sprite_id(general_data_t *gd);
 void create_events(general_data_t *gd);
 
 //key

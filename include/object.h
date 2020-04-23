@@ -24,6 +24,7 @@ typedef struct object
 } object_t;
 
 object_t object_get_by_name(object_t *objects, int len, char *name);
+int object_get_id_by_name(object_t *objects, int len, char *name);
 
 //objects
 object_t calming(void);

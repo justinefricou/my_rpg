@@ -22,7 +22,7 @@ object_t calming(void)
 {
     object_t obj = {0};
 
-    obj.name = "calming pills";
+    obj.name = "calming_pills";
     obj.description = "Reduce your stress.\n+10pv";
     obj.icon_id = 1;
     obj.consomable = 1;

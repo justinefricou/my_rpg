@@ -115,6 +115,7 @@ SRC_EVT =	src/events/variable.c											\
 			src/events/instructions/ins_answer.c							\
 			src/events/instructions/ins_battle.c							\
 			src/events/instructions/ins_move.c								\
+			src/events/instructions/give.c									\
 
 SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/scp_link_camera.c									\

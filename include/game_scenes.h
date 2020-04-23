@@ -9,11 +9,12 @@
 #define GAME_SCENES_H_
 
 #include "libdragon.h"
+#include "general_data.h"
 
 #define NB_GAME_SCENE 7
 
 void get_game_scenes(dg_scene_t **scenes, int escape);
-void create_game_scenes(dg_window_t *w);
+void create_game_scenes(general_data_t *gd, char *map_name);
 void remove_game_scenes(void);
 
 //buttons

@@ -52,9 +52,9 @@ char *parse_mev_data(char **content)
 int mev_data_int(char **content)
 {
     char *str = parse_mev_data(content);
-    int result = 0;
+    int result = get_int(str);
 
-    result = my_atoi(*content) - 1;
+    free(str);
     return result;
 }
 

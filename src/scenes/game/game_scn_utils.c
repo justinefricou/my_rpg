@@ -21,21 +21,21 @@ void get_game_scenes(dg_scene_t **scenes, int escape)
         scenes[6] = dg_scene_manager_get_scene("escape_menu");
 }
 
-void create_game_scenes(dg_window_t *w)
+void create_game_scenes(general_data_t *gd, char *map_name)
 {
-    general_data_t *gd = w->general_data;
-    dg_scene_t *event = scene_game_event(gd->maps.map[0], gd);
+    map_data_t map = get_map_data(map_name, gd);
+    dg_scene_t *event = scene_game_event(map, gd);
 
     dg_scene_manager_add_scene(scene_game_bottom
-        (gd->maps.map[0].layers.bottom, event));
+        (map.layers.bottom, event));
     dg_scene_manager_add_scene(scene_game_bh
-        (gd->maps.map[0].layers.bottom_hover, event));
+        (map.layers.bottom_hover, event));
     dg_scene_manager_add_scene(event);
     dg_scene_manager_add_scene(scene_game_middle
-        (gd->maps.map[0].layers.middle, event));
+        (map.layers.middle, event));
     dg_scene_manager_add_scene(scene_game_top
-        (gd->maps.map[0].layers.hover, event));
-    dg_scene_manager_add_scene(scene_game_hud(w));
+        (map.layers.hover, event));
+    dg_scene_manager_add_scene(scene_game_hud(gd));
     dg_scene_manager_add_scene(scene_escape_menu());
 }
 

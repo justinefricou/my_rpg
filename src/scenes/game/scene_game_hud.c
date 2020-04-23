@@ -10,9 +10,8 @@
 #include "ecs.h"
 #include "general_data.h"
 
-dg_scene_t *scene_game_hud(dg_window_t *w)
+dg_scene_t *scene_game_hud(general_data_t *gd)
 {
-    general_data_t *gd = w->general_data;
     dg_scene_t *scene = dg_scene_create("layer_hud");
     sfVector2f *size = 0;
     dg_entity_t *ent = ent_hud_progress_bar(

@@ -25,16 +25,18 @@ instruction_t *add_instruction(instruction_t *old,
     for (int i = 0; i < len; i++)
         new[i] = old[i];
     new[len] = data;
+    new[len + 1].keycode = NONE;
+    new[len + 1].len = 0;
     new[len + 1].parameters = NULL;
     free(old);
     return new;
 }
 
-static instruction_t *set_instructions(instruction_t *tmp, general_data_t *gd)
+static instruction_t *set_instructions(instruction_t *tmp,
+    general_data_t *gd, int *len)
 {
     instruction_t *instructions = malloc(sizeof(instruction_t));
     instruction_t to_add = {0};
-    int len = 0;
 
     for (int i = 0; tmp[i].keycode != NONE; i++) {
         to_add.keycode = tmp[i].keycode;
@@ -43,7 +45,8 @@ static instruction_t *set_instructions(instruction_t *tmp, general_data_t *gd)
         } else {
             to_add.parameters = NULL;
         }
-        instructions = add_instruction(instructions, len, to_add);
+        instructions = add_instruction(instructions, *len, to_add);
+        *len += 1;
     }
     return instructions;
 }
@@ -60,7 +63,8 @@ static event_t *interpret_events(event_t *tmp_event, general_data_t *gd)
     event = malloc(sizeof(event_t) * (len + 1));
     for (int i = 0; i < len; i++) {
         event[i].name = tmp_event[i].name;
-        event[i].parameters = set_instructions(tmp_event[i].parameters, gd);
+        event[i].len = 0;
+        event[i].parameters = set_instructions(tmp_event[i].parameters, gd, &(event[i].len));
     }
     event[len].parameters = NULL;
     return event;

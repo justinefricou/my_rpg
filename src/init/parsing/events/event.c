@@ -68,7 +68,6 @@ void add_event(event_t **event_list, char *filename, int *len)
     new[*len].parameters = NULL;
     new[*len].len = 0;
     new[*len].name = 0;
-    free(*event_list);
     *event_list = new;
 }    
 

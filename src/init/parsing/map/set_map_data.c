@@ -12,7 +12,7 @@
 #include "general_data.h"
 #include <stdlib.h>
 
-static int get_int(char *str)
+int get_int(char *str)
 {
     int nb = 0;
     int i = 0;

@@ -18,7 +18,7 @@ dg_scene_t *scene_main_menu_hover(void);
 dg_scene_t *scene_escape_menu(void);
 dg_scene_t *scene_how_to_play(void);
 dg_scene_t *scene_game_event(map_data_t md, general_data_t *gd);
-dg_scene_t *scene_game_hud(dg_window_t *w);
+dg_scene_t *scene_game_hud(general_data_t *gd);
 dg_scene_t *scene_game_top(int **map, dg_scene_t *event);
 dg_scene_t *scene_game_bottom(int **map, dg_scene_t *event);
 dg_scene_t *scene_game_bh(int **map, dg_scene_t *event);

@@ -20,23 +20,19 @@
 static const char *key_text[14] = {"NONE", "SET", "IF", "WHILE", "FOR",
     "END", "GIVE", "TAKE", "TP", "DIALOG", "TALK", "ANSWER", "BATTLE", "MOVE"};
 
-char *parse_instructions(int *i, char **content)
+static char *parse_instructions(int *i, char *content)
 {
-    char *copy = *content;
     char *result = NULL;
     int len = 0;
 
-    for (; copy[len] != ' ' && copy[len] != '\n'
-        && copy[len] != '\0'; len++);
+    for (; content[*i + len] != ' ' && content[*i + len] != '\n'
+        && content[*i + len] != '\0'; len++);
     result = malloc(sizeof(char) * (len + 1));
     for (int j = 0; j < len; j++) {
-        result[j] = copy[j];
+        result[j] = content[*i + j];
     }
     result[len] = 0;
-    if (**content == ' ') {
-        *content = &((*content)[len]);
-        *i += len;
-    }
+    *i += len;
     return result;
 }
 
@@ -55,16 +51,16 @@ static int set_instructions_text(char *content, int *i,
     parameters_t *tmp = 0;
     int len = 0;
 
-    while (*content != '\n' && *content) {
+    while (content[*i] != '\n' && content[*i]) {
         tmp = instruction->parameters;
         instruction->parameters = malloc(sizeof(parameters_t) * (len + 2));
         for (int j = 0; j < len; j++)
             instruction->parameters[j] = tmp[j];
         instruction->parameters[len].type = STRING;
-        content = &(content[1]);
-        *i += 1;
+        if (content[*i])
+            *i += 1;
         instruction->parameters[len].parameters.s =
-            parse_instructions(i, &content);
+            parse_instructions(i, content);
         len++;
         free(tmp);
     }
@@ -75,7 +71,7 @@ instruction_t get_instructions(int *i, char *content)
 {
     instruction_t instruction;
     int len = 0;
-    char *kk_text = parse_instructions(i, &content);
+    char *kk_text = parse_instructions(i, content);
 
     instruction.keycode = text_to_kk(kk_text);
     instruction.parameters = malloc(sizeof(parameters_t));
@@ -95,9 +91,9 @@ instruction_t *create_event(char *content, int *len)
 
     for (int i = 0; content[i];) {
         tmp = malloc(sizeof(instruction_t) * (*len + 2));
-        for (int i = 0; i < *len; i++)
-            tmp[i] = instructions[i];
-        tmp[*len] = get_instructions(&i, &(content[i]));
+        for (int j = 0; j < *len; j++)
+            tmp[j] = instructions[j];
+        tmp[*len] = get_instructions(&i, content);
         if (instructions)
             free(instructions);
         instructions = tmp;

@@ -178,6 +178,7 @@ SRC_OTH =	src/other/tilemap.c												\
 			src/other/keymap.c												\
 			src/other/keycode_to_text.c										\
 			src/other/inventory.c											\
+			src/other/get_map_data.c										\
 			src/other/objects/calming.c										\
 
 SRC_LIB =	lib/get_next_line.c			\

@@ -112,4 +112,7 @@ int remove_from_inventory(general_data_t *gd, int id, int nb);
 int is_in_inventory(general_data_t *gd, int id, int nb);
 int how_much_in_inventory(general_data_t *gd, int id);
 
+//events
+map_data_t get_map_data(char *name, general_data_t *gd);
+
 #endif /*GENERAL_DATA_H_*/

@@ -31,6 +31,7 @@ dg_entity_t *entity_player_fight_create(void)
     void *idata[2] = {player, animator->data};
 
     dg_entity_add_component(player, animator);
-    dg_entity_add_component(player, dg_cpt_pos(500, 750));
+    dg_entity_add_component(player, dg_cpt_pos(500, 350));
+    dg_entity_add_component(player, cpt_scale(4, 4));
     return player;
 }

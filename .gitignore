@@ -1,0 +1,7 @@
+*.o
+vg*
+*~
+#*#
+my_rpg
+.vscode
+*.a

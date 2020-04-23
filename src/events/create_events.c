@@ -17,8 +17,6 @@ static const key_setter_t key_setter[14] = {
     &ins_set_end, &ins_set_give, &ins_set_take, &ins_set_tp, &ins_set_dialog,
     &ins_set_talk, &ins_set_answer, &ins_set_battle, &ins_set_move};
 
-static event_t *get_events(void){}
-
 instruction_t *add_instruction(instruction_t *old,
     int len, instruction_t data)
 {
@@ -40,10 +38,11 @@ static instruction_t *set_instructions(instruction_t *tmp, general_data_t *gd)
 
     for (int i = 0; tmp[i].keycode != NONE; i++) {
         to_add.keycode = tmp[i].keycode;
-        if (key_setter[tmp[i].keycode])
+        if (key_setter[tmp[i].keycode]) {
             to_add.parameters = key_setter[tmp[i].keycode](tmp, &i, gd);
-        else
+        } else {
             to_add.parameters = NULL;
+        }
         instructions = add_instruction(instructions, len, to_add);
     }
     return instructions;
@@ -61,7 +60,6 @@ static event_t *interpret_events(event_t *tmp_event, general_data_t *gd)
     event = malloc(sizeof(event_t) * (len + 1));
     for (int i = 0; i < len; i++) {
         event[i].name = tmp_event[i].name;
-        event[i].sprite_id = tmp_event[i].sprite_id;
         event[i].parameters = set_instructions(tmp_event[i].parameters, gd);
     }
     event[len].parameters = NULL;
@@ -70,7 +68,7 @@ static event_t *interpret_events(event_t *tmp_event, general_data_t *gd)
 
 void create_events(general_data_t *gd)
 {
-    event_t *tmp_event = get_events();
+    event_t *tmp_event = set_text_events();
 
     gd->event_manager.events = interpret_events(tmp_event, gd);
 }

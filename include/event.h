@@ -16,6 +16,7 @@ typedef struct parameters parameters_t;
 
 typedef struct instruction {
     int keycode;
+    int len;
     parameters_t *parameters;
 } instruction_t;
 
@@ -33,14 +34,14 @@ typedef struct parameters {
 } parameters_t;
 
 typedef struct variable {
-    parameters_t data;
+    int data;
     char *name;
 } variable_t;
 
 typedef struct event {
     char *name;
-    int sprite_id;
-    instruction_t* parameters;
+    int len;
+    instruction_t *parameters;
 } event_t;
 
 typedef struct event_manager {
@@ -54,7 +55,7 @@ enum {NONE, SET, IF, WHILE, FOR, END, GIVE, TAKE,
     TP, DIALOG, TALK, ANSWER, BATTLE, MOVE};
 
 enum {INT, STRING, CHAR, FLOAT, INSTRUCTIONS,
-    VARIABLE, CALCUL, EQUALITY, UNION};
+    VARIABLE, CALCUL, EQUALITY, UNION, VOID};
 
 enum {EQUAL, LESS, MORE, ELESS, EMORE, INEQUAL};
 enum {PLUS, MINUS, DIVIDE, MULTIPLY};

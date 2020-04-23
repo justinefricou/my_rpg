@@ -90,6 +90,7 @@ general_data_t *create_general_data(void);
 void free_general_data(general_data_t *gd);
 void set_volume(dg_window_t *w);
 map_t set_map_data(void);
+void create_events(general_data_t *gd);
 
 //key
 int key_is_clicked(dg_window_t *w, sfKeyCode key, int force_ignore);

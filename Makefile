@@ -88,8 +88,13 @@ SRC_INI =	src/init/init_img.c												\
 			src/init/parsing/pars_dialogs.c 								\
 			src/init/parsing/map/set_map_data.c								\
 			src/init/parsing/map/map.c										\
+			src/init/parsing/map/map_events.c								\
 			src/init/parsing/map/get_map_content.c							\
 			src/init/parsing/map/set_path.c									\
+			src/init/parsing/events/create_event.c							\
+			src/init/parsing/events/event.c									\
+			src/init/parsing/events/get_event_content.c						\
+			src/init/parsing/events/set_path.c								\
 
 SRC_EVT =	src/events/variable.c											\
 			src/events/create_events.c										\
@@ -147,7 +152,8 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/hud/load/load_set_data.c							\
 			src/scripts/hud/keymap_button/scp_hud_keymap_button.c			\
 			src/scripts/hud/keymap_button/kb_utils.c						\
-			src/scripts/fight/fight_manager.c							\
+			src/scripts/event/script_event.c								\
+			src/scripts/fight/fight_manager.c								\
 
 SRC_SAV =	src/save_load/save_load_utils.c									\
 			src/save_load/save_game.c										\

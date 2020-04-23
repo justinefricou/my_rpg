@@ -154,6 +154,7 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/hud/keymap_button/scp_hud_keymap_button.c			\
 			src/scripts/hud/keymap_button/kb_utils.c						\
 			src/scripts/event/script_event.c								\
+			src/scripts/fight/fight_manager.c								\
 
 SRC_SAV =	src/save_load/save_load_utils.c									\
 			src/save_load/save_game.c										\

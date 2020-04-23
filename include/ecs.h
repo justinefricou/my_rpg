@@ -27,7 +27,7 @@ dg_scene_t *scene_fight_event(int **map);
 dg_scene_t *scene_fight_hud(dg_window_t *w);
 dg_scene_t *scene_fight_top(void);
 dg_scene_t *scene_fight_bottom(int **map, dg_scene_t *event);
-dg_scene_t *scene_fight_middle(void);
+dg_scene_t *scene_fight_middle(int id);
 dg_scene_t *scene_tmp_hover(char *name);
 dg_scene_t *scene_tmp_hover_ws(char *name);
 

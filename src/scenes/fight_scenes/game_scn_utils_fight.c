@@ -33,13 +33,13 @@ void get_fight_scenes(dg_scene_t **scenes, int escape)
     scenes[4] = dg_scene_manager_get_scene("layer_hud_fight");
 }
 
-void create_fight_scenes(dg_window_t *w)
+void create_fight_scenes(dg_window_t *w, int id)
 {
     int **map = create_test_map();
     dg_scene_t *event = scene_fight_event(map);
 
     dg_scene_manager_add_scene(scene_fight_bottom(map, event));
-    dg_scene_manager_add_scene(scene_fight_middle());
+    dg_scene_manager_add_scene(scene_fight_middle(id));
     dg_scene_manager_add_scene(scene_fight_top());
     dg_scene_manager_add_scene(scene_fight_hud(w));
 }

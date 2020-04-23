@@ -12,6 +12,7 @@
 #include "libmy.h"
 #include "general_data.h"
 #include "instructions.h"
+#include "script_event_data.h"
 
 parameters_t *ins_set_while(instruction_t *instruction, int *i,
     general_data_t *gd)
@@ -28,4 +29,20 @@ parameters_t *ins_set_while(instruction_t *instruction, int *i,
     param[len].parameters.i = ins_set_intern(instruction, i, gd);
     param[len + 1].type = NONE;
     return param;
+}
+
+intern_t *ins_ini_while(void)
+{
+    return NULL;
+}
+
+int ins_act_while(intern_t *intern, self_data_t data,
+    general_data_t *gd)
+{
+    return 1;
+}
+
+void ins_end_while(intern_t *intern)
+{
+
 }

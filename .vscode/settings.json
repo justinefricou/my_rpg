@@ -33,6 +33,7 @@
         "*.tcc": "c",
         "string": "c",
         "string_view": "c",
-        "tilemap.h": "c"
+        "tilemap.h": "c",
+        "script_event_data.h": "c"
     }
 }

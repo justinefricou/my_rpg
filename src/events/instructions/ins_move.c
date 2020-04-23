@@ -12,6 +12,7 @@
 #include "libmy.h"
 #include "general_data.h"
 #include "instructions.h"
+#include "script_event_data.h"
 
 parameters_t *ins_set_move(instruction_t *instruction, int *i,
     general_data_t *gd)
@@ -27,4 +28,20 @@ parameters_t *ins_set_move(instruction_t *instruction, int *i,
     param[2].parameters.n = my_atoi(text_param[2].parameters.s);
     param[3].type = NONE;
     return param;
+}
+
+intern_t *ins_ini_move(void)
+{
+    return NULL;
+}
+
+int ins_act_move(intern_t *intern, self_data_t data,
+    general_data_t *gd)
+{
+    return 1;
+}
+
+void ins_end_move(intern_t *intern)
+{
+
 }

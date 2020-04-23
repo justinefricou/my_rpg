@@ -12,6 +12,7 @@
 #include "libmy.h"
 #include "general_data.h"
 #include "instructions.h"
+#include "script_event_data.h"
 
 parameters_t *ins_set_tp(instruction_t *instruction, int *i,
     general_data_t *gd)
@@ -29,4 +30,20 @@ parameters_t *ins_set_tp(instruction_t *instruction, int *i,
     param[3].parameters.n = my_atoi(text_param[3].parameters.s);
     param[4].type = NONE;
     return param;
+}
+
+intern_t *ins_ini_tp(void)
+{
+    return NULL;
+}
+
+int ins_act_tp(intern_t *intern, self_data_t data,
+    general_data_t *gd)
+{
+    return 1;
+}
+
+void ins_end_tp(intern_t *intern)
+{
+
 }

@@ -12,6 +12,7 @@
 #include "libmy.h"
 #include "general_data.h"
 #include "instructions.h"
+#include "script_event_data.h"
 
 parameters_t *ins_set_answer(instruction_t *instruction, int *i,
     general_data_t *gd)
@@ -25,4 +26,20 @@ parameters_t *ins_set_answer(instruction_t *instruction, int *i,
     param[1].parameters.i = ins_set_intern(instruction, i, gd);
     param[2].type = NONE;
     return param;
+}
+
+intern_t *ins_ini_answer(void)
+{
+    return NULL;
+}
+
+int ins_act_answer(intern_t *intern, self_data_t data,
+    general_data_t *gd)
+{
+    return 1;
+}
+
+void ins_end_answer(intern_t *intern)
+{
+
 }

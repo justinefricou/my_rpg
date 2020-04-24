@@ -21,7 +21,7 @@ static int open_dialog_file(char *language)
     char *filepath = NULL;
     int fd = 0;
 
-    filepath = my_strcat("dialogs/dialogs_", language);
+    filepath = my_strcat("res/dialogs/dialogs_", language);
     if (!filepath)
         return (-1);
     fd = open(filepath, O_RDONLY);

@@ -171,8 +171,6 @@ SRC_SAV =	src/save_load/save_load_utils.c									\
 			src/save_load/game/progression/load_saved_inventory.c			\
 			src/save_load/game/progression/save_clues.c						\
 			src/save_load/game/progression/load_saved_clues.c				\
-			src/save_load/game/progression/save_skills.c					\
-			src/save_load/game/progression/load_saved_skills.c				\
 			src/save_load/options/save_options.c							\
 			src/save_load/options/load_saved_options.c						\
 			src/save_load/options/save_options_volume.c						\

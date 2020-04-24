@@ -18,18 +18,18 @@ void sys_camera(dg_entity_t *entity, dg_window_t *w,
     dg_entity_t *sprite = dg_get_entity(scene->entities, "map");
     dg_entity_t *player = dg_get_entity(*entities, "player");
     tilemap_t *sm = (tilemap_t *) (dg_entity_get_component(sprite, "tilemap"));
-    sfVector2f *s_scale = (sfVector2f *)
-        (dg_entity_get_component(sprite, "scale"));
     sfVector2f *c_pos = (sfVector2f *)(dg_entity_get_component(camera, "pos"));
     sfVector2f *s_pos = (sfVector2f *)(dg_entity_get_component(player, "pos"));
     sfVector2f map_size =
-        {sm->width * sm->sheet->x * s_scale->x,
-        sm->height * sm->sheet->y * s_scale->y};
+        {sm->width * 16 * 3,
+        sm->height * 16 * 3};
 
     if (!camera || sm == NULL)
         return;
-    if (s_pos->x > 960 && s_pos->x < map_size.x + 320)
-        c_pos->x = s_pos->x - 960;
-    if (s_pos->y > 540 && s_pos->y < map_size.y + 180)
-        c_pos->y = s_pos->y - 540;
+    c_pos->x = s_pos->x - 960;
+    c_pos->y = s_pos->y - 540;
+    c_pos->x = (s_pos->x <= 960) ? 0 : c_pos->x;
+    c_pos->x = (s_pos->x >= map_size.x - 960) ? map_size.x - 1920 : c_pos->x;
+    c_pos->y = (s_pos->y <= 540) ? 0 : c_pos->y;
+    c_pos->y = (s_pos->y >= map_size.y - 540) ? map_size.y - 1080 : c_pos->y;
 }

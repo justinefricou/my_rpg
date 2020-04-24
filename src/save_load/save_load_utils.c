@@ -23,10 +23,8 @@ int open_save_file(FILE **save_file, int save_nb, char *mode)
         filepath[6] = save_nb + '0';
         *save_file = fopen(filepath, mode);
     }
-    if (*save_file == NULL) {
-        write(2, "Save file could not be opened.\n", 31);
+    if (*save_file == NULL)
         return (84);
-    }
     return (0);
 }
 

@@ -13,7 +13,7 @@
 #include "general_data.h"
 #include "save_load.h"
 
-static char *get_player_name(FILE *save_file)
+char *get_player_name(FILE *save_file)
 {
     char *line = NULL;
     char *new_name = NULL;

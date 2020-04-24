@@ -10,6 +10,7 @@
 #include "ecs.h"
 #include "script.h"
 #include "hud/hud_load.h"
+#include "save_load.h"
 
 static const int DECAL = 100;
 
@@ -22,11 +23,14 @@ void load_set_sounds(data_t *data)
 static void save_add_info(data_t *data, int x, int y, int i)
 {
     char slot_name[7] = {'s', 'l', 'o', 't', ' ', '1' + i, '\0'};
+    char *name = "Empty";
+    char *level = "-";
 
+    get_save_infos(&name, &level, i);
     dg_scene_add_ent(data->layer, ent_text(x + 20, y + 10, 60, slot_name));
-    dg_scene_add_ent(data->layer, ent_text(x + 20, y + 140, 60, "Player"));
+    dg_scene_add_ent(data->layer, ent_text(x + 20, y + 140, 60, name));
     dg_scene_add_ent(data->layer, ent_text(x + 1090, y + 75, 60, "lvl :"));
-    dg_scene_add_ent(data->layer, ent_text(x + 1290, y + 75, 60, "100"));
+    dg_scene_add_ent(data->layer, ent_text(x + 1290, y + 75, 60, level));
 }
 
 void load_set_data(data_t *data, dg_scene_t *scene)

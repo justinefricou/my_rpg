@@ -164,6 +164,7 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/fight/fight_manager.c								\
 
 SRC_SAV =	src/save_load/save_load_utils.c									\
+			src/save_load/set_save_infos.c									\
 			src/save_load/game/save_game.c									\
 			src/save_load/game/load_saved_game.c							\
 			src/save_load/game/player/save_player_info.c					\

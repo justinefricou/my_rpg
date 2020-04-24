@@ -88,7 +88,7 @@ SRC_INI =	src/init/init_img.c												\
 			src/init/parsing/skills/skills.c								\
 			src/init/parsing/skills/parse_skills.c							\
 			src/init/parsing/dialogs/init_dialogs.c							\
-			src/init/parsing/dialogs/parse_dialogs.c 								\
+			src/init/parsing/dialogs/parse_dialogs.c						\
 			src/init/parsing/map/set_map_data.c								\
 			src/init/parsing/map/map.c										\
 			src/init/parsing/map/map_events.c								\

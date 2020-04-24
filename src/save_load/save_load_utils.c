@@ -54,8 +54,9 @@ char *get_line_from_save_file(FILE *save_file)
 {
     char *line = NULL;
     ssize_t line_size = 0;
+    size_t n = 0;
 
-    line_size = getline(&line, 0, save_file);
+    line_size = getline(&line, &n, save_file);
     if (line_size == -1) {
         write(2, "Error : line could not be read.\n", 32);
         return (NULL);

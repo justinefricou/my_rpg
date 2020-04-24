@@ -12,6 +12,7 @@
 #include "general_data.h"
 #include "hud/hud_options.h"
 #include "epitech_tools.h"
+#include "save_load.h"
 
 void *scp_hud_options_init(void *init_data)
 {
@@ -54,6 +55,7 @@ void scp_hud_options_loop(dg_entity_t *entity, dg_window_t *w,
         sound_play(data->sound_activate);
         *(data->previous) = 1;
         entity->destroy = 1;
+        save_options(gd->options);
     }
     data->selector.pos->y = update_selector(data);
     update_sound(data, gd);

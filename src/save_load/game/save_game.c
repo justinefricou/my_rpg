@@ -20,6 +20,7 @@ static int save_data(general_data_t *data, FILE *save_file)
     save_player_position(position, save_file);*/
     save_inventory(data->inventory, save_file);
     save_clues(data->clues, save_file);
+    save_skills(data->skills, save_file);
     return (0);
 }
 

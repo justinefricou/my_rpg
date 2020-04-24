@@ -26,6 +26,8 @@ static int load_saved_data(general_data_t *data, FILE *save_file)
         return (84);
     if (load_saved_clues(&(data->clues), save_file) == 84)
         return (84);
+    if (load_saved_skills(data->skills, save_file) == 84)
+        return (84);
     return (0);
 }
 

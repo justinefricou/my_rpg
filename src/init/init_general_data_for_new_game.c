@@ -6,6 +6,7 @@
 */
 
 #include "general_data.h"
+#include "init_general_data_for_new_game.h"
 
 static void init_inventory_for_new_game(inventory_t *inventory)
 {
@@ -34,7 +35,7 @@ static void init_player_for_new_game(player_t *player)
 
 void init_general_data_for_new_game(general_data_t *data)
 {
-    init_inventory(&(data->inventory));
-    init_clues();
-    init_player(&(data->player));
+    init_inventory_for_new_game(&(data->inventory));
+    init_clues_for_new_game();
+    init_player_for_new_game(&(data->player));
 }

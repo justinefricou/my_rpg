@@ -28,7 +28,8 @@ instruction_t *ins_set_intern(instruction_t *tmp, int *i,
     for (*i += 1; tmp[*i].keycode != END; *i += 1) {
         to_add.keycode = tmp[*i].keycode;
         if (key_setter[tmp[*i].keycode])
-            to_add.parameters = key_setter[tmp[*i].keycode](tmp, i, gd);
+            to_add.parameters = key_setter[tmp[*i].keycode]
+                (tmp, i, gd, &(to_add.len));
         else
             to_add.parameters = NULL;
         instructions = add_instruction(instructions, len, to_add);

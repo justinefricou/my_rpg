@@ -13,7 +13,10 @@
 #include "event.h"
 
 //give
-int give_obj(general_data_t *gd, parameters_t *params);
-int give_player(general_data_t *gd, parameters_t *params);
+int give_obj(general_data_t *gd, parameters_t *params, int mul);
+int give_player(general_data_t *gd, parameters_t *params, int mul);
+
+//calcul
+int event_calculate(parameters_t *params, general_data_t *gd, int len);
 
 #endif /*GIVE_H_*/

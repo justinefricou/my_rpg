@@ -15,7 +15,7 @@
 #include "script_event_data.h"
 
 parameters_t *ins_set_while(instruction_t *instruction, int *i,
-    general_data_t *gd)
+    general_data_t *gd, int *rlen)
 {
     int len = 0;
     parameters_t *param = 0;
@@ -28,6 +28,7 @@ parameters_t *ins_set_while(instruction_t *instruction, int *i,
     param[len].type = INSTRUCTIONS;
     param[len].parameters.i = ins_set_intern(instruction, i, gd);
     param[len + 1].type = NONE;
+    *rlen = len + 1;
     return param;
 }
 

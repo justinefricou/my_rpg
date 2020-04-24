@@ -15,14 +15,15 @@
 #include "script_event_data.h"
 
 parameters_t *ins_set_battle(instruction_t *instruction, int *i,
-    general_data_t *gd)
+    general_data_t *gd, int *len)
 {
     parameters_t *param = malloc(sizeof(parameters_t) * 2);
     parameters_t *text_param = instruction[*i].parameters;
 
     param[0].type = INT;
     param[0].parameters.n = atoi(text_param[0].parameters.s);
-    param[1].type = NONE;
+    param[1].type = VOID;
+    *len = 1;
     return param;
 }
 

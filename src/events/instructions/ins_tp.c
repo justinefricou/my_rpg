@@ -17,7 +17,7 @@
 #include "game_scenes.h"
 
 parameters_t *ins_set_tp(instruction_t *instruction, int *i,
-    general_data_t *gd)
+    general_data_t *gd, int *len)
 {
     parameters_t *param = malloc(sizeof(parameters_t) * 5);
     parameters_t *text_param = instruction[*i].parameters;
@@ -31,6 +31,7 @@ parameters_t *ins_set_tp(instruction_t *instruction, int *i,
     param[3].type = INT;
     param[3].parameters.n = my_atoi(text_param[3].parameters.s);
     param[4].type = NONE;
+    *len = 4;
     return param;
 }
 

@@ -17,7 +17,7 @@
 #include "give.h"
 
 parameters_t *ins_set_give(instruction_t *instruction, int *i,
-    general_data_t *gd)
+    general_data_t *gd, int *len)
 {
     parameters_t *param = malloc(sizeof(parameters_t) * 3);
     parameters_t *text_param = instruction[*i].parameters;
@@ -26,7 +26,8 @@ parameters_t *ins_set_give(instruction_t *instruction, int *i,
     param[0].parameters.s = text_param[0].parameters.s;
     param[1].type = INT;
     param[1].parameters.n = atoi(text_param[1].parameters.s);
-    param[2].type = NONE;
+    param[2].type = VOID;
+    *len = 2;
     return param;
 }
 
@@ -41,8 +42,8 @@ int ins_act_give(intern_t *intern, self_data_t data,
     parameters_t *params = intern->script[intern->reader.progress].parameters;
     int test = 0;
     
-    test += give_obj(gd, params);
-    test += (!test) ? give_player(gd, params) : 0;
+    test += give_obj(gd, params, 1);
+    test += (!test) ? give_player(gd, params, 1) : 0;
     return 1;
 }
 

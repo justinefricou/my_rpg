@@ -15,7 +15,7 @@
 #include "script_event_data.h"
 
 parameters_t *ins_set_answer(instruction_t *instruction, int *i,
-    general_data_t *gd)
+    general_data_t *gd, int *len)
 {
     parameters_t *param = malloc(sizeof(parameters_t) * 3);
     parameters_t *text_param = instruction[*i].parameters;
@@ -24,7 +24,8 @@ parameters_t *ins_set_answer(instruction_t *instruction, int *i,
     param[0].parameters.s = text_param[0].parameters.s;
     param[1].type = INSTRUCTIONS;
     param[1].parameters.i = ins_set_intern(instruction, i, gd);
-    param[2].type = NONE;
+    param[2].type = VOID;
+    *len = 2;
     return param;
 }
 

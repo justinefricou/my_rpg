@@ -41,3 +41,19 @@ void event_launch(intern_t *data)
         data->intern = key_init[data->script[data->reader.progress].keycode]();
     }
 }
+
+void check_interaction(data_t *data, dg_array_t **entities, dg_window_t *w)
+{
+    dg_entity_t *player = dg_get_entity(*entities, "player");
+    sfVector2f *pos = dg_entity_get_component(player, "pos");
+    sfVector2f p_pos = {pos->x / (16 * 3), pos->y / (16 * 3)};
+    sfVector2f e_pos = {data->self.pos->x / (16 * 3), data->self.pos->y / (16 * 3)};
+
+    if (keymap_is_clicked(w, "action", 0)) {
+        if (p_pos.x - 1 <= e_pos.x && p_pos.x + 1 >= e_pos.x 
+            && p_pos.y - 1 <= e_pos.y && p_pos.y + 1 >= e_pos.y) {
+                data->intern.reader.activation = 1;
+                data->intern.reader.progress = 0;
+        }
+    }
+}

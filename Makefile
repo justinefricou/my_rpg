@@ -161,16 +161,22 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/fight/fight_manager.c								\
 
 SRC_SAV =	src/save_load/save_load_utils.c									\
-			src/save_load/save_game.c										\
-			src/save_load/save_player_info.c								\
-			src/save_load/save_player_status.c								\
-			src/save_load/save_inventory.c									\
-			src/save_load/save_clues.c										\
-			src/save_load/load_saved_game.c									\
-			src/save_load/load_saved_player_info.c							\
-			src/save_load/load_saved_player_status.c						\
-			src/save_load/load_saved_inventory.c							\
-			src/save_load/load_saved_clues.c								\
+			src/save_load/game/save_game.c									\
+			src/save_load/game/load_saved_game.c							\
+			src/save_load/game/player/save_player_info.c					\
+			src/save_load/game/player/load_saved_player_info.c				\
+			src/save_load/game/player/save_player_status.c					\
+			src/save_load/game/player/load_saved_player_status.c			\
+			src/save_load/game/progression/save_inventory.c					\
+			src/save_load/game/progression/load_saved_inventory.c			\
+			src/save_load/game/progression/save_clues.c						\
+			src/save_load/game/progression/load_saved_clues.c				\
+			src/save_load/options/save_options.c							\
+			src/save_load/options/load_saved_options.c						\
+			src/save_load/options/save_options_volume.c						\
+			src/save_load/options/load_saved_options_volume.c				\
+			src/save_load/options/save_options_keymap.c						\
+			src/save_load/options/load_saved_options_keymap.c				\
 
 SRC_OTH =	src/other/tilemap.c												\
 			src/other/transform.c											\

@@ -11,35 +11,36 @@
 #ifndef INSTRUCTIONS_H_
 #define INSTRUCTIONS_H_
 
-typedef parameters_t *(*key_setter_t)(instruction_t *, int *, general_data_t *);
+typedef parameters_t *(*key_setter_t)(instruction_t *, int *,
+    general_data_t *, int *len);
 
 //ins_setter
 parameters_t *ins_set_set(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 parameters_t *ins_set_if(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 parameters_t *ins_set_while(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 parameters_t *ins_set_for(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 parameters_t *ins_set_end(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 parameters_t *ins_set_give(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 parameters_t *ins_set_take(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 parameters_t *ins_set_tp(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 parameters_t *ins_set_dialog(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 parameters_t *ins_set_talk(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 parameters_t *ins_set_answer(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 parameters_t *ins_set_battle(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 parameters_t *ins_set_move(instruction_t *instruction, int *i,
-    general_data_t *gd);
+    general_data_t *gd, int *len);
 
 //functions
 void set_variable(variable_t *var, int i, void *data);

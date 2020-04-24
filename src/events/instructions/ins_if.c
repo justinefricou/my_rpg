@@ -15,7 +15,7 @@
 #include "script_event_data.h"
 
 parameters_t *ins_set_if(instruction_t *instruction, int *i,
-    general_data_t *gd)
+    general_data_t *gd, int *rlen)
 {
     int len = 0;
     parameters_t *param = 0;
@@ -27,7 +27,8 @@ parameters_t *ins_set_if(instruction_t *instruction, int *i,
         param[i] = set_from_calcul(text_param[i].parameters.s, gd);
     param[len].type = INSTRUCTIONS;
     param[len].parameters.i = ins_set_intern(instruction, i, gd);
-    param[len + 1].type = NONE;
+    param[len + 1].type = VOID;
+    *rlen = len;
     return param;
 }
 

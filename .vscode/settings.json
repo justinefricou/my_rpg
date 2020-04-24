@@ -36,6 +36,7 @@
         "tilemap.h": "c",
         "script_event_data.h": "c",
         "object.h": "c",
-        "libmy.h": "c"
+        "libmy.h": "c",
+        "give.h": "c"
     }
 }

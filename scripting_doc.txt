@@ -8,7 +8,7 @@ template :
 ------------------------------------------------
 keycodes :
 SET [VARIABLE] [DATA]
-IF [CONSITION]                           //END
+IF [CONDITION]                           //END
 WHILE [CONDITION]                        //END
 FOR [BEGIN] [END]                        //END
 END

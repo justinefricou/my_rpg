@@ -15,7 +15,7 @@
 #include "script_event_data.h"
 
 parameters_t *ins_set_set(instruction_t *instruction, int *i,
-    general_data_t *gd)
+    general_data_t *gd, int *rlen)
 {
     parameters_t *param = 0;
     int len = instruction[*i].len;
@@ -26,7 +26,8 @@ parameters_t *ins_set_set(instruction_t *instruction, int *i,
     param[0].parameters.n = variable_to_int(text_param[0].parameters.s, gd);
     for (int i = 1; i < len; i++)
         param[i] = set_from_calcul(text_param[i].parameters.s, gd);
-    param[len].type = NONE;
+    param[len].type = VOID;
+    *rlen = len;
     return param;
 }
 
@@ -38,6 +39,11 @@ intern_t *ins_ini_set(void)
 int ins_act_set(intern_t *intern, self_data_t data,
     general_data_t *gd)
 {
+    parameters_t *params = intern->script[intern->reader.progress].parameters;
+    int len = intern->script[intern->reader.progress].len;
+    int *var = &(gd->event_manager.var[params[0].parameters.n].data);
+
+    *var = event_calculate(&(params[1]), gd, len - 1);
     return 1;
 }
 

@@ -15,8 +15,9 @@
 #include "script_event_data.h"
 
 parameters_t *ins_set_end(instruction_t *instruction, int *i,
-    general_data_t *gd)
+    general_data_t *gd, int *len)
 {
+    len = 0;
     return NULL;
 }
 

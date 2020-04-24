@@ -13,9 +13,10 @@
 #include "general_data.h"
 #include "instructions.h"
 #include "script_event_data.h"
+#include "give.h"
 
 parameters_t *ins_set_take(instruction_t *instruction, int *i,
-    general_data_t *gd)
+    general_data_t *gd, int *len)
 {
     parameters_t *param = malloc(sizeof(parameters_t) * 3);
     parameters_t *text_param = instruction[*i].parameters;
@@ -25,6 +26,7 @@ parameters_t *ins_set_take(instruction_t *instruction, int *i,
     param[1].type = INT;
     param[1].parameters.n = atoi(text_param[1].parameters.s);
     param[2].type = NONE;
+    *len = 2;
 }
 
 intern_t *ins_ini_take(void)
@@ -35,10 +37,15 @@ intern_t *ins_ini_take(void)
 int ins_act_take(intern_t *intern, self_data_t data,
     general_data_t *gd)
 {
+    parameters_t *params = intern->script[intern->reader.progress].parameters;
+    int test = 0;
+    
+    test += give_obj(gd, params, -1);
+    test += (!test) ? give_player(gd, params, -1) : 0;
     return 1;
 }
 
 void ins_end_take(intern_t *intern)
 {
-
+    return;
 }

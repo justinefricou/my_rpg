@@ -41,7 +41,8 @@ static instruction_t *set_instructions(instruction_t *tmp,
     for (int i = 0; tmp[i].keycode != NONE; i++) {
         to_add.keycode = tmp[i].keycode;
         if (key_setter[tmp[i].keycode]) {
-            to_add.parameters = key_setter[tmp[i].keycode](tmp, &i, gd);
+            to_add.parameters = key_setter[tmp[i].keycode](tmp, &i,
+                gd, &(to_add.len));
         } else {
             to_add.parameters = NULL;
         }

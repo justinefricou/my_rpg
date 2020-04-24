@@ -44,8 +44,6 @@ int load_saved_player_name(general_data_t *data, FILE *save_file)
         write(2, "Error : player's name could not be loaded.\n", 43);
         return (84);
     }
-    if (data->player.name)
-        free(data->player.name);
     data->player.name = new_name;
     return (0);
 }

@@ -10,6 +10,7 @@
 #include "ecs.h"
 #include "script.h"
 #include "hud/hud_load.h"
+#include "save_load.h"
 
 void *scp_hud_load_init(void *init_data)
 {
@@ -37,6 +38,8 @@ void *scp_hud_load_init(void *init_data)
 
 void load_active(dg_window_t *w, data_t *data)
 {
+    general_data_t *general_data = w->general_data;
+
     if (keymap_is_clicked(w, "down", 1) && data->select < 2) {
         sound_play(data->sound_move);
         data->select++;
@@ -45,8 +48,11 @@ void load_active(dg_window_t *w, data_t *data)
         sound_play(data->sound_move);
         data->select--;
     }
+    if (keymap_is_clicked(w, "action", 1)) {
+        sound_play(data->sound_activate);
+        load_saved_game(general_data, data->select);
+    }
 }
-
 
 void scp_hud_load_loop(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt)

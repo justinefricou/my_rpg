@@ -10,6 +10,7 @@
 #include "ecs.h"
 #include "script.h"
 #include "hud/hud_save.h"
+#include "save_load.h"
 
 void *scp_hud_save_init(void *init_data)
 {
@@ -37,6 +38,8 @@ void *scp_hud_save_init(void *init_data)
 
 void save_active(dg_window_t *w, data_t *data)
 {
+    general_data_t *general_data = w->general_data;
+
     if (keymap_is_clicked(w, "down", 1) && data->select < 2) {
         sound_play(data->sound_move);
         data->select++;
@@ -44,6 +47,10 @@ void save_active(dg_window_t *w, data_t *data)
     if (keymap_is_clicked(w, "up", 1) && data->select > 0) {
         sound_play(data->sound_move);
         data->select--;
+    }
+    if (keymap_is_clicked(w, "action", 1)) {
+        sound_play(data->sound_activate);
+        save_game(general_data, data->select);
     }
 }
 

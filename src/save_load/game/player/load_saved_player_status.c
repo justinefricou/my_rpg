@@ -32,7 +32,7 @@ int load_saved_player_pv(general_data_t *data, FILE *save_file)
         return (84);
     }
     start = my_strlen("max_pv ");
-    data->player.pv.x = get_nbr_until(&(line[start]), 0);
+    data->player.pv.y = get_nbr_until(&(line[start]), 0);
     free(line);
     return (0);
 }

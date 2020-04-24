@@ -58,11 +58,12 @@ static int load_inventory_slot(inventory_slot_t *slot, FILE *save_file)
 
     line = get_line_from_save_file(save_file);
     if (!line)
-        return (84);
+        return (0);
     slot->id = get_nbr_until(line, ' ');
     for (; line[start] && line[start] != ' '; start++);
     slot->nb = get_nbr_until(&(line[start + 1]), 0);
     free(line);
+    return (1);
 }
 
 static int load_inventory_content(inventory_t *inventory, FILE *save_file)

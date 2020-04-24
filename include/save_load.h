@@ -44,10 +44,12 @@ int load_saved_player_xp(player_t *player, FILE *save_file);
 
 // save_player_status.c
 void save_player_pv(sfVector2f pv, FILE *save_file);
+void save_player_pm(sfVector2f pm, FILE *save_file);
 void save_player_money(player_t player, FILE *save_file);
 
 // load_saved_player_status.c
 int load_saved_player_pv(general_data_t *data, FILE *save_file);
+int load_saved_player_pm(general_data_t *data, FILE *save_file);
 int load_saved_player_money(player_t *player, FILE *save_file);
 
 /*

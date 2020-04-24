@@ -18,6 +18,8 @@ static int load_saved_data(general_data_t *data, FILE *save_file)
         return (84);
     if (load_saved_player_pv(data, save_file) == 84)
         return (84);
+    if (load_saved_player_pm(data, save_file) == 84)
+        return (84);
     if (load_saved_player_money(&(data->player), save_file) == 84)
         return (84);
     /*if (load_saved_player_position(player's position, FILE *save_file) == 84)

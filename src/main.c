@@ -9,6 +9,7 @@
 #include "libdragon.h"
 #include "ecs.h"
 #include "general_data.h"
+#include "save_load.h"
 
 void fix_empty_slot(general_data_t *gd, int hole)
 {
@@ -24,7 +25,7 @@ void fix_empty_slot(general_data_t *gd, int hole)
 void update_inventory(general_data_t *gd)
 {
     int *id = 0;
-    int *nb = 0; 
+    int *nb = 0;
 
     for (int i = 0; i < gd->inventory.len; i++) {
         id = &(gd->inventory.slot[i].id);
@@ -37,10 +38,14 @@ void update_inventory(general_data_t *gd)
 
 void *dg_init(dg_window_t *window, void *import)
 {
+    general_data_t *gd = NULL;
+
     dg_scene_manager_create();
     init_img();
     init_audio();
     window->general_data = create_general_data();
+    gd = window->general_data;
+    load_saved_options(&(gd->options));
     dg_scene_manager_add_scene(scene_main_menu());
     dg_scene_manager_add_scene(scene_main_menu_hover());
     return 0;

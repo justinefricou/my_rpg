@@ -253,6 +253,7 @@ fclean:	clean ## Clean the project
 	@make fclean -C dragon/
 	@rm -f $(NAME)
 	@rm -f $(DEBUG)
+	@rm -f *.save
 	@printf "[\e[1;31m-RM-\e[0m] % 42s\n" $(NAME) | tr ' ' '.'
 	@printf "[\e[1;31m-RM-\e[0m] % 42s\n" $(DEBUG) | tr ' ' '.'
 	@printf "\e[1;3;5;32m▀▄▀▄▀▄ Finished RM ▄▀▄▀▄▀\e[0m\n"

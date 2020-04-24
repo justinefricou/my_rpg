@@ -84,6 +84,7 @@ SRC_SYS =	src/systems/sys_render.c										\
 SRC_INI =	src/init/init_img.c												\
 			src/init/init_audio.c											\
 			src/init/general_data.c											\
+			src/init/init_general_data_for_new_game.c						\
 			src/init/set_sprite_id.c										\
 			src/init/parsing/skills/skills.c								\
 			src/init/parsing/skills/parse_skills.c							\

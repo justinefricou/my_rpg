@@ -71,6 +71,7 @@ void scp_event_loop(dg_entity_t *entity, dg_window_t *w,
     data_t *data = script->data;
     general_data_t *gd = w->general_data;
 
+    check_interaction(data, entities, w);
     event_launch(&(data->intern));
     event_active(&(data->intern), data->self, gd);
 }

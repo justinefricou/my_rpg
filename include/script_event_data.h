@@ -116,5 +116,6 @@ extern const key_end_t key_end[14];
 void get_event_from_name(char *name, general_data_t *gd, data_t *data);
 void event_active(intern_t *data, self_data_t self, general_data_t *gd);
 void event_launch(intern_t *data);
+void check_interaction(data_t *data, dg_array_t **entities, dg_window_t *w);
 
 #endif /*SCRIPT_EVENT_H_*/

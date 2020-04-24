@@ -66,13 +66,6 @@ void save_clues(clues_t clues, FILE *save_file);
 // load_saved_clues.c
 int load_saved_clues(clues_t *clues, FILE *save_file);
 
-// save_skills.c
-void save_skills(skill_t *skills, FILE *save_file);
-
-// load_saved_skills.c
-int load_saved_skills(skill_t *skills, FILE *save_file);
-
-
 
 /*               OPTIONS               */
 

@@ -48,11 +48,19 @@ typedef struct clues
     int list[CLUES_LEN];
 } clues_t;
 
+typedef enum skill_type
+{
+    INTIMIDATION = 0,
+    FLATTERY = 1,
+    TRICKERY = 2,
+    REPARTEE = 3,
+} skill_type;
+
 typedef struct skill
 {
     char *name;
     char *description;
-    int unlocked;
+    skill_type type;
 } skill_t;
 
 typedef struct keymap

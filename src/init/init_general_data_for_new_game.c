@@ -15,9 +15,11 @@ static void init_inventory_for_new_game(inventory_t *inventory)
     inventory->stack.y = 100;
 }
 
-static void init_clues_for_new_game()
+static void init_clues_for_new_game(clues_t *clues)
 {
-    // TODO
+    clues->len = 0;
+    for (int i = 0; i < CLUES_LEN; i++)
+        clues->list[i] = 0;
 }
 
 static void init_player_for_new_game(player_t *player)
@@ -36,6 +38,6 @@ static void init_player_for_new_game(player_t *player)
 void init_general_data_for_new_game(general_data_t *data)
 {
     init_inventory_for_new_game(&(data->inventory));
-    init_clues_for_new_game();
+    init_clues_for_new_game(&(data->clues));
     init_player_for_new_game(&(data->player));
 }

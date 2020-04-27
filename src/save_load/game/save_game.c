@@ -6,6 +6,7 @@
 */
 
 #include <stdio.h>
+#include <unistd.h>
 #include "save_load.h"
 
 static int save_data(general_data_t *data, FILE *save_file)

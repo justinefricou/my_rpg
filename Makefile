@@ -84,10 +84,13 @@ SRC_SYS =	src/systems/sys_render.c										\
 
 SRC_INI =	src/init/init_img.c												\
 			src/init/init_audio.c											\
-			src/init/init_dialogs.c 										\
 			src/init/general_data.c											\
+			src/init/init_general_data_for_new_game.c						\
 			src/init/set_sprite_id.c										\
-			src/init/parsing/pars_dialogs.c 								\
+			src/init/parsing/skills/skills.c								\
+			src/init/parsing/skills/parse_skills.c							\
+			src/init/parsing/dialogs/init_dialogs.c							\
+			src/init/parsing/dialogs/parse_dialogs.c						\
 			src/init/parsing/map/set_map_data.c								\
 			src/init/parsing/map/map.c										\
 			src/init/parsing/map/map_events.c								\
@@ -162,6 +165,7 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/fight/fight_manager.c								\
 
 SRC_SAV =	src/save_load/save_load_utils.c									\
+			src/save_load/set_save_infos.c									\
 			src/save_load/game/save_game.c									\
 			src/save_load/game/load_saved_game.c							\
 			src/save_load/game/player/save_player_info.c					\
@@ -255,7 +259,7 @@ fclean:	clean ## Clean the project
 	@make fclean -C dragon/
 	@rm -f $(NAME)
 	@rm -f $(DEBUG)
-	@rm -f *.save
+	@rm -f saves/*.save
 	@printf "[\e[1;31m-RM-\e[0m] % 42s\n" $(NAME) | tr ' ' '.'
 	@printf "[\e[1;31m-RM-\e[0m] % 42s\n" $(DEBUG) | tr ' ' '.'
 	@printf "\e[1;3;5;32m▀▄▀▄▀▄ Finished RM ▄▀▄▀▄▀\e[0m\n"

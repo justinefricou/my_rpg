@@ -32,7 +32,31 @@ int load_saved_player_pv(general_data_t *data, FILE *save_file)
         return (84);
     }
     start = my_strlen("max_pv ");
-    data->player.pv.x = get_nbr_until(&(line[start]), 0);
+    data->player.pv.y = get_nbr_until(&(line[start]), 0);
+    free(line);
+    return (0);
+}
+
+int load_saved_player_pm(general_data_t *data, FILE *save_file)
+{
+    char *line = NULL;
+    int start = 0;
+
+    line = get_line_from_save_file(save_file);
+    if (!line) {
+        write(2, "Error : player's pm could not be loaded.\n", 41);
+        return (84);
+    }
+    start = my_strlen("current_pm ");
+    data->player.pm.x = get_nbr_until(&(line[start]), 0);
+    free(line);
+    line = get_line_from_save_file(save_file);
+    if (!line) {
+        write(2, "Error : player's max pm could not be loaded.\n", 45);
+        return (84);
+    }
+    start = my_strlen("max_pm ");
+    data->player.pm.y = get_nbr_until(&(line[start]), 0);
     free(line);
     return (0);
 }

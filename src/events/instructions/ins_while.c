@@ -32,13 +32,13 @@ parameters_t *ins_set_while(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_while(void)
+intern_t *ins_ini_while(intern_t *prev)
 {
     return NULL;
 }
 
 int ins_act_while(intern_t *intern, self_data_t data,
-    general_data_t *gd)
+    dg_window_t *w)
 {
     return 1;
 }

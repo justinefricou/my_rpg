@@ -44,6 +44,7 @@ void set_self_data(data_t *data, map_events_t mev_data,
         dg_entity_add_component(entity, data->self.animator);
     }
     data->self.pos = pos->data;
+    data->self.memory = (sfVector2f) {data->self.pos->x, data->self.pos->y};
     dg_entity_add_component(entity, pos);
 }
 
@@ -71,9 +72,10 @@ void scp_event_loop(dg_entity_t *entity, dg_window_t *w,
     data_t *data = script->data;
     general_data_t *gd = w->general_data;
 
-    check_interaction(data, entities, w);
+    set_collision(data, entities, w);
     event_launch(&(data->intern));
-    event_active(&(data->intern), data->self, gd);
+    event_active(&(data->intern), data->self, w);
+    check_interaction(data, entities, w);
 }
 
 void scp_event_end(void *data)

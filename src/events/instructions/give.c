@@ -49,3 +49,12 @@ int give_player(general_data_t *gd, parameters_t *params, int mul)
     }
     return 0;
 }
+
+int give_clues(general_data_t *gd, parameters_t *params, int mul)
+{
+    if (!dg_strcmp("CLUES", params[0].parameters.s)) {
+        unlock_clue(gd, params[1].parameters.n);
+        return 1;
+    }
+    return 0;
+}

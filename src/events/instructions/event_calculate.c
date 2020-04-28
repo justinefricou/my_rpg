@@ -38,6 +38,5 @@ int event_calculate(parameters_t *params, general_data_t *gd, int len)
         result /= (type == DIVIDE) ? tmp : 1;
         result *= (type == MULTIPLY) ? tmp : 1;
     }
-    printf("%d\n", result);
     return result;
 }

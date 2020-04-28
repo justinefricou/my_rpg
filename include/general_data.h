@@ -77,6 +77,12 @@ typedef struct map {
     map_data_t *map;
 } map_t;
 
+typedef struct lock
+{
+    int move;
+    int menu;
+} lock_t;
+
 typedef struct general_data
 {
     inventory_t inventory;
@@ -88,6 +94,7 @@ typedef struct general_data
     options_t options;
     int block_input;
     set_animator_t sprite_id[SPRITE_ID_LEN];
+    lock_t lock;
 } general_data_t;
 
 general_data_t *create_general_data(void);
@@ -96,6 +103,7 @@ void set_volume(dg_window_t *w);
 map_t set_map_data(void);
 void set_sprite_id(general_data_t *gd);
 void create_events(general_data_t *gd);
+void unlock_clue(general_data_t *gd, int id);
 
 //key
 int key_is_clicked(dg_window_t *w, sfKeyCode key, int force_ignore);

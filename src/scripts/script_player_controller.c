@@ -60,14 +60,17 @@ static void collide(sfVector2f *move, data_t *data)
 void scp_player_controller_loop(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt)
 {
+    general_data_t *gd = w->general_data;
     script_t *script = (script_t *)dg_entity_get_component(entity, "script");
     data_t *data = script->data;
     sfVector2f move = {0, 0};
 
-    move.x += (keymap_is_pressed(w, "right")) ? 1 : 0;
-    move.x += (keymap_is_pressed(w, "left")) ? -1 : 0;
-    move.y += (keymap_is_pressed(w, "down")) ? 1 : 0;
-    move.y += (keymap_is_pressed(w, "up")) ? -1 : 0;
+    if (!gd->lock.move) {
+        move.x += (keymap_is_pressed(w, "right")) ? 1 : 0;
+        move.x += (keymap_is_pressed(w, "left")) ? -1 : 0;
+        move.y += (keymap_is_pressed(w, "down")) ? 1 : 0;
+        move.y += (keymap_is_pressed(w, "up")) ? -1 : 0;
+    }
     move.x *= dt.microseconds / 10000 * data->speed * 1.5;
     move.y *= dt.microseconds / 10000 * data->speed * 1.5;
     collide(&move, data);

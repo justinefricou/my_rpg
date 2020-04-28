@@ -66,6 +66,7 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/hud/ent_hud_htp.c									\
 			src/entities/hud/ent_hud_load.c									\
 			src/entities/hud/ent_hud_keymap_button.c						\
+			src/entities/hud/ent_hud_text.c									\
 			src/entities/hud/ent_cancel_menu_selector.c						\
 			src/entities/fight_ent/ent_player_fight.c						\
 
@@ -188,6 +189,7 @@ SRC_OTH =	src/other/tilemap.c												\
 			src/other/inventory.c											\
 			src/other/get_map_data.c										\
 			src/other/objects/calming.c										\
+			src/other/clues.c												\
 
 SRC_LIB =	lib/get_next_line.c			\
 			lib/my_putarray.c			\

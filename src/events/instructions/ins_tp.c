@@ -35,14 +35,24 @@ parameters_t *ins_set_tp(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_tp(void)
+intern_t *ins_ini_tp(intern_t *prev)
 {
     return NULL;
 }
 
-int ins_act_tp(intern_t *intern, self_data_t self,
-    general_data_t *gd)
+static act_change_scene(general_data_t *gd, parameters_t *params)
 {
+    if (!dg_strcmp("SELF", params[3].parameters.s))
+        return 1;
+    remove_game_scenes();
+    create_game_scenes(gd, params[3].parameters.s);
+    return 1;
+}
+
+int ins_act_tp(intern_t *intern, self_data_t self,
+    dg_window_t *w)
+{
+    general_data_t *gd = w->general_data;
     parameters_t *params = intern->script[intern->reader.progress].parameters;
     dg_scene_t *scene = dg_scene_manager_get_scene("layer_event");
     dg_entity_t *player = dg_get_entity(scene->entities, "player");
@@ -57,11 +67,6 @@ int ins_act_tp(intern_t *intern, self_data_t self,
         return 1;
     *pos = (sfVector2f){params[1].parameters.n * 16 * 3,
         params[2].parameters.n * 16 * 3};
-    return 1;
-    if (!dg_strcmp("SELF", params[3].parameters.s))
-        return 1;
-    remove_game_scenes();
-    create_game_scenes(gd, params[3].parameters.s);
     return 1;
 }
 

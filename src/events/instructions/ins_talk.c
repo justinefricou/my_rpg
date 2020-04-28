@@ -27,15 +27,21 @@ parameters_t *ins_set_talk(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_talk(void)
+intern_t *ins_ini_talk(intern_t *prev)
 {
     return NULL;
 }
 
 int ins_act_talk(intern_t *intern, self_data_t data,
-    general_data_t *gd)
+    dg_window_t *w)
 {
-    return 1;
+    parameters_t *params = intern->script[intern->reader.progress].parameters;
+
+    sfText_setString(intern->dialog.text, params[0].parameters.s);
+    if (keymap_is_clicked(w, "action", 1)) {
+        return 1;
+    }
+    return 0;
 }
 
 void ins_end_talk(intern_t *intern)

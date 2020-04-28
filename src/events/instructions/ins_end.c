@@ -21,13 +21,13 @@ parameters_t *ins_set_end(instruction_t *instruction, int *i,
     return NULL;
 }
 
-intern_t *ins_ini_end(void)
+intern_t *ins_ini_end(intern_t *prev)
 {
     return NULL;
 }
 
 int ins_act_end(intern_t *intern, self_data_t data,
-    general_data_t *gd)
+    dg_window_t *w)
 {
     return 1;
 }

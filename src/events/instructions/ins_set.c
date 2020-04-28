@@ -31,14 +31,15 @@ parameters_t *ins_set_set(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_set(void)
+intern_t *ins_ini_set(intern_t *prev)
 {
     return NULL;
 }
 
 int ins_act_set(intern_t *intern, self_data_t data,
-    general_data_t *gd)
+    dg_window_t *w)
 {
+    general_data_t *gd = w->general_data;
     parameters_t *params = intern->script[intern->reader.progress].parameters;
     int len = intern->script[intern->reader.progress].len;
     int *var = &(gd->event_manager.var[params[0].parameters.n].data);

@@ -65,7 +65,7 @@ int ins_act_dialog(intern_t *intern, self_data_t data,
 
 void ins_end_dialog(intern_t *intern)
 {
-    intern->dialog.box->destroy = 1;
-    intern->dialog.ent_text->destroy = 1;
-    free(intern);
+    intern->intern->dialog.box->destroy = 1;
+    intern->intern->dialog.ent_text->destroy = 1;
+    free(intern->intern);
 }

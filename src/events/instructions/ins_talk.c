@@ -39,6 +39,7 @@ int ins_act_talk(intern_t *intern, self_data_t data,
 
     sfText_setString(intern->dialog.text, params[0].parameters.s);
     if (keymap_is_clicked(w, "action", 1)) {
+        sound_play(dg_ressources_get_audio_by_name("hud_activate"));
         return 1;
     }
     return 0;

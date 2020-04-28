@@ -23,7 +23,7 @@ void event_active(intern_t *data, self_data_t self, dg_window_t *w)
     while (data->script[data->reader.progress].keycode != NONE &&
         key_active[data->script[data->reader.progress].keycode]
         (data, self, w)) {
-        key_end[data->script[data->reader.progress].keycode](data->intern);
+        key_end[data->script[data->reader.progress].keycode](data);
         data->reader.progress++;
         if (data->script[data->reader.progress].keycode != NONE) {
             data->intern =
@@ -56,7 +56,7 @@ void check_interaction(data_t *data, dg_array_t **entities, dg_window_t *w)
     sfVector2f e_pos = {data->self.pos->x / (16 * 3),
         data->self.pos->y / (16 * 3)};
 
-    if (keymap_is_clicked(w, "action", 1)) {
+    if (keymap_is_clicked(w, "action", 0)) {
         if (p_pos.x - 1 <= e_pos.x && p_pos.x + 1 >= e_pos.x 
             && p_pos.y - 1 <= e_pos.y && p_pos.y + 1 >= e_pos.y) {
                 data->intern.reader.activation = 1;

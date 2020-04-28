@@ -37,6 +37,7 @@
         "script_event_data.h": "c",
         "object.h": "c",
         "libmy.h": "c",
-        "give.h": "c"
+        "give.h": "c",
+        "answer.h": "c"
     }
 }

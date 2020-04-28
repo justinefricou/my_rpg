@@ -117,6 +117,7 @@ SRC_EVT =	src/events/variable.c											\
 			src/events/instructions/ins_dialog.c							\
 			src/events/instructions/ins_talk.c								\
 			src/events/instructions/ins_answer.c							\
+			src/events/instructions/answer.c								\
 			src/events/instructions/ins_battle.c							\
 			src/events/instructions/ins_move.c								\
 			src/events/instructions/give.c									\

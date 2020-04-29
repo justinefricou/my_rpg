@@ -15,6 +15,16 @@
 #include <stdio.h>
 #include <unistd.h>
 
+char *copy(char *source)
+{
+    int len = my_strlen(source);
+    char *cop = malloc(sizeof(char) * (len + 1));
+
+    for (int i = 0; i < len; i++)
+        cop[i] = source[i];
+    cop[len] = '\0';
+}
+
 void destroy_map_list(map_t map_list)
 {
     int **map = 0;
@@ -59,7 +69,7 @@ void set_whole_map(map_t *map_list, char *filename)
 
     for (int i = 0; i < map_list->len; i++)
         new[i] = map_list->map[i];
-    new[map_list->len].name = filename;
+    new[map_list->len].name = copy(filename);
     new[map_list->len].layers.bottom = get_map(filename, '0');
     new[map_list->len].layers.bottom_hover = get_map(filename, '1');
     new[map_list->len].layers.middle = get_map(filename, '2');

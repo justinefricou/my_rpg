@@ -58,7 +58,7 @@ void inventory_set_data(data_t *data, dg_entity_t *entity)
         (sfColor){255, 255, 255, 100},
         (sfColor){0, 0, 0, 0});
     dg_entity_t *weight_ent = ent_text(70, 880, 35, "  0 / 0");
-    
+
     dg_entity_add_component(entity, pos);
     dg_entity_add_component(entity, selector);
     data->selector.select = 0;

@@ -27,13 +27,13 @@ parameters_t *ins_set_battle(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_battle(void)
+intern_t *ins_ini_battle(intern_t *prev)
 {
     return NULL;
 }
 
 int ins_act_battle(intern_t *intern, self_data_t data,
-    general_data_t *gd)
+    dg_window_t *w)
 {
     return 1;
 }

@@ -36,7 +36,7 @@ int give_player(general_data_t *gd, parameters_t *params, int mul)
 {
     float *data[6] = {&(gd->player.pv.x), &(gd->player.pv.y),
         &(gd->player.pm.x), &(gd->player.pm.y), &(gd->player.xp.x)};
-    
+
     for (int i = 0; i < 5; i++) {
         if (!dg_strcmp(PLAYER_ATRIBUT[i], params[0].parameters.s)) {
             *(data[i]) += params[1].parameters.n * mul;
@@ -45,6 +45,15 @@ int give_player(general_data_t *gd, parameters_t *params, int mul)
     }
     if (!dg_strcmp(PLAYER_ATRIBUT[5], params[0].parameters.s)) {
         gd->player.money += params[1].parameters.n * mul;
+        return 1;
+    }
+    return 0;
+}
+
+int give_clues(general_data_t *gd, parameters_t *params, int mul)
+{
+    if (!dg_strcmp("CLUES", params[0].parameters.s)) {
+        unlock_clue(gd, params[1].parameters.n);
         return 1;
     }
     return 0;

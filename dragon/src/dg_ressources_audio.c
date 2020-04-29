@@ -51,7 +51,7 @@ void dg_ressources_add_audio(char *path, char *name, int type)
     indg_ressources_add_audio_two(ressources, audio, name, type);
     free(oldr);
     free(oldn);
-    free(oldt);   
+    free(oldt);
 }
 
 sfMusic *dg_ressources_get_audio(int id)

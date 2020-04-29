@@ -15,7 +15,7 @@
 static button_t *create_inv_action_box(data_t *data)
 {
     button_t *button_list = malloc(sizeof(button_t) * 4);
-    
+
     button_list[0] = (button_t){"Use", &inv_use, data};
     button_list[1] = (button_t){"Throw", &inv_throw, data};
     button_list[2] = (button_t){"Cancel", &inv_cancel, data};

@@ -37,7 +37,7 @@ static void scene_add_sys(dg_scene_t *scene)
 dg_scene_t *scene_game_event(map_data_t md, general_data_t *gd)
 {
     dg_scene_t *scene = dg_scene_create("layer_event");
-    
+
     scene_add_ent(scene, md, gd);
     scene_add_sys(scene);
     return scene;

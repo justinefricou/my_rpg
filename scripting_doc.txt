@@ -10,7 +10,7 @@ keycodes :
 SET [VARIABLE] [DATA]
 IF [CONDITION]                           //END
 WHILE [CONDITION]                        //END
-FOR [BEGIN] [END]                        //END
+FOR [BEGIN] [END]                        //END //j'ai la flemme de l'implémenter mdr
 END
 GIVE [OBJECT] [NB]
 TAKE [OBJECT] [NB]

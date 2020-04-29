@@ -65,7 +65,8 @@ static event_t *interpret_events(event_t *tmp_event, general_data_t *gd)
     for (int i = 0; i < len; i++) {
         event[i].name = tmp_event[i].name;
         event[i].len = 0;
-        event[i].parameters = set_instructions(tmp_event[i].parameters, gd, &(event[i].len));
+        event[i].parameters =
+        set_instructions(tmp_event[i].parameters, gd, &(event[i].len));
     }
     event[len].parameters = NULL;
     return event;

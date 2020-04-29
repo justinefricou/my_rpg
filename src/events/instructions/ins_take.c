@@ -29,17 +29,18 @@ parameters_t *ins_set_take(instruction_t *instruction, int *i,
     *len = 2;
 }
 
-intern_t *ins_ini_take(void)
+intern_t *ins_ini_take(intern_t *prev)
 {
     return NULL;
 }
 
 int ins_act_take(intern_t *intern, self_data_t data,
-    general_data_t *gd)
+    dg_window_t *w)
 {
+    general_data_t *gd = w->general_data;
     parameters_t *params = intern->script[intern->reader.progress].parameters;
     int test = 0;
-    
+
     test += give_obj(gd, params, -1);
     test += (!test) ? give_player(gd, params, -1) : 0;
     return 1;

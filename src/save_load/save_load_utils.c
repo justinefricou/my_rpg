@@ -14,7 +14,7 @@
 int open_save_file(FILE **save_file, int save_nb, char *mode)
 {
     char filepath[13] = {'s', 'a', 'v', 'e', 's', '/', '0', '.', 's', 'a',
-                         'v', 'e', 0};
+                        'v', 'e', 0};
     char *filepath_options = "saves/options.save";
 
     if (save_nb == -1)

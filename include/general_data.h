@@ -108,7 +108,7 @@ typedef struct general_data
     object_list_t object_list;
     event_manager_t event_manager;
     map_t maps;
-    dialog_t dialogs;
+    dialogs_t dialogs;
     options_t options;
     int block_input;
     set_animator_t sprite_id[SPRITE_ID_LEN];

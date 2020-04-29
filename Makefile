@@ -68,6 +68,8 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/hud/ent_hud_keymap_button.c						\
 			src/entities/hud/ent_cancel_menu_selector.c						\
 			src/entities/fight_ent/ent_player_fight.c						\
+			src/entities/fight_ent/ent_hud_fight_inventory.c				\
+			src/entities/fight_ent/ent_hud_skill_fight.c					\
 
 SRC_SYS =	src/systems/sys_render.c										\
 			src/systems/sys_tm_render.c										\

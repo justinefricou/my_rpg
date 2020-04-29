@@ -60,6 +60,8 @@ dg_entity_t *ent_hud_keymap_button(sfVector2f pos, int size,
     int *keymap, dg_scene_t *scene);
 dg_entity_t *ent_event(map_events_t data, general_data_t *gd);
 dg_entity_t *entity_player_fight_create(void);
+dg_entity_t *ent_hud_fight_inventory(int *previous, dg_scene_t *scene);
+dg_entity_t *ent_hud_skill_fight(int *previous, dg_scene_t *scene);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));

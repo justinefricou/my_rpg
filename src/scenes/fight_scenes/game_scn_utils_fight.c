@@ -24,15 +24,6 @@ static int **create_test_map(void)
     return map;
 }
 
-void get_fight_scenes(dg_scene_t **scenes, int escape)
-{
-    scenes[0] = dg_scene_manager_get_scene("layer_event_fight");
-    scenes[1] = dg_scene_manager_get_scene("layer_top_fight");
-    scenes[2] = dg_scene_manager_get_scene("layer_middle_fight");
-    scenes[3] = dg_scene_manager_get_scene("layer_bottom_fight");
-    scenes[4] = dg_scene_manager_get_scene("layer_hud_fight");
-}
-
 void create_fight_scenes(dg_window_t *w, int id)
 {
     int **map = create_test_map();
@@ -46,10 +37,9 @@ void create_fight_scenes(dg_window_t *w, int id)
 
 void remove_fight_scenes(void)
 {
-    dg_scene_t *game_scenes[NB_FIGHT_SCENE] = {0};
-
-    get_fight_scenes(game_scenes, 1);
-    for (int i = 0; i < NB_FIGHT_SCENE; i++) {
-        dg_scene_manager_remove(game_scenes[i]->name);
-    }
+    dg_scene_manager_remove("layer_event_fight");
+    dg_scene_manager_remove("layer_top_fight");
+    dg_scene_manager_remove("layer_middle_fight");
+    dg_scene_manager_remove("layer_bottom_fight");
+    dg_scene_manager_remove("layer_hud_fight");
 }

@@ -47,7 +47,9 @@ button_t *set_choices(intern_t *prev, intern_t *intern)
     button_t *buttons = 0;
     parameters_t *params = 0;
 
-    for (len = 0; prev->script[prev->reader.progress - len].keycode == ANSWER; len++);
+    for (len = 0; prev->script[prev->reader.progress - len].keycode
+        == ANSWER;
+        len++);
     buttons = malloc(sizeof(button_t) * (len + 1));
     for (int i = len - 1; i >= 0; i--) {
         params = prev->script[prev->reader.progress - (len - i - 1)].parameters;

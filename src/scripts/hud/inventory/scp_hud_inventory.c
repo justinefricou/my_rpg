@@ -40,7 +40,7 @@ static void inventory_menu_active(dg_window_t *w, data_t *data,
     }
     if (keymap_is_clicked(w, "action", 1) && gd->inventory.len > 0) {
         data->is_active = 0;
-        data->launch_action = 1;    
+        data->launch_action = 1;
     }
 }
 

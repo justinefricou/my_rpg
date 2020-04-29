@@ -12,7 +12,6 @@
 #include "hud/hud_menu_selector.h"
 #include "general_data.h"
 
-
 void *scp_hud_menu_selector_init(void *init_data)
 {
     void **idata = (void **) init_data;

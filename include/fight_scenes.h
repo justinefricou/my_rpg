@@ -10,10 +10,11 @@
 
 #include "libdragon.h"
 
-#define NB_FIGHT_SCENE 6
+#define NB_FIGHT_SCENE 5
 
-void get_fight_scenes(dg_scene_t **scenes, int escape);
 void create_fight_scenes(dg_window_t *w, int id);
 void remove_fight_scenes(void);
+
+void fight_skill(int *previous, void *data, dg_window_t *w);
 
 #endif /*GAME_SCENES_H_*/

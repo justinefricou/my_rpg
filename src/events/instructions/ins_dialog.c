@@ -35,7 +35,8 @@ intern_t *ins_ini_dialog(intern_t *prev)
 
     intern->script = params[0].parameters.i;
     for (intern->reader.len = 0; intern->script[intern->reader.len].keycode
-        != NONE; intern->reader.len++);
+        != NONE;
+        intern->reader.len++);
     intern->reader.activation = 1;
     intern->dialog.box = ent_hud_box(45, 700, 38, 6);
     intern->dialog.ent_text = ent_text(65, 710, 50, "");

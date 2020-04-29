@@ -42,7 +42,7 @@ int ins_act_give(intern_t *intern, self_data_t data,
     general_data_t *gd = w->general_data;
     parameters_t *params = intern->script[intern->reader.progress].parameters;
     int test = 0;
-    
+
     test += give_obj(gd, params, 1);
     test += (!test) ? give_clues(gd, params, 1) : 0;
     test += (!test) ? give_player(gd, params, 1) : 0;

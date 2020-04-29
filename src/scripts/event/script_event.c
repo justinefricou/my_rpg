@@ -55,7 +55,7 @@ void *scp_event_init(void *init_data)
     map_events_t mev_data = *((map_events_t *)idata[0]);
     dg_entity_t *entity = idata[2];
     general_data_t *gd = idata[1];
-    
+
     set_self_data(data, mev_data, entity, gd);
     data->intern.reader.activation = mev_data.interaction;
     data->intern.reader.active = 0;

@@ -30,7 +30,7 @@ int event_calculate(parameters_t *params, general_data_t *gd, int len)
     int tmp = 0;
     int type;
 
-    for (int i = 1; i < len; i+= 2) {
+    for (int i = 1; i < len; i += 2) {
         type = params[i].parameters.n;
         tmp = get_var_data(params[i + 1], gd);
         result += (type == PLUS) ? tmp : 0;

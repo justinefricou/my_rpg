@@ -21,29 +21,56 @@ parameters_t *ins_set_while(instruction_t *instruction, int *i,
     parameters_t *param = 0;
     parameters_t *text_param = instruction[*i].parameters;
 
-    for (len = 0; text_param[len].type != NONE; len++);
+    for (len = 0; text_param[len].type != VOID; len++);
     param = malloc(sizeof(parameters_t) * (len + 2));
     for (int i = 0; i < len; i++)
         param[i] = set_from_calcul(text_param[i].parameters.s, gd);
     param[len].type = INSTRUCTIONS;
     param[len].parameters.i = ins_set_intern(instruction, i, gd);
-    param[len + 1].type = NONE;
-    *rlen = len + 1;
+    param[len + 1].type = VOID;
+    *rlen = len;
     return param;
 }
 
 intern_t *ins_ini_while(intern_t *prev)
 {
-    return NULL;
+    parameters_t *params = prev->script[prev->reader.progress].parameters;
+    int len = prev->script[prev->reader.progress].len;
+    intern_t *intern = malloc(sizeof(intern_t));
+
+    intern->dialog = prev->dialog;
+    intern->script = params[len].parameters.i;
+    intern->reader.activation = 0;
+    intern->reader.end = 0;
+    intern->reader.active = 0;
+    intern->reader.progress = 0;
+    return intern;
 }
 
 int ins_act_while(intern_t *intern, self_data_t data,
     dg_window_t *w)
 {
-    return 1;
+    parameters_t *params = intern->script[intern->reader.progress].parameters;
+    int len = intern->script[intern->reader.progress].len;
+    int condition = 1;
+
+    if (!intern->intern->reader.end) {
+        condition = calcul_condition(params, 0, len, w->general_data);
+        if (!condition)
+            return 1;
+        intern->intern->reader.activation = 1;
+        event_launch(intern->intern);
+        intern->intern->reader.end = 1;
+    } else {
+        event_active(intern->intern, data, w);
+        if (intern->intern->reader.active == 0) {
+            intern->intern->reader.end = 0;
+        }
+    }
+    return 0;
 }
 
 void ins_end_while(intern_t *intern)
 {
-
+    free(intern->intern);
 }

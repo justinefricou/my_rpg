@@ -14,7 +14,7 @@
 #include "instructions.h"
 #include "script_event_data.h"
 
-static int get_var_data(parameters_t params, general_data_t *gd)
+int get_var_data(parameters_t params, general_data_t *gd)
 {
     int result = 0;
 

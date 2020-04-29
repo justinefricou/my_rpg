@@ -1,4 +1,5 @@
 TP PLAYER 95 9 SELF
+SET TMP 0
 DIALOG
 TALK Hello_!_Welcome_to_midnight_murder_!_...
 TALK Its_actually_a_lie,_there_is_no_name_...
@@ -12,6 +13,13 @@ END
 ANSWER no
 END
 TALK Have_fun_playing_our_game!
+IF TMP == 0
+SET TMP TMP + 1
+END
+WHILE TMP < 2
 TALK PS,_Justine_tu_pourrais_set_les_dialogues
 TALK dans_general_data_stp_?
+SET TMP TMP + 1
 END
+END
+MOVE PLAYER 88 9

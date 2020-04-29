@@ -122,6 +122,7 @@ SRC_EVT =	src/events/variable.c											\
 			src/events/instructions/ins_move.c								\
 			src/events/instructions/give.c									\
 			src/events/instructions/event_calculate.c						\
+			src/events/instructions/calcul_condition.c						\
 
 SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/scp_link_camera.c									\

@@ -1,11 +1,17 @@
 TP PLAYER 95 9 SELF
-GIVE XP 10
-GIVE PV 10
-GIVE PM 10
-GIVE PV_MAX 10
-GIVE PM_MAX 10
+DIALOG
+TALK Hello_!_Welcome_to_midnight_murder_!_...
+TALK Its_actually_a_lie,_there_is_no_name_...
+TALK But_here_is_a_funny_little_message_from_me_noneless_!
+TALK Because_dialogues_are_out_now !
+TALK So_tell_me_now,_do_you_want_calming_pills_?
+ANSWER yes
 GIVE calming_pills 10
-GIVE MONEY 10
-SET LOL 0
-SET LOL LOL + 1
-SET LOL LOL + 50
+TALK Here_you_go_!
+END
+ANSWER no
+END
+TALK Have_fun_playing_our_game!
+TALK PS,_Justine_tu_pourrais_set_les_dialogues
+TALK dans_general_data_stp_?
+END

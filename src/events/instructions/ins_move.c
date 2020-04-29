@@ -31,13 +31,13 @@ parameters_t *ins_set_move(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_move(void)
+intern_t *ins_ini_move(intern_t *prev)
 {
     return NULL;
 }
 
 int ins_act_move(intern_t *intern, self_data_t data,
-    general_data_t *gd)
+    dg_window_t *w)
 {
     return 1;
 }

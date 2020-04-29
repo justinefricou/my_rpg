@@ -12,7 +12,6 @@
 #include "hud/hud_menu_selector.h"
 #include "general_data.h"
 
-
 void *scp_hud_menu_selector_init(void *init_data)
 {
     void **idata = (void **) init_data;
@@ -80,6 +79,9 @@ void scp_hud_menu_selector_end(void *data)
 {
     data_t *d = (data_t *)data;
 
+    d->hud_box->destroy = 1;
+    for (int i = 0; i < d->llen; i++)
+        d->buttons[i]->destroy = 1;
     free(d->button_list);
     free(d->buttons);
     free(d);

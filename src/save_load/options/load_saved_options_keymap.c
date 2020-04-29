@@ -32,10 +32,10 @@ static int load_saved_key(char *label, sfKeyCode *key, FILE *save_file)
 int load_saved_keymap(keymap_t *keymap, FILE *save_file)
 {
     char *labels[6] = {"keymap_up ", "keymap_left ", "keymap_down ",
-                       "keymap_right ", "keymap_action ", "keymap_cancel "};
+                    "keymap_right ", "keymap_action ", "keymap_cancel "};
     sfKeyCode *keys[6] = {&(keymap->up), &(keymap->left), &(keymap->down),
-                          &(keymap->right), &(keymap->action),
-                          &(keymap->cancel)};
+                        &(keymap->right), &(keymap->action),
+                        &(keymap->cancel)};
 
     for (int i = 0; i < 6; i++) {
         if (load_saved_key(labels[i], keys[i], save_file) == 84)

@@ -13,6 +13,7 @@ static void set_object_list(general_data_t *gd)
 {
     gd->object_list.len = OBJECT_LIST;
     gd->object_list.object[0] = calming();
+    gd->clues.len = 0;
 }
 
 static void set_default_keymap(general_data_t *gd)
@@ -24,6 +25,10 @@ static void set_default_keymap(general_data_t *gd)
     gd->options.keymap.left = sfKeyLeft;
     gd->options.keymap.right = sfKeyRight;
     gd->block_input = 0;
+    gd->options.general_volume = (sfVector2f){50, 100};
+    gd->options.music = (sfVector2f){15, 100};
+    gd->options.sound = (sfVector2f){30, 100};
+    gd->options.resolution = 0;
 }
 
 static void set_inventory(general_data_t *gd)
@@ -42,10 +47,6 @@ general_data_t *create_general_data(void)
 {
     general_data_t *gd = malloc(sizeof(general_data_t));
 
-    gd->options.general_volume = (sfVector2f){50, 100};
-    gd->options.music = (sfVector2f){15, 100};
-    gd->options.sound = (sfVector2f){30, 100};
-    gd->options.resolution = 0;
     gd->player.name = "Player";
     gd->player.money = 100;
     gd->player.pv.x = 50;
@@ -54,6 +55,8 @@ general_data_t *create_general_data(void)
     gd->player.pm.y = 100;
     gd->player.xp.x = 0;
     gd->player.xp.y = 20;
+    gd->lock.menu = 0;
+    gd->lock.move = 0;
     set_object_list(gd);
     set_inventory(gd);
     set_default_keymap(gd);

@@ -29,7 +29,7 @@ int add_variable(general_data_t *gd, char *name)
 {
     variable_t *new = malloc(sizeof(variable_t)
         * (gd->event_manager.var_len + 1));
-    
+
     for (int i = 0; i < gd->event_manager.var_len; i++)
         new[i] = gd->event_manager.var[i];
     new[gd->event_manager.var_len].name = copy_name(name);

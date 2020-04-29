@@ -33,6 +33,7 @@ instruction_t *ins_set_intern(instruction_t *tmp, int *i,
         else
             to_add.parameters = NULL;
         instructions = add_instruction(instructions, len, to_add);
+        len++;
     }
     *i++;
     return instructions;

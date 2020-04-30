@@ -37,13 +37,13 @@ intern_t *ins_ini_battle(intern_t *prev, general_data_t *gd)
 int ins_act_battle(intern_t *intern, self_data_t data,
     dg_window_t *w, sfTime dt)
 {
-    dg_scene_t game[NB_GAME_SCENE];
+    dg_scene_t *game[NB_GAME_SCENE];
     parameters_t *params = intern->script[intern->reader.progress].parameters;
     
-    get_game_scenes(&game, 1);
+    get_game_scenes(game, 1);
     for (int i = 0; i < NB_GAME_SCENE; i++) {
-        game[i].display = 0;
-        game[i].run = 0;
+        game[i]->display = 0;
+        game[i]->run = 0;
     }
     create_fight_scenes(w, params[0].parameters.n);
     sfMusic_stop(dg_ressources_get_audio_by_name("game_theme"));

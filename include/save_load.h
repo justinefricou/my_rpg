@@ -9,6 +9,7 @@
 #define DEF_SAVE_LOAD_H_
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "general_data.h"
 
 // save_load_utils.c

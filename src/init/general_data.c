@@ -47,14 +47,7 @@ general_data_t *create_general_data(void)
 {
     general_data_t *gd = malloc(sizeof(general_data_t));
 
-    gd->player.name = "Player";
-    gd->player.money = 100;
-    gd->player.pv.x = 50;
-    gd->player.pv.y = 100;
-    gd->player.pm.x = 100;
-    gd->player.pm.y = 100;
-    gd->player.xp.x = 0;
-    gd->player.xp.y = 20;
+    init_general_data_for_new_game(gd);
     gd->lock.menu = 0;
     gd->lock.move = 0;
     set_object_list(gd);
@@ -63,6 +56,8 @@ general_data_t *create_general_data(void)
     create_events(gd);
     set_sprite_id(gd);
     gd->maps = set_map_data();
+    gd->skills = init_skills("en");
+    init_dialogs(&(gd->dialogs), "en");
     return gd;
 }
 

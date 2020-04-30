@@ -57,8 +57,8 @@ void check_interaction(data_t *data, dg_array_t **entities, dg_window_t *w)
         data->self.pos->y / (16 * 3)};
 
     if (keymap_is_clicked(w, "action", 0)) {
-        if (p_pos.x - 1 <= e_pos.x && p_pos.x + 1 >= e_pos.x
-            && p_pos.y - 1 <= e_pos.y && p_pos.y + 1 >= e_pos.y) {
+        if (p_pos.x - 1.5 <= e_pos.x && p_pos.x + 1.5 >= e_pos.x
+            && p_pos.y - 1.5 <= e_pos.y && p_pos.y + 1.5 >= e_pos.y) {
                 data->intern.reader.activation = 1;
                 data->intern.reader.progress = 0;
         }
@@ -72,6 +72,9 @@ void set_collision(data_t *data, dg_array_t **entities, dg_window_t *w)
     sfVector2f e_pos = {data->self.pos->x / (16 * 3),
         data->self.pos->y / (16 * 3)};
 
+    if ((int)e_pos.y < 0 || (int)e_pos.x < 0 ||
+        (int)e_pos.y > tm->height || (int)e_pos.x > tm->width)
+        return;
     tm->map[(int)e_pos.y][(int)e_pos.x] = 1;
     if (data->self.pos->x != data->self.memory.x
         || data->self.pos->y != data->self.memory.y) {

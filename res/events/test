@@ -1,3 +1,4 @@
+IF INIT == 0
 TP PLAYER 95 9 SELF
 SET TMP 0
 DIALOG
@@ -22,4 +23,5 @@ TALK dans_general_data_stp_?
 SET TMP TMP + 1
 END
 END
-MOVE PLAYER 88 9
+SET INIT 1
+END

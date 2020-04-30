@@ -1,3 +1,6 @@
-2
-REPARTEE "Name" "Description"
+5
 FLATTERY "Skill 1" "Does something"
+REPARTEE "Skill 2" "Does something else"
+INTIMIDATION "Skill 3" "Another skill"
+FLATTERY "Skill 4" "The 4th skill"
+REPARTEE "Skill 5" "The last skill"

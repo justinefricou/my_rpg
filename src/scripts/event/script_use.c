@@ -72,6 +72,9 @@ void set_collision(data_t *data, dg_array_t **entities, dg_window_t *w)
     sfVector2f e_pos = {data->self.pos->x / (16 * 3),
         data->self.pos->y / (16 * 3)};
 
+    if ((int)e_pos.y < 0 || (int)e_pos.x < 0 ||
+        (int)e_pos.y > tm->height || (int)e_pos.x > tm->width)
+        return;
     tm->map[(int)e_pos.y][(int)e_pos.x] = 1;
     if (data->self.pos->x != data->self.memory.x
         || data->self.pos->y != data->self.memory.y) {

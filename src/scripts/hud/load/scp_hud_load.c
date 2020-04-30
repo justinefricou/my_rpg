@@ -28,6 +28,7 @@ void *scp_hud_load_init(void *init_data)
     data->previous = idata[2];
     data->selector = selector->data;
     data->select = 0;
+    data->load_on_exit = 0;
     sfRectangleShape_setOutlineThickness(data->selector, 5);
     data->layer = scene_tmp_hover("load");
     load_set_data(data, scene);
@@ -50,7 +51,8 @@ void load_active(dg_window_t *w, data_t *data)
     }
     if (keymap_is_clicked(w, "action", 1)) {
         sound_play(data->sound_activate);
-        load_saved_game(general_data, data->select);
+        if (load_saved_game(general_data, data->select) == 0)
+            data->load_on_exit = 1;
     }
 }
 
@@ -60,9 +62,10 @@ void scp_hud_load_loop(dg_entity_t *entity, dg_window_t *w,
     script_t *script = (script_t *)dg_entity_get_component(entity, "script");
     data_t *data = script->data;
 
+    data->w = w;
     load_active(w, data);
     load_update_position(data);
-    if (keymap_is_clicked(w, "cancel", 1)) {
+    if (keymap_is_clicked(w, "cancel", 1) || data->load_on_exit) {
         sound_play(data->sound_activate);
         *(data->previous) = 1;
         entity->destroy = 1;
@@ -76,5 +79,12 @@ void scp_hud_load_end(void *data)
     for (int i = 0; i < 4; i++)
             d->hud_box[i]->destroy = 1;
     dg_scene_manager_remove("load");
+    if (d->load_on_exit) {
+        create_game_scenes(d->w->general_data, "island");
+        sfMusic_stop(dg_ressources_get_audio_by_name("menu_theme"));
+        sfMusic_play(dg_ressources_get_audio_by_name("game_theme"));
+        dg_scene_manager_remove("main_menu");
+        dg_scene_manager_remove("main_menu_hover");
+    }
     free(d);
 }

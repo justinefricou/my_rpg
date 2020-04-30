@@ -148,4 +148,9 @@ int how_much_in_inventory(general_data_t *gd, int id);
 //events
 map_data_t get_map_data(char *name, general_data_t *gd);
 
+//loop
+void fix_empty_slot(general_data_t *gd, int hole);
+void update_inventory(general_data_t *gd);
+void update_level(general_data_t *gd);
+
 #endif /*GENERAL_DATA_H_*/

@@ -24,6 +24,8 @@ typedef struct data {
     int is_active;
     sfMusic *sound_move;
     sfMusic *sound_activate;
+    int load_on_exit;
+    dg_window_t *w;
 } data_t;
 
 void load_set_sounds(data_t *data);

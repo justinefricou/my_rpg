@@ -89,6 +89,7 @@ SRC_INI =	src/init/init_img.c												\
 			src/init/init_audio.c											\
 			src/init/general_data.c											\
 			src/init/init_general_data_for_new_game.c						\
+			src/init/loop_general_data.c									\
 			src/init/set_sprite_id.c										\
 			src/init/parsing/skills/skills.c								\
 			src/init/parsing/skills/parse_skills.c							\
@@ -123,6 +124,7 @@ SRC_EVT =	src/events/variable.c											\
 			src/events/instructions/answer.c								\
 			src/events/instructions/ins_battle.c							\
 			src/events/instructions/ins_move.c								\
+			src/events/instructions/move.c									\
 			src/events/instructions/give.c									\
 			src/events/instructions/event_calculate.c						\
 			src/events/instructions/calcul_condition.c						\

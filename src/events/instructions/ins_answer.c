@@ -30,7 +30,7 @@ parameters_t *ins_set_answer(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_answer(intern_t *prev)
+intern_t *ins_ini_answer(intern_t *prev, general_data_t *gd)
 {
     intern_t *intern = 0;
     parameters_t *params = prev->script[prev->reader.progress].parameters;
@@ -46,17 +46,17 @@ intern_t *ins_ini_answer(intern_t *prev)
     intern->reader.active = 0;
     intern->reader.end = 0;
     intern->dialog.hud_box = ent_hud_menu_selector((sfVector2f){1500, 500},
-        set_choices(prev, intern), scene, 1);
+        set_choices(prev, intern, gd), scene, 1);
     dg_scene_add_ent(scene, intern->dialog.hud_box);
     return intern;
 }
 
 int ins_act_answer(intern_t *intern, self_data_t data,
-    dg_window_t *w)
+    dg_window_t *w, sfTime dt)
 {
     if (intern->script[intern->reader.progress + 1].keycode == ANSWER)
         return 1;
-    event_active(intern->intern, data, w);
+    event_active(intern->intern, data, w, dt);
     if (intern->intern->reader.active == 0 && intern->intern->reader.end) {
         return 1;
     }

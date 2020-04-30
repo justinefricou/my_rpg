@@ -11,31 +11,6 @@
 #include "general_data.h"
 #include "save_load.h"
 
-void fix_empty_slot(general_data_t *gd, int hole)
-{
-    for (; hole + 1 < gd->inventory.len; hole++) {
-        gd->inventory.slot[hole].id = gd->inventory.slot[hole + 1].id;
-        gd->inventory.slot[hole].nb = gd->inventory.slot[hole + 1].nb;
-    }
-    gd->inventory.slot[hole].id = -1;
-    gd->inventory.slot[hole].nb = 0;
-    gd->inventory.len--;
-}
-
-void update_inventory(general_data_t *gd)
-{
-    int *id = 0;
-    int *nb = 0;
-
-    for (int i = 0; i < gd->inventory.len; i++) {
-        id = &(gd->inventory.slot[i].id);
-        nb = &(gd->inventory.slot[i].nb);
-        *id = (*nb == 0) ? -1 : *id;
-        if (*id == -1)
-            fix_empty_slot(gd, i);
-    }
-}
-
 void *dg_init(dg_window_t *window, void *import)
 {
     general_data_t *gd = NULL;
@@ -55,6 +30,7 @@ int dg_loop(dg_window_t *w, void *var, sfTime dt)
 {
     sfRenderWindow_clear(w->window, sfBlack);
     update_inventory(w->general_data);
+    update_level(w->general_data);
     dg_scene_manager_update(w, dt);
     set_volume(w);
     return 0;
@@ -68,5 +44,8 @@ void dg_end(void *var, int id)
 
 int main(int argc, char **argv)
 {
+    int *ran = malloc(sizeof(int));
+    srand(ran);
+    free(ran);
     return dg_play((sfVector2u){1920, 1080}, "RPG", 0, NULL);
 }

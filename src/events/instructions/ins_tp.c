@@ -35,7 +35,7 @@ parameters_t *ins_set_tp(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_tp(intern_t *prev)
+intern_t *ins_ini_tp(intern_t *prev, general_data_t *gd)
 {
     return NULL;
 }
@@ -50,7 +50,7 @@ static act_change_scene(general_data_t *gd, parameters_t *params)
 }
 
 int ins_act_tp(intern_t *intern, self_data_t self,
-    dg_window_t *w)
+    dg_window_t *w, sfTime dt)
 {
     general_data_t *gd = w->general_data;
     parameters_t *params = intern->script[intern->reader.progress].parameters;

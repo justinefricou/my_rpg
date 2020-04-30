@@ -29,13 +29,13 @@ parameters_t *ins_set_for(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_for(intern_t *prev)
+intern_t *ins_ini_for(intern_t *prev, general_data_t *gd)
 {
     return NULL;
 }
 
 int ins_act_for(intern_t *intern, self_data_t data,
-    dg_window_t *w)
+    dg_window_t *w, sfTime dt)
 {
     return 1;
 }

@@ -31,13 +31,13 @@ parameters_t *ins_set_give(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_give(intern_t *prev)
+intern_t *ins_ini_give(intern_t *prev, general_data_t *gd)
 {
     return NULL;
 }
 
 int ins_act_give(intern_t *intern, self_data_t data,
-    dg_window_t *w)
+    dg_window_t *w, sfTime dt)
 {
     general_data_t *gd = w->general_data;
     parameters_t *params = intern->script[intern->reader.progress].parameters;

@@ -41,6 +41,7 @@ typedef struct player
     int level;
     sfVector2f xp;
     int money;
+    float damage;
 } player_t;
 
 typedef struct clues
@@ -101,7 +102,7 @@ typedef struct lock
 
 typedef struct enemy
 {
-    float pv;
+    sfVector2f pv;
 } enemy_t;
 
 typedef struct general_data

@@ -55,6 +55,7 @@ typedef struct data {
     sfVector2f *pos;
     dg_entity_t *hud_box;
     dg_entity_t *side_box;
+    dg_entity_t *skill_box;
     sfText *weight;
     selector_t selector;
     inv_hover_t slots;

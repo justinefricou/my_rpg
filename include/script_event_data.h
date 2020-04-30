@@ -141,5 +141,6 @@ void event_launch(intern_t *data, general_data_t *gd);
 void check_interaction(data_t *data, dg_array_t **entities, dg_window_t *w);
 int calcul_condition(parameters_t *params, int min,
     int max, general_data_t *gd);
+void update_special_variable(general_data_t *gd);
 
 #endif /*SCRIPT_EVENT_H_*/

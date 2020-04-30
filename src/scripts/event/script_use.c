@@ -23,6 +23,7 @@ void event_active(intern_t *data, self_data_t self, dg_window_t *w, sfTime dt)
     while (data->script[data->reader.progress].keycode != NONE &&
         key_active[data->script[data->reader.progress].keycode]
         (data, self, w, dt)) {
+        update_special_variable(w->general_data);
         key_end[data->script[data->reader.progress].keycode](data);
         data->reader.progress++;
         if (data->script[data->reader.progress].keycode != NONE) {
@@ -85,4 +86,25 @@ void set_collision(data_t *data, dg_array_t **entities, dg_window_t *w)
             data->self.memory.x = data->self.pos->x;
             data->self.memory.y = data->self.pos->y;
     }
+}
+
+void update_special_variable(general_data_t *gd)
+{
+    gd->event_manager.var[variable_to_int("PV", gd)].data = gd->player.pv.x;
+    gd->event_manager.var[variable_to_int("PV_MAX", gd)].data =
+        gd->player.pv.y;
+    gd->event_manager.var[variable_to_int("PM", gd)].data =
+        gd->player.pm.x;
+    gd->event_manager.var[variable_to_int("XP", gd)].data =
+        gd->player.xp.x;
+    gd->event_manager.var[variable_to_int("LEVEL", gd)].data =
+        gd->player.level;
+    gd->event_manager.var[variable_to_int("PM_MAX", gd)].data =
+        gd->player.pm.x;
+    gd->event_manager.var[variable_to_int("MONEY", gd)].data =
+        gd->player.money;
+    gd->event_manager.var[variable_to_int("WEIGHT", gd)].data =
+        gd->inventory.stack.x;
+    gd->event_manager.var[variable_to_int("WEIGHT_MAX", gd)].data =
+        gd->inventory.stack.y;
 }

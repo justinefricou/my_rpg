@@ -41,7 +41,7 @@ static skill_t *create_blank_skills_array(FILE *res_file, int *nb_skills)
     if (*nb_skills <= 0)
         return (NULL);
     skills = malloc(sizeof(skill_t) * (*nb_skills + 1));
-    for (int i = 0; i < *nb_skills; i++) {
+    for (int i = 0; i <= *nb_skills; i++) {
         skills[i].name = 0;
         skills[i].description = 0;
         skills[i].type = 0;

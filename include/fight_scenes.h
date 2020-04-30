@@ -5,8 +5,8 @@
 ** game_scenes
 */
 
-#ifndef GAME_SCENES_H_
-#define GAME_SCENES_H_
+#ifndef FIGHT_SCENES_H_
+#define FIGHT_SCENES_H_
 
 #include "libdragon.h"
 
@@ -17,4 +17,4 @@ void remove_fight_scenes(void);
 
 void fight_skill(int *previous, void *data, dg_window_t *w);
 
-#endif /*GAME_SCENES_H_*/
+#endif /*FIGHT_SCENES_H_*/

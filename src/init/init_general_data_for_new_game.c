@@ -33,6 +33,7 @@ static void init_player_for_new_game(player_t *player)
     player->xp.x = 0;
     player->xp.y = 100;
     player->money = 100;
+    player->damage = 10;
 }
 
 void init_general_data_for_new_game(general_data_t *data)

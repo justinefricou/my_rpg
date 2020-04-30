@@ -69,6 +69,7 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/hud/ent_hud_text.c									\
 			src/entities/hud/ent_cancel_menu_selector.c						\
 			src/entities/fight_ent/ent_player_fight.c						\
+			src/entities/fight_ent/ent_enemy_fight.c						\
 			src/entities/fight_ent/ent_hud_fight_inventory.c				\
 			src/entities/fight_ent/ent_hud_skill_fight.c					\
 
@@ -167,6 +168,8 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/event/get_event_from_name.c							\
 			src/scripts/event/script_use.c									\
 			src/scripts/fight/fight_manager.c								\
+			src/scripts/fight/scp_hud_fight.c								\
+			src/scripts/fight/fight_update_slot.c							\
 
 SRC_SAV =	src/save_load/save_load_utils.c									\
 			src/save_load/set_save_infos.c									\

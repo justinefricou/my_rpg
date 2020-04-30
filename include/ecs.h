@@ -24,7 +24,7 @@ dg_scene_t *scene_game_bottom(int **map, dg_scene_t *event);
 dg_scene_t *scene_game_bh(int **map, dg_scene_t *event);
 dg_scene_t *scene_game_middle(int **map, dg_scene_t *event);
 dg_scene_t *scene_fight_event(int **map);
-dg_scene_t *scene_fight_hud(dg_window_t *w);
+dg_scene_t *scene_fight_hud(dg_window_t *w, general_data_t *gd);
 dg_scene_t *scene_fight_top(void);
 dg_scene_t *scene_fight_bottom(int **map, dg_scene_t *event);
 dg_scene_t *scene_fight_middle(int id);
@@ -60,6 +60,7 @@ dg_entity_t *ent_hud_keymap_button(sfVector2f pos, int size,
     int *keymap, dg_scene_t *scene);
 dg_entity_t *ent_event(map_events_t data, general_data_t *gd);
 dg_entity_t *entity_player_fight_create(void);
+dg_entity_t *entity_enemy_fight_create(void);
 dg_entity_t *ent_hud_text(char *text);
 dg_entity_t *ent_hud_fight_inventory(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_skill_fight(int *previous, dg_scene_t *scene);

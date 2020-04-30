@@ -21,4 +21,5 @@ void init_img(void)
     dg_ressources_add_spritesheet("./img/background_fight_1.png",
         "background_fight_1", 1272, 253);
     dg_ressources_add_spritesheet("./img/enemy_1.png", "enemy_1", 64, 134);
+    dg_ressources_add_spritesheet("./img/enemy_2.png", "enemy_2", 79, 138);
 }

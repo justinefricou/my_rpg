@@ -99,12 +99,18 @@ typedef struct lock
     int menu;
 } lock_t;
 
+typedef struct enemy
+{
+    float pv;
+} enemy_t;
+
 typedef struct general_data
 {
     inventory_t inventory;
     clues_t clues;
     skill_t *skills;
     player_t player;
+    enemy_t enemy;
     object_list_t object_list;
     event_manager_t event_manager;
     map_t maps;

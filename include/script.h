@@ -110,5 +110,10 @@ void scp_fight_manager_loop(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void scp_fight_manager_end(void *data);
 
+// fight manager
+void *scp_hud_fight_init(void *init_data);
+void scp_hud_fight_loop(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void scp_hud_fight_end(void *data);
 
 #endif /*SCRIPT_H_*/

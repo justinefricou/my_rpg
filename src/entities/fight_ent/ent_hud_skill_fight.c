@@ -16,8 +16,8 @@ dg_entity_t *ent_hud_skill_fight(int *previous, dg_scene_t *scene)
     dg_entity_t *entity = dg_entity_create("hud_skill_fight");
     void *idata[3] = {entity, scene, previous};
 
-    dg_entity_add_component(entity, cpt_script(&scp_hud_inventory_init,
-        &scp_hud_inventory_loop, &scp_hud_inventory_end, idata));
+    dg_entity_add_component(entity, cpt_script(&scp_hud_fight_init,
+        &scp_hud_fight_loop, &scp_hud_fight_end, idata));
     return entity;
 }
 

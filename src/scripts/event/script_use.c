@@ -16,18 +16,19 @@
 #include "instructions.h"
 #include "script_event_data.h"
 
-void event_active(intern_t *data, self_data_t self, dg_window_t *w)
+void event_active(intern_t *data, self_data_t self, dg_window_t *w, sfTime dt)
 {
     if (!data->reader.active)
         return;
     while (data->script[data->reader.progress].keycode != NONE &&
         key_active[data->script[data->reader.progress].keycode]
-        (data, self, w)) {
+        (data, self, w, dt)) {
         key_end[data->script[data->reader.progress].keycode](data);
         data->reader.progress++;
         if (data->script[data->reader.progress].keycode != NONE) {
             data->intern =
-                key_init[data->script[data->reader.progress].keycode](data);
+                key_init[data->script[data->reader.progress].keycode]
+                (data, w->general_data);
         }
     }
     if (data->script[data->reader.progress].keycode == NONE) {
@@ -35,7 +36,7 @@ void event_active(intern_t *data, self_data_t self, dg_window_t *w)
     }
 }
 
-void event_launch(intern_t *data)
+void event_launch(intern_t *data, general_data_t *gd)
 {
     if (data->reader.activation) {
         data->reader.progress = 0;
@@ -44,7 +45,8 @@ void event_launch(intern_t *data)
         data->reader.end = 0;
         if (data->script[data->reader.progress].keycode != NONE)
             data->intern =
-                key_init[data->script[data->reader.progress].keycode](data);
+                key_init[data->script[data->reader.progress].keycode]
+                (data, gd);
     }
 }
 

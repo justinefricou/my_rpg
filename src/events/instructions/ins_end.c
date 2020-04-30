@@ -21,13 +21,13 @@ parameters_t *ins_set_end(instruction_t *instruction, int *i,
     return NULL;
 }
 
-intern_t *ins_ini_end(intern_t *prev)
+intern_t *ins_ini_end(intern_t *prev, general_data_t *gd)
 {
     return NULL;
 }
 
 int ins_act_end(intern_t *intern, self_data_t data,
-    dg_window_t *w)
+    dg_window_t *w, sfTime dt)
 {
     return 1;
 }

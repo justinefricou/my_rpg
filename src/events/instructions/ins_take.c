@@ -29,13 +29,13 @@ parameters_t *ins_set_take(instruction_t *instruction, int *i,
     *len = 2;
 }
 
-intern_t *ins_ini_take(intern_t *prev)
+intern_t *ins_ini_take(intern_t *prev, general_data_t *gd)
 {
     return NULL;
 }
 
 int ins_act_take(intern_t *intern, self_data_t data,
-    dg_window_t *w)
+    dg_window_t *w, sfTime dt)
 {
     general_data_t *gd = w->general_data;
     parameters_t *params = intern->script[intern->reader.progress].parameters;

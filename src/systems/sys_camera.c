@@ -10,6 +10,16 @@
 #include "tilemap.h"
 #include "ecs.h"
 
+void set_too_small_map(sfVector2f *c_pos, sfVector2f map_size )
+{
+    if (map_size.x < 1920) {
+        c_pos->x = 0 - (1920 - map_size.x) / 2;
+    }
+    if (map_size.y < 1080) {
+        c_pos->y = 0 - (1080 - map_size.y) / 2;
+    }
+}
+
 void sys_camera(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt)
 {
@@ -32,4 +42,5 @@ void sys_camera(dg_entity_t *entity, dg_window_t *w,
     c_pos->x = (s_pos->x >= map_size.x - 960) ? map_size.x - 1920 : c_pos->x;
     c_pos->y = (s_pos->y <= 540) ? 0 : c_pos->y;
     c_pos->y = (s_pos->y >= map_size.y - 540) ? map_size.y - 1080 : c_pos->y;
+    set_too_small_map(c_pos, map_size);
 }

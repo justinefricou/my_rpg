@@ -53,7 +53,7 @@ void *dg_init(dg_window_t *window, void *import)
 
 int dg_loop(dg_window_t *w, void *var, sfTime dt)
 {
-    sfRenderWindow_clear(w->window, sfRed);
+    sfRenderWindow_clear(w->window, sfBlack);
     update_inventory(w->general_data);
     dg_scene_manager_update(w, dt);
     set_volume(w);

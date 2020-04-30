@@ -28,8 +28,8 @@ parameters_t *ins_set_tp(instruction_t *instruction, int *i,
     param[1].parameters.n = my_atoi(text_param[1].parameters.s);
     param[2].type = INT;
     param[2].parameters.n = my_atoi(text_param[2].parameters.s);
-    param[3].type = INT;
-    param[3].parameters.n = my_atoi(text_param[3].parameters.s);
+    param[3].type = STRING;
+    param[3].parameters.s = text_param[3].parameters.s;
     param[4].type = NONE;
     *len = 4;
     return param;
@@ -54,10 +54,13 @@ int ins_act_tp(intern_t *intern, self_data_t self,
 {
     general_data_t *gd = w->general_data;
     parameters_t *params = intern->script[intern->reader.progress].parameters;
-    dg_scene_t *scene = dg_scene_manager_get_scene("layer_event");
-    dg_entity_t *player = dg_get_entity(scene->entities, "player");
+    dg_scene_t *scene = 0;
+    dg_entity_t *player = 0;
     sfVector2f *pos = NULL;
 
+    act_change_scene(gd, params);
+    scene = dg_scene_manager_get_scene("layer_event");
+    player = dg_get_entity(scene->entities, "player");
     pos = (!dg_strcmp("PLAYER", params[0].parameters.s)) ?
         dg_entity_get_component(player, "pos") : NULL;
     pos = (!dg_strcmp("SELF", params[0].parameters.s)) ?

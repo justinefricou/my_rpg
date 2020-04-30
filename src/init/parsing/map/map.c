@@ -23,6 +23,7 @@ char *copy(char *source)
     for (int i = 0; i < len; i++)
         cop[i] = source[i];
     cop[len] = '\0';
+    return cop;
 }
 
 void destroy_map_list(map_t map_list)

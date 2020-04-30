@@ -35,25 +35,33 @@ void *scp_player_controller_init(void *init_data)
     return data;
 }
 
+//16 * 3 = 48
+int try_collide(data_t *data, sfVector2f m)
+{
+    sfVector2f p = {(data->pos->x), data->pos->y};
+    sfVector2f tiled_pos[4] = {
+        {(p.x + m.x) / (48), (p.y + m.y) / (48)},
+        {(p.x + m.x + 24) / 48, (p.y + m.y + 24) / (48)},
+        {(p.x + m.x) / 48, (p.y + m.y + 24) / (48)},
+        {(p.x + m.x + 24) / 48, (p.y + m.y) / (48)}
+    };
+
+    for ( int i = 0; i < 4; i++) {
+        if (tiled_pos[i].y <= 0 || tiled_pos[i].x <= 0.3 ||
+            tiled_pos[i].x + 0.3 >= data->collide->width ||
+            tiled_pos[i].y + 0.3 >= data->collide->height)
+            return 1;
+        if (data->collide->map[(int)tiled_pos[i].y][(int)tiled_pos[i].x])
+            return 1;
+    }
+    return 0;
+}
+
 static void collide(sfVector2f *move, data_t *data)
 {
-    sfVector2f pos = {(data->pos->x),
-        data->pos->y};
-    sfVector2i tiled_posx[2] = {
-        {(data->pos->x + move->x) / (16 * 3),
-        data->pos->y / (16 * 3)},
-        {(data->pos->x + move->x + (16 * 3 / 2)) / (16 * 3),
-        (data->pos->y + (16 * 3 / 2)) / (16 * 3)}};
-    sfVector2i tiled_posy[2] = {{(data->pos->x) / (16 * 3),
-        (data->pos->y + move->y) / (16 * 3)},
-        {(data->pos->x + (16 * 3 / 2)) / (16 * 3),
-        (data->pos->y + move->y + (16 * 3 / 2)) / (16 * 3)}};
-
-    if (data->collide->map[tiled_posx[0].y][tiled_posx[0].x] ||
-        data->collide->map[tiled_posx[1].y][tiled_posx[1].x])
+    if (try_collide(data, (sfVector2f){move->x, 0}))
         move->x = 0;
-    if (data->collide->map[tiled_posy[0].y][tiled_posy[0].x] ||
-        data->collide->map[tiled_posy[1].y][tiled_posy[1].x])
+    if (try_collide(data, (sfVector2f){0, move->y}))
         move->y = 0;
 }
 
@@ -71,8 +79,8 @@ void scp_player_controller_loop(dg_entity_t *entity, dg_window_t *w,
         move.y += (keymap_is_pressed(w, "down")) ? 1 : 0;
         move.y += (keymap_is_pressed(w, "up")) ? -1 : 0;
     }
-    move.x *= dt.microseconds / 10000 * data->speed * 1.5;
-    move.y *= dt.microseconds / 10000 * data->speed * 1.5;
+    move.x *= dt.microseconds / 10000.0 * data->speed * 1.5;
+    move.y *= dt.microseconds / 10000.0 * data->speed * 1.5;
     collide(&move, data);
     (move.x > 0) ? dg_animator_set_animation(data->animator, "right") : NULL;
     (move.x < 0) ? dg_animator_set_animation(data->animator, "left") : NULL;

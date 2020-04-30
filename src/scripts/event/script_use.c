@@ -57,8 +57,8 @@ void check_interaction(data_t *data, dg_array_t **entities, dg_window_t *w)
         data->self.pos->y / (16 * 3)};
 
     if (keymap_is_clicked(w, "action", 0)) {
-        if (p_pos.x - 1 <= e_pos.x && p_pos.x + 1 >= e_pos.x
-            && p_pos.y - 1 <= e_pos.y && p_pos.y + 1 >= e_pos.y) {
+        if (p_pos.x - 1.5 <= e_pos.x && p_pos.x + 1.5 >= e_pos.x
+            && p_pos.y - 1.5 <= e_pos.y && p_pos.y + 1.5 >= e_pos.y) {
                 data->intern.reader.activation = 1;
                 data->intern.reader.progress = 0;
         }

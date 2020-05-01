@@ -6,3 +6,12 @@ tp_island_to_hangar 0 30 48 -1
 tp_island_to_library_reception 0 11 57 -1
 tp_island_to_library_reception 0 12 57 -1
 tp_island_to_home1 0 58 70 -1
+tp_island_to_home2 0 63 70 -1
+tp_island_to_home3 0 68 70 -1
+tp_island_to_home4 0 73 70 -1
+tp_island_to_home5 0 78 70 -1
+tp_island_to_home6 0 58 80 -1
+tp_island_to_home7 0 63 80 -1
+tp_island_to_home8 0 68 80 -1
+tp_island_to_home9 0 73 80 -1
+tp_island_to_home10 0 78 80 -1

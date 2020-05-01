@@ -18,6 +18,9 @@ void init_img(void)
     dg_ressources_add_spritesheet("./img/tileset_HUD.png", "hud", 16, 16);
     dg_ressources_add_spritesheet("./img/icons.png", "icons", 32, 32);
     dg_ressources_add_spritesheet("./img/player.png", "player", 32, 32);
+    dg_ressources_add_spritesheet("./img/butcher.png", "butcher", 16, 16);
+    dg_ressources_add_spritesheet("./img/fisher.png", "fisher", 16, 16);
+    dg_ressources_add_spritesheet("./img/mayor.png", "mayor", 16, 16);
     dg_ressources_add_spritesheet("./img/background_fight_1.png",
         "background_fight_1", 1272, 253);
     dg_ressources_add_spritesheet("./img/enemy_1.png", "enemy_1", 62, 132);

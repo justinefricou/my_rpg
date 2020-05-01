@@ -86,4 +86,5 @@ void create_events(general_data_t *gd)
     variable_to_int("LEVEL", gd);
     variable_to_int("WEIGHT", gd);
     variable_to_int("WEIGHT_MAX", gd);
+    variable_to_int("BATTLE", gd);
 }

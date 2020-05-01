@@ -56,13 +56,13 @@ typedef enum skill_type
     FLATTERY = 1,
     TRICKERY = 2,
     REPARTEE = 3,
-} skill_type;
+} skill_type_t;
 
 typedef struct skill
 {
     char *name;
     char *description;
-    skill_type type;
+    skill_type_t type;
 } skill_t;
 
 typedef struct keymap

@@ -43,19 +43,20 @@ sfVector2f *set_move_target(self_data_t self,
         pos = self.pos;
         *mator = self.animator;
     } else {
-        pos = pos;
-        *mator = self.animator;
+        player = dg_get_entity(scene->entities, params[0].parameters.s);
+        pos = dg_entity_get_component(player, "pos");
+        *mator = dg_entity_get_component(player, "animator");
     }
     return pos;
 }
 
-void move_set_collision(self_data_t self, dg_window_t *w)
+void move_set_collision(sfVector2f *pos, dg_window_t *w)
 {
     dg_scene_t *scene = dg_scene_manager_get_scene("layer_event");
     dg_entity_t *ent_map = dg_get_entity(scene->entities, "map");
     tilemap_t *tm = dg_entity_get_component(ent_map, "tilecollide");
-    sfVector2f e_pos = {self.pos->x / (16 * 3),
-        self.pos->y / (16 * 3)};
+    sfVector2f e_pos = {(pos->x + 24) / (16 * 3),
+        (pos->y + 24) / (16 * 3)};
 
     if ((int)e_pos.y < 0 || (int)e_pos.x < 0 ||
         (int)e_pos.y > tm->height || (int)e_pos.x > tm->width)
@@ -67,9 +68,13 @@ sfVector2f move_set_move(sfVector2f *pos, sfVector2f target)
 {
     sfVector2f move = {0};
 
-    move.x = (pos->x - 1 > target.x) ? -1 : move.x;
-    move.x = (pos->x + 1 < target.x) ? 1 : move.x;
-    move.y = (pos->y - 1 > target.y) ? -1 : move.y;
-    move.y = (pos->y + 1 < target.y) ? 1 : move.y;
+    move.x = (pos->x - 2 > target.x) ? -1 : move.x;
+    move.x = (pos->x + 2 < target.x) ? 1 : move.x;
+    move.y = (pos->y - 2 > target.y) ? -1 : move.y;
+    move.y = (pos->y + 2 < target.y) ? 1 : move.y;
+    if (sfKeyboard_isKeyPressed(sfKeyLShift)) {
+        move.x *= 3;
+        move.y *= 3;
+    }
     return move;
 }

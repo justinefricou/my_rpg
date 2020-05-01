@@ -1,0 +1,5 @@
+IF INIT == 1
+DIALOG
+TALK init07
+END
+END

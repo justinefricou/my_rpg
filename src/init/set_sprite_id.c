@@ -16,15 +16,15 @@ static dg_animator_t *mator_butcher(void)
     dg_animation_t *anim = 0;
     char *name_list[4] = {"down", "up", "right", "left"};
 
+    anim = dg_animation_create(ss, 10);
+    dg_animation_add(anim, 1);
+    dg_animator_add(animator, "idle", anim);
     for (int i = 0; i < 4; i++) {
         anim = dg_animation_create(ss, 10);
         for (int j = 0; j < 3; j++)
             dg_animation_add(anim, (i * 3) + j);
         dg_animator_add(animator, name_list[i], anim);
     }
-    anim = dg_animation_create(ss, 10);
-    dg_animation_add(anim, 1);
-    dg_animator_add(animator, "idle", anim);
     return animator;
 }
 
@@ -35,15 +35,15 @@ static dg_animator_t *mator_mayor(void)
     dg_animation_t *anim = 0;
     char *name_list[4] = {"down", "up", "right", "left"};
 
+    anim = dg_animation_create(ss, 10);
+    dg_animation_add(anim, 1);
+    dg_animator_add(animator, "idle", anim);
     for (int i = 0; i < 4; i++) {
         anim = dg_animation_create(ss, 10);
         for (int j = 0; j < 3; j++)
             dg_animation_add(anim, (i * 3) + j);
         dg_animator_add(animator, name_list[i], anim);
     }
-    anim = dg_animation_create(ss, 10);
-    dg_animation_add(anim, 1);
-    dg_animator_add(animator, "idle", anim);
     return animator;
 }
 
@@ -54,15 +54,15 @@ static dg_animator_t *mator_fisher(void)
     dg_animation_t *anim = 0;
     char *name_list[4] = {"down", "up", "right", "left"};
 
+    anim = dg_animation_create(ss, 10);
+    dg_animation_add(anim, 1);
+    dg_animator_add(animator, "idle", anim);
     for (int i = 0; i < 4; i++) {
         anim = dg_animation_create(ss, 10);
         for (int j = 0; j < 3; j++)
             dg_animation_add(anim, (i * 3) + j);
         dg_animator_add(animator, name_list[i], anim);
     }
-    anim = dg_animation_create(ss, 10);
-    dg_animation_add(anim, 1);
-    dg_animator_add(animator, "idle", anim);
     return animator;
 }
 

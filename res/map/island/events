@@ -1,4 +1,6 @@
-test 2 50 10 1
+island_auto 1 0 0 -1
+island_auto2 1 0 0 -1
+MAYOR 0 50 10 1
 tp_island_to_bar 0 24 73 -1
 tp_island_to_camping 0 44 13 -1
 tp_island_to_hangar 0 29 48 -1

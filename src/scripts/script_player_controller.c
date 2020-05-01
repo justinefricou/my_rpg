@@ -23,7 +23,7 @@ void *scp_player_controller_init(void *init_data)
     void **idata = (void **) init_data;
     data_t *data = malloc(sizeof(data_t));
     dg_entity_t *entity = idata[0];
-    dg_component_t *pos = dg_cpt_pos(1000, 500);
+    dg_component_t *pos = dg_cpt_pos(88 * 16 * 3, 9 * 16 * 3);
     dg_scene_t *scene = idata[2];
     dg_entity_t *map_ent = dg_get_entity(scene->entities, "map");
 

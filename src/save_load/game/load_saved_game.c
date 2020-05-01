@@ -33,5 +33,6 @@ int load_saved_game(general_data_t *data, int save_nb)
     if (return_value != 84) {
         return_value = load_saved_data(data, save_file);
         fclose(save_file);
+    }
     return (return_value);
 }

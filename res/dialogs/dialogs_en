@@ -1,8 +1,9 @@
-npc01 Hello !
-npc02 Wow.
-npc03 Nope
-npc04 Yep.
-player01 Hey
-play02 My name is Potato.
-player03 Do you like potatoes ?
-player04 That's too bad.
+error error
+init00 Hello ! Come here !
+init01 I'm the mayor, Robin. Welcome to our island.
+init02 I'm relieved you could have come so fast.
+init03 What happened is a veritable tragedy...
+init04 I hope you'll be able to solve this riddle ispector
+init05 follow me ! I'll show you around !
+init06 This is the camping managed by Ben.
+init07 Why don't you go and say hello ?

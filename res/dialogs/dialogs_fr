@@ -1,8 +1,9 @@
-npc01 Bonjour !
-npc02 Oh.
-npc03 Non
-npc04 Ouaip.
-player01 Salut
-play02 Je m'appelle Patate.
-player03 Tu aimes les patates ?
-player04 Dommage.
+error error
+init00 Hello ! Come here !
+init01 I'm the mayor, Robin. Welcome to our island.
+init02 I'm relieved you could have come so fast.
+init03 What happened is a veritable tragedy...
+init04 I hope you'll be able to solve this riddle ispector
+init05 follow me ! I'll show you around !
+init06 This is the camping managed by Ben.
+init07 Why don't you go and say hello ?

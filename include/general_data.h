@@ -16,7 +16,7 @@
 
 #define OBJECT_LIST 1
 #define CLUES_LEN 1
-#define SPRITE_ID_LEN 1
+#define SPRITE_ID_LEN 3
 
 typedef dg_animator_t *(*set_animator_t)(void);
 
@@ -62,7 +62,7 @@ typedef struct skill
 {
     char *name;
     char *description;
-    skill_type type;
+    skill_type_t type;
 } skill_t;
 
 typedef struct keymap

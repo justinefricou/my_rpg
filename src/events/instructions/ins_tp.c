@@ -65,9 +65,10 @@ int ins_act_tp(intern_t *intern, self_data_t self,
         dg_entity_get_component(player, "pos") : NULL;
     pos = (!dg_strcmp("SELF", params[0].parameters.s)) ?
         self.pos : pos;
-    pos = (!pos) ? NULL : pos;
-    if (!pos)
-        return 1;
+    if (!pos) {
+        player = dg_get_entity(scene->entities, params[0].parameters.s);
+        pos = dg_entity_get_component(player, "pos");
+    }
     *pos = (sfVector2f){params[1].parameters.n * 16 * 3,
         params[2].parameters.n * 16 * 3};
     return 1;

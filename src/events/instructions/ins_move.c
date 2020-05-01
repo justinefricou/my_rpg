@@ -49,13 +49,14 @@ int ins_act_move(intern_t *intern, self_data_t self,
     sfVector2f move = move_set_move(pos, target);
 
     move_set_animation(move, mator);
-    move_set_collision(self, w);
+    move_set_collision(pos, w);
     pos->x += move.x * dt.microseconds / 10000.0 * 1.5;
     pos->y += move.y * dt.microseconds / 10000.0 * 1.5;
-    if (pos->x - 5 < target.x && pos->x + 5 > target.x &&
-        pos->y - 5 < target.y && pos->y + 5 > target.y) {
+    if (pos->x - 4 < target.x && pos->x + 4 > target.x &&
+        pos->y - 4 < target.y && pos->y + 4 > target.y) {
         gd->lock.menu = 0;
         gd->lock.move = 0;
+        dg_animator_set_animation(mator, "idle");
         return 1;
     }
     return 0;

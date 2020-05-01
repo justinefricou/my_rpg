@@ -32,7 +32,7 @@ parameters_t *ins_set_if(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_if(intern_t *prev)
+intern_t *ins_ini_if(intern_t *prev, general_data_t *gd)
 {
     parameters_t *params = prev->script[prev->reader.progress].parameters;
     int len = prev->script[prev->reader.progress].len;
@@ -48,7 +48,7 @@ intern_t *ins_ini_if(intern_t *prev)
 }
 
 int ins_act_if(intern_t *intern, self_data_t data,
-    dg_window_t *w)
+    dg_window_t *w, sfTime dt)
 {
     parameters_t *params = intern->script[intern->reader.progress].parameters;
     int len = intern->script[intern->reader.progress].len;
@@ -59,10 +59,10 @@ int ins_act_if(intern_t *intern, self_data_t data,
         if (!condition)
             return 1;
         intern->intern->reader.activation = 1;
-        event_launch(intern->intern);
+        event_launch(intern->intern, w->general_data);
         intern->intern->reader.end = 1;
     } else {
-        event_active(intern->intern, data, w);
+        event_active(intern->intern, data, w, dt);
         if (intern->intern->reader.active == 0) {
             return 1;
         }

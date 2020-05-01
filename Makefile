@@ -89,6 +89,7 @@ SRC_INI =	src/init/init_img.c												\
 			src/init/init_audio.c											\
 			src/init/general_data.c											\
 			src/init/init_general_data_for_new_game.c						\
+			src/init/loop_general_data.c									\
 			src/init/set_sprite_id.c										\
 			src/init/parsing/skills/skills.c								\
 			src/init/parsing/skills/parse_skills.c							\
@@ -123,6 +124,7 @@ SRC_EVT =	src/events/variable.c											\
 			src/events/instructions/answer.c								\
 			src/events/instructions/ins_battle.c							\
 			src/events/instructions/ins_move.c								\
+			src/events/instructions/move.c									\
 			src/events/instructions/give.c									\
 			src/events/instructions/event_calculate.c						\
 			src/events/instructions/calcul_condition.c						\
@@ -169,7 +171,7 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/event/script_use.c									\
 			src/scripts/fight/fight_manager.c								\
 			src/scripts/fight/scp_hud_fight.c								\
-			src/scripts/fight/fight_update_slot.c							\
+			src/scripts/fight/attack_fight.c								\
 
 SRC_SAV =	src/save_load/save_load_utils.c									\
 			src/save_load/set_save_infos.c									\

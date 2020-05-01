@@ -36,12 +36,14 @@ void set_self_data(data_t *data, map_events_t mev_data,
 {
     dg_component_t *pos = dg_cpt_pos(mev_data.pos.x * (16 * 3),
         mev_data.pos.y * (16 * 3));
+    dg_component_t *anim_cpt = 0;
 
     get_event_from_name(mev_data.name, gd, data);
     if (mev_data.animator_id >= 0) {
-        data->self.animator = dg_cpt_animator(
+        anim_cpt = dg_cpt_animator(
         (gd->sprite_id[mev_data.animator_id]));
-        dg_entity_add_component(entity, data->self.animator);
+        data->self.animator = anim_cpt->data;
+        dg_entity_add_component(entity, anim_cpt);
     }
     data->self.pos = pos->data;
     data->self.memory = (sfVector2f) {data->self.pos->x, data->self.pos->y};
@@ -72,9 +74,11 @@ void scp_event_loop(dg_entity_t *entity, dg_window_t *w,
     data_t *data = script->data;
     general_data_t *gd = w->general_data;
 
+    update_special_variable(w->general_data);
     set_collision(data, entities, w);
-    event_launch(&(data->intern));
-    event_active(&(data->intern), data->self, w);
+    update_special_variable(gd);
+    event_launch(&(data->intern), gd);
+    event_active(&(data->intern), data->self, w, dt);
     check_interaction(data, entities, w);
 }
 

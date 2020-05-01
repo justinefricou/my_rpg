@@ -21,9 +21,6 @@ void new_game(int *previous, void *data, dg_window_t *w)
     create_game_scenes(w->general_data, "island");
     sfMusic_stop(dg_ressources_get_audio_by_name("menu_theme"));
     sfMusic_play(dg_ressources_get_audio_by_name("game_theme"));
-    /*create_fight_scenes(w, 0);
-    sfMusic_stop(dg_ressources_get_audio_by_name("menu_theme"));
-    sfMusic_play(dg_ressources_get_audio_by_name("fight_theme"));*/
     dg_scene_manager_remove("main_menu");
     dg_scene_manager_remove("main_menu_hover");
 }

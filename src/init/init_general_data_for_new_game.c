@@ -29,10 +29,11 @@ static void init_player_for_new_game(player_t *player)
     player->pv.y = 100;
     player->pm.x = 90;
     player->pm.y = 100;
-    player->level = 0;
+    player->level = 1;
     player->xp.x = 0;
     player->xp.y = 100;
     player->money = 100;
+    player->damage = 10;
 }
 
 void init_general_data_for_new_game(general_data_t *data)

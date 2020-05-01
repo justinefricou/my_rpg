@@ -27,7 +27,7 @@ parameters_t *ins_set_dialog(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_dialog(intern_t *prev)
+intern_t *ins_ini_dialog(intern_t *prev, general_data_t *gd)
 {
     parameters_t *params = prev->script[prev->reader.progress].parameters;
     dg_scene_t *scene = dg_scene_manager_get_scene("layer_hud");
@@ -44,18 +44,18 @@ intern_t *ins_ini_dialog(intern_t *prev)
         dg_entity_get_component(intern->dialog.ent_text, "text");
     dg_scene_add_ent(scene, intern->dialog.ent_text);
     dg_scene_add_ent(scene, intern->dialog.box);
-    event_launch(intern);
+    event_launch(intern, gd);
     return intern;
 }
 
 int ins_act_dialog(intern_t *intern, self_data_t data,
-    dg_window_t *w)
+    dg_window_t *w, sfTime dt)
 {
     general_data_t *gd = w->general_data;
 
     gd->lock.menu = 1;
     gd->lock.move = 1;
-    event_active(intern->intern, data, w);
+    event_active(intern->intern, data, w, dt);
     if (intern->intern->reader.active == 0) {
         gd->lock.menu = 0;
         gd->lock.move = 0;

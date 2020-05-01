@@ -10,6 +10,7 @@
 #include "ecs.h"
 #include "button_action.h"
 #include "fight_scenes.h"
+#include "game_scenes.h"
 
 static void fight_inventory(int *previous, void *data, dg_window_t *w)
 {
@@ -21,8 +22,12 @@ static void fight_inventory(int *previous, void *data, dg_window_t *w)
 
 static void quit_fight(int *previous, void *data, dg_window_t *w)
 {
-    dg_scene_manager_add_scene(scene_main_menu());
-    dg_scene_manager_add_scene(scene_main_menu_hover());
+    dg_scene_t *game_scenes[NB_GAME_SCENE];
+    get_game_scenes(&game_scenes, 1);
+    for (int i = 0; i < NB_GAME_SCENE; i++) {
+        game_scenes[i]->display = 1;
+        game_scenes[i]->run = 1;
+    }
     sfMusic_play(dg_ressources_get_audio_by_name("game_theme"));
     sfMusic_stop(dg_ressources_get_audio_by_name("fight_theme"));
     remove_fight_scenes();

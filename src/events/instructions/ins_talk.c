@@ -13,6 +13,7 @@
 #include "general_data.h"
 #include "instructions.h"
 #include "script_event_data.h"
+#include "init_dialogs.h"
 
 parameters_t *ins_set_talk(instruction_t *instruction, int *i,
     general_data_t *gd, int *len)
@@ -27,17 +28,22 @@ parameters_t *ins_set_talk(instruction_t *instruction, int *i,
     return param;
 }
 
-intern_t *ins_ini_talk(intern_t *prev)
+intern_t *ins_ini_talk(intern_t *prev, general_data_t *gd)
 {
     return NULL;
 }
 
 int ins_act_talk(intern_t *intern, self_data_t data,
-    dg_window_t *w)
+    dg_window_t *w, sfTime dt)
 {
+    general_data_t *gd = w->general_data;
     parameters_t *params = intern->script[intern->reader.progress].parameters;
+    int dialog_id = get_dialog_id(params[0].parameters.s, gd->dialogs);
 
-    sfText_setString(intern->dialog.text, params[0].parameters.s);
+    if (dialog_id >= 0)
+        sfText_setString(intern->dialog.text, gd->dialogs.lines[dialog_id]);
+    else
+        sfText_setString(intern->dialog.text, "");
     if (keymap_is_clicked(w, "action", 1)) {
         sound_play(dg_ressources_get_audio_by_name("hud_activate"));
         return 1;

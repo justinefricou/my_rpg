@@ -41,6 +41,7 @@ typedef struct player
     int level;
     sfVector2f xp;
     int money;
+    float damage;
 } player_t;
 
 typedef struct clues
@@ -101,7 +102,7 @@ typedef struct lock
 
 typedef struct enemy
 {
-    float pv;
+    sfVector2f pv;
 } enemy_t;
 
 typedef struct general_data
@@ -146,5 +147,10 @@ int how_much_in_inventory(general_data_t *gd, int id);
 
 //events
 map_data_t get_map_data(char *name, general_data_t *gd);
+
+//loop
+void fix_empty_slot(general_data_t *gd, int hole);
+void update_inventory(general_data_t *gd);
+void update_level(general_data_t *gd);
 
 #endif /*GENERAL_DATA_H_*/

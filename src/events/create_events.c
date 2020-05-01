@@ -77,4 +77,13 @@ void create_events(general_data_t *gd)
     event_t *tmp_event = set_text_events();
 
     gd->event_manager.events = interpret_events(tmp_event, gd);
+    variable_to_int("PV", gd);
+    variable_to_int("PM", gd);
+    variable_to_int("PV_MAX", gd);
+    variable_to_int("PM_MAX", gd);
+    variable_to_int("MONEY", gd);
+    variable_to_int("XP", gd);
+    variable_to_int("LEVEL", gd);
+    variable_to_int("WEIGHT", gd);
+    variable_to_int("WEIGHT_MAX", gd);
 }

@@ -28,6 +28,7 @@ static void initialise_stats(general_data_t *gd)
 {
     gd->enemy.pv.x = 100;
     gd->enemy.pv.y = 100;
+    gd->enemy.type = 1;
 }
 
 void create_fight_scenes(dg_window_t *w, int id)

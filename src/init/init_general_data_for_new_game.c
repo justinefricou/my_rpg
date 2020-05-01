@@ -7,6 +7,7 @@
 
 #include "general_data.h"
 #include "init_general_data_for_new_game.h"
+#include "event.h"
 
 static void init_inventory_for_new_game(inventory_t *inventory)
 {
@@ -36,9 +37,16 @@ static void init_player_for_new_game(player_t *player)
     player->damage = 10;
 }
 
+static void init_event_vars_for_new_game(event_manager_t *event_manager)
+{
+    for (int i = 0; i < event_manager->var_len; i++)
+        event_manager->var[i].data = 0;
+}
+
 void init_general_data_for_new_game(general_data_t *data)
 {
     init_inventory_for_new_game(&(data->inventory));
     init_clues_for_new_game(&(data->clues));
     init_player_for_new_game(&(data->player));
+    init_event_vars_for_new_game(&(data->event_manager));
 }

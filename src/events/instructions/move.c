@@ -67,9 +67,9 @@ sfVector2f move_set_move(sfVector2f *pos, sfVector2f target)
 {
     sfVector2f move = {0};
 
-    move.x = (pos->x - 2 > target.x) ? -1 : move.x;
-    move.x = (pos->x + 2 < target.x) ? 1 : move.x;
-    move.y = (pos->y - 2 > target.y) ? -1 : move.y;
-    move.y = (pos->y + 2 < target.y) ? 1 : move.y;
+    move.x = (pos->x - 1 > target.x) ? -1 : move.x;
+    move.x = (pos->x + 1 < target.x) ? 1 : move.x;
+    move.y = (pos->y - 1 > target.y) ? -1 : move.y;
+    move.y = (pos->y + 1 < target.y) ? 1 : move.y;
     return move;
 }

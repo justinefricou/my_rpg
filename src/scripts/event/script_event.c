@@ -80,6 +80,7 @@ void scp_event_loop(dg_entity_t *entity, dg_window_t *w,
     event_launch(&(data->intern), gd);
     event_active(&(data->intern), data->self, w, dt);
     check_interaction(data, entities, w);
+    //dg_animator_set_animation(data->self.animator, "idle");
 }
 
 void scp_event_end(void *data)

@@ -47,6 +47,11 @@ int give_player(general_data_t *gd, parameters_t *params, int mul)
         gd->player.money += params[1].parameters.n * mul;
         return 1;
     }
+    if (!dg_strcmp("KEYBOARD", params[0].parameters.s)) {
+        gd->lock.menu = params[1].parameters.n;
+        gd->lock.move = params[1].parameters.n;
+        return 1;
+    }
     return 0;
 }
 

@@ -56,6 +56,7 @@ int ins_act_move(intern_t *intern, self_data_t self,
         pos->y - 5 < target.y && pos->y + 5 > target.y) {
         gd->lock.menu = 0;
         gd->lock.move = 0;
+        dg_animator_set_animation(mator, "idle");
         return 1;
     }
     return 0;

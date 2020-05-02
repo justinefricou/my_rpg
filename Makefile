@@ -91,6 +91,10 @@ SRC_INI =	src/init/init_img.c												\
 			src/init/init_general_data_for_new_game.c						\
 			src/init/loop_general_data.c									\
 			src/init/set_sprite_id.c										\
+			src/init/set_sprite_id_char.c									\
+			src/init/set_sprite_id_child.c									\
+			src/init/set_sprite_id_mother.c									\
+			src/init/set_sprite_id_obj.c									\
 			src/init/parsing/skills/skills.c								\
 			src/init/parsing/skills/parse_skills.c							\
 			src/init/parsing/dialogs/init_dialogs.c							\

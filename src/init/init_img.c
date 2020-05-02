@@ -9,6 +9,25 @@
 #include "libdragon.h"
 #include "ecs.h"
 
+static img_add_characters(void)
+{
+    dg_ressources_add_spritesheet("./img/fisher.png", "fisher", 16, 16);
+    dg_ressources_add_spritesheet("./img/mayor.png", "mayor", 16, 16);
+    dg_ressources_add_spritesheet("./img/pdg.png", "pdg", 16, 16);
+    dg_ressources_add_spritesheet("./img/camping.png", "camping", 16, 16);
+    dg_ressources_add_spritesheet("./img/librarian.png", "librarian", 16, 16);
+    dg_ressources_add_spritesheet("./img/policeman.png", "policeman", 16, 16);
+    dg_ressources_add_spritesheet("./img/photograph.png",
+        "photograph", 16, 16);
+    dg_ressources_add_spritesheet("./img/cashier.png", "cashier", 16, 16);
+    dg_ressources_add_spritesheet("./img/mother2.png", "mother_one", 16, 16);
+    dg_ressources_add_spritesheet("./img/mother.png", "mother", 16, 16);
+    dg_ressources_add_spritesheet("./img/child3.png", "child_two", 16, 16);
+    dg_ressources_add_spritesheet("./img/child2.png", "child_one", 16, 16);
+    dg_ressources_add_spritesheet("./img/child.png", "child", 16, 16);
+    dg_ressources_add_spritesheet("./img/dead.png", "dead", 16, 16);
+}
+
 void init_img(void)
 {
     dg_ressources_add_spritesheet("./img/background.png", "background_menu",
@@ -17,12 +36,10 @@ void init_img(void)
     dg_ressources_add_spritesheet("./img/tileset_map.png", "map", 16, 16);
     dg_ressources_add_spritesheet("./img/tileset_HUD.png", "hud", 16, 16);
     dg_ressources_add_spritesheet("./img/icons.png", "icons", 32, 32);
-    dg_ressources_add_spritesheet("./img/player.png", "player", 32, 32);
-    dg_ressources_add_spritesheet("./img/butcher.png", "butcher", 16, 16);
-    dg_ressources_add_spritesheet("./img/fisher.png", "fisher", 16, 16);
-    dg_ressources_add_spritesheet("./img/mayor.png", "mayor", 16, 16);
+    dg_ressources_add_spritesheet("./img/player.png", "player", 16, 16);
     dg_ressources_add_spritesheet("./img/background_fight_1.png",
         "background_fight_1", 1272, 253);
     dg_ressources_add_spritesheet("./img/enemy_1.png", "enemy_1", 62, 132);
     dg_ressources_add_spritesheet("./img/enemy_2.png", "enemy_2", 79, 138);
+    img_add_characters();
 }

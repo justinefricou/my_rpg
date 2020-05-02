@@ -22,8 +22,8 @@ void *scp_dialogue_fight_init(void *init_data)
     data->previous = idata[1];
     data->sound_activate = dg_ressources_get_audio_by_name("hud_activate");
     data->sound_move = dg_ressources_get_audio_by_name("hud_move");
-    data->side_box = ent_hud_box(300, 600, 20, 7);
-    data->skill_box = ent_text(305, 600, 50, gd->skills[i].description);
+    data->side_box = ent_hud_box(875, 600, 20, 7);
+    data->skill_box = ent_text(880, 600, 25, gd->skills[i].description);
     data->launch_action = 0;
     dg_scene_add_ent(scene, data->side_box);
     dg_scene_add_ent(scene, data->skill_box);

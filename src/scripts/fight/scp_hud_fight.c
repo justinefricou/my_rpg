@@ -10,6 +10,7 @@
 #include "ecs.h"
 #include "script.h"
 #include "hud/hud_inventory.h"
+#include "game_scenes.h"
 
 static button_t *create_select_box(general_data_t *gd)
 {
@@ -68,8 +69,22 @@ void scp_hud_fight_loop(dg_entity_t *entity, dg_window_t *w,
     script_t *script = (script_t *)dg_entity_get_component(entity, "script");
     data_t *data = script->data;
     general_data_t *gd = w->general_data;
+    dg_scene_t *game_scenes[NB_GAME_SCENE];
 
     inventory_menu_active(w, data, entity);
+    if (gd->enemy.pv.x <= 0) {
+        sound_play(data->sound_activate);
+        entity->destroy = 1;
+        gd->event_manager.var[variable_to_int("BATTLE", gd)].data = 1;
+        get_game_scenes(&game_scenes, 1);
+        for (int i = 0; i < NB_GAME_SCENE; i++) {
+            game_scenes[i]->display = 1;
+            game_scenes[i]->run = 1;
+        }
+        sfMusic_play(dg_ressources_get_audio_by_name("game_theme"));
+        sfMusic_stop(dg_ressources_get_audio_by_name("fight_theme"));
+        remove_fight_scenes();
+    }
 }
 
 void scp_hud_fight_end(void *data)

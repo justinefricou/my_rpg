@@ -31,6 +31,7 @@ static dg_animator_t *set_player_animator(void)
     }
     return animator;
 }
+
 dg_entity_t *entity_player_create(dg_scene_t *scene)
 {
     dg_entity_t *player = dg_entity_create("player");

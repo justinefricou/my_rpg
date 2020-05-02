@@ -16,5 +16,6 @@ void create_fight_scenes(dg_window_t *w, int id);
 void remove_fight_scenes(void);
 
 void fight_skill(int *previous, void *data, dg_window_t *w);
+void end_battle(dg_entity_t *entity, dg_window_t *w);
 
 #endif /*FIGHT_SCENES_H_*/

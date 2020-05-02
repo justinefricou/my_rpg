@@ -25,16 +25,16 @@ static button_t *create_select_box(void)
     return button_list;
 }
 
-static sparkle_context_t set_sprakle(void)
+static rain_context_t set_rain(void)
 {
-    sparkle_context_t context = {0};
+    rain_context_t context = {0};
 
-    context.density = 0.0005;
-    context.duration = 5;
+    context.density = 0.005;
+    context.speed = 5;
     context.dispersion = (sfVector2i) {1920, 1080};
-    context.dispersion_type = SQUARE;
+    context.direction = 2;
     context.position = (sfVector2f) {0, 0};
-    context.size = 3;
+    context.size = (sfVector2i) {2, 10};
     context.color = sfRed;
     return context;
 }
@@ -47,17 +47,13 @@ dg_scene_t *scene_main_menu(void)
 
     dg_scene_add_ent(scene, ent_hud_menu_selector((sfVector2f){80, 700},
         button_list, scene, 1));
-    dg_scene_add_ent(scene, ent_sprite(
-            dg_ressources_get_spritesheet_by_name("background_menu"),
-            0, 1, (sfVector2f){0, 0}));
     dg_scene_add_ent(scene, ent_text(300, 100, 200, "RPG"));
-    dg_scene_add_ent(scene, ent_text(1200, 150, 150, "Menu"));
     dg_scene_add_ent(scene, dg_ent_camera(0, 0));
-    dg_scene_add_ent(scene, ent_sparkle(set_sprakle()));
-    dg_scene_add_sys(scene, dg_system_create(&sys_particle, 1));
+    dg_scene_add_ent(scene, ent_rain(set_rain()));
     dg_scene_add_sys(scene, dg_system_create(&sys_display_text, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_shape_rectangle, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_tm_render, 1));
+    dg_scene_add_sys(scene, dg_system_create(&sys_particle, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_sprite, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_script, 0));
     if (sfMusic_getStatus(music) != sfPlaying) {

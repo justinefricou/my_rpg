@@ -70,6 +70,7 @@ dg_entity_t *ent_hud_fight_dialogue(int *previous, dg_scene_t *scene, int i,
     general_data_t *gd);
 dg_entity_t *ent_particle(sfVector2f pos, sfVector2i size, int type);
 dg_entity_t *ent_sparkle(sparkle_context_t context);
+dg_entity_t *ent_rain(rain_context_t context);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));

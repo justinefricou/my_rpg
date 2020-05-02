@@ -9,8 +9,8 @@
 #include "libdragon.h"
 #include "particle.h"
 
-static const particle_setter_t type_initializer[PARTICLE_TYPE_LEN] =
-    {&particle_set_none, &particle_set_sparkle, NULL};
+static const particle_setter_t type_initializer[PARTICLE_TYPE_LEN + 1] =
+    {&particle_set_none, &particle_set_sparkle, &particle_set_rain};
 
 void particle_set_type(particle_system_t *particle, int type)
 {

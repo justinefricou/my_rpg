@@ -58,6 +58,7 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_event.c										\
 			src/entities/ent_particle.c										\
 			src/entities/ent_sparkle.c										\
+			src/entities/ent_rain.c										\
 			src/entities/hud/ent_hud_progress_bar.c							\
 			src/entities/hud/ent_hud_box.c									\
 			src/entities/hud/ent_hud_menu_selector.c						\

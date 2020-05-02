@@ -178,13 +178,43 @@ librarian04 There are lots of books and newspapers that
 librarian05 could help you here !
 librarian06 Just tell me what you need and I'll lead you
 librarian07 to the right shelf !
-librarian08 Yes ? What topic do you want to learn about ?
+librarian08 What topic do you want to learn about ?
 librarian_answer01 The shop's owner
 librarian_answer02 The lake's monster
+librarian_answer03 Nothing, thanks.
 librarian09 Alright, follow me !
 librarian10 Here it is !
 librarian11 Take your time,
 librarian12 we don't close until 8pm on Wednesdays.
+book1_01 This is the newspaper of the 4th of February.
+book1_02 That's five months ago.
+book1_03 Let's see what it reads...
+book1_04 BREAKING NEWS : YET ANOTHER BUSINESS RUINED
+book1_05 Everyone in town knows Donald O'Donell
+book1_06 and his lovely grocery shop.
+book1_07 Yesterday, he was forced to close his
+book1_08 business, after months and months of
+book1_09 fighting against Mr Bezoz and his big corporation.
+book1_10 A real tragedy for our beloved Donald who now
+book1_11 finds himself unable to pay for his daughter's
+book1_12 college.
+book1_13 "I call for everyone's generosity in these
+book1_14 difficult times.", he says.
+book1_15 This is not the first time that Mr Bezoz
+book1_16 takes a little business to court to
+book1_17 expand his own company.
+book1_18 And it may not be the last...
+book2_01 Okay, let's look at this book...
+book2_02 "The monster of the lake, myth or reality?"
+book2_03 Some say the monster of the lake is real,
+book2_04 that they have seen it emerge, move, and
+book2_05 even, sometimes, look at them.
+book2_06 Some others say this is pure fantasy :
+book2_07 stories told to the children
+book2_08 before they go to bed, to scare them so
+book2_09 they don't go to the lake alone and drown.
+book2_10 So, who is right, you ask ? That is what we
+book2_11 will try to find out in this book...
 yes yes
 no no
 corpse01 ...

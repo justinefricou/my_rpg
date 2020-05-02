@@ -1,0 +1,14 @@
+DIALOG
+TALK book2_01
+TALK book2_02
+TALK book2_03
+TALK book2_04
+TALK book2_05
+TALK book2_06
+TALK book2_07
+TALK book2_08
+TALK book2_09
+TALK book2_10
+TALK book2_11
+SET CLUE_BOOK2 1
+END

@@ -44,6 +44,7 @@ void scp_dialogue_fight_loop(dg_entity_t *entity, dg_window_t *w,
         keymap_is_clicked(w, "up", 1) ||
         keymap_is_clicked(w, "down", 1)) {
         sound_play(data->sound_activate);
+        gd->player.turn = 1;
         data->is_active = 0;
         data->launch_action = 1;
         entity->destroy = 1;

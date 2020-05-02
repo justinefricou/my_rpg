@@ -37,6 +37,156 @@ tuto12 (Escape key by default)
 tuto13 (When you think you know the responsive of this crime)
 tuto14 (Just go tell the mayor your answer)
 tuto15 (Now it is time to begin, good luck !)
+notes_check01 Let's check out the notes they gave me...
+notes_check02 It says I should start by talking to the policeman
+notes_check03 who has already started to work on the case.
+notes_check04 Then, the photographer. He is the one who
+notes_check05 found the body. He could be of great help.
+notes_check06 Finally, it says the logger is the main suspect.
+notes_check07 Apparently he has been in a quarrel with the
+notes_check08 victim for several months...
+notes_check09 Well then, let's go find them !
+photographer01 Hello ! So you're the inspector who's working on the case ?
+photographer02 I was near the crime scene when it happened. I was taking
+photographer03 photos of the beautiful forest and its flora when I heard
+photographer04 screams. Several people, male and female voices, I'd say.
+photographer05 Before that, there had been the sound of a chainsaw for, maybe, an hour ?
+photographer06 Probably the logger cutting some trees, as usual...
+photographer07 Anyway, I digress...
+photographer08 When I heard the screams and then the chainsaw stopping,
+photographer09 I went to see what was happening.
+photographer10 Well... That's the worst thing I have ever saw.
+photographer11 Here it was, the campsite's owner, cut in half...
+photographer12 There was no one else. I went directly to the police.
+photographer13 That's all I can tell you.
+logger01 Hello, I don't think I know you ? I'm Jack.
+logger_answer01 I'm inspector Allen.
+logger_answer02 Are you a logger ?
+logger02 Ho... yes.
+logger03 So you're here to question me, right ?
+logger04 What do you want me to say ?
+logger05 Well, I am innocent, and I don't know who the murderer is.
+logger06 That's all you'll hear from me.
+logger07 I'm sick of all these questions, all day, every day.
+logger08 Okay, okay, I'll talk to you...
+logger09 I didn't kill him, but it was indeed my chainsaw that was used.
+logger10 Someone must have stolen it from me and used it
+logger11 so people would think I'm the murderer...
+logger12 And it worked ! Everyone in town thinks I did it !
+logger13 But that's not true... I wouldn't hurt a fly...
+logger14 I swear !
+logger15 Ho, it's you again ?
+logger_answer03 Do you know Matt ?
+logger16 Matt ? Of course ! He's a very good friend of mine.
+logger17 Is it the policeman who told you about him ?
+logger18 I heard he believes Matt is the murderer...
+logger19 What an idiot !
+logger20 Matt would never do such a terrible thing.
+logger21 And event if he could...
+logger22 He would have used MY chainsaw to kill someone
+logger23 in MY forest ? He's not stupid, he would have
+logger24 known people would suspect me.
+logger25 We are allies, he wouldn't do that to me.
+logger_answer04 Allies ?
+logger_26 Yes, you haven't heard about it ?
+logger_27 The campsite's owner and the shop's owner both
+logger_28 want to destroy the forest so they can expand
+logger_29 their businesses.
+logger_30 I, as a logger, and Matt, as a nature
+logger_31 photographer, want to preserve the forest.
+logger_32 Now, leave me alone, I have things to do.
+policeman01 Oh, hello !
+policeman02 You must be inspector Allen ? I was waiting for you.
+policeman03 I've already started working on the case,
+policeman04 and what I'm sure of is that...
+policeman05 Jack, the logger, didn't do it.
+policeman_answer01 Then who did ?
+policeman06 Well...
+policeman07 I Think Matt, the one who discovered the body, did it.
+policeman_answer02 How do you know ?
+policeman08 Hum, to be honest, I'm not completely sure of it.
+policeman09 But I think Matt, the one who discovered the body,
+policeman10 is the murderer.
+policeman_answer03 Any proof ?
+policeman11 Well, not really, no...
+policeman12 But he really loves this forest.
+policeman13 And the campsite's owner wanted it gone so he
+policeman14 could expand his campsite.
+policeman15 I think he killed him to preserve the forest
+policeman16 and so he could go on photographing the nature.
+policeman17 Then he went directly to the police
+policeman18 so that no one would suspect him !
+ceo01 What do you want ?
+ceo02 I am a busy man, I can't talk to you right now.
+ceo03 You will have to schedule an appointement with
+ceo04 my secretary. She's right there...
+ceo05 You again ? I told you, come back later !
+ceo06 Sigh...
+ceo07 What do you want ? And be quick !
+ceo_answer01 I'm inspector Allen
+ceo08 What ?!? you're the inspector ?!?
+ceo09 I won't talk to you without my lawyer.
+ceo10 No need to insist, I said I wouldn't talk to you.
+ceo11 Are you serious ? Leave me alone !!!
+ceo12 Alright, alright... I'll talk to you.
+ceo13 I don't know much about all of this.
+ceo14 But I can tell you one thing :
+ceo15 I'm not guilty ! As you know, Rob, the campsite's
+ceo16 owner, and I, were on the same page about the forest.
+ceo17 We both wanted it gone. We started to take legal action
+ceo18 against Jack, the logger, and Matt, the photographer.
+ceo19 We did it so the island's economy could flourish !
+ceo20 Less forest means more campsite and more of my shops.
+ceo21 And more campsite means more tourists in my shops !
+ceo22 Wouldn't it be perfect ?
+ceo23 So now, I'm asking you...
+ceo24 Do you still think I can be the murderer ?
+ceo25 Exactly !
+ceo26 What ?!? Are you stupid ?!?
+ceo27 Why would I kill the one person who' supporting me
+ceo28 in this battle for the forest ?
+ceo29 That would make no sense !
+cashier01 Hello, how can I help you today ?
+cashier02 Wait ! Are you the inspector my boss
+cashier03 told me about ? He told me not to talk to you.
+cashier04 But you know what ? I don't care...
+cashier05 I'll tell you everything you want to know.
+cashier06 Starting with...
+cashier07 How my boss is a terrible person.
+cashier08 Go check the news shelf in the library...
+cashier09 Lots and lots of articles about him...
+cashier10 But anyway ! I think he told me not to
+cashier11 talk to you for a reason...
+cashier12 Yep, I think he's guilty.
+cashier13 Wanna know why ?
+cashier14 What ? Why ? It's your job to wanna know why !
+cashier15 You're not doing your job properly !
+cashier16 How did you event get the job ?!?
+cashier17 I bet you lied on your resume !
+cashier18 ... Where were we again ? Ho, right...
+cashier19 I know he's guilty because he would do
+cashier20 anything to expand his business.
+cashier21 Even if it meant killing his own ally...
+cashier22 So people would suspect his ennemies...
+cashier23 And so he would get more land, now that
+cashier24 he doesn't have an ally to share it with...
+cashier25 Think about it !
+librarian01 Hello, Welcome to the town's library !
+librarian02 You are the inspector everyone is talking
+librarian03 about, right ?
+librarian04 There are lots of books and newspapers that
+librarian05 could help you here !
+librarian06 Just tell me what you need and I'll lead you
+librarian07 to the right shelf !
+librarian08 Yes ? What topic do you want to learn about ?
+librarian_answer01 The shop's owner
+librarian_answer02 The lake's monster
+librarian09 Alright, follow me !
+librarian10 Here it is !
+librarian11 Take your time,
+librarian12 we don't close until 8pm on Wednesdays.
 yes yes
 no no
+corpse01 ...
+corpse02 Yep, he's dead.
 nothing_to_say Have a nice day !

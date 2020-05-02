@@ -12,6 +12,18 @@
 #include "save_load.h"
 #include "init_skills.h"
 
+static void add_line_breaks(skill_t *skills)
+{
+    char c = 0;
+
+    for (int i = 0; skills[i].description; i++) {
+        for (int j = 0; skills[i].description[j]; j++) {
+            c = skills[i].description[j];
+            skills[i].description[j] = (c == '_') ? '\n' : c;
+        }
+    }
+}
+
 static FILE *open_skill_file(char *language)
 {
     char *filepath = NULL;
@@ -77,5 +89,6 @@ skill_t *init_skills(char *language)
         }
     }
     fclose(res_file);
+    add_line_breaks(skills);
     return (skills);
 }

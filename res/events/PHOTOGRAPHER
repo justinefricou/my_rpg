@@ -1,3 +1,19 @@
+IF CLUE_PHOTOGRAPHER == 0
 DIALOG
-TALK nothing_to_say
+TALK photographer01
+TALK photographer02
+TALK photographer03
+TALK photographer04
+TALK photographer05
+TALK photographer06
+TALK photographer07
+TALK photographer08
+TALK photographer09
+TALK photographer10
+TALK photographer11
+TALK photographer12
+TALK photographer13
+END
+GIVE CLUES 0
+SET CLUE_PHOTOGRAPHER 1
 END

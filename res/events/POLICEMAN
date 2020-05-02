@@ -1,3 +1,30 @@
+IF CLUE_POLICEMAN == 0
 DIALOG
-TALK nothing_to_say
+policeman01 Oh, hello !
+TALK policeman02
+TALK policeman03
+TALK policeman04
+TALK policeman05
+ANSWER policeman_answer01
+TALK policeman06
+TALK policeman07
+END
+ANSWER policeman_answer02
+TALK policeman08
+TALK policeman09
+TALK policeman10
+END
+ANSWER policeman_answer03
+END
+TALK policeman11
+TALK policeman12
+TALK policeman13
+TALK policeman14
+TALK policeman15
+TALK policeman16
+TALK policeman17
+TALK policeman18
+END
+GIVE CLUES 3
+SET CLUE_POLICEMAN 1
 END

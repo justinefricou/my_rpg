@@ -24,11 +24,13 @@ static int **create_test_map(void)
     return map;
 }
 
-static void initialise_stats(general_data_t *gd)
+static void initialise_stats(general_data_t *gd, int id)
 {
     gd->enemy.pv.x = 100;
     gd->enemy.pv.y = 100;
     gd->enemy.type = 1;
+    gd->enemy.damage = 4 + (id * 2);
+    gd->player.turn = 0;
 }
 
 void create_fight_scenes(dg_window_t *w, int id)
@@ -37,7 +39,7 @@ void create_fight_scenes(dg_window_t *w, int id)
     dg_scene_t *event = scene_fight_event(map);
     general_data_t *gd = w->general_data;
 
-    initialise_stats(gd);
+    initialise_stats(gd, id);
     dg_scene_manager_add_scene(scene_fight_bottom(map, event));
     dg_scene_manager_add_scene(scene_fight_middle(id));
     dg_scene_manager_add_scene(scene_fight_top());

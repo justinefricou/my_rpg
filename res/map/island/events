@@ -3,6 +3,8 @@ island_auto2 1 0 0 -1
 MAYOR 0 29 61 1
 DEAD 0 70 55 15
 PHOTOGRAPHER 0 30 72 8
+LOGGER 0 83 30 8
+POLICEMAN 0 51 80 8
 tp_island_to_bar 0 24 73 -1
 tp_island_to_camping 0 44 13 -1
 tp_island_to_hangar 0 29 48 -1

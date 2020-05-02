@@ -10,6 +10,7 @@
 #include "ecs.h"
 #include "game_scenes.h"
 #include "button_action.h"
+#include "particle.h"
 
 static button_t *create_select_box(void)
 {
@@ -22,6 +23,20 @@ static button_t *create_select_box(void)
     button_list[4] = (button_t){"Quit", &action_quit, NULL};
     button_list[5] = (button_t){NULL, NULL, NULL};
     return button_list;
+}
+
+static sparkle_context_t set_sprakle(void)
+{
+    sparkle_context_t context = {0};
+
+    context.density = 0.0005;
+    context.duration = 5;
+    context.dispersion = (sfVector2i) {1920, 1080};
+    context.dispersion_type = SQUARE;
+    context.position = (sfVector2f) {0, 0};
+    context.size = 3;
+    context.color = sfRed;
+    return context;
 }
 
 dg_scene_t *scene_main_menu(void)
@@ -38,6 +53,8 @@ dg_scene_t *scene_main_menu(void)
     dg_scene_add_ent(scene, ent_text(300, 100, 200, "RPG"));
     dg_scene_add_ent(scene, ent_text(1200, 150, 150, "Menu"));
     dg_scene_add_ent(scene, dg_ent_camera(0, 0));
+    dg_scene_add_ent(scene, ent_sparkle(set_sprakle()));
+    dg_scene_add_sys(scene, dg_system_create(&sys_particle, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_display_text, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_shape_rectangle, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_tm_render, 1));

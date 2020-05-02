@@ -17,6 +17,8 @@ dg_framebuffer_t *dg_framebuffer_create(unsigned int width,
 
     sfSprite_setTexture(sp, tex, sfFalse);
     fb->pixels = malloc(sizeof(sfUint8) * width * height * 4);
+    for (int i = 0; i < width * height * 4; i++)
+        fb->pixels[i] = 0;
     fb->width = width;
     fb->height = height;
     fb->sp = sp;
@@ -34,10 +36,10 @@ int dg_framebuffer_destroy(dg_framebuffer_t *fb)
     return 0;
 }
 
-void dg_framebuffer_update(dg_framebuffer_t *fb, sfRenderWindow *window)
+void dg_framebuffer_update(dg_framebuffer_t *fb, sfRenderWindow *window, int x, int y)
 {
     sfTexture_updateFromPixels((sfTexture *) sfSprite_getTexture(fb->sp),
-        fb->pixels, fb->width, fb->height, 0, 0);
+        fb->pixels, fb->width, fb->height, x, y);
     sfRenderWindow_drawSprite(window, fb->sp, NULL);
 }
 

@@ -24,9 +24,14 @@ dg_framebuffer_t *dg_framebuffer_create(unsigned int, unsigned int);
 
 int dg_framebuffer_destroy(dg_framebuffer_t *);
 
-void dg_framebuffer_update(dg_framebuffer_t *, sfRenderWindow *);
+void dg_framebuffer_update(dg_framebuffer_t *, sfRenderWindow *, int x, int y);
 
 int dg_fb_putpx(dg_framebuffer_t *, unsigned int, unsigned int, sfColor);
+
+sfColor dg_fb_getpx(dg_framebuffer_t *fb, unsigned int x,
+    unsigned int y);
+
+void dg_fb_fill(dg_framebuffer_t *fb, sfColor color);
 
 void dg_fb_putsquare(dg_framebuffer_t *, sfVector2u, unsigned int, sfColor);
 

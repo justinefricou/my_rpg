@@ -24,3 +24,13 @@ void dg_fb_putrectangle(dg_framebuffer_t *fb, sfVector2u position,
             dg_fb_putpx(fb, i, j, color);
 }
 
+//fill framebuffer
+void dg_fb_fill(dg_framebuffer_t *fb, sfColor color)
+{
+    for (int i = 0; i < fb->width * fb->height; i++) {
+        fb->pixels[i * 4] = color.r;
+        fb->pixels[(i * 4) + 1] = color.g;
+        fb->pixels[(i * 4) + 2] = color.b;
+        fb->pixels[(i * 4) + 3] = color.a;
+    }
+}

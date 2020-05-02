@@ -76,7 +76,7 @@ static int dg_render_screen(dg_window_t *window, void *var)
         window->events = (dg_event_t){0};
         dg_manage_event(window);
         to_return = dg_loop(window, var, dt);
-        dg_framebuffer_update(window->fb, window->window);
+        dg_framebuffer_update(window->fb, window->window, 0, 0);
         sfRenderWindow_display(window->window);
         dt = sfClock_getElapsedTime(clock);
         sfClock_restart(clock);

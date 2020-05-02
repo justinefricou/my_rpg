@@ -11,6 +11,7 @@
 #include "libdragon.h"
 #include "general_data.h"
 #include "hud/hud.h"
+#include "particle.h"
 
 // scenes
 dg_scene_t *scene_main_menu(void);
@@ -67,6 +68,8 @@ dg_entity_t *ent_hud_skill_fight(int *previous, dg_scene_t *scene,
     dg_window_t *w);
 dg_entity_t *ent_hud_fight_dialogue(int *previous, dg_scene_t *scene, int i, 
     general_data_t *gd);
+dg_entity_t *ent_particle(sfVector2f pos, sfVector2i size, int type);
+dg_entity_t *ent_sparkle(sparkle_context_t context);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));
@@ -90,6 +93,7 @@ dg_component_t *cpt_shape_circle(sfVector2f pos, int size,
 dg_component_t *cpt_shape_rectangle(sfVector2f pos, sfVector2f size,
     sfColor fill, sfColor outline);
 dg_component_t *cpt_sprite(dg_spritesheet_t *sheet, int id);
+dg_component_t *cpt_particle(float x, float y, int type);
 
 // systems
 void sys_render(dg_entity_t *entity, dg_window_t *w,
@@ -115,6 +119,8 @@ void sys_shape_circle(dg_entity_t *entity, dg_window_t *w,
 void sys_shape_rectangle(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void sys_sprite(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void sys_particle(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 
 // init

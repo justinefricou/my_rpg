@@ -46,6 +46,7 @@ SRC_CPT =	src/components/cpt_action.c										\
 			src/components/cpt_shape_rectangle.c							\
 			src/components/cpt_shape_circle.c								\
 			src/components/cpt_sprite.c										\
+			src/components/cpt_particle.c									\
 
 SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_sprite.c										\
@@ -55,6 +56,8 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_button.c										\
 			src/entities/ent_player.c										\
 			src/entities/ent_event.c										\
+			src/entities/ent_particle.c										\
+			src/entities/ent_sparkle.c										\
 			src/entities/hud/ent_hud_progress_bar.c							\
 			src/entities/hud/ent_hud_box.c									\
 			src/entities/hud/ent_hud_menu_selector.c						\
@@ -85,6 +88,7 @@ SRC_SYS =	src/systems/sys_render.c										\
 			src/systems/sys_shape_circle.c									\
 			src/systems/sys_shape_rectangle.c								\
 			src/systems/sys_sprite.c										\
+			src/systems/sys_particle.c										\
 
 SRC_INI =	src/init/init_img.c												\
 			src/init/init_audio.c											\
@@ -211,6 +215,13 @@ SRC_OTH =	src/other/tilemap.c												\
 			src/other/get_map_data.c										\
 			src/other/objects/calming.c										\
 			src/other/clues.c												\
+			src/other/particle/particle.c									\
+			src/other/particle/particle_set_general.c						\
+			src/other/particle/particle_set_type.c							\
+			src/other/particle/particle_calcul.c							\
+			src/other/particle/particle_update.c							\
+			src/other/particle/particule_add_random.c						\
+			src/other/particle/particle_change_sparkle.c					\
 
 SRC_LIB =	lib/get_next_line.c			\
 			lib/my_putarray.c			\

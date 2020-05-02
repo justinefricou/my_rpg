@@ -15,7 +15,7 @@
 #define GENERAL_DATA_H_
 
 #define OBJECT_LIST 1
-#define CLUES_LEN 1
+#define CLUES_LEN 7
 #define SPRITE_ID_LEN 16
 
 typedef dg_animator_t *(*set_animator_t)(void);

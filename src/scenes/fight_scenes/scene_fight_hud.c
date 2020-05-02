@@ -22,7 +22,10 @@ static void fight_inventory(int *previous, void *data, dg_window_t *w)
 
 static void quit_fight(int *previous, void *data, dg_window_t *w)
 {
+    general_data_t *gd = w->general_data;
     dg_scene_t *game_scenes[NB_GAME_SCENE];
+
+    gd->event_manager.var[variable_to_int("BATTLE", gd)].data = 0;
     get_game_scenes(&game_scenes, 1);
     for (int i = 0; i < NB_GAME_SCENE; i++) {
         game_scenes[i]->display = 1;

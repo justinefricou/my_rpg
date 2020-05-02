@@ -72,6 +72,7 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/fight_ent/ent_enemy_fight.c						\
 			src/entities/fight_ent/ent_hud_fight_inventory.c				\
 			src/entities/fight_ent/ent_hud_skill_fight.c					\
+			src/entities/fight_ent/ent_hud_fight_dialogue.c					\
 
 SRC_SYS =	src/systems/sys_render.c										\
 			src/systems/sys_tm_render.c										\
@@ -176,6 +177,7 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/fight/fight_manager.c								\
 			src/scripts/fight/scp_hud_fight.c								\
 			src/scripts/fight/attack_fight.c								\
+			src/scripts/fight/scp_dialogue_fight.c							\
 
 SRC_SAV =	src/save_load/save_load_utils.c									\
 			src/save_load/set_save_infos.c									\
@@ -189,6 +191,8 @@ SRC_SAV =	src/save_load/save_load_utils.c									\
 			src/save_load/game/progression/load_saved_inventory.c			\
 			src/save_load/game/progression/save_clues.c						\
 			src/save_load/game/progression/load_saved_clues.c				\
+			src/save_load/game/progression/save_event_vars.c				\
+			src/save_load/game/progression/load_saved_event_vars.c 			\
 			src/save_load/options/save_options.c							\
 			src/save_load/options/load_saved_options.c						\
 			src/save_load/options/save_options_volume.c						\

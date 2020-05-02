@@ -65,6 +65,8 @@ dg_entity_t *ent_hud_text(char *text);
 dg_entity_t *ent_hud_fight_inventory(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_skill_fight(int *previous, dg_scene_t *scene,
     dg_window_t *w);
+dg_entity_t *ent_hud_fight_dialogue(int *previous, dg_scene_t *scene, int i, 
+    general_data_t *gd);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));

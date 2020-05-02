@@ -52,10 +52,10 @@ typedef struct clues
 
 typedef enum skill_type
 {
-    INTIMIDATION = 0,
-    FLATTERY = 1,
-    TRICKERY = 2,
-    REPARTEE = 3,
+    FLATTERY = 0,
+    INTIMIDATION = 1,
+    REPARTEE = 2,
+    TRICKERY = 3,
 } skill_type_t;
 
 typedef struct skill
@@ -103,6 +103,7 @@ typedef struct lock
 typedef struct enemy
 {
     sfVector2f pv;
+    skill_type_t type;
 } enemy_t;
 
 typedef struct general_data

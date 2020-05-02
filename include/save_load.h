@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "general_data.h"
+#include "event.h"
 
 // save_load_utils.c
 int open_save_file(FILE **save_file, int save_nb, char *mode);
@@ -74,6 +75,11 @@ void save_clues(clues_t clues, FILE *save_file);
 // load_saved_clues.c
 int load_saved_clues(clues_t *clues, FILE *save_file);
 
+// save_event_vars.c
+void save_event_vars(event_manager_t event_manager, FILE *save_file);
+
+// load_saved_event_vars.c
+int load_saved_event_vars(event_manager_t *event_manager, FILE *save_file);
 
 /*               OPTIONS               */
 

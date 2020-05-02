@@ -92,6 +92,10 @@ SRC_INI =	src/init/init_img.c												\
 			src/init/init_general_data_for_new_game.c						\
 			src/init/loop_general_data.c									\
 			src/init/set_sprite_id.c										\
+			src/init/set_sprite_id_char.c									\
+			src/init/set_sprite_id_child.c									\
+			src/init/set_sprite_id_mother.c									\
+			src/init/set_sprite_id_obj.c									\
 			src/init/parsing/skills/skills.c								\
 			src/init/parsing/skills/parse_skills.c							\
 			src/init/parsing/dialogs/init_dialogs.c							\
@@ -173,7 +177,7 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/fight/fight_manager.c								\
 			src/scripts/fight/scp_hud_fight.c								\
 			src/scripts/fight/attack_fight.c								\
-			src/scripts/fight/scp_dialogue_fight.c								\
+			src/scripts/fight/scp_dialogue_fight.c							\
 
 SRC_SAV =	src/save_load/save_load_utils.c									\
 			src/save_load/set_save_infos.c									\
@@ -187,6 +191,8 @@ SRC_SAV =	src/save_load/save_load_utils.c									\
 			src/save_load/game/progression/load_saved_inventory.c			\
 			src/save_load/game/progression/save_clues.c						\
 			src/save_load/game/progression/load_saved_clues.c				\
+			src/save_load/game/progression/save_event_vars.c				\
+			src/save_load/game/progression/load_saved_event_vars.c 			\
 			src/save_load/options/save_options.c							\
 			src/save_load/options/load_saved_options.c						\
 			src/save_load/options/save_options_volume.c						\

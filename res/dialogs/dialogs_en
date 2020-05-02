@@ -5,5 +5,38 @@ init02 I'm relieved you could have come so fast.
 init03 What happened is a veritable tragedy...
 init04 I hope you'll be able to solve this riddle ispector
 init05 follow me ! I'll show you around !
-init06 This is the camping managed by Ben.
-init07 Why don't you go and say hello ?
+init06 This is the camping managed by our poor victim.
+init07 You can go check the camping. But it's closed.
+visit_camping Are you done visiting the camping ?
+init08 Let's continue !
+init09 This is The commercial zone.
+init10 To the left you have the library.
+init11 At the top you have the warehouse.
+init12 At the right you have the shop.
+init13 And at the bottom, you have the bar.
+init14 And here is the residential district.
+init15 Now that you have a gook idea of the island,
+init16 Let's go to the crime scene, shall we ?
+init17 I know, this is terrible.
+init18 But you have all the cards in hands inspector
+init19 You should begin by checking the corpse.
+init20 Good luck !
+tuto00 (You now have to solve this riddle)
+tuto01 (Do you want to know how to play ?)
+tuto02 (Who is the victim, who's the killer, why, how ?)
+tuto03 (Talk to the residents of the island,)
+tuto04 (and search for clues.)
+tuto05 (Sometimes, people might refuse to cooperate.)
+tuto06 (But you can fight them into an arguments battle)
+tuto07 (to get more informations)
+tuto08 (You can use items in your inventory to help you)
+tuto09 (The clues you've got will also be accessible)
+tuto10 (in the clue menu)
+tuto11 (You can access the menu with the cancel key)
+tuto12 (Escape key by default)
+tuto13 (When you think you know the responsive of this crime)
+tuto14 (Just go tell the mayor your answer)
+tuto15 (Now it is time to begin, good luck !)
+yes yes
+no no
+nothing_to_say Have a nice day !

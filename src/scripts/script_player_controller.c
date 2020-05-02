@@ -10,6 +10,7 @@
 #include "ecs.h"
 #include "script.h"
 #include "tilemap.h"
+#include "epitech_tools.h"
 
 typedef struct data {
     sfVector2f *pos;
@@ -65,6 +66,25 @@ static void collide(sfVector2f *move, data_t *data)
         move->y = 0;
 }
 
+void player_set_animation(sfVector2f move, data_t *data, general_data_t *gd)
+{
+    char *key = NULL;
+    char *new_key = NULL;
+    (move.x > 0) ? dg_animator_set_animation(data->animator, "right") : NULL;
+    (move.x < 0) ? dg_animator_set_animation(data->animator, "left") : NULL;
+    (move.y < 0) ? dg_animator_set_animation(data->animator, "up") : NULL;
+    (move.y > 0) ? dg_animator_set_animation(data->animator, "down") : NULL;
+    if (move.x == 0 && move.y == 0 && !gd->lock.move) {
+        key = data->animator->keys[data->animator->current];
+        new_key = key;
+        new_key = (!dg_strcmp(key, "right")) ? "idle_r" : new_key;
+        new_key = (!dg_strcmp(key, "left")) ? "idle_l" : new_key;
+        new_key = (!dg_strcmp(key, "up")) ? "idle_u" : new_key;
+        new_key = (!dg_strcmp(key, "down")) ? "idle" : new_key;
+        dg_animator_set_animation(data->animator, new_key);
+    }
+}
+
 void scp_player_controller_loop(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt)
 {
@@ -81,11 +101,8 @@ void scp_player_controller_loop(dg_entity_t *entity, dg_window_t *w,
     }
     move.x *= dt.microseconds / 10000.0 * data->speed * 1.5;
     move.y *= dt.microseconds / 10000.0 * data->speed * 1.5;
+    player_set_animation(move, data, gd);
     collide(&move, data);
-    (move.x > 0) ? dg_animator_set_animation(data->animator, "right") : NULL;
-    (move.x < 0) ? dg_animator_set_animation(data->animator, "left") : NULL;
-    (move.y < 0) ? dg_animator_set_animation(data->animator, "up") : NULL;
-    (move.y > 0) ? dg_animator_set_animation(data->animator, "down") : NULL;
     data->pos->x += move.x;
     data->pos->y += move.y;
 }

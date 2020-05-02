@@ -30,3 +30,45 @@ template :
 exemple :
 test 1 50 50 -1
 retest 0 1 1 2
+
+gd->sprite_id[0] = &mator_butcher;
+    gd->sprite_id[1] = &mator_mayor;
+    gd->sprite_id[2] = &mator_fisher;
+    gd->sprite_id[3] = &mator_barman;
+    gd->sprite_id[4] = &mator_pdg;
+    gd->sprite_id[5] = &mator_camping;
+    gd->sprite_id[6] = &mator_librarian;
+    gd->sprite_id[7] = &mator_policeman;
+    gd->sprite_id[8] = &mator_photograph;
+    gd->sprite_id[9] = &mator_cashier;
+    gd->sprite_id[10] = &mator_mother_one;
+    gd->sprite_id[11] = &mator_mother;
+    gd->sprite_id[12] = &mator_child_two;
+    gd->sprite_id[13] = &mator_child_one;
+    gd->sprite_id[14] = &mator_child;
+    gd->sprite_id[15] = &mator_dead;
+
+liste des sprites_id :
+-1  NONE
+0   BUTCHER
+1   MAYOR
+2   FISHER
+3   BARMAN
+4   PGD
+5   CAMPING
+6   LIBRARIAN
+7   POLICEMAN
+8   PHOTOGRAPH
+9   CASHIER
+10  MOTHER_ONE
+11  MOTHER
+12  CHILD_TWO
+13  CHILD_ONE
+14  CHILD
+15  DEAD
+16
+17
+18
+19
+20
+21

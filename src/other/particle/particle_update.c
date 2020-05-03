@@ -23,7 +23,7 @@ void particle_calcul_update_sparkle(particle_system_t *ps, sfTime dt)
             {intern->particles[i].pos.x, intern->particles[i].pos.y};
         tmp_color = ps->color;
         tmp_color.a = (intern->particles[i].clock / intern->duration) * 255;
-        dg_fb_putcircle(ps->fb, tmp,intern->size , tmp_color);
+        dg_fb_putcircle(ps->fb, tmp, intern->size, tmp_color);
         if (intern->particles[i].clock > intern->duration)
             intern->particles[i].clock = 0;
         intern->particles[i].clock += sfTime_asSeconds(dt);

@@ -5,6 +5,9 @@
 ** map
 */
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 #include <dirent.h>
 #include <sys/types.h>
 #include "libmy.h"
@@ -12,9 +15,6 @@
 #include "map.h"
 #include "instructions.h"
 #include "general_data.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
 
 void destroy_events_list(event_t *event_list)
 {
@@ -69,7 +69,7 @@ void add_event(event_t **event_list, char *filename, int *len)
     new[*len].len = 0;
     new[*len].name = 0;
     *event_list = new;
-}    
+}
 
 event_t *set_text_events(void)
 {

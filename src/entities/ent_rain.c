@@ -16,7 +16,7 @@ dg_entity_t *ent_rain(rain_context_t context)
     dg_component_t *cpt = cpt_particle(0, 0, RAIN);
     particle_system_t *ps = cpt->data;
     particle_rain_t *intern = ps->data;
-    
+
     intern->density = context.density;
     intern->direction = context.direction;
     intern->dispersion = context.dispersion;

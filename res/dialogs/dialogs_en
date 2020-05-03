@@ -46,7 +46,6 @@ notes_check06 Finally, it says the logger is the main suspect.
 notes_check07 Apparently he has been in a quarrel with the
 notes_check08 victim for several months...
 notes_check09 Well then, let's go find them !
-<<<<<<< HEAD
 photographer01 Hello !
 photographer02 So you're the inspector who's working on the case ?
 photographer03 I was near the crime scene when it happened.
@@ -153,7 +152,7 @@ ceo04 my secretary. She's right there...
 ceo05 You again ? I told you, come back later !
 ceo06 Sigh...
 ceo07 What do you want ? And be quick !
-ceo_answer01 I'm private investigator Allen
+ceo_answer01 I'm Mr Allen
 ceo08 What ?!? You're the private investigator ?!?
 ceo09 I won't talk to you without my lawyer.
 ceo10 No need to insist, I said I wouldn't talk to you.
@@ -219,7 +218,7 @@ librarian12 we don't close until 8pm on Wednesdays.
 librarian13 Oh, it's you again !
 librarian14 Is there another topic you want
 librarian15 to learn about ?
-librarian16 Alright, I confess, Jack is my fiancé.
+librarian16 Alright, I confess, Jack is my fiance.
 librarian17 But you must promise me to keep the secret !
 librarian18 My family would make my life terrible...
 librarian19 As if it wasn't already, with this murder
@@ -302,7 +301,6 @@ mother1_06 Well, I don't.
 mother1_07 Me neither.
 mother1_answer01 I don't know
 mother1_08 Me neither, but I'd say he didn't.
-mother1_answer02 why ?
 mother1_09 Most people say Rob went into the forest
 mother1_10 and Jack jumped on the occasion to kill him.
 mother1_11 But I've visited him several times...
@@ -375,15 +373,15 @@ barman10 The weird guy of the island, I'd say.
 barman11 He thinks he's a pirate and he believes in
 barman12 a stupid legend about a monster living in the lake.
 barman13 But deep down he's a good guy !
-barman_answer02 The lumberjack
+barman_answer02 The logger
 barman14 Oh yeah, that poor Jack...
 barman15 A shame, what's happening to him...
 barman16 I know him quite well, he used to come
 barman17 every Saturday evening for a date night
-barman18 with his fiancée. What a lovely couple.
-barman_answer03 His fiancée ?
+barman18 with his fiancee. What a lovely couple.
+barman_answer03 His fiancee ?
 barman19 Uuuh... Did I say that ?
-barman_answer04 He has a fiancée ?
+barman_answer04 He is engaged ?
 barman20 Alright buddy, let's talk about something else.
 barman_answer05 Who is it ?
 barman21 I don't know what you're talking about...

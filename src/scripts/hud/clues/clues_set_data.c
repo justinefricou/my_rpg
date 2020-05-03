@@ -30,3 +30,10 @@ void clues_set_data(data_t *data)
     sfText_setString(data->text[9],
     "                             -- NO CLUES --");
 }
+
+void scp_player_controller_end(void *data)
+{
+    data_t *d = (data_t *)data;
+
+    free(d);
+}

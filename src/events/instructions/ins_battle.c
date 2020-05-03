@@ -23,7 +23,7 @@ parameters_t *ins_set_battle(instruction_t *instruction, int *i,
     parameters_t *text_param = instruction[*i].parameters;
 
     param[0].type = INT;
-    param[0].parameters.n = atoi(text_param[0].parameters.s);
+    param[0].parameters.n = my_atoi(text_param[0].parameters.s);
     param[1].type = VOID;
     *len = 1;
     return param;
@@ -39,7 +39,7 @@ int ins_act_battle(intern_t *intern, self_data_t data,
 {
     dg_scene_t *game[NB_GAME_SCENE];
     parameters_t *params = intern->script[intern->reader.progress].parameters;
-    
+
     get_game_scenes(game, 1);
     for (int i = 0; i < NB_GAME_SCENE; i++) {
         game[i]->display = 0;

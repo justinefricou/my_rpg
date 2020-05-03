@@ -27,7 +27,8 @@ void dialog_button(int *previous, void *data, dg_window_t *w)
     free(d);
 }
 
-static button_t set_choices_buttons(intern_t *intern, parameters_t *params, general_data_t *gd)
+static button_t set_choices_buttons(intern_t *intern,
+    parameters_t *params, general_data_t *gd)
 {
     void **data = 0;
     button_t button = {0};

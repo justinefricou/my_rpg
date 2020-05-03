@@ -15,7 +15,7 @@ dg_entity_t *ent_sparkle(sparkle_context_t context)
     dg_entity_t *entity = dg_entity_create("particle");
     dg_component_t *cpt = cpt_particle(0, 0, SPARKLE);
     particle_system_t *ps = cpt->data;
-    
+
     sparkle_change_size(ps, context.size);
     sparkle_change_density(ps, context.density);
     sparkle_change_duration(ps, context.duration);

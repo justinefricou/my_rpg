@@ -1,3 +1,8 @@
+IF CLUE_MOTHER == 2
+DIALOG
+TALK nothing_to_say
+END
+END
 IF CLUE_MOTHER == 1
 DIALOG
 TALK mother1_18
@@ -24,12 +29,7 @@ END
 GIVE CLUES 14
 SET CLUE_MOTHER 2
 END
-IF CLUE_MOTHER1 == 1
-DIALOG
-TALK nothing_to_say
-END
-END
-IF CLUE_MOTHER1 == 0
+IF CLUE_MOTHER == 0
 DIALOG
 TALK mother1_01
 TALK mother1_02
@@ -44,8 +44,6 @@ TALK mother1_07
 END
 ANSWER mother1_answer01
 TALK mother1_08
-END
-ANSWER mother1_answer02
 END
 TALK mother1_09
 TALK mother1_10

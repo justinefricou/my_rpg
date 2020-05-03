@@ -16,7 +16,6 @@
 #include "map.h"
 #include "general_data.h"
 
-
 int open_event_file(char *filename, int *fd)
 {
     *fd = open(filename, O_RDONLY);

@@ -81,7 +81,7 @@ void set_whole_map(map_t *map_list, char *filename)
     map_list->len += 1;
     free(map_list->map);
     map_list->map = new;
-}    
+}
 
 map_t set_map_data(void)
 {

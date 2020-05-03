@@ -24,4 +24,6 @@ typedef struct data {
 void status_set_sounds(data_t *data);
 void status_set_data(data_t *data, dg_window_t *w);
 
+void status_data_add(data_t *data);
+
 #endif /*HUD_STATUS_H_*/

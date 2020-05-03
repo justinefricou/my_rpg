@@ -9,7 +9,6 @@
 #include "general_data.h"
 #include "object.h"
 
-//child
 dg_animator_t *mator_child(void)
 {
     dg_spritesheet_t *ss = dg_ressources_get_spritesheet_by_name("child");

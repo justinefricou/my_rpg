@@ -55,7 +55,8 @@ static void inventory_menu_active(dg_window_t *w, data_t *data,
 
     if (gd->player.turn == 1) {
         gd->player.turn = 0;
-        gd->player.pv.x -= gd->enemy.damage;
+        if ((gd->enemy.damage - gd->player.defence) > 0)
+            gd->player.pv.x -= (gd->enemy.damage - gd->player.defence);
     }
     inventory_manage_move(w, data);
     if (keymap_is_clicked(w, "cancel", 1)) {

@@ -40,9 +40,9 @@ TALK logger03
 TALK logger04
 TALK logger05
 TALK logger06
-TALK logger07
 END
 DIALOG
+TALK logger07
 TALK logger08
 TALK logger09
 TALK logger10

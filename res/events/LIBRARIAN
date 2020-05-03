@@ -1,3 +1,26 @@
+IF CLUE_BARMAN == 1
+DIALOG
+TALK librarian13
+TALK librarian14
+TALK librarian15
+TALK librarian16
+TALK librarian17
+TALK librarian18
+TALK librarian19
+TALK librarian20
+TALK librarian21
+TALK librarian22
+TALK librarian23
+TALK librarian24
+TALK librarian25
+TALK librarian26
+TALK librarian27
+TALK librarian28
+END
+GIVE CLUES 11
+SET CLUE_LIBRARIAN 1
+END
+IF CLUE_BARMAN == 0
 DIALOG
 TALK librarian01
 END
@@ -52,4 +75,5 @@ TALK librarian06
 TALK librarian07
 END
 SET LIBRARIAN_MET 1
+END
 END

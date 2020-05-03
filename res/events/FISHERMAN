@@ -1,0 +1,47 @@
+IF CLUE_FISHERMAN == 1
+DIALOG
+TALK fisherman_nothing_to_say
+END
+END
+IF CLUE_FISHERMAN == 0
+DIALOG
+TALK fisherman01
+ANSWER fisherman_answer01
+TALK fisherman02
+END
+ANSWER fisherman_answer02
+TALK fisherman03
+TALK fisherman04
+END
+TALK fisherman05
+TALK fisherman06
+TALK fisherman07
+TALK fisherman08
+TALK fisherman09
+ANSWER fisherman_answer03
+END
+TALK fisherman10
+TALK fisherman11
+TALK fisherman12
+TALK fisherman13
+TALK fisherman14
+TALK fisherman15
+TALK fisherman16
+TALK fisherman17
+TALK fisherman18
+ANSWER fisherman_answer04
+END
+TALK fisherman19
+TALK fisherman20
+TALK fisherman21
+ANSWER fisherman_answer05
+END
+TALK fisherman22
+TALK fisherman23
+TALK fisherman24
+TALK fisherman25
+TALK fisherman26
+GIVE CLUES 8
+SET CLUE_FISHERMAN 1
+END
+END

@@ -64,15 +64,15 @@ logger_answer01 I'm inspector Allen.
 logger_answer02 Are you a logger ?
 logger02 Ho... yes.
 logger03 So you're here to question me, right ?
-logger04 What do you want me to say ?
-logger05 Well, I am innocent, and I don't know who the murderer is.
-logger06 That's all you'll hear from me.
-logger07 I'm sick of all these questions, all day, every day.
-logger08 Okay, okay, I'll talk to you...
-logger09 I didn't kill him, but it was indeed my chainsaw that was used.
-logger10 Someone must have stolen it from me and used it
-logger11 so people would think I'm the murderer...
-logger12 And it worked ! Everyone in town thinks I did it !
+logger04 Well, I am innocent, and I don't know who the murderer is.
+logger05 That's all you'll hear from me.
+logger06 I'm sick of all these questions, all day, every day.
+logger07 Okay, okay, I'll talk to you...
+logger08 I didn't kill him, but it was indeed my chainsaw
+logger09 that was used. Someone must have stolen it from
+logger10 me, let it turned on and then used it as
+logger11 a weapon so people would think I was cutting
+logger12 wood, saw him and killed him.
 logger13 But that's not true... I wouldn't hurt a fly...
 logger14 I swear !
 logger15 Ho, it's you again ?
@@ -116,6 +116,34 @@ policeman15 I think he killed him to preserve the forest
 policeman16 and so he could go on photographing the nature.
 policeman17 Then he went directly to the police
 policeman18 so that no one would suspect him !
+policeman19 Oh, hello again !
+policeman20 Did you make any progress ?
+policeman21 Great, great ! We rely on you !
+policeman22 Don't worry, you'll end up finding
+policeman23 something interesting.
+policeman24 Just make sure you talk to everyone
+policeman25 so you don't miss anything !
+policeman26 I have some news for you.
+policeman27 I have been looking through the dead's
+policeman28 belongings to see if I could find
+policeman29 anything to help us. Something like,
+policeman30 maybe, threatening letters or other
+policeman31 clues...
+policeman32 Well, I found some disturbing letters
+policeman33 hidden under his bed.
+policeman34 Letters sent by Mr Bezoz, saying they should
+policeman35 get rid of any 'difficulty' preventing them
+policeman36 from expanding their businesses. In the last
+policeman37 letter, he says they should start
+policeman38 taking actions 'in a few days'...
+policeman39 That last letter dates back to a week ago.
+policeman40 I don't know about you, but I think I
+policeman41 know what difficulties they were talking
+policeman42 about...
+policeman43 This is very concerning. I sure hope
+policeman44 that Matt's and Jack's lives are not in
+policeman45 danger...
+policeman46 Maybe they are safe now that Rob is dead ?
 ceo01 What do you want ?
 ceo02 I am a busy man, I can't talk to you right now.
 ceo03 You will have to schedule an appointement with
@@ -186,6 +214,22 @@ librarian09 Alright, follow me !
 librarian10 Here it is !
 librarian11 Take your time,
 librarian12 we don't close until 8pm on Wednesdays.
+librarian13 Oh, it's you again !
+librarian14 Is there another topic you want
+librarian15 to learn about ?
+librarian16 Alright, I confess, Jack is my fiancé.
+librarian17 But you must promise me to keep the secret !
+librarian18 My family would make my life terrible...
+librarian19 As if it wasn't already, with this murder
+librarian20 and Jack being accused !
+librarian21 So, now that you know we're engaged,
+librarian22 I can tell you : Jack and I were at
+librarian23 the bar when the murder happened.
+librarian24 Of course, we couldn't tell anybody
+librarian25 ou alibi or else everyone would know
+librarian26 we're together ! But go ask the
+librarian27 barman, he'll tell you ! He must
+librarian28 remember. He's a good guy.
 book1_01 This is the newspaper of the 4th of February.
 book1_02 That's five months ago.
 book1_03 Let's see what it reads...
@@ -215,8 +259,143 @@ book2_08 before they go to bed, to scare them so
 book2_09 they don't go to the lake alone and drown.
 book2_10 So, who is right, you ask ? That is what we
 book2_11 will try to find out in this book...
+fisherman01 Ahoy ! How you doin' son ?
+fisherman_answer01 Great !
+fisherman02 Hey, now that's what I want to hear !
+fisherman_answer02 Not so good...
+fisherman03 Hey, don't say that son,
+fisherman04 it will all work out in the end !
+fisherman05 Hey son, did you hear about this poor boy ?
+fisherman06 The one they found in the forest !
+fisherman07 They say he was killed by one of the villagers...
+fisherman08 But they're all fools ! I know what killed him !
+fisherman09 It was the monster of the lake !
+fisherman_answer03 The what ?
+fisherman10 What, you don't know about him ?
+fisherman11 He lives in the lake, and some days he
+fisherman12 decides to emerge and show himself...
+fisherman13 He won't do anything to you if he is
+fisherman14 in a good mood.
+fisherman15 But if you wake him, now that's another story.
+fisherman16 This poor Rob... Jack was disturbing the
+fisherman17 monster's peace with his noisy chainsaw !
+fisherman18 So the monster came and killed the first one he saw !
+fisherman_answer04 That's nonsense !
+fisherman19 What do you mean ? You don't believe me ?
+fisherman20 Well then, go and check by yourself
+fisherman21 if you're not a coward !
+fisherman_answer05 You are crazy !
+fisherman22 I'm not crazy, you son of a biscuit eater !
+fisherman23 I'm telling you, the logger had been cutting
+fisherman24 trees for almost an hour,
+fisherman25 the monster was tired of it !
+fisherman26 Why won't anyone believe me ?
+fisherman_nothing_to_say Ahoy ! Did you see the monster today ?
+mother1_01 Hello, are you a tourist ?
+mother1_02 I don't think I know you.
+mother1_03 Have you heard about that murder ?
+mother1_04 They say Jack, the logger could be the culprit.
+mother1_05 Do you think he did it ?
+mother1_06 Well, I don't.
+mother1_07 Me neither.
+mother1_answer01 I don't know
+mother1_08 Me neither, but I'd say he didn't.
+mother1_answer02 why ?
+mother1_09 Most people say Rob went into the forest
+mother1_10 and Jack jumped on the occasion to kill him.
+mother1_11 But I've visited him several times...
+mother1_12 And when he's cutting wood,
+mother1_13 with all that noise and sawdust,
+mother1_14 he never hears nor sees me coming.
+mother1_15 If Rob was in the forest, Jack was
+mother1_16 either waiting for him or too busy
+mother1_17 to notice him.
+mother1_18 Oh it's you again !
+mother1_19 Could you help me ? My fridge broke !
+mother1_20 It does that every summer, so annoying !
+mother1_21 The air must be too hot...
+mother1_22 I usually ask Jack to help me, he knows
+mother1_23 a lot about these kinds of things.
+mother1_24 After all, when his chainsaw breaks,
+mother1_25 he has to repair it himself !
+mother1_26 That's what I told Lily when her bike
+mother1_27 broke 4 days ago. But she said she was busy
+mother1_28 and would wait until the next day to go ask
+mother1_29 him. Maybe she's shy and doesn't know
+mother1_30 him very well so she wanted to see if she
+mother1_31 could fix it by herself ?
+mother1_32 But she's just a librarian, I don't
+mother1_33 think she was able to do it...
+mother1_34 But anyway, I can't ask Jack to help me,
+mother1_35 He's already exhausted by what's
+mother1_36 happening right now. I can't ask him to
+mother1_37 help me... So, will you do it ?
+mother2_01 Sigh... What do you want ?
+mother2_02 I can't help you, I have to take care
+mother2_03 of my children, cook, clean the house...
+mother2_04 And my husband is at the bar, as always !
+mother2_05 He spends his entire days there...
+mother2_06 I don't know what to do anymore...
+mother2_07 3 days ago, I had to go get him
+mother2_08 and take him back to our house.
+mother2_09 He was so drunk, he couldn't walk properly.
+mother2_10 The barman had to help me carry him all
+mother2_11 the way to the house ! He had to close his
+mother2_12 bar for the whole afternoon because of all
+mother2_13 the mess my damn husband had made !
+mother2_14 Could you help ? Do you know any good
+mother2_15 rehab ? You look like a former addict.
+mother2_answer01 WHAT ?!?
+mother2_16 Oh, sorry, I thought...
+mother2_answer02 How do you know ?
+mother2_17 I don't know, must be the socks...
+mother2_18 Who wears green socks with pink dots ???
+child01 My mom told me not to talk to strangers.
+child02 But I will talk to you if you help me.
+child03 My mom told me a man was really hurt in
+child04 the forest 3 days ago. She says it was the
+child05 monster of the lake who did it !
+child06 But I like the forest. I want to go play there
+child07 like I used to. But my mom won't let me.
+child08 Please tell her the monster of the lake will
+child09 not hurt me !
+barman01 Hey you !
+barman02 You're the investigator, right ?
+barman03 You should be happy that I'm here !
+barman04 As a barman, I see lots of people
+barman05 and I hear a lot of stories.
+barman06 I bet I have some uselful informations for you !
+barman07 Come on, ask me anything !
+barman_answer01 The fisherman
+barman08 Oh yeah, him...
+barman09 He's uh... Kind of...
+barman10 The weird guy of the island, I'd say.
+barman11 He thinks he's a pirate and he believes in
+barman12 a stupid legend about a monster living in the lake.
+barman13 But deep down he's a good guy !
+barman_answer02 The logger
+barman14 Oh yeah, that poor Jack...
+barman15 A shame, what's happening to him...
+barman16 I know him quite well, he used to come
+barman17 every Saturday evening for a date night
+barman18 with his fiancée. What a lovely couple.
+barman_answer03 His fiancée ?
+barman19 Uuuh... Did I say that ?
+barman_answer04 He has a fiancée ?
+barman20 Alright buddy, let's talk about something else.
+barman_answer05 Who is it ?
+barman21 I don't know what you're talking about...
+barman22 Alright alright, I'll tell you...
+barman23 He's engaged to the librarian.
+barman24 But only me and a few people know
+barman25 because the instant her family knows...
+barman26 All hell breaks loose !
+barman27 They don't want her to be with him
+barman28 because he doesn't come from a wealthy
+barman29 family, like her. Sad story.
 yes yes
 no no
 corpse01 ...
 corpse02 Yep, he's dead.
 nothing_to_say Have a nice day !
+nothing_to_ask Nothing, thanks.

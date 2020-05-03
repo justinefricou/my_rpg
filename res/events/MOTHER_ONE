@@ -1,3 +1,28 @@
+IF CLUE_WOMAN2 == 0
 DIALOG
-TALK nothing_to_say
+TALK mother2_01
+TALK mother2_02
+TALK mother2_03
+TALK mother2_04
+TALK mother2_05
+TALK mother2_06
+TALK mother2_07
+TALK mother2_08
+TALK mother2_09
+TALK mother2_10
+TALK mother2_11
+TALK mother2_12
+TALK mother2_13
+TALK mother2_14
+TALK mother2_15
+ANSWER mother2_answer01
+TALK mother2_16
+END
+ANSWER mother2_answer02
+END
+TALK mother2_17
+TALK mother2_18
+END
+GIVE CLUES 12
+SET CLUE_WOMAN2 1
 END

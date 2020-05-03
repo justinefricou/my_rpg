@@ -1,3 +1,77 @@
+IF BARMAN_MET == 1
+SET TOPIC_BARMAN 0
 DIALOG
-TALK nothing_to_say
+TALK barman07
+IF CLUE_FISHERMAN == 1
+IF BARMAN_FICHER == 0
+ANSWER barman_answer01
+SET TOPIC_BARMAN 1
+END
+END
+END
+IF LIBRARIAN_MET == 1
+IF CLUE_BOOK1 == 1
+IF CLUE_LOGGER == 2
+IF CLUE_BARMAN == 0
+ANSWER barman_answer02
+SET TOPIC_BARMAN 2
+END
+END
+END
+END
+END
+IF TOPIC_BARMAN == 0
+ANSWER nothing_to_ask
+END
+END
+END
+IF TOPIC_BARMAN == 1
+DIALOG
+TALK barman08
+TALK barman09
+TALK barman10
+TALK barman11
+TALK barman12
+TALK barman13
+SET BARMAN_FISHER 1
+END
+END
+IF TOPIC_BARMAN == 2
+DIALOG
+TALK barman14
+TALK barman15
+TALK barman16
+TALK barman17
+TALK barman18
+ANSWER barman_answer03
+END
+TALK barman19
+ANSWER barman_answer04
+END
+TALK barman20
+ANSWER barman_answer05
+END
+TALK barman21
+TALK barman22
+TALK barman23
+TALK barman24
+TALK barman25
+TALK barman26
+TALK barman27
+TALK barman28
+TALK barman29
+END
+GIVE CLUES 10
+SET CLUE_BARMAN 1
+END
+IF BARMAN_MET == 0
+DIALOG
+TALK barman01
+TALK barman02
+TALK barman03
+TALK barman04
+TALK barman05
+TALK barman06
+END
+END
 END

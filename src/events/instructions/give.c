@@ -14,6 +14,7 @@
 #include "instructions.h"
 #include "script_event_data.h"
 #include "object.h"
+#include "game_scenes.h"
 #include "epitech_tools.h"
 
 static const char *PLAYER_ATRIBUT[6] = {

@@ -20,7 +20,7 @@ void sys_escape(dg_entity_t *entity, dg_window_t *w,
     if (gd->lock.menu)
         return;
     get_game_scenes(game_scenes, 1);
-    if (keymap_is_clicked(w, "cancel", 1)) {
+    if (keymap_is_clicked(w, "cancel", 1) || gd->auto_quit) {
         for (int i = 0; i < NB_GAME_SCENE - 1; i++)
             game_scenes[i]->run = 0;
         scn_change(game_scenes[NB_GAME_SCENE - 1], 1);

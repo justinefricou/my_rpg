@@ -50,6 +50,7 @@ general_data_t *create_general_data(void)
 
     gd->lock.menu = 0;
     gd->lock.move = 0;
+    gd->auto_quit = 0;
     set_object_list(gd);
     set_inventory(gd);
     set_default_keymap(gd);

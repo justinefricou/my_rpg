@@ -36,6 +36,7 @@ typedef struct self_data {
     sfVector2f memory;
     sfVector2f *pos;
     dg_animator_t *animator;
+    int *quit;
 } self_data_t;
 
 typedef struct data {

@@ -129,6 +129,7 @@ typedef struct general_data
     int block_input;
     set_animator_t sprite_id[SPRITE_ID_LEN];
     lock_t lock;
+    int auto_quit;
 } general_data_t;
 
 general_data_t *create_general_data(void);

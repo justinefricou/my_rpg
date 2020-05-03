@@ -30,7 +30,7 @@ void *scp_intro_init(void *init_data)
     data->fb.fb = dg_entity_get_component(data->fb.entity, "framebuffer");
     data->sparkle.entity = ent_sparkle(set_sparkle_intro());
     data->sparkle.pos = dg_entity_get_component(data->sparkle.entity, "pos");
-    data->text.entity = ent_text(500, -300, 140, "RPG");
+    data->text.entity = ent_text(100, -300, 140, "Murder at High Noon");
     data->text.pos = dg_entity_get_component(data->text.entity, "pos");
     dg_scene_add_ent(data->layer, data->fb.entity);
     return data;

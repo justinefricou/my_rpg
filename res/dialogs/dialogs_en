@@ -407,6 +407,49 @@ mayor02 What ? No, I know for a fact that he didn't do it.
 mayor03 For I was with him when the murder happened !
 mayor04 You are an incompetent ! You're fired !
 mayor05 Really ? Let's go see her !
+mayor06 Mayor : Lily ! Come here now !
+mayor07 Mr Allen says you are the killer !
+mayor08 I can't believe it ! How could you ?
+lily01 Lily : What ? Uuuh...
+mayor09 Mayor : Stop lying and tell us why you would
+mayor10 do such a thing !
+lily02 Lily : It... It wasn't my fault !
+lily_answer01 How so ?
+lily_answer02 What happened ?
+lily03 Lily : Alright, I'll tell you everything...
+lily04 Jack was cutting wood in the forest
+lily05 My bike was broken, so I went to see him and
+lily06 ask him if he could fix it.
+lily07 When I arrived, there was Rob behind him,
+lily08 and he was about to kill Jack !
+lily09 He knew what he was doing ! He knew that Jack
+lily10 wouldn't notice him if he came when he was
+lily11 working. All this noise and sawdust... He
+lily12 wouldn't be seen nor heard.
+lily13 Fortunately, I happened to be here and see him
+lily14 before he could do any harm to my sweet Jack !
+lily15 So of course, I rushed up to him to stop him !
+lily16 But Jack saw me and got so surprised he dropped
+lily17 his chainsaw....
+lily18 I had already jumped on Rob to stop him,
+lily19 it was too late. He lost his balance and fell
+lily20 on Jack's chainsaw...
+lily21 We were in shock. We didn't know what to do.
+lily22 So we ran. And told nothing. To anyone.
+lily23 So yes, I killed him by pushing him onto
+lily24 Jack's chainsaw. But it was an accident,
+lily25 and right after Rob tried to kill him.
+lily26 So, do you still think I deserve jail ?
+mayor11 Mayor : Well, me neither.
+mayor12 Mayor : Well, I don't.
+mayor13 We know how cruel Mr Bezoz can be.
+mayor14 The policeman told me that he indeed planned
+mayor15 to get rid of Jack and Matt by convincing Rob
+mayor16 to do the dirty work for him.
+mayor17 Jack got really lucky !
+mayor18 Mr Allen, thank you for your work.
+mayor19 You were an excellent detective and
+mayor20 you will always be welcome in this town !
 yes yes
 no no
 corpse01 ...

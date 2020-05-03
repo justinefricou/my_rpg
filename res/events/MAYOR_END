@@ -1,0 +1,54 @@
+IF END_DONE == 0
+DIALOG
+TALK mayor06
+TALK mayor07
+TALK mayor08
+TALK lily01
+TALK mayor09
+TALK mayor10
+TALK lily02
+ANSWER lily_answer01
+END
+ANSWER lily_answer02
+END
+TALK lily03
+TALK lily04
+TALK lily05
+TALK lily06
+TALK lily07
+TALK lily08
+TALK lily09
+TALK lily10
+TALK lily11
+TALK lily12
+TALK lily13
+TALK lily14
+TALK lily15
+TALK lily16
+TALK lily17
+TALK lily18
+TALK lily19
+TALK lily20
+TALK lily21
+TALK lily22
+TALK lily23
+TALK lily24
+TALK lily25
+TALK lily26
+ANSWER yes
+TALK mayor12
+END
+ANSWER no
+TALK mayor11
+END
+TALK mayor13
+TALK mayor14
+TALK mayor15
+TALK mayor16
+TALK mayor17
+TALK mayor18
+TALK mayor19
+TALK mayor20
+END
+SET END_DONE 1
+END

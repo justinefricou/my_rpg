@@ -12,6 +12,8 @@
 #include "intro.h"
 
 static const sfColor blood = {140, 0, 0, 255};
+static const sfColor grass = {10, 100, 10, 255};
+static const sfColor sky = {0, 0, 40, 255};
 
 void gun_shot(data_t *data, sfTime dt)
 {
@@ -65,6 +67,25 @@ void dead_shot(data_t *data, sfTime dt)
         data->dead.pos->y += sfTime_asMilliseconds(dt) * 2;
         data->dead.size->y -= sfTime_asMilliseconds(dt) / 10.0;
         dg_fb_fill(data->fb.fb, blood);
-    } else {
     }
+}
+
+void island_shot(data_t *data, sfTime dt)
+{
+    float y = 600;
+    sfColor bsky = sky;
+    sfColor bgrass = grass;
+
+    if (data->clock < 14) {
+        y = (data->clock - 8) * 100;
+    }
+    if (data->clock > 18) {
+        bsky.a = (2.0 - (data->clock - 18)) / 2 * 255;
+        bgrass.a = (2.0 - (data->clock - 18)) / 2 * 255;
+    }
+    dg_fb_fill(data->fb.fb, bsky);
+    data->sparkle.pos->y = -600 + y;
+    data->text.pos->y =  - 400 + y;
+    dg_fb_putrectangle(data->fb.fb, (sfVector2u) {0, y},
+        (sfVector2u) {1920, 1080}, bgrass);
 }

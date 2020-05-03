@@ -192,6 +192,7 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/fight/attack_fight.c								\
 			src/scripts/fight/scp_dialogue_fight.c							\
 			src/scripts/intro/scp_intro.c									\
+			src/scripts/intro/intro_utils.c									\
 			src/scripts/intro/gun_part.c									\
 
 SRC_SAV =	src/save_load/save_load_utils.c									\

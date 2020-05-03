@@ -23,10 +23,18 @@ typedef struct fb {
     dg_framebuffer_t *fb;
 } fb_t;
 
+typedef struct sparkel {
+    dg_entity_t *entity;
+    sfVector2f *pos;
+} sparkel_t;
+
 typedef struct data {
     float clock;
     sprite_t gun;
     sprite_t dead;
+    sparkel_t sparkle;
+    sparkel_t text;
+    int added;
     fb_t fb;
     dg_scene_t *layer;
 } data_t;
@@ -34,5 +42,10 @@ typedef struct data {
 void gun_shot(data_t *data, sfTime dt);
 void ball_shot(data_t *data, sfTime dt);
 void dead_shot(data_t *data, sfTime dt);
+void island_shot(data_t *data, sfTime dt);
+
+sprite_t set_sprite_intro(char *sheet, dg_scene_t *scene,
+    sfVector2f id_scale, sfVector2f pos);
+sparkle_context_t set_sparkle_intro(void);
 
 #endif /*INTRO_H_*/

@@ -18,8 +18,6 @@ static int save_data(general_data_t *data, FILE *save_file)
     save_player_pv(data->player.pv, save_file);
     save_player_pm(data->player.pm, save_file);
     save_player_money(data->player, save_file);
-    /*position = dg_entity_get_component(player, "pos"); // get player
-    save_player_position(position, save_file);*/
     save_inventory(data->inventory, save_file);
     save_clues(data->clues, save_file);
     save_event_vars(data->event_manager, save_file);

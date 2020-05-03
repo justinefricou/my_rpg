@@ -39,4 +39,6 @@ map_events_t *get_map_events(char *filename, int *ev_len);
 int **create_map(char *content);
 int get_int(char *str);
 
+int mev_data_int(char **content);
+
 #endif /*MAP_H_*/

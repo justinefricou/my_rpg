@@ -107,10 +107,3 @@ void scp_player_controller_loop(dg_entity_t *entity, dg_window_t *w,
     data->pos->x += move.x;
     data->pos->y += move.y;
 }
-
-void scp_player_controller_end(void *data)
-{
-    data_t *d = (data_t *)data;
-
-    free(d);
-}

@@ -39,22 +39,14 @@ char *parse_mev_data(char **content)
     int len = 0;
 
     for (; copy[len] != ' ' && copy[len] != '\n'
-        && copy[len] != '\0'; len++);
+        && copy[len] != '\0';
+        len++);
     result = malloc(sizeof(char) * (len + 1));
     for (int j = 0; j < len; j++) {
         result[j] = copy[j];
     }
     result[len] = 0;
     *content = &((*content)[len]);
-    return result;
-}
-
-int mev_data_int(char **content)
-{
-    char *str = parse_mev_data(content);
-    int result = get_int(str);
-
-    free(str);
     return result;
 }
 

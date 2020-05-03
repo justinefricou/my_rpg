@@ -16,7 +16,6 @@
 #include "map.h"
 #include "general_data.h"
 
-
 int open_file(char *filename, int *fd)
 {
     *fd = open(filename, O_RDONLY);
@@ -41,4 +40,13 @@ int get_map_content(char **content, int fd)
         return (84);
     (*content)[buffer.st_size] = 0;
     return (0);
+}
+
+int mev_data_int(char **content)
+{
+    char *str = parse_mev_data(content);
+    int result = get_int(str);
+
+    free(str);
+    return result;
 }

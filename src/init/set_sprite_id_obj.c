@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include "general_data.h"
 
-//dead
 dg_animator_t *mator_dead(void)
 {
     dg_spritesheet_t *ss = dg_ressources_get_spritesheet_by_name("dead");

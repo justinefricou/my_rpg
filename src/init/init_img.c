@@ -43,5 +43,6 @@ void init_img(void)
     dg_ressources_add_spritesheet("./img/enemy_2.png", "enemy_2", 104, 162);
     dg_ressources_add_spritesheet("./img/enemy_3.png", "enemy_3", 112, 123);
     dg_ressources_add_spritesheet("./img/enemy_4.png", "enemy_4", 76, 143);
+    dg_ressources_add_spritesheet("./img/enemy_5.png", "enemy_5", 97, 149);
     img_add_characters();
 }

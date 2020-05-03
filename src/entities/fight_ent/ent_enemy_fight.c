@@ -66,6 +66,9 @@ static dg_component_t *set_animator(int id)
         case 2:
             animator = dg_cpt_animator(&set_enemy_animator_pdg);
             break;
+        case 3:
+            animator = dg_cpt_animator(&set_enemy_animator_barman);
+            break;
         default:
             animator = dg_cpt_animator(&set_enemy_animator_bliblio);
             break;
@@ -82,7 +85,7 @@ dg_entity_t *entity_enemy_fight_create(int id)
     dg_entity_add_component(enemy, animator);
     if (id == 2)
         dg_entity_add_component(enemy, dg_cpt_pos(1250, 600));
-    else if (id == 3)
+    else if (id >= 4)
         dg_entity_add_component(enemy, dg_cpt_pos(1250, 520));
     else
         dg_entity_add_component(enemy, dg_cpt_pos(1250, 500));

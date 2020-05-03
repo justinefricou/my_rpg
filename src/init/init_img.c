@@ -15,6 +15,7 @@ static img_add_characters(void)
     dg_ressources_add_spritesheet("./img/mayor.png", "mayor", 16, 16);
     dg_ressources_add_spritesheet("./img/pdg.png", "pdg", 16, 16);
     dg_ressources_add_spritesheet("./img/camping.png", "camping", 16, 16);
+    dg_ressources_add_spritesheet("./img/barman.png", "barman", 16, 16);
     dg_ressources_add_spritesheet("./img/librarian.png", "librarian", 16, 16);
     dg_ressources_add_spritesheet("./img/policeman.png", "policeman", 16, 16);
     dg_ressources_add_spritesheet("./img/photograph.png",

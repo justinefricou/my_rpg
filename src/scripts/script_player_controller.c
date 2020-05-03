@@ -24,7 +24,7 @@ void *scp_player_controller_init(void *init_data)
     void **idata = (void **) init_data;
     data_t *data = malloc(sizeof(data_t));
     dg_entity_t *entity = idata[0];
-    dg_component_t *pos = dg_cpt_pos(88 * 16 * 3, 9 * 16 * 3);
+    dg_component_t *pos = dg_cpt_pos(78 * 16 * 3, 9 * 16 * 3);
     dg_scene_t *scene = idata[2];
     dg_entity_t *map_ent = dg_get_entity(scene->entities, "map");
 
@@ -41,15 +41,15 @@ int try_collide(data_t *data, sfVector2f m)
     sfVector2f p = {(data->pos->x), data->pos->y};
     sfVector2f tiled_pos[4] = {
         {(p.x + m.x) / (48), (p.y + m.y) / (48)},
-        {(p.x + m.x + 24) / 48, (p.y + m.y + 24) / (48)},
-        {(p.x + m.x) / 48, (p.y + m.y + 24) / (48)},
+        {(p.x + m.x + 24) / 48, (p.y + m.y + 40) / (48)},
+        {(p.x + m.x) / 48, (p.y + m.y + 40) / (48)},
         {(p.x + m.x + 24) / 48, (p.y + m.y) / (48)}
     };
 
     for ( int i = 0; i < 4; i++) {
-        if (tiled_pos[i].y <= 0 || tiled_pos[i].x <= 0.3 ||
-            tiled_pos[i].x + 0.3 >= data->collide->width ||
-            tiled_pos[i].y + 0.3 >= data->collide->height)
+        if (tiled_pos[i].y <= 0 || tiled_pos[i].x <= 0.1 ||
+            tiled_pos[i].x + 0.1 >= data->collide->width ||
+            tiled_pos[i].y + 0.1 >= data->collide->height)
             return 1;
         if (data->collide->map[(int)tiled_pos[i].y][(int)tiled_pos[i].x])
             return 1;

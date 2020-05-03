@@ -45,7 +45,11 @@ void skill_attack(int *previous, void *data, dg_window_t *w)
         mult = 2;
     else
         mult = 0.5;
-    gd->enemy.pv.x -= (gd->player.damage * mult ) + capacity;
+    mult = (gd->player.damage * mult ) + capacity;
+    if ((gd->enemy.pv.x - mult) < 0)
+        gd->enemy.pv.x = 0;
+    else
+        gd->enemy.pv.x -= mult;
 }
 
 static void close_fight(void)
@@ -69,7 +73,7 @@ void end_battle(dg_entity_t *entity, dg_window_t *w)
             gd->event_manager.var[variable_to_int("BATTLE", gd)].data = 0;
         else
             gd->event_manager.var[variable_to_int("BATTLE", gd)].data = 1;
-        get_game_scenes(&game_scenes, 0);
+        get_game_scenes(&game_scenes, 1);
         for (int i = 0; i < NB_GAME_SCENE; i++) {
             game_scenes[i]->display = 1;
             game_scenes[i]->run = 1;

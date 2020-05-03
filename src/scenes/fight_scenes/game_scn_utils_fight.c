@@ -59,3 +59,17 @@ void remove_fight_scenes(void)
     dg_scene_manager_remove("layer_bottom_fight");
     dg_scene_manager_remove("layer_hud_fight");
 }
+
+sparkle_context_t set_sparkle(void)
+{
+    sparkle_context_t context = {0};
+
+    context.position = (sfVector2f) {0, 0};
+    context.dispersion = (sfVector2i) {1920, 1080};
+    context.density = 0.00025;
+    context.size = 20;
+    context.duration = 2;
+    context.dispersion_type = 1;
+    context.color = sfRed;
+    return context;
+}

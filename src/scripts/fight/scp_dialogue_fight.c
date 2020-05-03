@@ -25,8 +25,10 @@ void *scp_dialogue_fight_init(void *init_data)
     data->side_box = ent_hud_box(875, 600, 20, 7);
     data->skill_box = ent_text(880, 600, 40, gd->skills[i].description);
     data->launch_action = 0;
+    data->fx = ent_sparkle(set_sparkle());
     dg_scene_add_ent(scene, data->side_box);
     dg_scene_add_ent(scene, data->skill_box);
+    dg_scene_add_ent(scene, data->fx);
     return data;
 }
 
@@ -58,5 +60,6 @@ void scp_dialogue_fight_end(void *data)
     *(d->previous) = 1;
     d->side_box->destroy = 1;
     d->skill_box->destroy = 1;
+    d->fx->destroy = 1;
     free(d);
 }

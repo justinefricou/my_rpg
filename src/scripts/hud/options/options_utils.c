@@ -11,7 +11,7 @@
 #include "script.h"
 #include "hud/hud_options.h"
 
-static void reset_selected(data_t *data)
+void reset_selected(data_t *data)
 {
     hud_progress_bar_activate(data->content.volume_general.data, 0);
     hud_progress_bar_activate(data->content.volume_music.data, 0);
@@ -22,11 +22,11 @@ static void reset_selected(data_t *data)
     hud_keymap_button_activate(data->content.keymap_left.data, 0);
     hud_keymap_button_activate(data->content.keymap_right.data, 0);
     hud_keymap_button_activate(data->content.keymap_up.data, 0);
+    hud_lang_button_activate(data->content.language.data, 0);
 }
 
 void act_by_selected(data_t *data)
 {
-    reset_selected(data);
     (data->select == 0) ?
         hud_progress_bar_activate(data->content.volume_general.data, 1) : NULL;
     (data->select == 1) ?
@@ -45,6 +45,8 @@ void act_by_selected(data_t *data)
         hud_keymap_button_activate(data->content.keymap_right.data, 1) : NULL;
     (data->select == 8) ?
         hud_keymap_button_activate(data->content.keymap_up.data, 1) : NULL;
+    (data->select == 9) ?
+        hud_lang_button_activate(data->content.language.data, 1) : NULL;
 }
 
 void hud_menu_manage_mouse(dg_window_t *w, data_t *data)

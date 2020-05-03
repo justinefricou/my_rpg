@@ -31,7 +31,7 @@ void *scp_hud_options_init(void *init_data)
 
 static void hud_options_active(dg_window_t *w, data_t *data)
 {
-    if (keymap_is_clicked(w, "down", 1) && data->select < 8) {
+    if (keymap_is_clicked(w, "down", 1) && data->select < 9) {
         sound_play(data->sound_move);
         data->select++;
     }
@@ -40,6 +40,7 @@ static void hud_options_active(dg_window_t *w, data_t *data)
         data->select--;
     }
     hud_menu_manage_mouse(w, data);
+    reset_selected(data);
     act_by_selected(data);
 }
 

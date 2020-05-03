@@ -72,6 +72,8 @@ dg_entity_t *ent_hud_fight_dialogue(int *previous, dg_scene_t *scene,
 dg_entity_t *ent_particle(sfVector2f pos, sfVector2i size, int type);
 dg_entity_t *ent_sparkle(sparkle_context_t context);
 dg_entity_t *ent_rain(rain_context_t context);
+dg_entity_t *ent_hud_language_button(sfVector2f pos,
+    int size, dg_scene_t *scene);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));
@@ -139,6 +141,7 @@ void scn_change(dg_scene_t *scene, int status);
 void scn_change_music(dg_scene_t *scene, int status);
 void hud_progress_bar_activate(dg_entity_t *pb, int stat);
 void hud_keymap_button_activate(dg_entity_t *kb, int stat);
+void hud_lang_button_activate(dg_entity_t *kb, int stat);
 void skill_attack(int *previous, void *data, dg_window_t *w);
 
 #endif

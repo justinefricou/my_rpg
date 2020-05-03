@@ -10,6 +10,7 @@ CC	=	gcc
 SRC_MAI = 	src/main.c														\
 
 SRC_SCN =	src/scenes/scene_main_menu.c									\
+			src/scenes/scene_intro.c										\
 			src/scenes/scene_main_menu_hover.c								\
 			src/scenes/scene_tmp_hover.c									\
 			src/scenes/scene_tmp_hover_ws.c									\
@@ -49,6 +50,7 @@ SRC_CPT =	src/components/cpt_action.c										\
 			src/components/cpt_particle.c									\
 
 SRC_ENT =	src/entities/ent_music.c										\
+			src/entities/ent_intro.c										\
 			src/entities/ent_sprite.c										\
 			src/entities/ent_text.c											\
 			src/entities/ent_map.c											\
@@ -58,7 +60,7 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_event.c										\
 			src/entities/ent_particle.c										\
 			src/entities/ent_sparkle.c										\
-			src/entities/ent_rain.c										\
+			src/entities/ent_rain.c											\
 			src/entities/hud/ent_hud_progress_bar.c							\
 			src/entities/hud/ent_hud_box.c									\
 			src/entities/hud/ent_hud_menu_selector.c						\
@@ -70,6 +72,7 @@ SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/hud/ent_hud_htp.c									\
 			src/entities/hud/ent_hud_load.c									\
 			src/entities/hud/ent_hud_keymap_button.c						\
+			src/entities/hud/ent_hud_language_button.c						\
 			src/entities/hud/ent_hud_text.c									\
 			src/entities/hud/ent_cancel_menu_selector.c						\
 			src/entities/fight_ent/ent_player_fight.c						\
@@ -174,6 +177,7 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/hud/load/scp_hud_load.c								\
 			src/scripts/hud/load/load_utils.c								\
 			src/scripts/hud/load/load_set_data.c							\
+			src/scripts/hud/language_button/scp_hud_language_button.c		\
 			src/scripts/hud/keymap_button/scp_hud_keymap_button.c			\
 			src/scripts/hud/keymap_button/kb_utils.c						\
 			src/scripts/event/script_event.c								\

@@ -30,6 +30,7 @@ static void opt_add_ent_data(data_t *data)
     dg_scene_add_ent(data->hover_layer, data->content.keymap_left.data);
     dg_scene_add_ent(data->hover_layer, data->content.keymap_right.data);
     dg_scene_add_ent(data->hover_layer, data->content.keymap_up.data);
+    dg_scene_add_ent(data->hover_layer, data->content.language.data);
 }
 
 static void opt_add_ent_name(data_t *data)
@@ -44,6 +45,7 @@ static void opt_add_ent_name(data_t *data)
     dg_scene_add_ent(data->hover_layer, data->content.keymap_left.name);
     dg_scene_add_ent(data->hover_layer, data->content.keymap_right.name);
     dg_scene_add_ent(data->hover_layer, data->content.keymap_up.name);
+    dg_scene_add_ent(data->hover_layer, data->content.language.name);
 }
 
 void options_set_data(data_t *data, dg_scene_t *scene,

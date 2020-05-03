@@ -83,6 +83,7 @@ typedef struct options
     sfVector2f sound;
     int resolution;
     keymap_t keymap;
+    int language;
 } options_t;
 
 typedef struct object_list {

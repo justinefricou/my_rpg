@@ -29,6 +29,7 @@ typedef struct content {
     op_slot_t keymap_right;
     op_slot_t keymap_action;
     op_slot_t keymap_cancel;
+    op_slot_t language;
     op_slot_t main;
 } content_t;
 
@@ -57,5 +58,6 @@ void update_sound(data_t *data, general_data_t *gd);
 void options_set_main(data_t *data, general_data_t *gd);
 void options_set_escape(data_t *data, general_data_t *gd);
 float update_selector(data_t *data);
+void reset_selected(data_t *data);
 
 #endif /*HUD_OPTIONS_H_*/

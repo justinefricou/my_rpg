@@ -29,6 +29,7 @@ static void set_default_keymap(general_data_t *gd)
     gd->options.music = (sfVector2f){15, 100};
     gd->options.sound = (sfVector2f){30, 100};
     gd->options.resolution = 0;
+    gd->options.language = 0;
 }
 
 static void set_inventory(general_data_t *gd)

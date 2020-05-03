@@ -25,6 +25,7 @@ static void opt_set_texts(data_t *data)
     data->content.keymap_down.name = ent_text(480, 682, 30, "down");
     data->content.keymap_left.name = ent_text(480, 762, 30, "left");
     data->content.keymap_right.name = ent_text(480, 842, 30, "right");
+    data->content.language.name = ent_text(480, 922, 30, "language");
 }
 
 static void opt_set_km(data_t *data, general_data_t *gd)
@@ -41,6 +42,8 @@ static void opt_set_km(data_t *data, general_data_t *gd)
     data->content.keymap_up.data = ent_hud_keymap_button(
         (sfVector2f){660, 840}, 6, &(gd->options.keymap.right),
         data->hover_layer);
+    data->content.language.data = ent_hud_language_button(
+        (sfVector2f){660, 920}, 6, data->hover_layer);
 }
 
 void options_set_escape(data_t *data, general_data_t *gd)

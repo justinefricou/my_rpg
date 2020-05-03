@@ -30,8 +30,6 @@ static img_add_characters(void)
 
 void init_img(void)
 {
-    dg_ressources_add_spritesheet("./img/background.png", "background_menu",
-        1920, 1080);
     dg_ressources_add_spritesheet("./img/button.png", "to_remove", 1104, 340);
     dg_ressources_add_spritesheet("./img/tileset_map.png", "map", 16, 16);
     dg_ressources_add_spritesheet("./img/tileset_HUD.png", "hud", 16, 16);
@@ -39,7 +37,11 @@ void init_img(void)
     dg_ressources_add_spritesheet("./img/player.png", "player", 16, 16);
     dg_ressources_add_spritesheet("./img/background_fight_1.png",
         "background_fight_1", 1272, 253);
-    dg_ressources_add_spritesheet("./img/enemy_1.png", "enemy_1", 62, 132);
-    dg_ressources_add_spritesheet("./img/enemy_2.png", "enemy_2", 79, 138);
+    dg_ressources_add_spritesheet("./img/player_fight.png",
+        "player_fight", 90, 195);
+    dg_ressources_add_spritesheet("./img/enemy_1.png", "enemy_1", 72, 148);
+    dg_ressources_add_spritesheet("./img/enemy_2.png", "enemy_2", 104, 162);
+    dg_ressources_add_spritesheet("./img/enemy_3.png", "enemy_3", 112, 123);
+    dg_ressources_add_spritesheet("./img/enemy_4.png", "enemy_4", 76, 143);
     img_add_characters();
 }

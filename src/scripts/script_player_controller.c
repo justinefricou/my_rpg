@@ -36,7 +36,6 @@ void *scp_player_controller_init(void *init_data)
     return data;
 }
 
-//16 * 3 = 48
 int try_collide(data_t *data, sfVector2f m)
 {
     sfVector2f p = {(data->pos->x), data->pos->y};
@@ -70,6 +69,7 @@ void player_set_animation(sfVector2f move, data_t *data, general_data_t *gd)
 {
     char *key = NULL;
     char *new_key = NULL;
+
     (move.x > 0) ? dg_animator_set_animation(data->animator, "right") : NULL;
     (move.x < 0) ? dg_animator_set_animation(data->animator, "left") : NULL;
     (move.y < 0) ? dg_animator_set_animation(data->animator, "up") : NULL;

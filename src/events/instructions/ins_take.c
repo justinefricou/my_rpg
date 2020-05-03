@@ -22,11 +22,12 @@ parameters_t *ins_set_take(instruction_t *instruction, int *i,
     parameters_t *text_param = instruction[*i].parameters;
 
     param[0].type = STRING;
-    param[0].parameters.s = text_param[1].parameters.s;
+    param[0].parameters.s = text_param[0].parameters.s;
     param[1].type = INT;
     param[1].parameters.n = my_atoi(text_param[1].parameters.s);
     param[2].type = NONE;
     *len = 2;
+    return param;
 }
 
 intern_t *ins_ini_take(intern_t *prev, general_data_t *gd)
@@ -41,8 +42,8 @@ int ins_act_take(intern_t *intern, self_data_t data,
     parameters_t *params = intern->script[intern->reader.progress].parameters;
     int test = 0;
 
-    test += give_obj(gd, params, -1);
     test += (!test) ? give_player(gd, params, -1) : 0;
+    test += (!test) ? give_obj(gd, params, -1) : 0;
     return 1;
 }
 

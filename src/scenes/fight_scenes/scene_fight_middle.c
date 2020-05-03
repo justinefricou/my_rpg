@@ -40,3 +40,17 @@ dg_animator_t *set_enemy_animator_fisherman(void)
     dg_animator_add(animator, "idle", anim);
     return animator;
 }
+
+dg_animator_t *set_enemy_animator_barman(void)
+{
+    dg_spritesheet_t *ss = dg_ressources_get_spritesheet_by_name("enemy_5");
+    dg_animator_t *animator = dg_animator_create();
+    dg_animation_t *anim = 0;
+
+    anim = dg_animation_create(ss, 3);
+    dg_animation_add(anim, 0);
+    dg_animation_add(anim, 1);
+    dg_animation_add(anim, 2);
+    dg_animator_add(animator, "idle", anim);
+    return animator;
+}

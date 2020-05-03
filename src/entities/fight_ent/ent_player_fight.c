@@ -12,15 +12,18 @@
 
 static dg_animator_t *set_player_animator(void)
 {
-    dg_spritesheet_t *ss = dg_ressources_get_spritesheet_by_name("enemy_1");
+    dg_spritesheet_t *ss = dg_ressources_get_spritesheet_by_name("player_fight");
     dg_animator_t *animator = dg_animator_create();
     dg_animation_t *anim = 0;
 
-    anim = dg_animation_create(ss, 4);
+    anim = dg_animation_create(ss, 1);
     dg_animation_add(anim, 0);
     dg_animation_add(anim, 1);
-    dg_animation_add(anim, 2);
     dg_animator_add(animator, "idle", anim);
+    anim = dg_animation_create(ss, 1);
+    dg_animation_add(anim, 90);
+    dg_animation_add(anim, 91);
+    dg_animator_add(animator, "attack", anim);
     return animator;
 }
 

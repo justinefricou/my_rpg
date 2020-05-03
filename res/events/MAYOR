@@ -1,3 +1,38 @@
+IF INIT == 3
+DIALOG
+TALK mayor01
+ANSWER mayor_answer01
+END
+ANSWER mayor_answer02
+END
+ANSWER mayor_answer03
+END
+ANSWER mayor_answer04
+END
+ANSWER mayor_answer05
+SET GAME_WON 1
+END
+ANSWER mayor_answer06
+END
+ANSWER mayor_answer07
+END
+ANSWER mayor_answer08
+END
+END
+IF GAME_WON == 0
+DIALOG
+TALK mayor02
+TALK mayor03
+TALK mayor04
+END
+GIVE QUIT 1
+END
+IF GAME_WON == 1
+DIALOG
+TALK mayor05
+END
+END
+END
 IF INIT == 1
 DIALOG
 TALK visit_camping

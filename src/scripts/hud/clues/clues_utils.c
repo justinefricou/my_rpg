@@ -11,9 +11,6 @@
 #include "script.h"
 #include "hud/hud_clues.h"
 
-/* "", "", "", "", "", "", "", "", "", "", "",
-"", "", "", "", "", "", "", "", ""*/
-
 static const char *CLUES_DESCRIPTION[CLUES_LEN][20] = {
     {
         "According to the photographer, the chainsaw was working",

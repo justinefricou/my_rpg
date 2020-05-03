@@ -30,7 +30,7 @@ void *scp_intro_init(void *init_data)
     data->fb.fb = dg_entity_get_component(data->fb.entity, "framebuffer");
     data->sparkle.entity = ent_sparkle(set_sparkle_intro());
     data->sparkle.pos = dg_entity_get_component(data->sparkle.entity, "pos");
-    data->text.entity = ent_text(500, -300, 140, "RPG");
+    data->text.entity = ent_text(100, -300, 140, "Murder at High Noon");
     data->text.pos = dg_entity_get_component(data->text.entity, "pos");
     dg_scene_add_ent(data->layer, data->fb.entity);
     return data;
@@ -59,7 +59,7 @@ void scp_intro_loop(dg_entity_t *entity, dg_window_t *w,
     dg_fb_fill(data->fb.fb, sfBlack);
     play_intro(data, w, entities, dt);
     data->clock += sfTime_asSeconds(dt);
-    if (data->clock > 8 && data->clock < 20&& !data->added) {
+    if (data->clock > 8 && data->clock < 20 && !data->added) {
         data->added = 1;
         dg_scene_add_ent(data->layer, data->sparkle.entity);
         dg_scene_add_ent(data->layer, data->text.entity);

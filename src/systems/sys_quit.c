@@ -18,7 +18,7 @@ void sys_quit(dg_entity_t *entity, dg_window_t *w,
     dg_scene_t *game_scenes[NB_GAME_SCENE] = {0};
 
     if (gd->auto_quit) {
-         dg_scene_manager_add_scene(scene_main_menu());
+        dg_scene_manager_add_scene(scene_main_menu());
         dg_scene_manager_add_scene(scene_main_menu_hover());
         sfMusic_play(dg_ressources_get_audio_by_name("menu_theme"));
         sfMusic_stop(dg_ressources_get_audio_by_name("game_theme"));

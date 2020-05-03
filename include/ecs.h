@@ -76,6 +76,7 @@ dg_entity_t *ent_rain(rain_context_t context);
 dg_entity_t *ent_hud_language_button(sfVector2f pos,
     int size, dg_scene_t *scene);
 dg_entity_t *ent_intro(void);
+dg_entity_t *ent_framebuffer(sfVector2f pos, sfVector2i size);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));
@@ -100,6 +101,8 @@ dg_component_t *cpt_shape_rectangle(sfVector2f pos, sfVector2f size,
     sfColor fill, sfColor outline);
 dg_component_t *cpt_sprite(dg_spritesheet_t *sheet, int id);
 dg_component_t *cpt_particle(float x, float y, int type);
+dg_component_t *cpt_rot(float angle);
+dg_component_t *cpt_framebuffer(int width, int height);
 
 // systems
 void sys_render(dg_entity_t *entity, dg_window_t *w,
@@ -127,6 +130,8 @@ void sys_shape_rectangle(dg_entity_t *entity, dg_window_t *w,
 void sys_sprite(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void sys_particle(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void sys_framebuffer(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 
 // init

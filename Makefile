@@ -35,6 +35,7 @@ SRC_SCN =	src/scenes/scene_main_menu.c									\
 SRC_CPT =	src/components/cpt_action.c										\
 			src/components/cpt_text.c										\
 			src/components/cpt_scale.c										\
+			src/components/cpt_rot.c										\
 			src/components/cpt_box_collider.c								\
 			src/components/cpt_spritesheet.c								\
 			src/components/cpt_sound.c										\
@@ -48,9 +49,11 @@ SRC_CPT =	src/components/cpt_action.c										\
 			src/components/cpt_shape_circle.c								\
 			src/components/cpt_sprite.c										\
 			src/components/cpt_particle.c									\
+			src/components/cpt_framebuffer.c								\
 
 SRC_ENT =	src/entities/ent_music.c										\
 			src/entities/ent_intro.c										\
+			src/entities/ent_framebuffer.c									\
 			src/entities/ent_sprite.c										\
 			src/entities/ent_text.c											\
 			src/entities/ent_map.c											\
@@ -93,6 +96,7 @@ SRC_SYS =	src/systems/sys_render.c										\
 			src/systems/sys_shape_rectangle.c								\
 			src/systems/sys_sprite.c										\
 			src/systems/sys_particle.c										\
+			src/systems/sys_framebuffer.c									\
 
 SRC_INI =	src/init/init_img.c												\
 			src/init/init_audio.c											\
@@ -188,6 +192,7 @@ SRC_SPT =	src/scripts/script_player_controller.c							\
 			src/scripts/fight/attack_fight.c								\
 			src/scripts/fight/scp_dialogue_fight.c							\
 			src/scripts/intro/scp_intro.c									\
+			src/scripts/intro/gun_part.c									\
 
 SRC_SAV =	src/save_load/save_load_utils.c									\
 			src/save_load/set_save_infos.c									\

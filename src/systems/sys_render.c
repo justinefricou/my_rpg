@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "dragon/dg_component.h"
+#include "libdragon.h"
 #include "ecs.h"
 
 sfSprite *render_sprite(sfVector2f *scale, dg_spritesheet_t *sheet,
@@ -36,11 +36,14 @@ void sys_render(dg_entity_t *entity, dg_window_t *w,
         (dg_entity_get_component(entity, "pos"));
     sfVector2f *scale = (sfVector2f *)
         (dg_entity_get_component(entity, "scale"));
+    float *rot = (float *) dg_entity_get_component(entity, "rot");
     sfSprite *sprite = 0;
 
     if (!dg_system_require(entity, 2, "spritesheet", "pos") || !camera)
         return;
     sprite = render_sprite(scale, sheet, pos, color);
+    if (rot)
+        sfSprite_setRotation(sprite, *rot);
     dg_camera_render(*c_pos, sprite, w);
     sfSprite_destroy(sprite);
 }

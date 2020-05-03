@@ -24,7 +24,8 @@ static int **create_hud_lang_button(int size)
     return pb;
 }
 
-dg_entity_t *ent_hud_language_button(sfVector2f pos, int size, dg_scene_t *scene)
+dg_entity_t *ent_hud_language_button(sfVector2f pos, int size,
+    dg_scene_t *scene)
 {
     int tmp = 0;
     dg_entity_t *entity = dg_entity_create("hud_box");

@@ -13,12 +13,28 @@
 #include "game_scenes.h"
 #include "fight_scenes.h"
 
+static float mult_verifcation(general_data_t *gd)
+{
+    float capacity = 0;
+
+    if (gd->enemy.type == 0)
+        capacity = gd->player.flattery_stat;
+    if (gd->enemy.type == 1)
+        capacity = gd->player.intimidation_stat;
+    if (gd->enemy.type == 2)
+        capacity = gd->player.repartee_stat;
+    if (gd->enemy.type == 3)
+        capacity = gd->player.trickery_stat;
+    return (capacity);
+}
+
 void skill_attack(int *previous, void *data, dg_window_t *w)
 {
     dg_scene_t *scene = dg_scene_manager_get_scene("layer_hud_fight");
     general_data_t *gd = w->general_data;
     int i = *((int *)data);
     float mult = 1;
+    float capacity = mult_verifcation(gd);
 
     dg_scene_add_ent(scene, ent_hud_fight_dialogue(previous, scene, i, gd));
     if (gd->skills[i].type == gd->enemy.type ||
@@ -29,7 +45,7 @@ void skill_attack(int *previous, void *data, dg_window_t *w)
         mult = 2;
     else
         mult = 0.5;
-    gd->enemy.pv.x -= (gd->player.damage * mult);
+    gd->enemy.pv.x -= (gd->player.damage * mult ) + capacity;
 }
 
 static void close_fight(void)
@@ -50,10 +66,10 @@ void end_battle(dg_entity_t *entity, dg_window_t *w)
         sound_play(data->sound_activate);
         entity->destroy = 1;
         if (gd->enemy.pv.x <= 0)
-            gd->event_manager.var[variable_to_int("BATTLE", gd)].data = 1;
-        else
             gd->event_manager.var[variable_to_int("BATTLE", gd)].data = 0;
-        get_game_scenes(&game_scenes, 1);
+        else
+            gd->event_manager.var[variable_to_int("BATTLE", gd)].data = 1;
+        get_game_scenes(&game_scenes, 0);
         for (int i = 0; i < NB_GAME_SCENE; i++) {
             game_scenes[i]->display = 1;
             game_scenes[i]->run = 1;

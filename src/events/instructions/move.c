@@ -35,10 +35,10 @@ sfVector2f *set_move_target(self_data_t self,
     sfVector2f *pos = NULL;
 
     if (!dg_strcmp("PLAYER", params[0].parameters.s)) {
-         pos = dg_entity_get_component(player, "pos");
-         gd->lock.menu = 1;
-         gd->lock.move = 1;
-         *mator = dg_entity_get_component(player, "animator");
+        pos = dg_entity_get_component(player, "pos");
+        gd->lock.menu = 1;
+        gd->lock.move = 1;
+        *mator = dg_entity_get_component(player, "animator");
     } else if (!dg_strcmp("SELF", params[0].parameters.s)) {
         pos = self.pos;
         *mator = self.animator;

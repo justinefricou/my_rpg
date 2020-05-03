@@ -12,6 +12,15 @@
 #include "hud/hud_load.h"
 #include "save_load.h"
 
+static void data_init_hud(data_t *data, void **idata,
+    dg_component_t *selector)
+{
+    data->previous = idata[2];
+    data->selector = selector->data;
+    data->select = 0;
+    data->load_on_exit = 0;
+}
+
 void *scp_hud_load_init(void *init_data)
 {
     void **idata = (void **) init_data;
@@ -25,10 +34,7 @@ void *scp_hud_load_init(void *init_data)
 
     dg_entity_add_component(entity, pos);
     dg_entity_add_component(entity, selector);
-    data->previous = idata[2];
-    data->selector = selector->data;
-    data->select = 0;
-    data->load_on_exit = 0;
+    data_init_hud(data, idata, selector);
     sfRectangleShape_setOutlineThickness(data->selector, 5);
     data->layer = scene_tmp_hover("load");
     load_set_data(data, scene);

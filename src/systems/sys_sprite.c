@@ -44,7 +44,7 @@ void sys_sprite(dg_entity_t *entity, dg_window_t *w,
         return;
     sprite = sprite_render(scale, sp, pos, color);
     if (rot)
-        sfSprite_setRotation(sprite, *rot);  
+        sfSprite_setRotation(sprite, *rot);
     dg_camera_render(*c_pos, sprite, w);
     sfSprite_destroy(sprite);
 }

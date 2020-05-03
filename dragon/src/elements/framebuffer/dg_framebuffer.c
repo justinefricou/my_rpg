@@ -36,7 +36,8 @@ int dg_framebuffer_destroy(dg_framebuffer_t *fb)
     return 0;
 }
 
-void dg_framebuffer_update(dg_framebuffer_t *fb, sfRenderWindow *window, int x, int y)
+void dg_framebuffer_update(dg_framebuffer_t *fb,
+    sfRenderWindow *window, int x, int y)
 {
     sfTexture_updateFromPixels((sfTexture *) sfSprite_getTexture(fb->sp),
         fb->pixels, fb->width, fb->height, x, y);

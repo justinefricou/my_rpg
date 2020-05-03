@@ -24,7 +24,7 @@ parameters_t *ins_set_take(instruction_t *instruction, int *i,
     param[0].type = STRING;
     param[0].parameters.s = text_param[1].parameters.s;
     param[1].type = INT;
-    param[1].parameters.n = atoi(text_param[1].parameters.s);
+    param[1].parameters.n = my_atoi(text_param[1].parameters.s);
     param[2].type = NONE;
     *len = 2;
 }

@@ -26,7 +26,8 @@ static char *parse_instructions(int *i, char *content)
     int len = 0;
 
     for (; content[*i + len] != ' ' && content[*i + len] != '\n'
-        && content[*i + len] != '\0'; len++);
+        && content[*i + len] != '\0';
+        len++);
     result = malloc(sizeof(char) * (len + 1));
     for (int j = 0; j < len; j++) {
         result[j] = content[*i + j];

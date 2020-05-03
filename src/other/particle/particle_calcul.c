@@ -30,7 +30,7 @@ void sparkle_force_update(particle_system_t *ps)
     intern->particles = malloc(sizeof(particle_intern_t) * intern->nb);
     for (int i = 0; i < intern->nb; i++) {
         do {
-            intern->particles[i].pos = 
+            intern->particles[i].pos =
                 add_random_particule(intern->dispersion_type,
                 (sfVector2i) {ps->fb->width, ps->fb->height},
                 (sfVector2i) {intern->size, intern->size});
@@ -54,7 +54,7 @@ void rain_force_update(particle_system_t *ps)
     intern->particles = malloc(sizeof(particle_intern_t) * intern->nb);
     for (int i = 0; i < intern->nb; i++) {
         do {
-            intern->particles[i].pos = 
+            intern->particles[i].pos =
                 add_random_particule(SQUARE,
                 (sfVector2i) {ps->fb->width, ps->fb->height},
                 (sfVector2i) {intern->size.x, intern->size.y});

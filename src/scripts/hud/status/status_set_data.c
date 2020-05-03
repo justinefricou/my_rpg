@@ -68,14 +68,6 @@ void status_set_data(data_t *data, dg_window_t *w)
     status_set_level((sfVector2f){1750, 140}, 50, gd->player.level, data);
     status_set_money((sfVector2f){1150, 240}, 50, gd->player.money, data);
     dg_scene_add_ent(data->layer, ent_text(570, 150, 40, gd->player.name));
-    dg_scene_add_ent(data->layer, ent_text(400, 335, 40, "calm"));
-    dg_scene_add_ent(data->layer, ent_text(400, 425, 40, "Strategy"));
-    dg_scene_add_ent(data->layer, ent_text(400, 515, 40, "xp"));
-    dg_scene_add_ent(data->layer, ent_text(600, 650, 30, "skill 1 :"));
-    dg_scene_add_ent(data->layer, ent_text(600, 750, 30, "skill 2 :"));
-    dg_scene_add_ent(data->layer, ent_text(600, 850, 30, "skill 3 :"));
-    dg_scene_add_ent(data->layer, ent_text(1200, 650, 30, "skill 4 :"));
-    dg_scene_add_ent(data->layer, ent_text(1200, 750, 30, "skill 5 :"));
-    dg_scene_add_ent(data->layer, ent_text(1200, 850, 30, "skill 6 :"));
+    status_data_add(data);
     status_set_skills(data, gd);
 }

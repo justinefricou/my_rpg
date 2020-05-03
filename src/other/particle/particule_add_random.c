@@ -16,10 +16,10 @@ static sfVector2i add_random_particule_round(sfVector2i fb_size,
     sfVector2i radius = {fb_size.x / 2 - particle_size.x,
         fb_size.y / 2 - particle_size.y};
     int angle_degree = rand() % 360 - 180;
-    float angle = angle_degree / 180.0 * PI; 
+    float angle = angle_degree / 180.0 * PI;
 
     pos.x = dg_cos(angle) * (rand() % radius.x) + fb_size.y / 2;
-    pos.y = dg_sin(angle) * (rand() % radius.y) + fb_size.y / 2; 
+    pos.y = dg_sin(angle) * (rand() % radius.y) + fb_size.y / 2;
     return pos;
 }
 

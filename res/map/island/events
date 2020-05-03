@@ -4,11 +4,11 @@ MAYOR 0 29 61 1
 DEAD 0 70 55 15
 PHOTOGRAPHER 0 86 42 8
 POLICEMAN 0 51 84 7
-CASHIER 0 43 58 9
 tp_island_to_bar 0 24 73 -1
 tp_island_to_camping 0 44 13 -1
 tp_island_to_hangar 0 29 48 -1
 tp_island_to_hangar 0 30 48 -1
+tp_island_to_shop 0 45 57 -1
 tp_island_to_library_reception 0 11 57 -1
 tp_island_to_library_reception 0 12 57 -1
 tp_island_to_home1 0 58 70 -1

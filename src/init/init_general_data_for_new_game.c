@@ -35,6 +35,12 @@ static void init_player_for_new_game(player_t *player)
     player->xp.y = 100;
     player->money = 100;
     player->damage = 10;
+    player->defence = 1;
+    player->damage = 1;
+    player->flattery_stat = 1;
+    player->intimidation_stat = 1;
+    player->repartee_stat = 1;
+    player->trickery_stat = 1;
 }
 
 static void init_event_vars_for_new_game(event_manager_t *event_manager)

@@ -13,6 +13,7 @@ static void set_object_list(general_data_t *gd)
 {
     gd->object_list.len = OBJECT_LIST;
     gd->object_list.object[0] = calming();
+    gd->object_list.object[1] = calming();
     gd->clues.len = 0;
 }
 
@@ -41,7 +42,6 @@ static void set_inventory(general_data_t *gd)
         gd->inventory.slot[i].id = -1;
         gd->inventory.slot[i].nb = 0;
     }
-    add_to_inventory(gd, 0, 10);
 }
 
 general_data_t *create_general_data(void)

@@ -36,6 +36,25 @@ void update_inventory(general_data_t *gd)
     }
 }
 
+void level_up(general_data_t *gd)
+{
+    int x = gd->player.level;
+    int ran = 0;
+    float *tab[6] = {
+        &(gd->player.repartee_stat), &(gd->player.trickery_stat),
+        &(gd->player.intimidation_stat), &(gd->player.flattery_stat),
+        &(gd->player.defence), &(gd->player.damage)};
+
+    gd->player.pv.y += 10 + 4 * x - x * x * 0.01;
+    gd->player.pm.y += 2 + 4 * x - x * x * 0.02;
+    gd->player.pv.x = gd->player.pv.y;
+    gd->player.pm.x = gd->player.pm.y;
+    for (int i = 0; i < 3; i++) {
+        ran = rand() % 6;
+        *(tab[ran]) += 1;
+    }
+}
+
 void update_level(general_data_t *gd)
 {
     int x = gd->player.level;
@@ -49,12 +68,6 @@ void update_level(general_data_t *gd)
     if (gd->player.xp.x >= gd->player.xp.y) {
         gd->player.level++;
         gd->player.xp.x = 0;
-        for (int i = 0; i < 3; i++) {
-            ran = rand() % 4;
-            gd->player.pv.y += 10 + 4 * x - x * x * 0.01;
-            gd->player.pm.y += 2 + 4 * x - x * x * 0.02;
-            gd->player.pv.x = gd->player.pv.y;
-            gd->player.pm.x = gd->player.pm.y;
-        }
+        level_up(gd);
     }
 }

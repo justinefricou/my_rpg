@@ -46,5 +46,5 @@ int main(int argc, char **argv)
     int *ran = malloc(sizeof(int));
     srand(ran);
     free(ran);
-    return dg_play((sfVector2u){1920, 1080}, "RPG", 0, NULL);
+    return dg_play((sfVector2u){1920, 1080}, "Murder at High Noon", 0, NULL);
 }

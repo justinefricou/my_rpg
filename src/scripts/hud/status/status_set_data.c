@@ -47,12 +47,16 @@ static void status_set_money(sfVector2f pos, int size,
 
 static void status_set_skills(data_t *data, general_data_t *gd)
 {
-    status_set_level((sfVector2f){800, 650}, 30, 1, data);
-    status_set_level((sfVector2f){800, 750}, 30, 1, data);
-    status_set_level((sfVector2f){800, 850}, 30, 1, data);
-    status_set_level((sfVector2f){1400, 650}, 30, 1, data);
-    status_set_level((sfVector2f){1400, 750}, 30, 1, data);
-    status_set_level((sfVector2f){1400, 850}, 30, 1, data);
+    status_set_level((sfVector2f){800, 650}, 30,
+        gd->player.flattery_stat, data);
+    status_set_level((sfVector2f){800, 750}, 30,
+        gd->player.intimidation_stat, data);
+    status_set_level((sfVector2f){800, 850}, 30,
+        gd->player.repartee_stat, data);
+    status_set_level((sfVector2f){1400, 650}, 30,
+        gd->player.trickery_stat, data);
+    status_set_level((sfVector2f){1400, 750}, 30, gd->player.defence, data);
+    status_set_level((sfVector2f){1400, 850}, 30, gd->player.damage, data);
 }
 
 void status_set_data(data_t *data, dg_window_t *w)

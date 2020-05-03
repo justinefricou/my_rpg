@@ -45,7 +45,7 @@ intern_t *ins_ini_answer(intern_t *prev, general_data_t *gd)
     intern->reader.progress = 0;
     intern->reader.active = 0;
     intern->reader.end = 0;
-    intern->dialog.hud_box = ent_hud_menu_selector((sfVector2f){1500, 500},
+    intern->dialog.hud_box = ent_hud_menu_selector((sfVector2f){1500, 400},
         set_choices(prev, intern, gd), scene, 1);
     dg_scene_add_ent(scene, intern->dialog.hud_box);
     return intern;

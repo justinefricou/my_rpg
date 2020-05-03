@@ -22,7 +22,7 @@ object_t energy_drink(void)
 {
     object_t obj = {0};
 
-    obj.name = "calming_pills";
+    obj.name = "energy_drink";
     obj.description = "Restores some of your energy.\n+10pm";
     obj.icon_id = 2;
     obj.consomable = 1;

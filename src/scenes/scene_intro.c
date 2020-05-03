@@ -24,6 +24,7 @@ dg_scene_t *scene_intro(void)
     dg_scene_add_sys(scene, dg_system_create(&sys_tm_render, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_particle, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_sprite, 1));
+    dg_scene_add_sys(scene, dg_system_create(&sys_framebuffer, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_script, 0));
     if (sfMusic_getStatus(music) != sfPlaying) {
         sfMusic_setLoop(music, true);

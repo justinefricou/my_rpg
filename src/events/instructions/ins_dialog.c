@@ -38,8 +38,8 @@ intern_t *ins_ini_dialog(intern_t *prev, general_data_t *gd)
         != NONE;
         intern->reader.len++);
     intern->reader.activation = 1;
-    intern->dialog.box = ent_hud_box(45, 700, 38, 6);
-    intern->dialog.ent_text = ent_text(65, 710, 50, "");
+    intern->dialog.box = ent_hud_box(45, 850, 38, 3);
+    intern->dialog.ent_text = ent_text(70, 890, 45, "");
     intern->dialog.text =
         dg_entity_get_component(intern->dialog.ent_text, "text");
     dg_scene_add_ent(scene, intern->dialog.ent_text);

@@ -38,10 +38,13 @@ void sys_sprite(dg_entity_t *entity, dg_window_t *w,
     sfVector2f *scale = (sfVector2f *)
         (dg_entity_get_component(entity, "scale"));
     sfSprite *sprite = 0;
+    float *rot = (float *) dg_entity_get_component(entity, "rot");
 
     if (!dg_system_require(entity, 2, "sprite", "pos") || !camera)
         return;
     sprite = sprite_render(scale, sp, pos, color);
+    if (rot)
+        sfSprite_setRotation(sprite, *rot);  
     dg_camera_render(*c_pos, sprite, w);
     sfSprite_destroy(sprite);
 }

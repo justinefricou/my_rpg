@@ -20,6 +20,7 @@ dg_scene_t *scene_tmp_hover(char *name)
     dg_scene_add_sys(scene, dg_system_create(&sys_sprite, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_tm_render, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_shape_rectangle, 1));
+    dg_scene_add_sys(scene, dg_system_create(&sys_framebuffer, 1));
     dg_scene_add_sys(scene, dg_system_create(&sys_button, 0));
     dg_scene_add_sys(scene, dg_system_create(&sys_script, 0));
     return scene;

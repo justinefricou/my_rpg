@@ -48,6 +48,7 @@ void save_active(dg_window_t *w, data_t *data)
         sound_play(data->sound_move);
         data->select--;
     }
+    hud_save_manage_mouse(w, data);
     if (keymap_is_clicked(w, "action", 1)) {
         sound_play(data->sound_activate);
         save_game(general_data, data->select);

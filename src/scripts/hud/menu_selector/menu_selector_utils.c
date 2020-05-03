@@ -65,3 +65,24 @@ void update_position(data_t *data)
     }
     data->pos_memory = (sfVector2f){data->pos->x, data->pos->y};
 }
+
+void hud_options_manage_mouse(dg_window_t *w, data_t *data)
+{
+    sfVector2i mouse_pos = sfMouse_getPositionRenderWindow(w->window);
+    sfVector2f rect_size = menu_selector_set_rect(data);
+    sfVector2f pos = {mouse_pos.x - data->pos->x, mouse_pos.y - data->pos->y};
+
+    if (data->llen * rect_size.y < pos.y || pos.y < 0
+        || pos.x < 0 || pos.x > rect_size.x ||
+        (mouse_pos.x == data->mouse_memory.x
+        && mouse_pos.y == data->mouse_memory.y))
+        return;
+    data->mouse_memory.x = mouse_pos.x;
+    data->mouse_memory.y = mouse_pos.y;
+    for (int i = 0; i < data->llen; i++)
+        if (pos.y < (rect_size.y * (i + 1))) {
+            (i != data->select) ? sound_play(data->sound_move) : 0;
+            data->select = i;
+            return;
+        }
+}

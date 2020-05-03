@@ -122,4 +122,16 @@ void scp_dialogue_fight_loop(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void scp_dialogue_fight_end(void *data);
 
+// language button
+void *scp_hud_language_button_init(void *init_data);
+void scp_hud_language_button_loop(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void scp_hud_language_button_end(void *data);
+
+// intro
+void *scp_intro_init(void *init_data);
+void scp_intro_loop(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
+void scp_intro_end(void *data);
+
 #endif /*SCRIPT_H_*/

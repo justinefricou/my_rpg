@@ -14,7 +14,9 @@ typedef struct data {
     sfVector2f *pos;
     int size;
     sfVector2f *data;
+    sfVector2i mmemory;
     sfRectangleShape *selector;
+    int activate;
     int active;
     sfMusic *sound_move;
 } data_t;
@@ -24,6 +26,7 @@ void hud_progress_bar_activate(dg_entity_t *pb, int stat)
     script_t *script = (script_t *)dg_entity_get_component(pb, "script");
     data_t *data = script->data;
 
+    data->activate = stat;
     data->active = stat;
 }
 
@@ -41,6 +44,7 @@ void *scp_hud_progress_bar_init(void *init_data)
     data->pos = pos->data;
     data->data = (sfVector2f *)idata[3];
     data->size = *((int *)idata[2]);
+    data->mmemory = (sfVector2i) {0};
     data->active = 0;
     dg_entity_add_component(entity, pos);
     selector = cpt_shape_rectangle((sfVector2f){0, 12},
@@ -52,14 +56,21 @@ void *scp_hud_progress_bar_init(void *init_data)
 
 static void hud_pb_active(dg_window_t *w, data_t *data)
 {
-    if (keymap_is_clicked(w, "right", 0) && data->data->x < data->data->y) {
+    sfVector2i mouse = sfMouse_getPositionRenderWindow(w->window);
+
+    if ((keymap_is_clicked(w, "right", 0) ||
+        (sfMouse_isButtonPressed(sfMouseLeft) && data->mmemory.x < mouse.x))
+        && data->data->x < data->data->y) {
         sound_play(data->sound_move);
         data->data->x++;
     }
-    if (keymap_is_clicked(w, "left", 0) && data->data->x > 0) {
+    if ((keymap_is_clicked(w, "left", 0) ||
+        (sfMouse_isButtonPressed(sfMouseLeft) && data->mmemory.x > mouse.x))
+        && data->data->x > 0) {
         sound_play(data->sound_move);
         data->data->x--;
     }
+    data->mmemory = sfMouse_getPositionRenderWindow(w->window);
 }
 
 void scp_hud_progress_bar_loop(dg_entity_t *entity, dg_window_t *w,

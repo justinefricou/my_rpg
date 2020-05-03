@@ -21,8 +21,7 @@ void *dg_init(dg_window_t *window, void *import)
     window->general_data = create_general_data();
     gd = window->general_data;
     load_saved_options(&(gd->options));
-    dg_scene_manager_add_scene(scene_main_menu());
-    dg_scene_manager_add_scene(scene_main_menu_hover());
+    dg_scene_manager_add_scene(scene_intro());
     return 0;
 }
 

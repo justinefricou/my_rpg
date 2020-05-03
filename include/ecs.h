@@ -31,6 +31,7 @@ dg_scene_t *scene_fight_bottom(int **map, dg_scene_t *event);
 dg_scene_t *scene_fight_middle(int id);
 dg_scene_t *scene_tmp_hover(char *name);
 dg_scene_t *scene_tmp_hover_ws(char *name);
+dg_scene_t *scene_intro(void);
 
 // entities
 dg_entity_t *ent_music(char *path);
@@ -61,16 +62,20 @@ dg_entity_t *ent_hud_keymap_button(sfVector2f pos, int size,
     int *keymap, dg_scene_t *scene);
 dg_entity_t *ent_event(map_events_t data, general_data_t *gd);
 dg_entity_t *entity_player_fight_create(void);
-dg_entity_t *entity_enemy_fight_create(void);
+dg_entity_t *entity_enemy_fight_create(int id);
+dg_animator_t *set_enemy_animator_fisherman(void);
 dg_entity_t *ent_hud_text(char *text);
 dg_entity_t *ent_hud_fight_inventory(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_skill_fight(int *previous, dg_scene_t *scene,
     dg_window_t *w);
-dg_entity_t *ent_hud_fight_dialogue(int *previous, dg_scene_t *scene, int i, 
-    general_data_t *gd);
+dg_entity_t *ent_hud_fight_dialogue(int *previous, dg_scene_t *scene,
+    int i, general_data_t *gd);
 dg_entity_t *ent_particle(sfVector2f pos, sfVector2i size, int type);
 dg_entity_t *ent_sparkle(sparkle_context_t context);
 dg_entity_t *ent_rain(rain_context_t context);
+dg_entity_t *ent_hud_language_button(sfVector2f pos,
+    int size, dg_scene_t *scene);
+dg_entity_t *ent_intro(void);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));
@@ -138,6 +143,7 @@ void scn_change(dg_scene_t *scene, int status);
 void scn_change_music(dg_scene_t *scene, int status);
 void hud_progress_bar_activate(dg_entity_t *pb, int stat);
 void hud_keymap_button_activate(dg_entity_t *kb, int stat);
+void hud_lang_button_activate(dg_entity_t *kb, int stat);
 void skill_attack(int *previous, void *data, dg_window_t *w);
 
 #endif

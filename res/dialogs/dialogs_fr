@@ -1,9 +1,222 @@
 error error
-init00 Hello ! Come here !
-init01 I'm the mayor, Robin. Welcome to our island.
-init02 I'm relieved you could have come so fast.
-init03 What happened is a veritable tragedy...
-init04 I hope you'll be able to solve this riddle ispector
-init05 follow me ! I'll show you around !
-init06 This is the camping managed by Ben.
-init07 Why don't you go and say hello ?
+init00 Bonjour ! Approche !
+init01 Je suis le maire, Robin. Bienvenue sur notre ile.
+init02 Je suis content que vous ayez pu arriver si vite !
+init03 Ce qui s'est produit est une veritable tragedie...
+init04 J'espère que vous pourrer nous sortir de ce mauvais pas
+init05 Suivez-moi, je vais vous montrer l'ile !
+init06 Voici le camping de notre pauvre victime.
+init07 Vous pouvez y jeter un oeil, mais c'est ferme...
+visit_camping Tu as fini de visiter le camping ?
+init08 Continuons !
+init09 Voici la zone commerciale.
+init10 A gauche il y a la bibliotheque.
+init11 En haut ce sont les entrepots.
+init12 A droite il y a le magasin.
+init13 Et en as, c'est le bar.
+init14 Eet voici le quartier residentiel.
+init15 Maintenant que nous avons fait le tour,
+init16 Je vais vous montrer la scene du crime.
+init17 Je sait, c'est un spectacle terrible...
+init18 Mais vous avez toutes les cartes en mains inspecteur !
+init19 Vous pourriez commencer par inspecter le corp.
+init20 Bonne chance !
+tuto00 (Il vous faut desormais resoudre cette affaire)
+tuto01 (Voulez-vous savoir comment jouer ?)
+tuto02 (Qui est la victime, le tueur, pourquoi, comment ?)
+tuto03 (Parlez aux habitants de l'ile,)
+tuto04 (Cherchez des indices.)
+tuto05 (Parfois, certaines personnes seront reticentes.)
+tuto06 (Mais vous pouvez les affronter dans un combat)
+tuto07 (d'argument pour obtenir plus d'informations)
+tuto08 (Utilisez les objets de votre inventaire)
+tuto09 (ainsi que les indices disponible)
+tuto10 (dans votre menu.)
+tuto11 (Vous pouvez y acceder avec la touche 'annuler')
+tuto12 (Echappe par default)
+tuto13 (Quand vous pensez avoir resolu l'affaire,)
+tuto14 (Allez le dire au maire, sur la place.)
+tuto15 (Il est desormais temps de jouer !)
+notes_check01 Regardons les notes que l'on m'a passe...
+notes_check02 Ca me dit d'aller parler au policier
+notes_check03 Qui enquete deja sur l'accident.
+notes_check04 Puis, il y a le photographe. Il a trouve
+notes_check05 le corp. Il pourrait etre utile.
+notes_check06 Enfin, le pricipal suspect est le bucheron.
+notes_check07 Apparemment, cela fait plusieurs mois qu'il est en
+notes_check08 conflit avec la victime...
+notes_check09 Et bien, Allons-y !
+photographer01 Bonjour ! Vous etes le fameux inspecteur ?
+photographer02 J'etais la quand ca s'est produit. Je prenais de
+photographer03 magnifiques photos de la foret et des fleurs quand j'ai entendu
+photographer04 des cris. Plusieurs, hommes et femmes, je dirais.
+photographer05 Juste avant, le bruit d'une tronconneuse durant... une heure ?
+photographer06 Surement le bucheron faisant son travail, comme d'habitude...
+photographer07 Enfin bref...
+photographer08 Quand j'ai entendu les cris et la tronconneuse,
+photographer09 Je suis alle voir ce qui se passait.
+photographer10 Bien... Je n'ai jamais rien vu d'aussi terrible.
+photographer11 Juste là, le gerant du camping, coupe en deux...
+photographer12 Il n'y avait personne d'autre. J'ai averti la police.
+photographer13 C'est tout ce que je peux vous dire.
+logger01 Hello, I don't think I know you ? I'm Jack.
+logger_answer01 I'm inspector Allen.
+logger_answer02 Are you a logger ?
+logger02 Ho... yes.
+logger03 So you're here to question me, right ?
+logger04 What do you want me to say ?
+logger05 Well, I am innocent, and I don't know who the murderer is.
+logger06 That's all you'll hear from me.
+logger07 I'm sick of all these questions, all day, every day.
+logger08 Okay, okay, I'll talk to you...
+logger09 I didn't kill him, but it was indeed my chainsaw that was used.
+logger10 Someone must have stolen it from me and used it
+logger11 so people would think I'm the murderer...
+logger12 And it worked ! Everyone in town thinks I did it !
+logger13 But that's not true... I wouldn't hurt a fly...
+logger14 I swear !
+logger15 Ho, it's you again ?
+logger_answer03 Do you know Matt ?
+logger16 Matt ? Of course ! He's a very good friend of mine.
+logger17 Is it the policeman who told you about him ?
+logger18 I heard he believes Matt is the murderer...
+logger19 What an idiot !
+logger20 Matt would never do such a terrible thing.
+logger21 And event if he could...
+logger22 He would have used MY chainsaw to kill someone
+logger23 in MY forest ? He's not stupid, he would have
+logger24 known people would suspect me.
+logger25 We are allies, he wouldn't do that to me.
+logger_answer04 Allies ?
+logger_26 Yes, you haven't heard about it ?
+logger_27 The campsite's owner and the shop's owner both
+logger_28 want to destroy the forest so they can expand
+logger_29 their businesses.
+logger_30 I, as a logger, and Matt, as a nature
+logger_31 photographer, want to preserve the forest.
+logger_32 Now, leave me alone, I have things to do.
+policeman01 Oh, hello !
+policeman02 You must be inspector Allen ? I was waiting for you.
+policeman03 I've already started working on the case,
+policeman04 and what I'm sure of is that...
+policeman05 Jack, the logger, didn't do it.
+policeman_answer01 Then who did ?
+policeman06 Well...
+policeman07 I Think Matt, the one who discovered the body, did it.
+policeman_answer02 How do you know ?
+policeman08 Hum, to be honest, I'm not completely sure of it.
+policeman09 But I think Matt, the one who discovered the body,
+policeman10 is the murderer.
+policeman_answer03 Any proof ?
+policeman11 Well, not really, no...
+policeman12 But he really loves this forest.
+policeman13 And the campsite's owner wanted it gone so he
+policeman14 could expand his campsite.
+policeman15 I think he killed him to preserve the forest
+policeman16 and so he could go on photographing the nature.
+policeman17 Then he went directly to the police
+policeman18 so that no one would suspect him !
+ceo01 What do you want ?
+ceo02 I am a busy man, I can't talk to you right now.
+ceo03 You will have to schedule an appointement with
+ceo04 my secretary. She's right there...
+ceo05 You again ? I told you, come back later !
+ceo06 Sigh...
+ceo07 What do you want ? And be quick !
+ceo_answer01 I'm inspector Allen
+ceo08 What ?!? you're the inspector ?!?
+ceo09 I won't talk to you without my lawyer.
+ceo10 No need to insist, I said I wouldn't talk to you.
+ceo11 Are you serious ? Leave me alone !!!
+ceo12 Alright, alright... I'll talk to you.
+ceo13 I don't know much about all of this.
+ceo14 But I can tell you one thing :
+ceo15 I'm not guilty ! As you know, Rob, the campsite's
+ceo16 owner, and I, were on the same page about the forest.
+ceo17 We both wanted it gone. We started to take legal action
+ceo18 against Jack, the logger, and Matt, the photographer.
+ceo19 We did it so the island's economy could flourish !
+ceo20 Less forest means more campsite and more of my shops.
+ceo21 And more campsite means more tourists in my shops !
+ceo22 Wouldn't it be perfect ?
+ceo23 So now, I'm asking you...
+ceo24 Do you still think I can be the murderer ?
+ceo25 Exactly !
+ceo26 What ?!? Are you stupid ?!?
+ceo27 Why would I kill the one person who' supporting me
+ceo28 in this battle for the forest ?
+ceo29 That would make no sense !
+cashier01 Hello, how can I help you today ?
+cashier02 Wait ! Are you the inspector my boss
+cashier03 told me about ? He told me not to talk to you.
+cashier04 But you know what ? I don't care...
+cashier05 I'll tell you everything you want to know.
+cashier06 Starting with...
+cashier07 How my boss is a terrible person.
+cashier08 Go check the news shelf in the library...
+cashier09 Lots and lots of articles about him...
+cashier10 But anyway ! I think he told me not to
+cashier11 talk to you for a reason...
+cashier12 Yep, I think he's guilty.
+cashier13 Wanna know why ?
+cashier14 What ? Why ? It's your job to wanna know why !
+cashier15 You're not doing your job properly !
+cashier16 How did you event get the job ?!?
+cashier17 I bet you lied on your resume !
+cashier18 ... Where were we again ? Ho, right...
+cashier19 I know he's guilty because he would do
+cashier20 anything to expand his business.
+cashier21 Even if it meant killing his own ally...
+cashier22 So people would suspect his ennemies...
+cashier23 And so he would get more land, now that
+cashier24 he doesn't have an ally to share it with...
+cashier25 Think about it !
+librarian01 Hello, Welcome to the town's library !
+librarian02 You are the inspector everyone is talking
+librarian03 about, right ?
+librarian04 There are lots of books and newspapers that
+librarian05 could help you here !
+librarian06 Just tell me what you need and I'll lead you
+librarian07 to the right shelf !
+librarian08 What topic do you want to learn about ?
+librarian_answer01 The shop's owner
+librarian_answer02 The lake's monster
+librarian_answer03 Nothing, thanks.
+librarian09 Alright, follow me !
+librarian10 Here it is !
+librarian11 Take your time,
+librarian12 we don't close until 8pm on Wednesdays.
+book1_01 This is the newspaper of the 4th of February.
+book1_02 That's five months ago.
+book1_03 Let's see what it reads...
+book1_04 BREAKING NEWS : YET ANOTHER BUSINESS RUINED
+book1_05 Everyone in town knows Donald O'Donell
+book1_06 and his lovely grocery shop.
+book1_07 Yesterday, he was forced to close his
+book1_08 business, after months and months of
+book1_09 fighting against Mr Bezoz and his big corporation.
+book1_10 A real tragedy for our beloved Donald who now
+book1_11 finds himself unable to pay for his daughter's
+book1_12 college.
+book1_13 "I call for everyone's generosity in these
+book1_14 difficult times.", he says.
+book1_15 This is not the first time that Mr Bezoz
+book1_16 takes a little business to court to
+book1_17 expand his own company.
+book1_18 And it may not be the last...
+book2_01 Okay, let's look at this book...
+book2_02 "The monster of the lake, myth or reality?"
+book2_03 Some say the monster of the lake is real,
+book2_04 that they have seen it emerge, move, and
+book2_05 even, sometimes, look at them.
+book2_06 Some others say this is pure fantasy :
+book2_07 stories told to the children
+book2_08 before they go to bed, to scare them so
+book2_09 they don't go to the lake alone and drown.
+book2_10 So, who is right, you ask ? That is what we
+book2_11 will try to find out in this book...
+yes yes
+no no
+corpse01 ...
+corpse02 Yep, he's dead.
+nothing_to_say Have a nice day !

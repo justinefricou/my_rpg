@@ -59,6 +59,7 @@ void hud_menu_active(dg_window_t *w, data_t *data)
         sound_play(data->sound_move);
         data->select--;
     }
+    hud_options_manage_mouse(w, data);
     hud_menu_actions(w, data);
 }
 

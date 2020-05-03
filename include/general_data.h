@@ -83,6 +83,7 @@ typedef struct options
     sfVector2f sound;
     int resolution;
     keymap_t keymap;
+    int language;
 } options_t;
 
 typedef struct object_list {
@@ -141,6 +142,7 @@ int keymap_is_clicked(dg_window_t *w, char *keymap, int force_ignore);
 sfKeyCode get_keymap(dg_window_t *w, char *keymap);
 const char *keycode_to_text(sfKeyCode code);
 int is_keymap(dg_window_t *w, sfKeyCode keymap);
+int is_mouse_clicked(dg_window_t *w, char *key, int force_ignore);
 
 //inventory
 int add_to_inventory(general_data_t *gd, int id, int nb);

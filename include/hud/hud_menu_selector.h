@@ -19,6 +19,7 @@ typedef struct data {
     button_t cancel;
     sfVector2f pos_memory;
     sfVector2f *pos;
+    sfVector2i mouse_memory;
     dg_entity_t *hud_box;
     dg_entity_t **buttons;
     sfRectangleShape *selector;
@@ -36,5 +37,7 @@ void update_position(data_t *data);
 data_t *menu_selector_set_data(dg_component_t *pos,
     button_t *button_list, dg_scene_t *scene, int has_box);
 sfVector2f menu_selector_set_rect(data_t *data);
+void hud_menu_manage_mouse(dg_window_t *w, data_t *data);
+void hud_options_manage_mouse(dg_window_t *w, data_t *data);
 
 #endif /*HUD_MENU_SELECTOR_H_*/

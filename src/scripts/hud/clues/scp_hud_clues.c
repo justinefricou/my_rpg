@@ -32,13 +32,19 @@ void *scp_hud_clues_init(void *init_data)
 
 void clues_active(dg_window_t *w, data_t *data)
 {
+    sfVector2i mouse = sfMouse_getPositionRenderWindow(w->window);
     general_data_t *gd = w->general_data;
-
-    if (keymap_is_clicked(w, "right", 0) && data->select <gd->clues.len - 1) {
+    if ((keymap_is_clicked(w, "right", 0) ||
+        (keymap_is_clicked(w, "action", 0)
+        && mouse.x > 1050 && mouse.x < 1880))
+        && data->select <gd->clues.len - 1) {
         sound_play(data->sound_move);
         data->select++;
     }
-    if (keymap_is_clicked(w, "left", 0) && data->select > 0) {
+    if ((keymap_is_clicked(w, "left", 0)
+        || (keymap_is_clicked(w, "action", 0)
+        && mouse.x < 1051 && mouse.x > 350))
+        && data->select > 0) {
         sound_play(data->sound_move);
         data->select--;
     }

@@ -11,7 +11,7 @@
 #include "script.h"
 #include "hud/hud_options.h"
 
-static void reset_selected(data_t *data)
+void reset_selected(data_t *data)
 {
     hud_progress_bar_activate(data->content.volume_general.data, 0);
     hud_progress_bar_activate(data->content.volume_music.data, 0);
@@ -22,11 +22,11 @@ static void reset_selected(data_t *data)
     hud_keymap_button_activate(data->content.keymap_left.data, 0);
     hud_keymap_button_activate(data->content.keymap_right.data, 0);
     hud_keymap_button_activate(data->content.keymap_up.data, 0);
+    hud_lang_button_activate(data->content.language.data, 0);
 }
 
 void act_by_selected(data_t *data)
 {
-    reset_selected(data);
     (data->select == 0) ?
         hud_progress_bar_activate(data->content.volume_general.data, 1) : NULL;
     (data->select == 1) ?
@@ -45,30 +45,28 @@ void act_by_selected(data_t *data)
         hud_keymap_button_activate(data->content.keymap_right.data, 1) : NULL;
     (data->select == 8) ?
         hud_keymap_button_activate(data->content.keymap_up.data, 1) : NULL;
+    (data->select == 9) ?
+        hud_lang_button_activate(data->content.language.data, 1) : NULL;
 }
 
-float update_selector(data_t *data)
+void hud_menu_manage_mouse(dg_window_t *w, data_t *data)
 {
-    switch (data->select)
-    {
-        case 0:
-            return 200;
-        case 1:
-            return 280;
-        case 2:
-            return 360;
-        case 3:
-            return 440;
-        case 4:
-            return 530;
-        case 5:
-            return 620;
-        case 6:
-            return 710;
-        case 7:
-            return 800;
-    }
-    return 890;
+    sfVector2i mouse_pos = sfMouse_getPositionRenderWindow(w->window);
+    sfVector2f pos = {mouse_pos.x - 600, mouse_pos.y - 200};
+
+    if (10 * 80 < pos.y || pos.y < 0
+        || pos.x < 0 || pos.x > 1800 ||
+        (mouse_pos.x == data->mouse_memory.x
+        && mouse_pos.y == data->mouse_memory.y))
+        return;
+    data->mouse_memory.x = mouse_pos.x;
+    data->mouse_memory.y = mouse_pos.y;
+    for (int i = 0; i < 10; i++)
+        if (pos.y < (80 * (i + 1))) {
+            (i != data->select) ? sound_play(data->sound_move) : 0;
+            data->select = i;
+            return;
+        }
 }
 
 void update_sound(data_t *data, general_data_t *gd)

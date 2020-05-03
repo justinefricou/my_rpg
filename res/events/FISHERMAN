@@ -37,11 +37,16 @@ TALK fisherman21
 ANSWER fisherman_answer05
 END
 TALK fisherman22
+END
+BATTLE 0
+IF BATTLE == 1
+DIALOG
 TALK fisherman23
 TALK fisherman24
 TALK fisherman25
 TALK fisherman26
 GIVE CLUES 8
 SET CLUE_FISHERMAN 1
+END
 END
 END

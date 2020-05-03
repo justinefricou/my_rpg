@@ -1,3 +1,62 @@
+IF CLUE_MOTHER == 1
+DIALOG
+TALK mother1_18
+TALK mother1_19
+TALK mother1_20
+TALK mother1_21
+TALK mother1_22
+TALK mother1_23
+TALK mother1_24
+TALK mother1_25
+TALK mother1_26
+TALK mother1_27
+TALK mother1_28
+TALK mother1_29
+TALK mother1_30
+TALK mother1_31
+TALK mother1_32
+TALK mother1_33
+TALK mother1_34
+TALK mother1_35
+TALK mother1_36
+TALK mother1_37
+END
+GIVE CLUES 14
+SET CLUE_MOTHER 2
+END
+IF CLUE_MOTHER1 == 1
 DIALOG
 TALK nothing_to_say
+END
+END
+IF CLUE_MOTHER1 == 0
+DIALOG
+TALK mother1_01
+TALK mother1_02
+TALK mother1_03
+TALK mother1_04
+TALK mother1_05
+ANSWER yes
+TALK mother1_06
+END
+ANSWER no
+TALK mother1_07
+END
+ANSWER mother1_answer01
+TALK mother1_08
+END
+ANSWER mother1_answer02
+END
+TALK mother1_09
+TALK mother1_10
+TALK mother1_11
+TALK mother1_12
+TALK mother1_13
+TALK mother1_14
+TALK mother1_15
+TALK mother1_16
+TALK mother1_17
+END
+GIVE CLUES 9
+SET CLUE_MOTHER 1
 END

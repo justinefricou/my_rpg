@@ -80,7 +80,7 @@ map_events_t *create_mev_list(char *content, int *ev_len)
 {
     map_events_t *ev = malloc(sizeof(map_events_t));
     map_events_t *tmp = NULL;
-    
+
     while (*content) {
         tmp = malloc(sizeof(map_events_t) * (*ev_len + 2));
         for (int c = 0; c < *ev_len; c++)

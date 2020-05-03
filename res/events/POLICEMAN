@@ -1,19 +1,56 @@
+IF CLUE_POLICEMAN == 1
+DIALOG
+TALK policeman19
+TALK policeman20
+ANSWER yes
+TALK policeman21
+END
+ANSWER no
+TALK policeman22
+TALK policeman23
+TALK policeman24
+TALK policeman25
+END
+TALK policeman26
+TALK policeman27
+TALK policeman28
+TALK policeman29
+TALK policeman30
+TALK policeman31
+TALK policeman32
+TALK policeman33
+TALK policeman34
+TALK policeman35
+TALK policeman36
+TALK policeman37
+TALK policeman38
+TALK policeman39
+TALK policeman40
+TALK policeman41
+TALK policeman42
+TALK policeman43
+TALK policeman44
+TALK policeman45
+TALK policeman46
+END
+GIVE CLUES 15
+SET CLUE_POLICEMAN 2
+END
 IF CLUE_POLICEMAN == 0
 DIALOG
-policeman01 Oh, hello !
+TALK policeman01
 TALK policeman02
 TALK policeman03
 TALK policeman04
 TALK policeman05
 ANSWER policeman_answer01
 TALK policeman06
-TALK policeman07
 END
 ANSWER policeman_answer02
 TALK policeman08
+END
 TALK policeman09
 TALK policeman10
-END
 ANSWER policeman_answer03
 END
 TALK policeman11

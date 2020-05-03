@@ -1,3 +1,15 @@
+IF CLUE_CHILD1 == 0
 DIALOG
-TALK nothing_to_say
+TALK child01
+TALK child02
+TALK child03
+TALK child04
+TALK child05
+TALK child06
+TALK child07
+TALK child08
+TALK child09
+END
+GIVE CLUES 13
+SET CLUE_CHILD1 1
 END

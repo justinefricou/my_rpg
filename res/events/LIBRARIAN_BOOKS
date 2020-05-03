@@ -1,5 +1,0 @@
-IF TOPIC_LIBRARY != 0
-DIALOG
-TALK librarian09_1
-END
-END

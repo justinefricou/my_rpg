@@ -227,6 +227,7 @@ SRC_OTH =	src/other/tilemap.c												\
 			src/other/inventory.c											\
 			src/other/get_map_data.c										\
 			src/other/objects/calming.c										\
+			src/other/objects/energy_drink.c								\
 			src/other/clues.c												\
 			src/other/particle/particle.c									\
 			src/other/particle/particle_set_general.c						\

@@ -35,7 +35,7 @@ int give_obj(general_data_t *gd, parameters_t *params, int mul)
 
 int give_player(general_data_t *gd, parameters_t *params, int mul)
 {
-    float *data[6] = {&(gd->player.pv.x), &(gd->player.pv.y),
+    float *data[5] = {&(gd->player.pv.x), &(gd->player.pv.y),
         &(gd->player.pm.x), &(gd->player.pm.y), &(gd->player.xp.x)};
 
     for (int i = 0; i < 5; i++) {

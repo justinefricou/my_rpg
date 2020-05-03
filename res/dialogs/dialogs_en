@@ -456,3 +456,8 @@ corpse01 ...
 corpse02 Yep, he's dead.
 nothing_to_say Have a nice day !
 nothing_to_ask Nothing, thanks.
+buy_pills buy calming pills ? (5$)
+buy_drink buy energy drink ? (8$)
+buy_book buy detective diary ? (20$)
+no_money You don't have enought money
+no_storage You don't have enought storage

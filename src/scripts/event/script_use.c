@@ -56,8 +56,8 @@ void check_interaction(data_t *data, dg_array_t **entities, dg_window_t *w)
     dg_entity_t *player = dg_get_entity(*entities, "player");
     sfVector2f *pos = dg_entity_get_component(player, "pos");
     sfVector2f p_pos = {pos->x / (16 * 3), pos->y / (16 * 3)};
-    sfVector2f e_pos = {data->self.pos->x / (16 * 3),
-        data->self.pos->y / (16 * 3)};
+    sfVector2f e_pos = {(data->self.pos->x + 10) / (16 * 3),
+        (data->self.pos->y + 10) / (16 * 3)};
 
     if (keymap_is_clicked(w, "action", 0)) {
         if (p_pos.x - 1.5 <= e_pos.x && p_pos.x + 1.5 >= e_pos.x
@@ -73,10 +73,11 @@ void set_collision(data_t *data, dg_array_t **entities, dg_window_t *w)
 {
     dg_entity_t *ent_map = dg_get_entity(*entities, "map");
     tilemap_t *tm = dg_entity_get_component(ent_map, "tilecollide");
-    sfVector2f e_pos = {(data->self.pos->x + 24) / (16 * 3),
-        (data->self.pos->y + 24) / (16 * 3)};
+    sfVector2f e_pos = {(data->self.pos->x + 10) / (16 * 3),
+        (data->self.pos->y + 10) / (16 * 3)};
 
-    if ((int)e_pos.y < 0 || (int)e_pos.x < 0 ||
+    if (data->self.pos->y < 0 || data->self.pos->x < 0 ||
+        (int)e_pos.y < 0 || (int)e_pos.x < 0 ||
         (int)e_pos.y >= tm->height || (int)e_pos.x >= tm->width)
         return;
     tm->map[(int)e_pos.y][(int)e_pos.x] = 1;

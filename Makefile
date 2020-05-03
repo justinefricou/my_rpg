@@ -97,6 +97,7 @@ SRC_SYS =	src/systems/sys_render.c										\
 			src/systems/sys_sprite.c										\
 			src/systems/sys_particle.c										\
 			src/systems/sys_framebuffer.c									\
+			src/systems/sys_quit.c											\
 
 SRC_INI =	src/init/init_img.c												\
 			src/init/init_audio.c											\

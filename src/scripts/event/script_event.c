@@ -15,6 +15,7 @@
 #include "event.h"
 #include "instructions.h"
 #include "script_event_data.h"
+#include "game_scenes.h"
 
 const key_ini_t key_init[14] = {
     NULL, &ins_ini_set, &ins_ini_if, &ins_ini_while, &ins_ini_for,

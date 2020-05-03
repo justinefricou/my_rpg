@@ -134,6 +134,8 @@ void sys_particle(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
 void sys_framebuffer(dg_entity_t *entity, dg_window_t *w,
     dg_array_t **entities, sfTime dt);
+void sys_quit(dg_entity_t *entity, dg_window_t *w,
+    dg_array_t **entities, sfTime dt);
 
 // init
 void init_img(void);

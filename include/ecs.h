@@ -61,13 +61,14 @@ dg_entity_t *ent_hud_keymap_button(sfVector2f pos, int size,
     int *keymap, dg_scene_t *scene);
 dg_entity_t *ent_event(map_events_t data, general_data_t *gd);
 dg_entity_t *entity_player_fight_create(void);
-dg_entity_t *entity_enemy_fight_create(void);
+dg_entity_t *entity_enemy_fight_create(int id);
+dg_animator_t *set_enemy_animator_fisherman(void);
 dg_entity_t *ent_hud_text(char *text);
 dg_entity_t *ent_hud_fight_inventory(int *previous, dg_scene_t *scene);
 dg_entity_t *ent_hud_skill_fight(int *previous, dg_scene_t *scene,
     dg_window_t *w);
-dg_entity_t *ent_hud_fight_dialogue(int *previous, dg_scene_t *scene, int i, 
-    general_data_t *gd);
+dg_entity_t *ent_hud_fight_dialogue(int *previous, dg_scene_t *scene,
+    int i, general_data_t *gd);
 dg_entity_t *ent_particle(sfVector2f pos, sfVector2i size, int type);
 dg_entity_t *ent_sparkle(sparkle_context_t context);
 dg_entity_t *ent_rain(rain_context_t context);

@@ -51,7 +51,10 @@ void update_level(general_data_t *gd)
         gd->player.xp.x = 0;
         for (int i = 0; i < 3; i++) {
             ran = rand() % 4;
-            //add stat later
+            gd->player.pv.y += 10 + 4 * x - x * x * 0.01;
+            gd->player.pm.y += 2 + 4 * x - x * x * 0.02;
+            gd->player.pv.x = gd->player.pv.y;
+            gd->player.pm.x = gd->player.pm.y;
         }
     }
 }

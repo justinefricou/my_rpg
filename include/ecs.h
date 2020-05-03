@@ -31,6 +31,7 @@ dg_scene_t *scene_fight_bottom(int **map, dg_scene_t *event);
 dg_scene_t *scene_fight_middle(int id);
 dg_scene_t *scene_tmp_hover(char *name);
 dg_scene_t *scene_tmp_hover_ws(char *name);
+dg_scene_t *scene_intro(void);
 
 // entities
 dg_entity_t *ent_music(char *path);
@@ -74,6 +75,7 @@ dg_entity_t *ent_sparkle(sparkle_context_t context);
 dg_entity_t *ent_rain(rain_context_t context);
 dg_entity_t *ent_hud_language_button(sfVector2f pos,
     int size, dg_scene_t *scene);
+dg_entity_t *ent_intro(void);
 
 // components
 dg_component_t *cpt_action(void (*action)(dg_window_t *));

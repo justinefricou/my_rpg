@@ -16,9 +16,9 @@
 
 static const char *CLUES_DESCRIPTION[CLUES_LEN][20] = {
     {
-        "According to the photographer, there was the sound of a chainsaw",
-        "during a long time. Then, screams (male and female voices) and",
-        "then the chainsaw stopped.",
+        "According to the photographer, the chainsaw was working",
+        "for a long time. Then, he heard screams (male and female)",
+        "and then the chainsaw stopped.",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "Use the right and left arrows to navigate through the clues"
     },
@@ -29,23 +29,23 @@ static const char *CLUES_DESCRIPTION[CLUES_LEN][20] = {
     },
     {
         "According to the logger, his chainsaw was stolen and turned on for",
-        "a long time before being used as the weapon so people would think",
-        "he was cutting wood when he saw Rob, the campsite owner, and",
-        "killed him",
+        "a long time before being used as the weapon, so that people would",
+        "think he was cutting wood when he saw Rob, the campsite owner, and",
+        "decided to kill him",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "Use the right and left arrows to navigate through the clues"
     },
     {
         "According to the policeman, the photographer is the murderer.",
         "He loves the forest and didn't want the campsite's owner to destroy",
-        "it to expand his business, so he killed him.",
+        "it just to expand his business, so he killed him.",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "Use the right and left arrows to navigate through the clues"
     },
     {
         "According to the logger, the photographer isn't the murderer.",
         "Indeed, they are allies against the campsite's owner and the shop's",
-        "owner in th battle for the forest, and the photographer wouldn't",
+        "owner in the battle for the forest, and the photographer wouldn't",
         "have used a weapon that would incriminate his ally (his chainsaw).",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "Use the right and left arrows to navigate through the clues"
@@ -68,7 +68,7 @@ static const char *CLUES_DESCRIPTION[CLUES_LEN][20] = {
     {
         "According to some newspapers, the shop owner has a habit of taking",
         "small businesses to court to expand his own company, even if it",
-        "means destroying a few lives.",
+        "means destroying people's livelihoods in the process.",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "Use the right and left arrows to navigate through the clues"
     },
@@ -77,7 +77,7 @@ static const char *CLUES_DESCRIPTION[CLUES_LEN][20] = {
         "the campsite owner. The logger had made too much noise using his",
         "chainswaw to whole afternoon, so the monster got angry and came out",
         "of the water to kill the first person he saw.",
-        "The fisherman wouldn't talk about anything else than this monster.",
+        "The fisherman wouldn't talk about anything else.",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "Use the right and left arrows to navigate through the clues"
     },

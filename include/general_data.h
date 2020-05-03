@@ -42,6 +42,11 @@ typedef struct player
     sfVector2f xp;
     int money;
     float damage;
+    float flattery_stat;
+    float intimidation_stat;
+    float repartee_stat;
+    float trickery_stat;
+    float defence;
     int turn;
 } player_t;
 

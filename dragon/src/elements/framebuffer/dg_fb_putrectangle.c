@@ -15,7 +15,6 @@ void dg_fb_putsquare(dg_framebuffer_t *fb, sfVector2u position,
             dg_fb_putpx(fb, i, j, color);
 }
 
-//draw a rectangle
 void dg_fb_putrectangle(dg_framebuffer_t *fb, sfVector2u position,
     sfVector2u size, sfColor color)
 {
@@ -24,7 +23,6 @@ void dg_fb_putrectangle(dg_framebuffer_t *fb, sfVector2u position,
             dg_fb_putpx(fb, i, j, color);
 }
 
-//fill framebuffer
 void dg_fb_fill(dg_framebuffer_t *fb, sfColor color)
 {
     for (int i = 0; i < fb->width * fb->height; i++) {

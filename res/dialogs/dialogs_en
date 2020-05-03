@@ -1,13 +1,13 @@
 error error
 init00 Hello ! Come here !
 init01 I'm the mayor, Robin. Welcome to our island.
-init02 I'm relieved you could have come so fast.
-init03 What happened is a veritable tragedy...
-init04 I hope you'll be able to solve this riddle ispector
-init05 follow me ! I'll show you around !
-init06 This is the camping managed by our poor victim.
-init07 You can go check the camping. But it's closed.
-visit_camping Are you done visiting the camping ?
+init02 I'm relieved you could come so fast.
+init03 What happened is a real tragedy...
+init04 I hope you'll be able to solve this murder case detective
+init05 Follow me ! I'll show you around !
+init06 This is the campsite managed by our poor victim.
+init07 You can go check the campsite. But it's closed.
+visit_camping Are you done visiting the campsite ?
 init08 Let's continue !
 init09 This is The commercial zone.
 init10 To the left you have the library.
@@ -15,10 +15,10 @@ init11 At the top you have the warehouse.
 init12 At the right you have the shop.
 init13 And at the bottom, you have the bar.
 init14 And here is the residential district.
-init15 Now that you have a gook idea of the island,
-init16 Let's go to the crime scene, shall we ?
+init15 Now that you have a good idea of the island,
+init16 Let's go straight to the crime scene.
 init17 I know, this is terrible.
-init18 But you have all the cards in hands inspector
+init18 But you have all the cards in your hands detective
 init19 You should begin by checking the corpse.
 init20 Good luck !
 tuto00 (You now have to solve this riddle)
@@ -27,14 +27,14 @@ tuto02 (Who is the victim, who's the killer, why, how ?)
 tuto03 (Talk to the residents of the island,)
 tuto04 (and search for clues.)
 tuto05 (Sometimes, people might refuse to cooperate.)
-tuto06 (But you can fight them into an arguments battle)
-tuto07 (to get more informations)
+tuto06 (But you can fight them in an arguments battle)
+tuto07 (to get more information)
 tuto08 (You can use items in your inventory to help you)
 tuto09 (The clues you've got will also be accessible)
-tuto10 (in the clue menu)
+tuto10 (in the clues menu)
 tuto11 (You can access the menu with the cancel key)
 tuto12 (Escape key by default)
-tuto13 (When you think you know the responsive of this crime)
+tuto13 (When you think you know who's responsible for this crime)
 tuto14 (Just go tell the mayor your answer)
 tuto15 (Now it is time to begin, good luck !)
 notes_check01 Let's check out the notes they gave me...
@@ -46,7 +46,7 @@ notes_check06 Finally, it says the logger is the main suspect.
 notes_check07 Apparently he has been in a quarrel with the
 notes_check08 victim for several months...
 notes_check09 Well then, let's go find them !
-photographer01 Hello ! So you're the inspector who's working on the case ?
+photographer01 Hello ! So you're the detective who's working on the case ?
 photographer02 I was near the crime scene when it happened. I was taking
 photographer03 photos of the beautiful forest and its flora when I heard
 photographer04 screams. Several people, male and female voices, I'd say.
@@ -60,8 +60,8 @@ photographer11 Here it was, the campsite's owner, cut in half...
 photographer12 There was no one else. I went directly to the police.
 photographer13 That's all I can tell you.
 logger01 Hello, I don't think I know you ? I'm Jack.
-logger_answer01 I'm inspector Allen.
-logger_answer02 Are you a logger ?
+logger_answer01 I'm detective Allen.
+logger_answer02 Are you a lumberjack ?
 logger02 Ho... yes.
 logger03 So you're here to question me, right ?
 logger04 Well, I am innocent, and I don't know who the murderer is.
@@ -92,11 +92,11 @@ logger_26 Yes, you haven't heard about it ?
 logger_27 The campsite's owner and the shop's owner both
 logger_28 want to destroy the forest so they can expand
 logger_29 their businesses.
-logger_30 I, as a logger, and Matt, as a nature
+logger_30 I, as a lumberjack, and Matt, as a nature
 logger_31 photographer, want to preserve the forest.
 logger_32 Now, leave me alone, I have things to do.
 policeman01 Oh, hello !
-policeman02 You must be inspector Allen ? I was waiting for you.
+policeman02 You must be private investigator Allen ? I was waiting for you.
 policeman03 I've already started working on the case,
 policeman04 and what I'm sure of is that...
 policeman05 Jack, the logger, didn't do it.
@@ -113,7 +113,7 @@ policeman12 But he really loves this forest.
 policeman13 And the campsite's owner wanted it gone so he
 policeman14 could expand his campsite.
 policeman15 I think he killed him to preserve the forest
-policeman16 and so he could go on photographing the nature.
+policeman16 and so he could go on, photographing the nature.
 policeman17 Then he went directly to the police
 policeman18 so that no one would suspect him !
 policeman19 Oh, hello again !
@@ -151,8 +151,8 @@ ceo04 my secretary. She's right there...
 ceo05 You again ? I told you, come back later !
 ceo06 Sigh...
 ceo07 What do you want ? And be quick !
-ceo_answer01 I'm inspector Allen
-ceo08 What ?!? you're the inspector ?!?
+ceo_answer01 I'm private investigator Allen
+ceo08 What ?!? You're the private investigator ?!?
 ceo09 I won't talk to you without my lawyer.
 ceo10 No need to insist, I said I wouldn't talk to you.
 ceo11 Are you serious ? Leave me alone !!!
@@ -175,7 +175,7 @@ ceo27 Why would I kill the one person who' supporting me
 ceo28 in this battle for the forest ?
 ceo29 That would make no sense !
 cashier01 Hello, how can I help you today ?
-cashier02 Wait ! Are you the inspector my boss
+cashier02 Wait ! Are you the detective my boss
 cashier03 told me about ? He told me not to talk to you.
 cashier04 But you know what ? I don't care...
 cashier05 I'll tell you everything you want to know.
@@ -189,7 +189,7 @@ cashier12 Yep, I think he's guilty.
 cashier13 Wanna know why ?
 cashier14 What ? Why ? It's your job to wanna know why !
 cashier15 You're not doing your job properly !
-cashier16 How did you event get the job ?!?
+cashier16 How did you even get the job ?!?
 cashier17 I bet you lied on your resume !
 cashier18 ... Where were we again ? Ho, right...
 cashier19 I know he's guilty because he would do
@@ -200,7 +200,7 @@ cashier23 And so he would get more land, now that
 cashier24 he doesn't have an ally to share it with...
 cashier25 Think about it !
 librarian01 Hello, Welcome to the town's library !
-librarian02 You are the inspector everyone is talking
+librarian02 You are the detective everyone is talking
 librarian03 about, right ?
 librarian04 There are lots of books and newspapers that
 librarian05 could help you here !
@@ -360,7 +360,7 @@ child07 like I used to. But my mom won't let me.
 child08 Please tell her the monster of the lake will
 child09 not hurt me !
 barman01 Hey you !
-barman02 You're the investigator, right ?
+barman02 You're the private investigator, right ?
 barman03 You should be happy that I'm here !
 barman04 As a barman, I see lots of people
 barman05 and I hear a lot of stories.
@@ -373,7 +373,7 @@ barman10 The weird guy of the island, I'd say.
 barman11 He thinks he's a pirate and he believes in
 barman12 a stupid legend about a monster living in the lake.
 barman13 But deep down he's a good guy !
-barman_answer02 The logger
+barman_answer02 The lumberjack
 barman14 Oh yeah, that poor Jack...
 barman15 A shame, what's happening to him...
 barman16 I know him quite well, he used to come

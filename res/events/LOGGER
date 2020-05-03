@@ -33,8 +33,6 @@ DIALOG
 TALK logger01
 ANSWER logger_answer01
 END
-ANSWER logger_answer02
-END
 TALK logger02
 TALK logger03
 TALK logger04

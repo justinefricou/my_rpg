@@ -46,25 +46,27 @@ notes_check06 Finally, it says the logger is the main suspect.
 notes_check07 Apparently he has been in a quarrel with the
 notes_check08 victim for several months...
 notes_check09 Well then, let's go find them !
-photographer01 Hello ! So you're the inspector who's working on the case ?
-photographer02 I was near the crime scene when it happened. I was taking
-photographer03 photos of the beautiful forest and its flora when I heard
-photographer04 screams. Several people, male and female voices, I'd say.
-photographer05 Before that, there had been the sound of a chainsaw for, maybe, an hour ?
-photographer06 Probably the logger cutting some trees, as usual...
-photographer07 Anyway, I digress...
-photographer08 When I heard the screams and then the chainsaw stopping,
-photographer09 I went to see what was happening.
-photographer10 Well... That's the worst thing I have ever saw.
-photographer11 Here it was, the campsite's owner, cut in half...
-photographer12 There was no one else. I went directly to the police.
-photographer13 That's all I can tell you.
+photographer01 Hello !
+photographer02 So you're the inspector who's working on the case ?
+photographer03 I was near the crime scene when it happened.
+photographer04 I was taking photos of the beautiful forest
+photographer05 and its flora when I heard screams.
+photographer06 Several people,male and female voices, I'd say.
+photographer07 Before that, there had been the sound of
+photographer08 a chainsaw for, maybe, an hour ?
+photographer09 Probably the logger cutting some trees, as usual...
+photographer10 Anyway, I digress...
+photographer11 When I heard the screams and then the chainsaw
+photographer12 stopping, I went to see what was happening.
+photographer13 Well... That's the worst thing I have ever saw.
+photographer14 Here it was, the campsite's owner, cut in half...
+photographer15 There was no one else. I went directly to the police.
+photographer16 That's all I can tell you.
 logger01 Hello, I don't think I know you ? I'm Jack.
-logger_answer01 I'm inspector Allen.
-logger_answer02 Are you a logger ?
-logger02 Ho... yes.
-logger03 So you're here to question me, right ?
-logger04 Well, I am innocent, and I don't know who the murderer is.
+logger_answer01 I'm Mr Allen.
+logger02 Ho... yes. So you're here to question me, right ?
+logger03 Well, I am innocent !
+logger04 And I don't know who the murderer is.
 logger05 That's all you'll hear from me.
 logger06 I'm sick of all these questions, all day, every day.
 logger07 Okay, okay, I'll talk to you...
@@ -102,10 +104,9 @@ policeman04 and what I'm sure of is that...
 policeman05 Jack, the logger, didn't do it.
 policeman_answer01 Then who did ?
 policeman06 Well...
-policeman07 I Think Matt, the one who discovered the body, did it.
-policeman_answer02 How do you know ?
+policeman_answer02 Why ?
 policeman08 Hum, to be honest, I'm not completely sure of it.
-policeman09 But I think Matt, the one who discovered the body,
+policeman09 I Think Matt, the one who discovered the body,
 policeman10 is the murderer.
 policeman_answer03 Any proof ?
 policeman11 Well, not really, no...

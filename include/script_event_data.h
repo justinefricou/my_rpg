@@ -8,7 +8,7 @@
 #ifndef SCRIPT_EVENT_H_
 #define SCRIPT_EVENT_H_
 
- #include "instructions.h"
+#include "instructions.h"
 
 typedef struct reader {
     int active;

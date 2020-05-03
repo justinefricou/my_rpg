@@ -39,6 +39,7 @@ static void hud_options_active(dg_window_t *w, data_t *data)
         sound_play(data->sound_move);
         data->select--;
     }
+    hud_menu_manage_mouse(w, data);
     act_by_selected(data);
 }
 
@@ -57,7 +58,7 @@ void scp_hud_options_loop(dg_entity_t *entity, dg_window_t *w,
         entity->destroy = 1;
         save_options(gd->options);
     }
-    data->selector.pos->y = update_selector(data);
+    data->selector.pos->y = 200 + data->select * 80;
     update_sound(data, gd);
 }
 

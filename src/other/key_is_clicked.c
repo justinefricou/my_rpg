@@ -39,6 +39,21 @@ static int *get_dgkey_id(dg_window_t *w, sfKeyCode key)
     }
 }
 
+int is_mouse_clicked(dg_window_t *w, char *key, int force_ignore)
+{
+    if (!dg_strcmp("action", key) && w->events.mouse_pressed_left) {
+        if (force_ignore)
+            w->events.mouse_pressed_left = 0;
+        return 1;
+    }
+    if (!dg_strcmp("cancel", key) && w->events.mouse_pressed_right) {
+        if (force_ignore)
+            w->events.mouse_pressed_right = 0;
+        return 1;
+    }
+    return 0;
+}
+
 int key_is_clicked(dg_window_t *w, sfKeyCode key, int force_ignore)
 {
     int *result = NULL;

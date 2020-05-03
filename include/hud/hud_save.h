@@ -17,6 +17,7 @@
 typedef struct data {
     int *previous;
     sfVector2f *pos;
+    sfVector2i mouse_memory;
     dg_entity_t *hud_box[4];
     dg_scene_t *layer;
     sfRectangleShape *selector;
@@ -29,5 +30,6 @@ typedef struct data {
 void save_set_sounds(data_t *data);
 void save_set_data(data_t *data, dg_scene_t *scene);
 void save_update_position(data_t *data);
+void hud_save_manage_mouse(dg_window_t *w, data_t *data);
 
 #endif /*HUD_SAVE_H_*/

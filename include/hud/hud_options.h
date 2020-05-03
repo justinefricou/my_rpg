@@ -43,6 +43,7 @@ typedef struct data {
     int *previous;
     content_t content;
     selector_t selector;
+    sfVector2i mouse_memory;
     int select;
     int is_active;
     sfMusic *sound_move;

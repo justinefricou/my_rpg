@@ -41,4 +41,5 @@ void save_set_data(data_t *data, dg_scene_t *scene)
     }
     data->hud_box[3] = ent_hud_box(350, 50, 32, 2);
     dg_scene_add_ent(scene, data->hud_box[3]);
+    data->mouse_memory = (sfVector2i) {0};
 }

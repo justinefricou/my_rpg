@@ -24,6 +24,7 @@ static void hud_selector_set_sounds(data_t *data)
 {
     data->sound_activate = dg_ressources_get_audio_by_name("hud_activate");
     data->sound_move = dg_ressources_get_audio_by_name("hud_move");
+    data->mouse_memory = (sfVector2i) {0, 0};
 }
 
 data_t *menu_selector_set_data(dg_component_t *pos,

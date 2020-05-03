@@ -58,6 +58,7 @@ void options_set_data(data_t *data, dg_scene_t *scene,
         options_set_main(data, gd);
     data->select = 0;
     data->is_active = 1;
+    data->mouse_memory = (sfVector2i) {0};
     data->gvm = gd->options.general_volume.x;
     dg_scene_add_ent(scene, data->content.main.data);
     opt_add_ent_data(data);

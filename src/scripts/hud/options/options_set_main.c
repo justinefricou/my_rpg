@@ -20,26 +20,26 @@ static void opt_set_texts(data_t *data)
     data->content.volume_music.name = ent_text(620, 282, 30, "music");
     data->content.volume_sound.name = ent_text(620, 362, 30, "sound");
     data->content.keymap_action.name = ent_text(620, 442, 30, "action");
-    data->content.keymap_cancel.name = ent_text(620, 532, 30, "cancel");
-    data->content.keymap_up.name = ent_text(620, 622, 30, "up");
-    data->content.keymap_down.name = ent_text(620, 712, 30, "down");
-    data->content.keymap_left.name = ent_text(620, 802, 30, "left");
-    data->content.keymap_right.name = ent_text(620, 892, 30, "right");
+    data->content.keymap_cancel.name = ent_text(620, 522, 30, "cancel");
+    data->content.keymap_up.name = ent_text(620, 602, 30, "up");
+    data->content.keymap_down.name = ent_text(620, 682, 30, "down");
+    data->content.keymap_left.name = ent_text(620, 762, 30, "left");
+    data->content.keymap_right.name = ent_text(620, 842, 30, "right");
 }
 
 static void opt_set_km(data_t *data, general_data_t *gd)
 {
     data->content.keymap_down.data = ent_hud_keymap_button(
-        (sfVector2f){800, 620}, 6, &(gd->options.keymap.up),
+        (sfVector2f){800, 600}, 6, &(gd->options.keymap.up),
         data->hover_layer);
     data->content.keymap_left.data = ent_hud_keymap_button(
-        (sfVector2f){800, 710}, 6, &(gd->options.keymap.down),
+        (sfVector2f){800, 680}, 6, &(gd->options.keymap.down),
         data->hover_layer);
     data->content.keymap_right.data = ent_hud_keymap_button(
-        (sfVector2f){800, 800}, 6, &(gd->options.keymap.left),
+        (sfVector2f){800, 760}, 6, &(gd->options.keymap.left),
         data->hover_layer);
     data->content.keymap_up.data = ent_hud_keymap_button(
-        (sfVector2f){800, 890}, 6, &(gd->options.keymap.right),
+        (sfVector2f){800, 840}, 6, &(gd->options.keymap.right),
         data->hover_layer);
 }
 
@@ -57,7 +57,7 @@ void options_set_main(data_t *data, general_data_t *gd)
         (sfVector2f){800, 440}, 6, &(gd->options.keymap.action),
         data->hover_layer);
     data->content.keymap_cancel.data = ent_hud_keymap_button(
-        (sfVector2f){800, 530}, 6, &(gd->options.keymap.cancel),
+        (sfVector2f){800, 520}, 6, &(gd->options.keymap.cancel),
         data->hover_layer);
     opt_set_km(data, gd);
     data->selector.entity = ent_sprite(

@@ -65,6 +65,8 @@ int keymap_is_clicked(dg_window_t *w, char *keymap, int force_ignore)
 
     if (gd->block_input)
         return 0;
+    if (is_mouse_clicked(w, keymap, force_ignore))
+        return 1;
     return key_is_clicked(w, get_keymap(w, keymap), force_ignore);
 }
 

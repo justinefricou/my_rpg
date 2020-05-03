@@ -89,14 +89,14 @@ static const char *CLUES_DESCRIPTION[CLUES_LEN][20] = {
         "Use the right and left arrows to navigate through the clues"
     },
     {
-        "The librarian is the logger's fiancé. Few people know because",
+        "The librarian is the logger's fiance. Few people know because",
         "Jack doesn't come from a wealthy family so the librarian's family",
         "is firmly against this union.",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "Use the right and left arrows to navigate through the clues"
     },
     {
-        "According to the librarian, she and her fiancé were at the bar when",
+        "According to the librarian, she and her fiance were at the bar when",
         "the murder happened.",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "Use the right and left arrows to navigate through the clues"

@@ -14,7 +14,7 @@
 #ifndef GENERAL_DATA_H_
 #define GENERAL_DATA_H_
 
-#define OBJECT_LIST 1
+#define OBJECT_LIST 2
 #define CLUES_LEN 16
 #define SPRITE_ID_LEN 16
 

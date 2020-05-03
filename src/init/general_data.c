@@ -13,7 +13,7 @@ static void set_object_list(general_data_t *gd)
 {
     gd->object_list.len = OBJECT_LIST;
     gd->object_list.object[0] = calming();
-    gd->object_list.object[1] = calming();
+    gd->object_list.object[1] = energy_drink();
     gd->clues.len = 0;
 }
 

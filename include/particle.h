@@ -12,7 +12,7 @@
 
 #define PARTICLE_TYPE_LEN 2
 
-enum {PARTICLE_NONE, SPARKLE, JET};
+enum {PARTICLE_NONE, SPARKLE, RAIN};
 
 enum {ROUND, SQUARE};
 
@@ -25,6 +25,16 @@ typedef struct sparkle_context {
     int dispersion_type;
     sfColor color;
 } sparkle_context_t;
+
+typedef struct rain_context {
+    sfVector2f position;
+    sfVector2i dispersion;
+    float density;
+    sfVector2i size;
+    float speed;
+    int direction;
+    sfColor color;
+} rain_context_t;
 
 typedef struct particle_intern {
     sfVector2i pos;
@@ -40,6 +50,16 @@ typedef struct particle_sparkle {
     int dispersion_type;
     particle_intern_t *particles;
 } particle_sparkle_t;
+
+typedef struct particle_rain {
+    sfVector2i dispersion;
+    float density;
+    sfVector2i size;
+    float speed;
+    int direction;
+    int nb;
+    particle_intern_t *particles;
+} particle_rain_t;
 
 typedef struct particle_system {
     dg_framebuffer_t *fb;
@@ -64,9 +84,11 @@ sfVector2i add_random_particule(int limit_type,
 //set type
 void particle_set_none(particle_system_t *ps);
 void particle_set_sparkle(particle_system_t *ps);
+void particle_set_rain(particle_system_t *ps);
 
 //update
 void particle_calcul_update_sparkle(particle_system_t *ps, sfTime dt);
+void particle_calcul_update_rain(particle_system_t *ps, sfTime dt);
 
 //sparkle change
 void sparkle_change_density(particle_system_t *ps, float density);
@@ -76,5 +98,8 @@ void sparkle_change_dispersion_type(particle_system_t *ps,
 void sparkle_change_size(particle_system_t *ps, int size);
 void sparkle_change_duration(particle_system_t *ps, float duration);
 void sparkle_force_update(particle_system_t *ps);
+
+//rain change
+void rain_force_update(particle_system_t *ps);
 
 #endif /*PARTICLE_H_*/

@@ -92,6 +92,7 @@ void scp_player_controller_loop(dg_entity_t *entity, dg_window_t *w,
     script_t *script = (script_t *)dg_entity_get_component(entity, "script");
     data_t *data = script->data;
     sfVector2f move = {0, 0};
+    float dspeed = sfKeyboard_isKeyPressed(sfKeyLShift) ? 0.3 : 1;
 
     if (!gd->lock.move) {
         move.x += (keymap_is_pressed(w, "right")) ? 1 : 0;
@@ -99,8 +100,8 @@ void scp_player_controller_loop(dg_entity_t *entity, dg_window_t *w,
         move.y += (keymap_is_pressed(w, "down")) ? 1 : 0;
         move.y += (keymap_is_pressed(w, "up")) ? -1 : 0;
     }
-    move.x *= dt.microseconds / 10000.0 * data->speed * 1.5;
-    move.y *= dt.microseconds / 10000.0 * data->speed * 1.5;
+    move.x *= dt.microseconds / 10000.0 * data->speed * 1.5 * dspeed;
+    move.y *= dt.microseconds / 10000.0 * data->speed * 1.5 * dspeed;
     player_set_animation(move, data, gd);
     collide(&move, data);
     data->pos->x += move.x;

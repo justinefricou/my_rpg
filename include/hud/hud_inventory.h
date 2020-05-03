@@ -56,6 +56,7 @@ typedef struct data {
     dg_entity_t *hud_box;
     dg_entity_t *side_box;
     dg_entity_t *skill_box;
+    dg_entity_t *fx;
     sfText *weight;
     selector_t selector;
     inv_hover_t slots;

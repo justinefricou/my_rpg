@@ -151,5 +151,6 @@ void hud_progress_bar_activate(dg_entity_t *pb, int stat);
 void hud_keymap_button_activate(dg_entity_t *kb, int stat);
 void hud_lang_button_activate(dg_entity_t *kb, int stat);
 void skill_attack(int *previous, void *data, dg_window_t *w);
+sparkle_context_t set_sparkle(void);
 
 #endif

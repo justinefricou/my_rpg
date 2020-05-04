@@ -45,11 +45,10 @@ void skill_attack(int *previous, void *data, dg_window_t *w)
         mult = 2;
     else
         mult = 0.5;
-    mult = (gd->player.damage * mult ) + capacity;
-    if ((gd->enemy.pv.x - mult) < 0)
+    if ((gd->enemy.pv.x - (gd->player.damage * mult ) + capacity) < 0)
         gd->enemy.pv.x = 0;
     else
-        gd->enemy.pv.x -= mult;
+        gd->enemy.pv.x -= (gd->player.damage * mult ) + capacity;
 }
 
 static void close_fight(void)

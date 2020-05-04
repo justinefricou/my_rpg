@@ -31,6 +31,7 @@ static void initialise_stats(general_data_t *gd, int id)
     gd->enemy.type = 1;
     gd->enemy.damage = 4 + (id * 2);
     gd->player.turn = 0;
+    gd->player.damage = 10;
     gd->player.defence = 1;
     gd->player.flattery_stat = 1;
     gd->player.intimidation_stat = 1;

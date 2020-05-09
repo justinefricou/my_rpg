@@ -1,10 +1,10 @@
 # My RPG - It's your turn to create you final fantaisy
 
 - **Binary name:** my_rpg
-- **Repository name:** my_rpg_2017
+- **Repository name:** my_rpg_2020
 - **Repository rights:** , alexia.legrand@epitech.eu, justine.fricou@epitech.eu, mathias.ressort@epitech.eu, vitor-hugo.moreira-reis@epitech.eu
 - **Language:** C
-- **Group Size:** 3
+- **Group Size:** 4
 - **Compilation:** via Makefile, including re, clean and fclean rules
 
 Trailer : https://www.youtube.com/watch?v=lBBdJoKM_5o

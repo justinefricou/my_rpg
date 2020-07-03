@@ -1,4 +1,4 @@
-# My RPG - It's your turn to create you final fantaisy
+# My RPG - It's your turn to create you final fantasy
 
 - **Binary name:** my_rpg
 - **Repository name:** my_rpg_2020
